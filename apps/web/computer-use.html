@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vision 5D — Computer Use</title>
+<link rel="stylesheet" href="css/dashboard.css">
+<style>
+.cu-panel { padding: 20px; max-width: 1200px; margin: 0 auto; }
+.cu-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+.cu-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 16px; }
+.cu-card { background: var(--v5d-bg-card); border: 1px solid var(--v5d-border); border-radius: 8px; padding: 16px; margin-bottom: 12px; }
+.cu-screenshot { width: 100%; max-height: 400px; object-fit: contain; border: 1px solid var(--v5d-border); border-radius: 4px; background: #000; }
+.cu-elements { max-height: 300px; overflow-y: auto; font-size: 12px; }
+.cu-element { display: flex; justify-content: space-between; padding: 4px 8px; border-bottom: 1px solid var(--v5d-border-light); }
+.cu-element:hover { background: var(--v5d-bg-hover); }
+.cu-el-id { font-weight: 600; color: var(--v5d-accent); min-width: 30px; }
+.cu-el-type { color: var(--v5d-text-tertiary); text-transform: uppercase; font-size: 10px; min-width: 70px; }
+.cu-el-label { flex: 1; margin: 0 8px; }
+.cu-el-conf { color: var(--v5d-success); min-width: 40px; text-align: right; }
+.cu-history { max-height: 400px; overflow-y: auto; font-size: 11px; }
+.cu-history-item { padding: 6px 8px; border-bottom: 1px solid var(--v5d-border-light); }
+.cu-history-success { border-left: 3px solid var(--v5d-success); }
+.cu-history-error { border-left: 3px solid var(--v5d-error); }
+.cu-btn { padding: 8px 16px; border: 1px solid var(--v5d-border); border-radius: 4px; cursor: pointer; font-size: 13px; }
+.cu-btn-start { background: var(--v5d-success); color: #fff; border-color: var(--v5d-success); }
+.cu-btn-pause { background: var(--v5d-warning); color: #fff; border-color: var(--v5d-warning); }
+.cu-btn-stop { background: var(--v5d-error); color: #fff; border-color: var(--v5d-error); }
+.cu-btn-step { background: var(--v5d-accent); color: #fff; border-color: var(--v5d-accent); }
+.cu-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+.cu-status { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 11px; font-weight: 600; }
+.cu-status-running { background: var(--v5d-success-bg); color: var(--v5d-success); }
+.cu-status-paused { background: var(--v5d-warning-bg); color: var(--v5d-warning); }
+.cu-status-stopped { background: var(--v5d-bg-tertiary); color: var(--v5d-text-tertiary); }
+.cu-status-error { background: var(--v5d-error-bg); color: var(--v5d-error); }
+.cu-objective { padding: 8px; background: var(--v5d-bg-secondary); border-radius: 4px; font-size: 13px; }
+.cu-confirm-box { padding: 12px; background: var(--v5d-warning-bg); border: 1px solid var(--v5d-warning); border-radius: 4px; margin: 8px 0; }
+.cu-confirm-box button { margin-right: 8px; }
+</style>
+</head>
+<body>
+<div class="cu-panel">
+  <div class="cu-header">
+    <h1>Computer Use Control</h1>
+    <div>
+      <span id="cu-status-badge" class="cu-status cu-status-stopped">STOPPED</span>
+      <span id="cu-action-count" style="margin-left:12px;font-size:12px;color:var(--v5d-text-tertiary)"></span>
+    </div>
+  </div>
+
+  <div class="cu-grid">
+    <div>
+      <!-- Screenshot -->
+      <div class="cu-card">
+        <div class="card-header"><span class="card-title">Current Screenshot</span></div>
+        <img id="cu-screenshot" class="cu-screenshot" src="" alt="No screenshot yet" onerror="this.style.display='none'">
+        <div id="cu-no-screenshot" style="padding:40px;text-align:center;color:var(--v5d-text-tertiary)">No screenshot captured yet</div>
+      </div>
+
+      <!-- Visible Elements -->
+      <div class="cu-card">
+        <div class="card-header"><span class="card-title">Detected Elements</span> <span id="cu-el-count" style="font-size:11px;color:var(--v5d-text-tertiary)"></span></div>
+        <div id="cu-elements" class="cu-elements">Run a step to detect elements</div>
+      </div>
+
+      <!-- Action History -->
+      <div class="cu-card">
+        <div class="card-header"><span class="card-title">Action History</span></div>
+        <div id="cu-history" class="cu-history">No actions yet</div>
+      </div>
+    </div>
+
+    <div>
+      <!-- Session Controls -->
+      <div class="cu-card">
+        <div class="card-header"><span class="card-title">Session</span></div>
+        <div style="margin-bottom:8px">
+          <label style="font-size:11px;color:var(--v5d-text-tertiary)">Objective:</label>
+          <input id="cu-objective" class="cu-objective" style="width:100%;margin-top:4px" placeholder="e.g., Inspect the Vision 5D dashboard" value="Inspect http://localhost:8100/index.html and determine why skeletons remain">
+        </div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <button id="cu-btn-create" class="cu-btn cu-btn-start" onclick="cuCreateSession()">Create Session</button>
+          <button id="cu-btn-start" class="cu-btn cu-btn-start" onclick="cuStartSession()" disabled>Start</button>
+          <button id="cu-btn-step" class="cu-btn cu-btn-step" onclick="cuStep()" disabled>Step</button>
+          <button id="cu-btn-pause" class="cu-btn cu-btn-pause" onclick="cuPause()" disabled>Pause</button>
+          <button id="cu-btn-stop" class="cu-btn cu-btn-stop" onclick="cuStop()" disabled>Stop</button>
+          <button id="cu-btn-emergency" class="cu-btn cu-btn-stop" onclick="cuEmergencyStop()" style="background:#000;color:#f00;border-color:#f00">EMERGENCY STOP</button>
+        </div>
+      </div>
+
+      <!-- Confirmation -->
+      <div id="cu-confirm-box" class="cu-confirm-box" style="display:none">
+        <div><strong>⚠️ Confirmation Required</strong></div>
+        <div id="cu-confirm-detail" style="font-size:12px;margin:8px 0"></div>
+        <button class="cu-btn cu-btn-start" onclick="cuApprove()">Approve</button>
+        <button class="cu-btn cu-btn-stop" onclick="cuReject()">Reject</button>
+      </div>
+
+      <!-- Session Info -->
+      <div class="cu-card">
+        <div class="card-header"><span class="card-title">Session Info</span></div>
+        <div id="cu-session-info" style="font-size:12px;color:var(--v5d-text-secondary)">No active session</div>
+      </div>
+
+      <!-- Security Status -->
+      <div class="cu-card">
+        <div class="card-header"><span class="card-title">Security</span></div>
+        <div id="cu-security" style="font-size:12px;color:var(--v5d-text-secondary)">Loading config...</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+let CU_SESSION_ID = null;
+let CU_API_BASE = 'http://localhost:8000';
+
+async function cuApi(method, path, body) {
+  const opts = { method, headers: { 'Content-Type': 'application/json' }, credentials: 'include' };
+  if (body) opts.body = JSON.stringify(body);
+  const r = await fetch(CU_API_BASE + path, opts);
+  return r.json();
+}
+
+async function cuCreateSession() {
+  const obj = document.getElementById('cu-objective').value;
+  const d = await cuApi('POST', '/api/v1/computer-use/sessions', { objective: obj });
+  CU_SESSION_ID = d.session_id;
+  cuUpdateUI(d);
+  document.getElementById('cu-btn-start').disabled = false;
+  document.getElementById('cu-session-info').textContent = `Session: ${CU_SESSION_ID?.substring(0,20)}... | Max actions: ${d.max_actions}`;
+}
+
+async function cuStartSession() {
+  if (!CU_SESSION_ID) return;
+  const d = await cuApi('POST', `/api/v1/computer-use/sessions/${CU_SESSION_ID}/start`);
+  cuUpdateUI(d);
+  document.getElementById('cu-btn-step').disabled = false;
+  document.getElementById('cu-btn-pause').disabled = false;
+  document.getElementById('cu-btn-stop').disabled = false;
+}
+
+async function cuStep() {
+  if (!CU_SESSION_ID) return;
+  document.getElementById('cu-btn-step').disabled = true;
+  try {
+    const d = await cuApi('POST', `/api/v1/computer-use/sessions/${CU_SESSION_ID}/step`);
+    cuUpdateUI(d);
+    if (d.step === 'awaiting_confirmation') cuShowConfirmation(d);
+    if (d.before_screenshot) cuLoadScreenshot(d.before_screenshot);
+    if (d.after_screenshot) cuLoadScreenshot(d.after_screenshot);
+    if (d.vision) cuShowElements(d.vision);
+    if (d.result) cuAddHistory(d);
+  } catch(e) { console.error(e); }
+  document.getElementById('cu-btn-step').disabled = false;
+}
+
+async function cuPause() { 
+  const d = await cuApi('POST', `/api/v1/computer-use/sessions/${CU_SESSION_ID}/pause`);
+  cuUpdateUI(d);
+}
+async function cuStop() { 
+  const d = await cuApi('POST', `/api/v1/computer-use/sessions/${CU_SESSION_ID}/stop`);
+  cuUpdateUI(d);
+}
+async function cuEmergencyStop() { 
+  const d = await cuApi('POST', `/api/v1/computer-use/sessions/${CU_SESSION_ID}/emergency-stop`);
+  cuUpdateUI(d);
+  document.getElementById('cu-status-badge').className = 'cu-status cu-status-error';
+  document.getElementById('cu-status-badge').textContent = 'EMERGENCY STOP';
+}
+async function cuApprove() {
+  const d = await cuApi('POST', `/api/v1/computer-use/sessions/${CU_SESSION_ID}/approve`);
+  cuUpdateUI(d);
+  document.getElementById('cu-confirm-box').style.display = 'none';
+}
+async function cuReject() {
+  const d = await cuApi('POST', `/api/v1/computer-use/sessions/${CU_SESSION_ID}/reject`);
+  cuUpdateUI(d);
+  document.getElementById('cu-confirm-box').style.display = 'none';
+}
+
+function cuUpdateUI(d) {
+  if (d.state) {
+    const badge = document.getElementById('cu-status-badge');
+    badge.textContent = d.state.toUpperCase();
+    badge.className = 'cu-status cu-status-' + d.state;
+  }
+  if (d.action_count !== undefined) {
+    document.getElementById('cu-action-count').textContent = `Action ${d.action_count}/${d.max_actions || 50}`;
+  }
+}
+
+function cuLoadScreenshot(path) {
+  const img = document.getElementById('cu-screenshot');
+  img.src = `${CU_API_BASE}/api/v1/computer-use/sessions/${CU_SESSION_ID}/screenshots/${path.split('/').pop()}`;
+  img.style.display = 'block';
+  document.getElementById('cu-no-screenshot').style.display = 'none';
+}
+
+function cuShowElements(vision) {
+  const container = document.getElementById('cu-elements');
+  const els = vision.visible_elements || [];
+  document.getElementById('cu-el-count').textContent = `${els.length} elements`;
+  if (els.length === 0) { container.innerHTML = 'No elements detected'; return; }
+  container.innerHTML = els.map(e => `
+    <div class="cu-element" title="bbox: ${JSON.stringify(e.bounding_box)}">
+      <span class="cu-el-id">#${e.element_id}</span>
+      <span class="cu-el-type">${e.element_type}</span>
+      <span class="cu-el-label">${e.label || '(no label)'}</span>
+      <span class="cu-el-conf">${Math.round(e.confidence*100)}%</span>
+    </div>
+  `).join('');
+}
+
+function cuAddHistory(d) {
+  const container = document.getElementById('cu-history');
+  if (container.textContent === 'No actions yet') container.innerHTML = '';
+  const cls = d.result?.success ? 'cu-history-success' : 'cu-history-error';
+  const action = d.action?.action_type || 'unknown';
+  const status = d.result?.success ? 'OK' : 'FAIL';
+  container.innerHTML = `
+    <div class="cu-history-item ${cls}">
+      <strong>${action}</strong> — ${status} (${d.result?.duration_ms?.toFixed(0) || 0}ms)
+      ${d.result?.error ? `<div style="color:var(--v5d-error);font-size:10px">${d.result.error}</div>` : ''}
+      ${d.visual_verification ? ' ✅ Verified' : ''}
+    </div>
+  ` + container.innerHTML;
+}
+
+function cuShowConfirmation(d) {
+  document.getElementById('cu-confirm-box').style.display = 'block';
+  document.getElementById('cu-confirm-detail').textContent = 
+    `Action: ${d.action?.action_type} — ${d.message || 'Requires approval'}`;
+}
+
+// Load config on page load
+(async function() {
+  try {
+    const cfg = await cuApi('GET', '/api/v1/computer-use/config');
+    document.getElementById('cu-security').innerHTML = 
+      `Enabled: ${cfg.enabled}<br>Domains: ${cfg.domain_allowlist?.join(', ')}<br>Max actions: ${cfg.max_actions_per_session}<br>Emergency stop: ${cfg.emergency_stop_active ? 'ACTIVE' : 'inactive'}`;
+  } catch(e) {
+    document.getElementById('cu-security').textContent = 'Config unavailable (sign in first)';
+  }
+})();
+</script>
+</body>
+</html>

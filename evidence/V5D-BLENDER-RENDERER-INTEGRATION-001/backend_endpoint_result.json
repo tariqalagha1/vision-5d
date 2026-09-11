@@ -1,0 +1,11 @@
+{
+  "mission": "V5D-BLENDER-RENDERER-INTEGRATION-001",
+  "timestamp": "2026-07-31T21:43:56.649733",
+  "endpoint": "POST /api/v1/projects/{id}/render",
+  "render_priority": "Blender (primary) \u2192 Cinematic Engine (fallback)",
+  "blender_detection": "subprocess.run(['blender', '--version'])",
+  "glb_validation": "Called before Blender import",
+  "artifact_registration": "DurableArtifactRef for MP4 + thumbnail",
+  "pipeline_routes_size": 36106,
+  "pipeline_routes_sha256": "b1a823d3e8a6a20b04448e92a69363c6f4ad79eb88d7912306d7a51a4fe48d4e"
+}

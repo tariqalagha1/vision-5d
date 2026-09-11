@@ -1,0 +1,13 @@
+{
+  "plans": {
+    "architectural_plan_01": {
+      "nvidia_clear": "4/6 assessments",
+      "evidence": "walls, partitions, doors, windows, stairs, rooms"
+    },
+    "elevation_detail_01": {
+      "nvidia_clear": "5/6 assessments",
+      "evidence": "architectural linework, structural elements"
+    }
+  },
+  "verdict": "PASS \u2014 NVIDIA confirms visible architectural elements"
+}

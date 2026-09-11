@@ -1,0 +1,12 @@
+{
+  "sourceRevisionId": "rev_001_original",
+  "newRevisionId": "rev_002_production_f670716f",
+  "sourceIntact": true,
+  "changedNodes": [
+    "wall_v5d_015"
+  ],
+  "atomicApplication": true,
+  "correctionEventIds": [
+    "8e78233a-83b9-4f8f-b0e9-172b796e7a76"
+  ]
+}

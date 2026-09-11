@@ -1,0 +1,88 @@
+{
+  "frames": [
+    {
+      "time_s": 0,
+      "path": "C:\\Users\\admin\\workspaces\\vision-5d\\evidence\\DELIVERY-CHALLENGE-001\\extracted_frames\\frame_000s.png",
+      "sha256": "9a3b21a86626a396b582f0c9a1abbe6d298cee5bc95d394d2b8cff96ccc9a33e",
+      "non_bg_pct": 55.51,
+      "brightness": 41.9,
+      "blank": false,
+      "diff_from_prev": "N/A"
+    },
+    {
+      "time_s": 5,
+      "path": "C:\\Users\\admin\\workspaces\\vision-5d\\evidence\\DELIVERY-CHALLENGE-001\\extracted_frames\\frame_005s.png",
+      "sha256": "693920caa9ce31fb214191eb410bdedd86a264b62554a70bc84f924e6ee3e0d6",
+      "non_bg_pct": 55.81,
+      "brightness": 42.3,
+      "blank": false,
+      "diff_from_prev": "DIFFERENT"
+    },
+    {
+      "time_s": 10,
+      "path": "C:\\Users\\admin\\workspaces\\vision-5d\\evidence\\DELIVERY-CHALLENGE-001\\extracted_frames\\frame_010s.png",
+      "sha256": "1b5472c09e673636f9a5e06ce9dea7257b560f6f49227456120d5c06e1e8da65",
+      "non_bg_pct": 55.77,
+      "brightness": 42.5,
+      "blank": false,
+      "diff_from_prev": "DIFFERENT"
+    },
+    {
+      "time_s": 20,
+      "path": "C:\\Users\\admin\\workspaces\\vision-5d\\evidence\\DELIVERY-CHALLENGE-001\\extracted_frames\\frame_020s.png",
+      "sha256": "66a48ef16b6681e0f7291fdc737b79279da2db040c1d5c82c4d1efda0b9c1dd6",
+      "non_bg_pct": 55.7,
+      "brightness": 42.3,
+      "blank": false,
+      "diff_from_prev": "DIFFERENT"
+    },
+    {
+      "time_s": 30,
+      "path": "C:\\Users\\admin\\workspaces\\vision-5d\\evidence\\DELIVERY-CHALLENGE-001\\extracted_frames\\frame_030s.png",
+      "sha256": "fb92b4674dd6cd86394f63aaae3155e20240f1250187ef25aa070537be01affb",
+      "non_bg_pct": 55.73,
+      "brightness": 42.3,
+      "blank": false,
+      "diff_from_prev": "DIFFERENT"
+    },
+    {
+      "time_s": 45,
+      "path": "C:\\Users\\admin\\workspaces\\vision-5d\\evidence\\DELIVERY-CHALLENGE-001\\extracted_frames\\frame_045s.png",
+      "sha256": "a0665519a9feec4603f14a862c4d58e19ce12976c710bb2a4d931581573ee536",
+      "non_bg_pct": 55.62,
+      "brightness": 42.2,
+      "blank": false,
+      "diff_from_prev": "DIFFERENT"
+    },
+    {
+      "time_s": 60,
+      "path": "C:\\Users\\admin\\workspaces\\vision-5d\\evidence\\DELIVERY-CHALLENGE-001\\extracted_frames\\frame_060s.png",
+      "sha256": "2ed18aeec6f848a78386a899535546512e1193e4edd64c8425a78aa18450dd6c",
+      "non_bg_pct": 55.68,
+      "brightness": 42.3,
+      "blank": false,
+      "diff_from_prev": "DIFFERENT"
+    },
+    {
+      "time_s": 75,
+      "path": "C:\\Users\\admin\\workspaces\\vision-5d\\evidence\\DELIVERY-CHALLENGE-001\\extracted_frames\\frame_075s.png",
+      "sha256": "586bdd241f055afbd2fb6ac52382feba17e7a776068047e2503878b99320f3af",
+      "non_bg_pct": 55.73,
+      "brightness": 42.3,
+      "blank": false,
+      "diff_from_prev": "DIFFERENT"
+    },
+    {
+      "time_s": 90,
+      "path": "C:\\Users\\admin\\workspaces\\vision-5d\\evidence\\DELIVERY-CHALLENGE-001\\extracted_frames\\frame_090s.png",
+      "sha256": "1287c3ff8a84dc4510a5e97177e65366e6d6223b060a766fd2465292502b723b",
+      "non_bg_pct": 55.77,
+      "brightness": 42.2,
+      "blank": false,
+      "diff_from_prev": "DIFFERENT"
+    }
+  ],
+  "unique_frames": 9,
+  "blank_frames": 0,
+  "avg_non_bg": 55.70222222222222
+}

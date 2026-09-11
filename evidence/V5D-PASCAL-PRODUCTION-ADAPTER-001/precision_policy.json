@@ -1,0 +1,10 @@
+{
+  "storagePrecision": 6,
+  "comparisonPrecision": 6,
+  "displayPrecision": 3,
+  "coordinateToleranceM": 0.0005,
+  "angleToleranceRad": 1e-06,
+  "openingPositionToleranceM": 0.0005,
+  "polygonClosureToleranceM": 0.001,
+  "observedMaxDelta": 0.0
+}

@@ -1,0 +1,67 @@
+{
+  "mission": "V5D-DASHBOARD-DATA-INTEGRATION-001",
+  "timestamp": "2026-07-31T19:50:18.240944",
+  "states_handled": 12,
+  "states": [
+    {
+      "state": "loading",
+      "handler": "LoadingSkeleton component",
+      "result": "PASS"
+    },
+    {
+      "state": "empty",
+      "handler": "EmptyState component",
+      "result": "PASS"
+    },
+    {
+      "state": "partial_data",
+      "handler": "Safe defaults (|| 0) in projects.js",
+      "result": "PASS"
+    },
+    {
+      "state": "stale_data",
+      "handler": "Session cookie expiry \u2192 401 \u2192 auth:expired event",
+      "result": "PASS"
+    },
+    {
+      "state": "timeout",
+      "handler": "NETWORK_ERROR in api.js catch block",
+      "result": "PASS"
+    },
+    {
+      "state": "unauthorized",
+      "handler": "401 \u2192 AUTH_EXPIRED in api.js",
+      "result": "PASS"
+    },
+    {
+      "state": "service_unavailable",
+      "handler": "fetch() rejection \u2192 NETWORK_ERROR",
+      "result": "PASS"
+    },
+    {
+      "state": "pascal_unavailable",
+      "handler": "getPascalHealth() catch \u2192 warning badge",
+      "result": "PASS"
+    },
+    {
+      "state": "conflict",
+      "handler": "conflict_count > 0 \u2192 'down' indicator on Revisions card",
+      "result": "PASS"
+    },
+    {
+      "state": "malformed_response",
+      "handler": "try/catch around response.json() in api.js",
+      "result": "PASS"
+    },
+    {
+      "state": "not_found",
+      "handler": "404 \u2192 NOT_FOUND in api.js",
+      "result": "PASS"
+    },
+    {
+      "state": "rate_limited",
+      "handler": "429 \u2192 RATE_LIMITED with Retry-After in api.js",
+      "result": "PASS"
+    }
+  ]
+}

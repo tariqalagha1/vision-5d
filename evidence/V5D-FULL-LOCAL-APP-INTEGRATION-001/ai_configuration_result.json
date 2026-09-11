@@ -1,0 +1,23 @@
+{
+  "mission": "V5D-FULL-LOCAL-APP-INTEGRATION-001",
+  "timestamp": "2026-07-31T21:14:49.398963",
+  "providers": {
+    "providers": [
+      {
+        "provider_id": "8097bf53-ed98-4aef-aa9c-213967892fc1",
+        "provider_type": "openai",
+        "display_name": "OpenAI",
+        "base_url": "https://api.openai.com/v1",
+        "default_model_id": "gpt-4o",
+        "connection_status": "UNTESTED",
+        "last_tested_at": null,
+        "has_credentials": false,
+        "created_at": "2026-07-31T17:09:39"
+      }
+    ],
+    "count": 1
+  },
+  "credential_storage": "AES-256-GCM encrypted",
+  "key_never_returned": true,
+  "masked_display": true
+}

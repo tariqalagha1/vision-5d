@@ -1,0 +1,40 @@
+{
+  "mission": "V5D-DASHBOARD-FOUNDATION-001",
+  "timestamp": "2026-07-31T13:44:20.485538",
+  "router": "Hash-based (V5D.Router)",
+  "routes": [
+    {
+      "path": "#dashboard",
+      "view": "V5D.Views.renderDashboard",
+      "status": "IMPLEMENTED"
+    },
+    {
+      "path": "#projects",
+      "view": "V5D.Views.renderProjects",
+      "status": "IMPLEMENTED"
+    },
+    {
+      "path": "#project",
+      "view": "V5D.Views.renderProjectDetail",
+      "status": "IMPLEMENTED"
+    },
+    {
+      "path": "#ai-config",
+      "view": "V5D.Views.renderAIConfig",
+      "status": "IMPLEMENTED"
+    },
+    {
+      "path": "#files",
+      "view": "placeholder \u2192 dashboard",
+      "status": "STUB"
+    },
+    {
+      "path": "#scenes",
+      "view": "placeholder \u2192 dashboard",
+      "status": "STUB"
+    }
+  ],
+  "default_route": "dashboard",
+  "back_forward_support": true,
+  "deep_linking": true
+}

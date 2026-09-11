@@ -1,0 +1,17 @@
+{
+  "durationMinutes": 30,
+  "observations": {
+    "errorRate": 0,
+    "restLatencyP50": 5,
+    "restLatencyP99": 30,
+    "cpuUsagePct": 12,
+    "memoryUsageMB": 180,
+    "retries": 0,
+    "failedExports": 0,
+    "failedImports": 0,
+    "correctionEvents": 0,
+    "syncFailures": 0,
+    "conflicts": 0
+  },
+  "verdict": "STABLE"
+}

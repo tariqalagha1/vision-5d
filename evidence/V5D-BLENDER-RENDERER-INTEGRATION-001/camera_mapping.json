@@ -1,0 +1,21 @@
+{
+  "mission": "V5D-BLENDER-RENDERER-INTEGRATION-001",
+  "timestamp": "2026-07-31T21:43:56.649733",
+  "shot_types": [
+    "static",
+    "orbit",
+    "dolly",
+    "walkthrough",
+    "crane",
+    "reveal"
+  ],
+  "interpolation": "BEZIER",
+  "properties": [
+    "position_start",
+    "position_end",
+    "target",
+    "fov",
+    "frame_start",
+    "frame_end"
+  ]
+}

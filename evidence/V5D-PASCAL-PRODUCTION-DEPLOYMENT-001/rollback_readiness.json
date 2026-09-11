@@ -1,0 +1,8 @@
+{
+  "rollbackPackageExists": true,
+  "rollbackProcedure": "Revert to previous Pascal sandbox commit or restart with prior build",
+  "rollbackTestedInStaging": true,
+  "currentVersionBackedUp": true,
+  "dataIntegrity": "Pascal scenes and V5D revisions are independently persisted",
+  "verdict": "READY"
+}

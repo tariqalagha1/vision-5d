@@ -1,0 +1,79 @@
+{
+  "health": {
+    "status": 200,
+    "body": {
+      "status": "ok",
+      "app": "editor",
+      "timestamp": "2026-07-30T06:01:52.818Z"
+    },
+    "latencyMs": 7,
+    "error": null
+  },
+  "create": {
+    "status": 201,
+    "body": {
+      "id": "fb4da1b6d815",
+      "name": "V5D Production Adapter \u2014 f670716f",
+      "projectId": "real-2d-45x45-32c4e1ba-151",
+      "ownerId": null,
+      "thumbnailUrl": null,
+      "version": 1,
+      "createdAt": "2026-07-30T06:01:52.789Z",
+      "updatedAt": "2026-07-30T06:01:52.789Z",
+      "sizeBytes": 64493,
+      "nodeCount": 64,
+      "editorUrl": "/editor/fb4da1b6d815",
+      "url": "/editor/fb4da1b6d815",
+      "published": true,
+      "graphHash": "8e371c2ac205d87a53dfd8a6c0754e8db5cdf54abf1072640dd173bd2a501192"
+    },
+    "latencyMs": 28,
+    "error": null
+  },
+  "read": {
+    "sceneId": "fb4da1b6d815",
+    "status": 200,
+    "latencyMs": 15
+  },
+  "list": {
+    "status": 200,
+    "body": {
+      "scenes": [
+        {
+          "id": "fb4da1b6d815",
+          "name": "V5D Production Adapter \u2014 f670716f",
+          "projectId": "real-2d-45x45-32c4e1ba-151",
+          "ownerId": null,
+          "thumbnailUrl": null,
+          "version": 1,
+          "createdAt": "2026-07-30T06:01:52.789Z",
+          "updatedAt": "2026-07-30T06:01:52.789Z",
+          "sizeBytes": 64493,
+          "nodeCount": 64,
+          "editorUrl": "/editor/fb4da1b6d815",
+          "url": "/editor/fb4da1b6d815",
+          "published": true,
+          "graphHash": "8e371c2ac205d87a53dfd8a6c0754e8db5cdf54abf1072640dd173bd2a501192"
+        },
+        {
+          "id": "de31085edb9a",
+          "name": "Updated \u2014 25836d58",
+          "projectId": "real-2d-45x45-32c4e1ba-151",
+          "ownerId": null,
+          "thumbnailUrl": null,
+          "version": 2,
+          "createdAt": "2026-07-30T05:48:03.968Z",
+          "updatedAt": "2026-07-30T05:48:04.829Z",
+          "sizeBytes": 45272,
+          "nodeCount": 64,
+          "editorUrl": "/editor/de31085edb9a",
+          "url": "/editor/de31085edb9a",
+          "published": true,
+          "graphHash": "f6ecfdd09f037eff6ac19ff15c6defa31ddcb91ede91494a7c0e34beaa129d6b"
+        }
+      ]
+    },
+    "latencyMs": 9,
+    "error": null
+  }
+}

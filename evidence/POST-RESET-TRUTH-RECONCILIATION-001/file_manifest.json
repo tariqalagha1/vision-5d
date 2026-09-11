@@ -1,0 +1,118 @@
+{
+  "mission": "V5D-POST-RESET-TRUTH-RECONCILIATION-001",
+  "evidence_directory": "C:\\Users\\admin\\workspaces\\vision-5d\\evidence\\POST-RESET-TRUTH-RECONCILIATION-001",
+  "total_files": 11,
+  "total_size": 112539,
+  "files": [
+    {
+      "filename": "artifact_catalogue.json",
+      "extension": ".json",
+      "size_bytes": 74902,
+      "human_size": "74,902 bytes",
+      "relative_path": "evidence\\POST-RESET-TRUTH-RECONCILIATION-001\\artifact_catalogue.json",
+      "absolute_path": "C:\\Users\\admin\\workspaces\\vision-5d\\evidence\\POST-RESET-TRUTH-RECONCILIATION-001\\artifact_catalogue.json",
+      "sha256": "d3c0b62e6ca35554b375cf77d6a7530cce3f53d3024a575f591d066fbd88c49c",
+      "created": "2026-07-27 08:23:44.327159"
+    },
+    {
+      "filename": "evidence_precedence.json",
+      "extension": ".json",
+      "size_bytes": 6930,
+      "human_size": "6,930 bytes",
+      "relative_path": "evidence\\POST-RESET-TRUTH-RECONCILIATION-001\\evidence_precedence.json",
+      "absolute_path": "C:\\Users\\admin\\workspaces\\vision-5d\\evidence\\POST-RESET-TRUTH-RECONCILIATION-001\\evidence_precedence.json",
+      "sha256": "176dd40ab702f8577eae84e0691836cf013f17552aaddfe1d6a1658468050bbe",
+      "created": "2026-07-27 08:22:53.925159"
+    },
+    {
+      "filename": "glb_structural_recheck.json",
+      "extension": ".json",
+      "size_bytes": 5132,
+      "human_size": "5,132 bytes",
+      "relative_path": "evidence\\POST-RESET-TRUTH-RECONCILIATION-001\\glb_structural_recheck.json",
+      "absolute_path": "C:\\Users\\admin\\workspaces\\vision-5d\\evidence\\POST-RESET-TRUTH-RECONCILIATION-001\\glb_structural_recheck.json",
+      "sha256": "8cc3672d168c62105d3a841832c5aba684d652096ba8b28159b102ef34ca5a7f",
+      "created": "2026-07-27 08:22:53.955009"
+    },
+    {
+      "filename": "html_dependency_recheck.json",
+      "extension": ".json",
+      "size_bytes": 1056,
+      "human_size": "1,056 bytes",
+      "relative_path": "evidence\\POST-RESET-TRUTH-RECONCILIATION-001\\html_dependency_recheck.json",
+      "absolute_path": "C:\\Users\\admin\\workspaces\\vision-5d\\evidence\\POST-RESET-TRUTH-RECONCILIATION-001\\html_dependency_recheck.json",
+      "sha256": "033068ab5686a3d6a65e5d97058f40d1857cd4cc8b620ccadd2fb661558ed4d3",
+      "created": "2026-07-27 08:23:44.310817"
+    },
+    {
+      "filename": "implementation_baseline.json",
+      "extension": ".json",
+      "size_bytes": 4994,
+      "human_size": "4,994 bytes",
+      "relative_path": "evidence\\POST-RESET-TRUTH-RECONCILIATION-001\\implementation_baseline.json",
+      "absolute_path": "C:\\Users\\admin\\workspaces\\vision-5d\\evidence\\POST-RESET-TRUTH-RECONCILIATION-001\\implementation_baseline.json",
+      "sha256": "1bb30633d0e95b7e93e25b9fde59e0e91c81baad03f548a999a4a5f1c4c02576",
+      "created": "2026-07-27 08:24:59.246149"
+    },
+    {
+      "filename": "reconciliation_report.md",
+      "extension": ".md",
+      "size_bytes": 5710,
+      "human_size": "5,710 bytes",
+      "relative_path": "evidence\\POST-RESET-TRUTH-RECONCILIATION-001\\reconciliation_report.md",
+      "absolute_path": "C:\\Users\\admin\\workspaces\\vision-5d\\evidence\\POST-RESET-TRUTH-RECONCILIATION-001\\reconciliation_report.md",
+      "sha256": "290086c67760732aaf2f8ba4e10d3ea0a63019f4ed2cdbcc4fed2305e73ded49",
+      "created": "2026-07-27 08:24:59.275354"
+    },
+    {
+      "filename": "reconciliation_verdict.json",
+      "extension": ".json",
+      "size_bytes": 3209,
+      "human_size": "3,209 bytes",
+      "relative_path": "evidence\\POST-RESET-TRUTH-RECONCILIATION-001\\reconciliation_verdict.json",
+      "absolute_path": "C:\\Users\\admin\\workspaces\\vision-5d\\evidence\\POST-RESET-TRUTH-RECONCILIATION-001\\reconciliation_verdict.json",
+      "sha256": "764df850c3dc3de0be8759a0d263e8d9b651c8baeee252ceffa5e3a4e809948a",
+      "created": "2026-07-27 08:24:59.265353"
+    },
+    {
+      "filename": "runtime_inventory.json",
+      "extension": ".json",
+      "size_bytes": 2137,
+      "human_size": "2,137 bytes",
+      "relative_path": "evidence\\POST-RESET-TRUTH-RECONCILIATION-001\\runtime_inventory.json",
+      "absolute_path": "C:\\Users\\admin\\workspaces\\vision-5d\\evidence\\POST-RESET-TRUTH-RECONCILIATION-001\\runtime_inventory.json",
+      "sha256": "122f03aae5525acbc09eb751594135d963332619906062d6522a7608717054dc",
+      "created": "2026-07-27 08:22:53.932164"
+    },
+    {
+      "filename": "score_reconciliation.json",
+      "extension": ".json",
+      "size_bytes": 3036,
+      "human_size": "3,036 bytes",
+      "relative_path": "evidence\\POST-RESET-TRUTH-RECONCILIATION-001\\score_reconciliation.json",
+      "absolute_path": "C:\\Users\\admin\\workspaces\\vision-5d\\evidence\\POST-RESET-TRUTH-RECONCILIATION-001\\score_reconciliation.json",
+      "sha256": "baf788696a8673df562af02fea5e2a727afe7a47e00766be81d75f16d9e29823",
+      "created": "2026-07-27 08:23:44.343624"
+    },
+    {
+      "filename": "test_environment_report.json",
+      "extension": ".json",
+      "size_bytes": 2782,
+      "human_size": "2,782 bytes",
+      "relative_path": "evidence\\POST-RESET-TRUTH-RECONCILIATION-001\\test_environment_report.json",
+      "absolute_path": "C:\\Users\\admin\\workspaces\\vision-5d\\evidence\\POST-RESET-TRUTH-RECONCILIATION-001\\test_environment_report.json",
+      "sha256": "d47b2ec60f094007d0ccbc83e5004d624675b638c46bc192b001507274278690",
+      "created": "2026-07-27 08:22:53.932164"
+    },
+    {
+      "filename": "video_provenance_recheck.json",
+      "extension": ".json",
+      "size_bytes": 2651,
+      "human_size": "2,651 bytes",
+      "relative_path": "evidence\\POST-RESET-TRUTH-RECONCILIATION-001\\video_provenance_recheck.json",
+      "absolute_path": "C:\\Users\\admin\\workspaces\\vision-5d\\evidence\\POST-RESET-TRUTH-RECONCILIATION-001\\video_provenance_recheck.json",
+      "sha256": "89c0bc1817dddda796489f05a141272f91514f1ca7b24c14139b3fa40c5ad332",
+      "created": "2026-07-27 08:23:44.327159"
+    }
+  ]
+}

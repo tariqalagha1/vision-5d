@@ -1,0 +1,69 @@
+{
+  "review_date": "2026-08-05",
+  "browser": "Google Chrome",
+  "url": "http://127.0.0.1:8000/apps/web/index.html",
+  "dashboard_state": "FULLY FUNCTIONAL",
+  "issues_found": [
+    {
+      "id": "V5D-FE-QUALITY-001",
+      "severity": "LOW",
+      "page": "Dashboard",
+      "component": "ActivityItem",
+      "description": "Activity items show 'undefined' for project detail",
+      "root_cause": "getActivity() transformation map does not include 'project' field; ActivityItem uses item.project which is undefined",
+      "fix": "Added project: a.project_name || a.project || a.project_id || '' to getActivity() mapping",
+      "file": "apps/web/js/services/projects.js",
+      "status": "FIXED"
+    },
+    {
+      "id": "V5D-FE-QUALITY-002",
+      "severity": "MEDIUM",
+      "page": "Dashboard",
+      "component": "Sidebar",
+      "description": "No Admin or Main Settings links in sidebar navigation",
+      "root_cause": "Sidebar items array in auth onChange does not include admin/settings routes",
+      "fix": "PENDING — requires admin/settings page routes to exist",
+      "file": "apps/web/js/app.js",
+      "status": "OPEN"
+    }
+  ],
+  "visual_review": {
+    "visual_hierarchy": "Good — clear sidebar/content split, card grid for stats",
+    "page_structure": "Professional — logo, nav, header, stats, projects, activity, health",
+    "sidebar_clarity": "Good — labeled icons, section dividers (WORKSPACE, SETTINGS)",
+    "navigation_labels": "Readable — Dashboard, Projects, Scenes, Files, AI Config, Sign Out",
+    "spacing": "Consistent — CSS variables for spacing",
+    "alignment": "Grid-based layout, cards align properly",
+    "typography": "Clean sans-serif, reasonable hierarchy",
+    "button_visibility": "Good — primary (New Project) stands out, secondary buttons clear",
+    "loading_states": "Skeletons replaced within 10s timeout",
+    "empty_states": "Activity shows descriptive empty message",
+    "error_states": "API errors shown with Retry button",
+    "responsiveness": "Sidebar toggle for mobile (<768px)",
+    "professional_appearance": "Looks finished and consistent"
+  },
+  "dashboard_behavior": {
+    "stats_loaded": true,
+    "projects_loaded": true,
+    "activity_loaded": true,
+    "health_loaded": true,
+    "connection_indicator": "Connected (green)",
+    "sidebar_working": true,
+    "icons_clickable": true,
+    "skeletons_removed": true
+  },
+  "frontend_backend_inventory": [
+    {"call": "POST /api/v1/auth/refresh", "status": "401 (no session)", "class": "AUTHENTICATION_BLOCKED"},
+    {"call": "GET /api/v1/workspaces/{id}/projects", "status": "200", "class": "CONNECTED_AND_RENDERED"},
+    {"call": "GET /api/v1/dashboard/activity", "status": "200", "class": "CONNECTED_AND_RENDERED"},
+    {"call": "GET /api/v1/health (Pascal)", "status": "operational", "class": "CONNECTED_AND_RENDERED"}
+  ],
+  "fixes_applied": [
+    "router.js: Added window.V5D = window.V5D || {} initialization",
+    "api.js: Changed window.V5D re-assignment to non-destructive const",
+    "api.js: Changed BASE from hardcoded localhost to window.location.origin",
+    "app.js: Made boot() start router before waiting for auth",
+    "main.py: Added StaticFiles mount at /apps/web/",
+    "projects.js: Added 'project' field to getActivity() mapping"
+  ]
+}

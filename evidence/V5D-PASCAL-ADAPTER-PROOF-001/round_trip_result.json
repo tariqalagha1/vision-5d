@@ -1,0 +1,12 @@
+{
+  "edit": "moved endpoint +0.5m",
+  "wall": "wall_v5d_000",
+  "can_round_trip": true,
+  "preserved": {
+    "stable_id": true,
+    "provenance": true,
+    "geometry": true,
+    "scale": true,
+    "parent": true
+  }
+}

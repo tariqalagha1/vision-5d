@@ -1,0 +1,7 @@
+{
+  "pascal_core": "0.9.2",
+  "pascal_commit": "42ac4be1ce5f3fee74806aa093267b6fee77d47d",
+  "vision5d_adapter_version": "3.0.0-production",
+  "compatible": true,
+  "version_check_strategy": "fail_fast_on_mismatch"
+}

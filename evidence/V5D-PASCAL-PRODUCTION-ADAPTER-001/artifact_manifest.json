@@ -1,0 +1,202 @@
+{
+  "mission": "V5D-PASCAL-PRODUCTION-ADAPTER-001",
+  "totalArtifacts": 39,
+  "artifacts": [
+    {
+      "path": "adapter_contract.md",
+      "sha256": "5a0d7422ad35cfe0dde258cc3415e202548835a4f5984384a1d8ea4b2dad7850",
+      "sizeBytes": 107
+    },
+    {
+      "path": "architecture_overview.md",
+      "sha256": "f39785efcaed377c121e7730229864b6492aec513ea2c635c22980a2a0ca314b",
+      "sizeBytes": 112
+    },
+    {
+      "path": "automated_test_results.json",
+      "sha256": "74db1b95d1530660f37c670c839566c5aeee266c5b28b04b54b22103a67faa32",
+      "sizeBytes": 989
+    },
+    {
+      "path": "configuration_schema.json",
+      "sha256": "f595a7e4407555af83f9f4a1e0c65df5f5e0eeb8d7b6a3e5adb2cf7f91f8215c",
+      "sizeBytes": 452
+    },
+    {
+      "path": "conflict_detection_result.json",
+      "sha256": "4354eac03603d5c8d349bdce0f1052e9b354a46bbc56d09530ba9e2d21f55d03",
+      "sizeBytes": 280
+    },
+    {
+      "path": "conflict_resolution_guide.md",
+      "sha256": "61ecbf72a25b40f82f278a4ba34ff329712844a65bc925b7fe0ef01c7346be3f",
+      "sizeBytes": 116
+    },
+    {
+      "path": "correction_event_result.json",
+      "sha256": "281a60950605b48c02e3153d83a757b955ea2b0638a07e3517ad073b871681d3",
+      "sizeBytes": 910
+    },
+    {
+      "path": "dependency_inventory.json",
+      "sha256": "95af8a2d9410032ab7bb810fa034157b32a6c2632070c467e6de6af9defddafe",
+      "sizeBytes": 1082
+    },
+    {
+      "path": "failure_test_results.json",
+      "sha256": "eea5f321caf91c4e36d9652bcef90ece1c8c179797585ba327aa081bf695ede7",
+      "sizeBytes": 1157
+    },
+    {
+      "path": "final_report.md",
+      "sha256": "202ed9cbf9f884e1e0dec938211680348340eb4a85baf1c1ac44aa7a31d09ac2",
+      "sizeBytes": 3005
+    },
+    {
+      "path": "forward_adapter_result.json",
+      "sha256": "995c2994879787d1cc5ab090f98097a67ba4e363cc1fa2e7ddc36c55f9eddd91",
+      "sizeBytes": 255
+    },
+    {
+      "path": "graph_validation_result.json",
+      "sha256": "44cded91a8f569857e98146ba5fce45c402f9d627d7d816a5bcfa76451c6d4fe",
+      "sizeBytes": 59
+    },
+    {
+      "path": "identity_contract.json",
+      "sha256": "ba628ecd4d6e469ed05c7a2f61fa451ccbd93a238da68538b28c6487e3ab59f1",
+      "sizeBytes": 311
+    },
+    {
+      "path": "identity_map_reference.json",
+      "sha256": "cb060951d63b284f7acaef7525a98b9be713cc4c6f6631e7cfc6a327a8b43995",
+      "sizeBytes": 38038
+    },
+    {
+      "path": "identity_model.md",
+      "sha256": "0aa4fb7d122d94175b1ad154efede4937115b2689f535cacb1efffb4130d52a5",
+      "sizeBytes": 105
+    },
+    {
+      "path": "mcp_client_result.json",
+      "sha256": "6a2a56bda1a6cf60a483f1d843ef5c1f75a8f996a7d1cf76f4f266cc6ae2468f",
+      "sizeBytes": 461
+    },
+    {
+      "path": "mcp_integration_guide.md",
+      "sha256": "5a1253c19db1ba51cddecd278fa4f1b93d88a91d82365a7c300bfdc6d4373b22",
+      "sizeBytes": 112
+    },
+    {
+      "path": "migration_guide.md",
+      "sha256": "5230b29dec276ed56adef2330ba692d206f8c0c45dd38b7ebd08bb6f8d03c86c",
+      "sizeBytes": 106
+    },
+    {
+      "path": "migration_result.json",
+      "sha256": "f62b862ef37e5418a2866f6ba544913bcbe643b3c61454e87496c4d44739eed4",
+      "sizeBytes": 78
+    },
+    {
+      "path": "node_validation_result.json",
+      "sha256": "490440fceda8ff965a7a89bd93d50455984bebb02588af96e33e5374d7704c71",
+      "sizeBytes": 7057
+    },
+    {
+      "path": "observability_result.json",
+      "sha256": "566cd62aaa04d30ac8fed0c312dc9e09597adff498e0aedfa3b26821582b2391",
+      "sizeBytes": 322
+    },
+    {
+      "path": "operational_runbook.md",
+      "sha256": "9dd800e9ccbf1cba96d26a427a487be91c16ae8bb7caeeb8c8e69544aafa6755",
+      "sizeBytes": 110
+    },
+    {
+      "path": "precision_policy.json",
+      "sha256": "6b8222b76b9ab64e1f20a4647462e30fa5356b7492c1862941452bea8ddb7316",
+      "sizeBytes": 256
+    },
+    {
+      "path": "production_architecture.md",
+      "sha256": "277bc013142e1e26624e5ad4fcca263671467cb3f0ff4e8d1216fed8abc18c88",
+      "sizeBytes": 1090
+    },
+    {
+      "path": "production_readiness_checklist.json",
+      "sha256": "696469c38975365ca3833e9cdef6d4ae22231346d4f29a87348a4606658e9f33",
+      "sizeBytes": 499
+    },
+    {
+      "path": "provenance_contract.json",
+      "sha256": "3f0b34b02e1ef973d9d0084140782afd1739b9b7213c7c74c4c97c8ff5b370d3",
+      "sizeBytes": 513
+    },
+    {
+      "path": "provenance_contract.md",
+      "sha256": "6d5e70ee4e7b7d6b83e2a1c909adedc164e324af02da64ba8d7d30f7bfa138b6",
+      "sizeBytes": 110
+    },
+    {
+      "path": "reference_e2e_result.json",
+      "sha256": "130b96906ac1d9ff68d19bec82f24ec761e8915ecc080a735af2d92a27d92c7c",
+      "sizeBytes": 533
+    },
+    {
+      "path": "rest_client_result.json",
+      "sha256": "2c4d977d5d1cf7f28748cb745e9613b096571fcc9397510e3c952ccb2e156465",
+      "sizeBytes": 2326
+    },
+    {
+      "path": "rest_integration_guide.md",
+      "sha256": "f9101730f20718401b50508c538315c1ee560769fd9beb25fc49d54c4a3a479b",
+      "sizeBytes": 113
+    },
+    {
+      "path": "reverse_adapter_result.json",
+      "sha256": "17b6368f2c2f73867201d7c130dc36fa699f08c405ac5e116f604c9e1ffe577e",
+      "sizeBytes": 126
+    },
+    {
+      "path": "revision_creation_result.json",
+      "sha256": "b9fa2b603daf4695d89b46660f67043f39fb99b5381047b43b8033d3e170df53",
+      "sizeBytes": 276
+    },
+    {
+      "path": "risk_report.md",
+      "sha256": "9630592422b05529cffd5cfdd2e329eabc669784494cb5833fb13b252af1045f",
+      "sizeBytes": 448
+    },
+    {
+      "path": "rollback_procedure.md",
+      "sha256": "bc47d8090eb614d636fb251189940a3705583d04fd6029f43e0afe7e3a0401ef",
+      "sizeBytes": 109
+    },
+    {
+      "path": "security_boundary_result.json",
+      "sha256": "000301fd81f449eb722b1eed3340dad814bfb6dfb6c14e95e81981a04113547e",
+      "sizeBytes": 533
+    },
+    {
+      "path": "synchronization_lifecycle.md",
+      "sha256": "1b6debef9b22d706c5ecaf7695dd32813ed9ad37fe4c6bace4e9b35cd829f7ba",
+      "sizeBytes": 116
+    },
+    {
+      "path": "synchronization_state_result.json",
+      "sha256": "cac8af4c7ea582e77a3ec99b205c2a3c0e9a74bca18ec4e8bd41c2e982e4ebbe",
+      "sizeBytes": 1012
+    },
+    {
+      "path": "upgrade_procedure.md",
+      "sha256": "8d1b2571e47841f00d5402c5f0a692e9cd80d04aaa07f11cd6568da7be39278a",
+      "sizeBytes": 108
+    },
+    {
+      "path": "version_compatibility.json",
+      "sha256": "a6ec701e2177a79cbe53be832c4dcdaf38f7500ea2f1eb6350a95a1d8b128591",
+      "sizeBytes": 222
+    }
+  ],
+  "generatedAt": "2026-07-30T06:01:52.703887+00:00"
+}

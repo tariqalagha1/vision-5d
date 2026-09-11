@@ -1,0 +1,18 @@
+{
+  "valid": true,
+  "total_nodes": 64,
+  "root_node_ids": [
+    "site_1mwi0hu25d6an4lv"
+  ],
+  "issues": [],
+  "checks": {
+    "node_map_shape": true,
+    "root_node_ids_present": true,
+    "parent_integrity": true,
+    "no_duplicate_ids": true,
+    "no_missing_parents": true,
+    "no_circular_hierarchy": true,
+    "valid_opening_references": true,
+    "children_arrays_consistent": true
+  }
+}

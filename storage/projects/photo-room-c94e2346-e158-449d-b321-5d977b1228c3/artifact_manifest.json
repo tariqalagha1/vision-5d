@@ -1,0 +1,83 @@
+{
+  "project_id": "6e1587e7-d86e-4df0-849e-41667ac1b490",
+  "job_id": "c94e2346-e158-449d-b321-5d977b1228c3",
+  "artifacts": [
+    {
+      "path": "logs\\photo_pipeline.log",
+      "file_size": 3736,
+      "sha256": "ea0c44634c869fdf621d8f540e93559c30c48c93203737dc96fb9759421b194f",
+      "created": "2026-07-29T06:21:48.087090+00:00",
+      "source_relationship": "generated"
+    },
+    {
+      "path": "nvidia_vision\\execution_log.json",
+      "file_size": 242,
+      "sha256": "8342f5651fac19aa6235ee2b05d6c934cf8a12f9d3dd2aedfabd9bafa7f21788",
+      "created": "2026-07-29T06:22:04.188823+00:00",
+      "source_relationship": "generated"
+    },
+    {
+      "path": "nvidia_vision\\normalized_response.json",
+      "file_size": 2748,
+      "sha256": "79063ec072977b76ec33b8ffb9683bfff95ac6c6adc4a6d3de7041e60d230d8d",
+      "created": "2026-07-29T06:22:04.188823+00:00",
+      "source_relationship": "generated"
+    },
+    {
+      "path": "nvidia_vision\\raw_response.json",
+      "file_size": 3176,
+      "sha256": "d6677a9cb0acf0ce9766908837c95a34b1b77bd0f65b01caf1b5c01e161b3e57",
+      "created": "2026-07-29T06:22:04.187812+00:00",
+      "source_relationship": "generated"
+    },
+    {
+      "path": "nvidia_vision\\request_manifest.json",
+      "file_size": 387,
+      "sha256": "e14fc6c078bbe7c18e4b37ea648f5bc84813b2968ca92bfa7117ad03ac57a77b",
+      "created": "2026-07-29T06:22:04.187812+00:00",
+      "source_relationship": "generated"
+    },
+    {
+      "path": "parsed\\photo_scene.json",
+      "file_size": 3278,
+      "sha256": "fed232808565caca3fce791923d695c10e7866d9b6240b9daa856adeebef3210",
+      "created": "2026-07-29T06:22:04.189823+00:00",
+      "source_relationship": "generated"
+    },
+    {
+      "path": "reports\\final_photo_pipeline_verdict.json",
+      "file_size": 1411,
+      "sha256": "4f67b379634e69a193db57d68dfa965dab7d04027d00ef0f968a3462aca7c38d",
+      "created": "2026-07-29T06:22:04.190825+00:00",
+      "source_relationship": "generated"
+    },
+    {
+      "path": "reports\\photo_input_validation.json",
+      "file_size": 341,
+      "sha256": "13047180996e1524d075cb1d14fe5ea35ba7fdf4048ba3e63834bbac4a661e23",
+      "created": "2026-07-29T06:21:48.238771+00:00",
+      "source_relationship": "generated"
+    },
+    {
+      "path": "reports\\scene_validation.json",
+      "file_size": 502,
+      "sha256": "149b9f954681ba10d299400bbb84f410a4abdd84ac47ade1ae67e5c1f78dec0f",
+      "created": "2026-07-29T06:22:04.190825+00:00",
+      "source_relationship": "generated"
+    },
+    {
+      "path": "source\\ingestion.json",
+      "file_size": 542,
+      "sha256": "892165801d9327e8af4005f52d55826630f4611980643b58542de61af78182dc",
+      "created": "2026-07-29T06:21:48.120758+00:00",
+      "source_relationship": "generated"
+    },
+    {
+      "path": "source\\photo_original.webp",
+      "file_size": 161854,
+      "sha256": "3b39eeaa3907409677fa205f13c3bc93f49a1a5f6d4bbec52878df4d76ed8732",
+      "created": "2026-07-29T06:21:48.097439+00:00",
+      "source_relationship": "ingested"
+    }
+  ]
+}

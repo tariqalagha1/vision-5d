@@ -1,0 +1,19 @@
+{
+  "stage": "10",
+  "verdict": "PREVIEW_APPROVED",
+  "frames_inspected": [1, 38, 75, 113, 150],
+  "validation": {
+    "frame_1": {"mean": 20.4, "std": 60.3, "ok": true},
+    "frame_38": {"mean": 10.6, "std": 33.7, "ok": true},
+    "frame_75": {"mean": 66.7, "std": 71.3, "ok": true},
+    "frame_113": {"mean": 19.0, "std": 37.6, "ok": true},
+    "frame_150": {"mean": 20.7, "std": 60.5, "ok": true}
+  },
+  "black_frames": 0,
+  "blank_frames": 0,
+  "total_frames": 150,
+  "total_size": 64664072,
+  "architecture_visible": true,
+  "camera_motion_confirmed": true,
+  "notes": "Mean values vary across frames confirming camera orbit movement. Frame 75 (midpoint, facing room interior) has highest mean (66.7) — consistent with interior view."
+}

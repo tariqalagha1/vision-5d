@@ -1,0 +1,17 @@
+{
+  "materials": {
+    "floor": {
+      "type": "light_oak",
+      "color": "#D4C4A8",
+      "roughness": 0.3
+    },
+    "wall": {
+      "color": "#F5F0E8",
+      "roughness": 0.6
+    },
+    "ceiling": {
+      "color": "#FFFFFF",
+      "roughness": 0.5
+    }
+  }
+}

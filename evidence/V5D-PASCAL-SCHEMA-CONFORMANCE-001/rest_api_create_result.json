@@ -1,0 +1,23 @@
+{
+  "request_hash": "5348837e81d11b1b91dc953663a61420ef61e6282abda944fe8f07d419d6e6e5",
+  "method": "POST",
+  "endpoint": "/api/scenes",
+  "status": 201,
+  "response": {
+    "id": "de31085edb9a",
+    "name": "V5D Schema Conformance Test \u2014 25836d58",
+    "projectId": "real-2d-45x45-32c4e1ba-151",
+    "ownerId": null,
+    "thumbnailUrl": null,
+    "version": 1,
+    "createdAt": "2026-07-30T05:48:03.968Z",
+    "updatedAt": "2026-07-30T05:48:03.968Z",
+    "sizeBytes": 45272,
+    "nodeCount": 64,
+    "editorUrl": "/editor/de31085edb9a",
+    "url": "/editor/de31085edb9a",
+    "published": true,
+    "graphHash": "f6ecfdd09f037eff6ac19ff15c6defa31ddcb91ede91494a7c0e34beaa129d6b"
+  },
+  "error": null
+}

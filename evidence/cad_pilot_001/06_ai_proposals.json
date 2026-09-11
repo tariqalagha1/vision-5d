@@ -1,0 +1,25 @@
+{
+  "rooms_analyzed": 0,
+  "options": 2,
+  "option_details": [
+    {
+      "name": "Minimal Intervention",
+      "strategy": "minimal",
+      "furniture_additions": 0,
+      "finish_changes": 1,
+      "advantages": [
+        "Applied modern finish palette"
+      ]
+    },
+    {
+      "name": "Balanced Redesign",
+      "strategy": "balanced",
+      "furniture_additions": 0,
+      "finish_changes": 1,
+      "advantages": [
+        "Applied modern finish palette",
+        "Adjusted lighting to 4000K"
+      ]
+    }
+  ]
+}

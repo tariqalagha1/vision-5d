@@ -1,0 +1,64 @@
+{
+  "title": "Vision 5D — Production Dashboard",
+  "uid": "vision5d-production",
+  "panels": [
+    {
+      "title": "HTTP Request Rate",
+      "type": "graph",
+      "targets": [{"expr": "rate(v5d_http_requests_total[1m])", "legendFormat": "{{method}} {{endpoint}}"}]
+    },
+    {
+      "title": "Request Duration (p95)",
+      "type": "graph",
+      "targets": [{"expr": "histogram_quantile(0.95, rate(v5d_http_request_duration_seconds_bucket[5m]))", "legendFormat": "{{method}} {{endpoint}}"}]
+    },
+    {
+      "title": "Requests In Flight",
+      "type": "gauge",
+      "targets": [{"expr": "v5d_http_requests_in_flight"}]
+    },
+    {
+      "title": "Active Users",
+      "type": "stat",
+      "targets": [{"expr": "v5d_active_users"}]
+    },
+    {
+      "title": "Jobs by Type and State",
+      "type": "bargauge",
+      "targets": [{"expr": "sum by (job_type, state) (rate(v5d_jobs_total[5m]))"}]
+    },
+    {
+      "title": "Worker Queue Depth",
+      "type": "graph",
+      "targets": [{"expr": "v5d_worker_queue_depth"}]
+    },
+    {
+      "title": "AI Provider Calls",
+      "type": "graph",
+      "targets": [{"expr": "rate(v5d_ai_requests_total[5m])", "legendFormat": "{{provider}} {{status}}"}]
+    },
+    {
+      "title": "AI Token Usage",
+      "type": "graph",
+      "targets": [{"expr": "rate(v5d_ai_tokens_total[5m])", "legendFormat": "{{provider}} {{type}}"}]
+    },
+    {
+      "title": "Storage Operations",
+      "type": "graph",
+      "targets": [{"expr": "rate(v5d_storage_operations_total[5m])", "legendFormat": "{{operation}} {{status}}"}]
+    },
+    {
+      "title": "Export Generation Rate",
+      "type": "graph",
+      "targets": [{"expr": "rate(v5d_exports_total[5m])", "legendFormat": "{{format}} {{status}}"}]
+    },
+    {
+      "title": "Validation Issues",
+      "type": "graph",
+      "targets": [{"expr": "rate(v5d_validation_issues_total[5m])", "legendFormat": "{{severity}} {{type}}"}]
+    }
+  ],
+  "templating": {"list": []},
+  "time": {"from": "now-1h", "to": "now"},
+  "refresh": "10s"
+}

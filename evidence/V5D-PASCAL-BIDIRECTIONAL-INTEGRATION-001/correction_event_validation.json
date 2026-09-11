@@ -1,0 +1,180 @@
+{
+  "total": 5,
+  "valid": 5,
+  "rejected": 0,
+  "valid_events": [
+    {
+      "event_id": "cdfca24f-1eb2-41c1-bc6d-afac57a758ab",
+      "event_type": "MOVE_WALL_ENDPOINT",
+      "timestamp": "2026-07-30T05:13:54.419077+00:00",
+      "project_id": "real-2d-45x45-32c4e1ba-151",
+      "source_revision_id": "rev_001_original",
+      "target_revision_id": "rev_002_vision5d_update",
+      "vision5d_id": "wall_v5d_010",
+      "pascal_node_id": "wall_v5d_010",
+      "old_value": {
+        "end_point_2d": [
+          333.934,
+          43.005
+        ]
+      },
+      "new_value": {
+        "end_point_2d": [
+          334.184,
+          43.005
+        ]
+      },
+      "coordinate_system": "right-handed X(east) Y(up) Z(north)",
+      "units": "meters",
+      "origin": "user_edit",
+      "reason": "Correct interior wall endpoint alignment",
+      "validation_status": "valid",
+      "dependent_nodes": [],
+      "provenance": {
+        "source_file_sha256": "aca1d4c9ef1e2ccb5427c6f525aadc3d8b18fa00a9e767c2d0fa404563f46509",
+        "project_id": "real-2d-45x45-32c4e1ba-151"
+      },
+      "checksum": "7c2e4a4b7648b1cdf318d317f9ea97cc2c107ed9962203a8a101684ac2355fed"
+    },
+    {
+      "event_id": "6d84d4ad-d274-4e68-b6d0-29c377c1e5d2",
+      "event_type": "CHANGE_WALL_THICKNESS",
+      "timestamp": "2026-07-30T05:13:54.419077+00:00",
+      "project_id": "real-2d-45x45-32c4e1ba-151",
+      "source_revision_id": "rev_001_original",
+      "target_revision_id": "rev_002_vision5d_update",
+      "vision5d_id": "wall_v5d_015",
+      "pascal_node_id": "wall_v5d_015",
+      "old_value": {
+        "thickness": 0.2
+      },
+      "new_value": {
+        "thickness": 0.25
+      },
+      "coordinate_system": "right-handed X(east) Y(up) Z(north)",
+      "units": "meters",
+      "origin": "user_edit",
+      "reason": "Adjust wall thickness for structural requirements",
+      "validation_status": "valid",
+      "dependent_nodes": [],
+      "provenance": {
+        "source_file_sha256": "aca1d4c9ef1e2ccb5427c6f525aadc3d8b18fa00a9e767c2d0fa404563f46509",
+        "project_id": "real-2d-45x45-32c4e1ba-151"
+      },
+      "checksum": "de35857472f4ec5f00ee04d71b6c97dbdc56ecb0dc4f7be6b5894d57a32c0313"
+    },
+    {
+      "event_id": "8ac53f7d-92e8-4220-8873-a742baec5c28",
+      "event_type": "MOVE_DOOR",
+      "timestamp": "2026-07-30T05:13:54.419077+00:00",
+      "project_id": "real-2d-45x45-32c4e1ba-151",
+      "source_revision_id": "rev_001_original",
+      "target_revision_id": "rev_002_vision5d_update",
+      "vision5d_id": "door_v5d_000",
+      "pascal_node_id": "door_v5d_000",
+      "old_value": {
+        "position": [
+          322.373,
+          0.0,
+          36.512
+        ]
+      },
+      "new_value": {
+        "position": [
+          322.573,
+          0.0,
+          36.512
+        ]
+      },
+      "coordinate_system": "right-handed X(east) Y(up) Z(north)",
+      "units": "meters",
+      "origin": "user_edit",
+      "reason": "Adjust door position for furniture clearance",
+      "validation_status": "valid",
+      "dependent_nodes": [
+        "wall_v5d_001"
+      ],
+      "provenance": {
+        "source_file_sha256": "aca1d4c9ef1e2ccb5427c6f525aadc3d8b18fa00a9e767c2d0fa404563f46509",
+        "project_id": "real-2d-45x45-32c4e1ba-151"
+      },
+      "checksum": "999f8d321e34eabeee38b2ff58c82f8bf3ad8a5f9e919d6f20a6323dc653bf02"
+    },
+    {
+      "event_id": "02366a8f-9b4c-421f-84b3-eb7284df03d4",
+      "event_type": "ADD_WINDOW",
+      "timestamp": "2026-07-30T05:13:54.419077+00:00",
+      "project_id": "real-2d-45x45-32c4e1ba-151",
+      "source_revision_id": "rev_001_original",
+      "target_revision_id": "rev_002_vision5d_update",
+      "vision5d_id": "window_v5d_001",
+      "pascal_node_id": "window_v5d_001",
+      "old_value": null,
+      "new_value": {
+        "position": [
+          313.615,
+          1.0,
+          64.129
+        ],
+        "width": 1.2,
+        "height": 1.0,
+        "windowType": "casement",
+        "wallId": "wall_v5d_027"
+      },
+      "coordinate_system": "right-handed X(east) Y(up) Z(north)",
+      "units": "meters",
+      "origin": "user_edit",
+      "reason": "Add window for natural light on exterior wall",
+      "validation_status": "valid",
+      "dependent_nodes": [
+        "wall_v5d_027"
+      ],
+      "provenance": {
+        "source_file_sha256": "aca1d4c9ef1e2ccb5427c6f525aadc3d8b18fa00a9e767c2d0fa404563f46509",
+        "project_id": "real-2d-45x45-32c4e1ba-151"
+      },
+      "checksum": "160df9d10bfc97393e5b61d11bea674bda9f8fda5fec8f96b67a0021f84d04bf"
+    },
+    {
+      "event_id": "af4331cd-ad08-402e-8c56-887187f168d6",
+      "event_type": "DELETE_WALL",
+      "timestamp": "2026-07-30T05:13:54.419077+00:00",
+      "project_id": "real-2d-45x45-32c4e1ba-151",
+      "source_revision_id": "rev_001_original",
+      "target_revision_id": "rev_002_vision5d_update",
+      "vision5d_id": "wall_v5d_053",
+      "pascal_node_id": "wall_v5d_053",
+      "old_value": {
+        "position": [
+          336.984,
+          0.0,
+          42.652
+        ],
+        "start_point_2d": [
+          336.984,
+          42.652
+        ],
+        "end_point_2d": [
+          336.984,
+          42.789
+        ],
+        "thickness": 0.2,
+        "height": 2.7,
+        "type": "wall"
+      },
+      "new_value": null,
+      "coordinate_system": "right-handed X(east) Y(up) Z(north)",
+      "units": "meters",
+      "origin": "user_edit",
+      "reason": "Remove non-structural internal wall for open-plan layout",
+      "validation_status": "valid",
+      "dependent_nodes": [],
+      "provenance": {
+        "source_file_sha256": "aca1d4c9ef1e2ccb5427c6f525aadc3d8b18fa00a9e767c2d0fa404563f46509",
+        "project_id": "real-2d-45x45-32c4e1ba-151"
+      },
+      "checksum": "e251018afd2f944dccc2ff62f08bc73ae964714d7550c94bec4dd70e50908116"
+    }
+  ],
+  "rejected_events": []
+}

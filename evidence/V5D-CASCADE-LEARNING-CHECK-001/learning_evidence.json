@@ -1,0 +1,56 @@
+{
+  "mission": "V5D-CASCADE-LEARNING-CHECK-001",
+  "final_verdict": "CASCADE DOES NOT REUSE PREVIOUS PROJECT KNOWLEDGE",
+  "confidence": "HIGH",
+  "evidence_items": [
+    {
+      "id": "E01",
+      "category": "database_isolation",
+      "description": "Triple-layer tenant/workspace/project isolation in schema. All 20 tables have project_id FKs. No cross-project FKs exist.",
+      "source": "packages/domain/models.py (644 lines)",
+      "decisive": true
+    },
+    {
+      "id": "E02",
+      "category": "pipeline_query_scoping",
+      "description": "Every pipeline query filters by project_id + tenant_id. Worker extracts project_id from current job, never queries other projects.",
+      "source": "apps/worker/main.py lines 337, 366, 378, 410, 460",
+      "decisive": true
+    },
+    {
+      "id": "E03",
+      "category": "persistence_scoping",
+      "description": "persist_understanding_graph and persist_geometry_model both query by project_id == project_id AND tenant_id == tenant_id.",
+      "source": "packages/domain/persistence.py lines 38-41, 132-135",
+      "decisive": true
+    },
+    {
+      "id": "E04",
+      "category": "storage_isolation",
+      "description": ".storage/ mock S3 encodes project_id in every filename. storage/projects/ uses per-project UUID directories.",
+      "source": "Filesystem scan of .storage/ (27 files) and storage/projects/ (3 directories)",
+      "decisive": true
+    },
+    {
+      "id": "E05",
+      "category": "no_vector_store",
+      "description": "Verified zero vector stores, embedding DBs, similarity indexes, or model caches exist anywhere in the project tree.",
+      "source": "Filesystem scan: no .npy, .pt, .faiss, .chroma, .pkl, .bin files",
+      "decisive": true
+    },
+    {
+      "id": "E06",
+      "category": "no_shared_memory",
+      "description": "No memory files, session state, or cross-project state mechanisms exist.",
+      "source": "Filesystem scan: no *memory*, *state*, *session* files",
+      "decisive": true
+    }
+  ],
+  "excluded_by_mission_rules": [
+    "Shared Python source code (packages/, apps/)",
+    "Fixed configuration (.env, pyproject.toml)",
+    "System prompts and model weights",
+    "test_plan.png (shared test fixture, not project data)"
+  ],
+  "why_no_learning_possible": "Cascade has NO mechanism to learn from previous projects because: (1) Every DB table is project-scoped with no cross-project FKs; (2) Every query in the pipeline filters by current project_id; (3) Storage is namespaced by project UUID; (4) No vector stores, caches, or memory files exist. Cascade processes each project as a completely independent pipeline run using only shared source code and configuration."
+}

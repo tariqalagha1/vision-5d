@@ -1,0 +1,77 @@
+{
+  "mission": "V5D-FRONTEND-INVENTORY-001",
+  "timestamp": "2026-07-31T13:32:43.056888",
+  "proposed_routes": [
+    {
+      "route": "/",
+      "view": "ProjectDashboard",
+      "description": "Main dashboard with overview, jobs, pipeline status"
+    },
+    {
+      "route": "/projects",
+      "view": "ProjectList",
+      "description": "List all projects in workspace"
+    },
+    {
+      "route": "/projects/{id}",
+      "view": "ProjectDetail",
+      "description": "Project detail with tabs: files, understanding, geometry, 3D, validation"
+    },
+    {
+      "route": "/projects/{id}/scenes",
+      "view": "Scenes",
+      "description": "List 3D scenes for project"
+    },
+    {
+      "route": "/projects/{id}/scenes/{scene_id}",
+      "view": "SceneViewer",
+      "description": "3D scene viewer with embedded Three.js"
+    },
+    {
+      "route": "/projects/{id}/revisions",
+      "view": "Revisions",
+      "description": "Revision history with Pascal correction events"
+    },
+    {
+      "route": "/settings/ai",
+      "view": "AIConfiguration",
+      "description": "AI provider configuration, API key management"
+    },
+    {
+      "route": "/settings",
+      "view": "Settings",
+      "description": "General settings, profile"
+    }
+  ],
+  "navigation": [
+    {
+      "label": "Dashboard",
+      "route": "/",
+      "icon": "home"
+    },
+    {
+      "label": "Projects",
+      "route": "/projects",
+      "icon": "folder"
+    },
+    {
+      "label": "AI Settings",
+      "route": "/settings/ai",
+      "icon": "settings"
+    },
+    {
+      "label": "Studio",
+      "action": "openStudio()",
+      "external": "studio.html"
+    }
+  ],
+  "layout": {
+    "type": "sidebar + header + content",
+    "sidebar_width": "220px",
+    "persistent": [
+      "sidebar",
+      "header"
+    ],
+    "responsive": "collapse sidebar below 800px"
+  }
+}

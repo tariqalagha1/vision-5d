@@ -1,0 +1,17 @@
+{
+  "types": {
+    "MTEXT": 271,
+    "INSERT": 66,
+    "LINE": 1988,
+    "LWPOLYLINE": 71,
+    "ARC": 437,
+    "SEQEND": 1,
+    "CIRCLE": 33,
+    "SPLINE": 11,
+    "ELLIPSE": 6,
+    "SOLID": 503,
+    "POINT": 755,
+    "TEXT": 2
+  },
+  "total": 4144
+}

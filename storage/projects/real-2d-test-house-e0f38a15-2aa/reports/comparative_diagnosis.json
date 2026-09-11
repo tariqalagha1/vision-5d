@@ -1,0 +1,22 @@
+{
+  "stage": "STAGE_7",
+  "timestamp": "2026-07-27T09:04:49.233285",
+  "call_center": {
+    "bounds": "21.0 x 11.8 meters",
+    "entities": 638,
+    "regions": 1,
+    "outlier_entities": "None",
+    "viewport_quality": "EXCELLENT",
+    "verdict": "PASS"
+  },
+  "house_2storey": {
+    "bounds": "701.1 x 338.9 meters global, ~33 x 70 per floor",
+    "entities": 4144,
+    "regions": 2,
+    "outlier_entities": "~300 ARC entities with large radii creating concentric circle patterns",
+    "viewport_quality": "PARTIAL - ground floor overwhelmed by arcs, first floor clear",
+    "verdict": "PARTIALLY VERIFIED"
+  },
+  "conclusion": "MIXED_FAILURE",
+  "rationale": "Call-center file has tight bounds, zero outliers, renders perfectly. Two-Storey house has hundreds of large-radius ARC entities that dominate ground-floor viewport. Both files convert and parse correctly. The common pipeline works. The issue is source-specific non-architectural geometry (large arcs/circles) that the bounding-box logic includes. Fix: add entity-type-aware viewport filtering."
+}

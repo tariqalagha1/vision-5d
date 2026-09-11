@@ -1,0 +1,18 @@
+{
+  "mission": "V5D-BLENDER-RUNTIME-VERIFICATION-001",
+  "timestamp": "2026-07-31T22:23:19.856746",
+  "fixes": [
+    {
+      "file": "packages/rendering/blender_scene_builder.py",
+      "line": 259,
+      "bug": "Windows backslash paths in f-string docstring caused unicode escape errors (\\U in \\Users)",
+      "fix": "Replace backslashes with forward slashes in docstring: safe_glb = glb_path.replace('\\\\', '/')"
+    },
+    {
+      "file": "packages/rendering/blender_scene_builder.py",
+      "line": 282,
+      "bug": "PREVIEW = {str(preview).lower()} produced 'false' instead of 'False' (NameError in Blender Python)",
+      "fix": "Changed to PREVIEW = {preview} (Python bool formatting gives True/False)"
+    }
+  ]
+}

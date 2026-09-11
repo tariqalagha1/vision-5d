@@ -1,0 +1,50 @@
+{
+  "states": [
+    "NOT_EXPORTED",
+    "EXPORT_PENDING",
+    "EXPORTED",
+    "EDITED_IN_PASCAL",
+    "IMPORT_PENDING",
+    "IMPORTED",
+    "CONFLICT",
+    "FAILED"
+  ],
+  "current": "EXPORTED",
+  "transitions": [
+    {
+      "from": "NOT_EXPORTED",
+      "to": "EXPORT_PENDING",
+      "trigger": "convert_to_pascal"
+    },
+    {
+      "from": "EXPORT_PENDING",
+      "to": "EXPORTED",
+      "trigger": "rest_create_success"
+    },
+    {
+      "from": "EXPORTED",
+      "to": "EDITED_IN_PASCAL",
+      "trigger": "pascal_edit_detected"
+    },
+    {
+      "from": "EDITED_IN_PASCAL",
+      "to": "IMPORT_PENDING",
+      "trigger": "extract_corrections"
+    },
+    {
+      "from": "IMPORT_PENDING",
+      "to": "IMPORTED",
+      "trigger": "apply_to_new_revision"
+    },
+    {
+      "from": "*",
+      "to": "CONFLICT",
+      "trigger": "both_sides_changed"
+    },
+    {
+      "from": "*",
+      "to": "FAILED",
+      "trigger": "any_validation_failure"
+    }
+  ]
+}

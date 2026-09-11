@@ -1,0 +1,43 @@
+{
+  "mission": "V5D-NVIDIA-VISION-2D-QA-001",
+  "model": "nvidia/llama-3.1-nemotron-nano-vl-8b-v1",
+  "endpoint": "https://integrate.api.nvidia.com/v1/chat/completions",
+  "total_requests": 8,
+  "requests": [
+    {
+      "project": "call-center",
+      "filename": "architectural_plan_01.png",
+      "sha256": "6c3c8e8e76037c8cba1df24210dcdbb7bfe2ad8107f26e9de937f20e00288227",
+      "status": 200,
+      "classification": "CLEAR_ARCHITECTURAL_PLAN"
+    },
+    {
+      "project": "call-center",
+      "filename": "full_source_drawing.png",
+      "sha256": "1cbf9d215d571890fd677cb88c417ea8c4244544d17777d3e0845166494a8e2f",
+      "status": 200,
+      "classification": "CLEAR_ARCHITECTURAL_PLAN"
+    },
+    {
+      "project": "two-storey",
+      "filename": "region_ground_floor.png",
+      "sha256": "799e6b43c997f4ad5a749d3ee1c2f59b445137562964263615375365af4491fb",
+      "status": 200,
+      "classification": "CLEAR_ARCHITECTURAL_PLAN"
+    },
+    {
+      "project": "two-storey",
+      "filename": "region_first_floor.png",
+      "sha256": "9c00729c8900d4de3f245a79325ea33b3019be92d7f8eca7723750af85a84053",
+      "status": 200,
+      "classification": "CLEAR_ARCHITECTURAL_PLAN"
+    },
+    {
+      "project": "two-storey",
+      "filename": "region_elevations_sections.png",
+      "sha256": "ced7051723198cbec8b1bb950866da9f3c321fd744a10547c07fb7776713b18c",
+      "status": 200,
+      "classification": "CLEAR_ARCHITECTURAL_PLAN"
+    }
+  ]
+}

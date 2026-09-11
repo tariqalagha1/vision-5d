@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vision 5D — Phase 3 Geometry Editor</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: #1a1a2e; color: #e0e0e0; display: flex; height: 100vh; overflow: hidden; }
+#sidebar { width: 320px; background: #16213e; padding: 16px; overflow-y: auto; border-right: 1px solid #0f3460; }
+#canvas-container { flex: 1; position: relative; }
+canvas { display: block; background: #f5f5f0; }
+#controls { margin-top: 12px; display: flex; gap: 8px; flex-wrap: wrap; }
+button { padding: 8px 14px; border: 1px solid #0f3460; background: #1a1a2e; color: #e0e0e0; border-radius: 4px; cursor: pointer; font-size: 13px; }
+button:hover { background: #0f3460; }
+button.active { background: #e94560; border-color: #e94560; }
+h2 { color: #e94560; margin-bottom: 12px; font-size: 18px; }
+h3 { color: #0f3460; margin: 8px 0; font-size: 14px; }
+.info-row { display: flex; justify-content: space-between; padding: 4px 0; font-size: 13px; border-bottom: 1px solid #0f346040; }
+.room-item { padding: 6px 8px; margin: 4px 0; background: #1a1a2e; border-radius: 4px; cursor: pointer; font-size: 13px; }
+.room-item:hover { background: #0f3460; }
+.room-item.selected { border: 2px solid #e94560; }
+.issue { padding: 4px 8px; margin: 2px 0; font-size: 12px; border-radius: 3px; }
+.issue.fail { background: #e9456020; border-left: 3px solid #e94560; }
+.issue.warn { background: #e9a84520; border-left: 3px solid #e9a845; }
+#status { position: fixed; bottom: 16px; right: 16px; padding: 8px 16px; background: #16213e; border-radius: 6px; font-size: 13px; }
+.metric { font-size: 12px; color: #888; }
+</style>
+</head>
+<body>
+
+<div id="sidebar">
+  <h2>Vision 5D Geometry</h2>
+  <div style="margin-bottom:16px">
+    <button onclick="reconstruct()">🔄 Reconstruct</button>
+    <button onclick="revalidate()">✅ Validate</button>
+    <span id="geom-status" style="font-size:12px;margin-left:8px"></span>
+  </div>
+
+  <h3>🏠 Rooms</h3>
+  <div id="room-list"></div>
+
+  <h3>🧱 Selected</h3>
+  <div id="selected-info" style="font-size:12px;color:#888">Click on geometry to select</div>
+
+  <div id="controls">
+    <button onclick="setMode('select')" id="btn-select" class="active">👆 Select</button>
+    <button onclick="setMode('pan')" id="btn-pan">✋ Pan</button>
+    <button onclick="undo()">↩️ Undo</button>
+    <button onclick="redo()">↪️ Redo</button>
+  </div>
+
+  <h3 style="margin-top:16px">⚠️ Issues</h3>
+  <div id="issues-list"></div>
+</div>
+
+<div id="canvas-container">
+  <canvas id="canvas"></canvas>
+</div>
+<div id="status">Ready</div>
+
+<script>
+const API = 'http://localhost:8000/api/v3';
+const PROJECT_ID = 'demo-project';
+
+let canvas, ctx, mode = 'select', offsetX = 0, offsetY = 0, scale = 1;
+let geoData = null, selectedRoom = null, selectedWall = null, isDragging = false;
+let lastX = 0, lastY = 0, dragTarget = null;
+
+async function reconstruct() {
+  setStatus('Reconstructing...');
+  try {
+    const resp = await fetch(`${API}/projects/${PROJECT_ID}/geometry/reconstruct`, { method: 'POST' });
+    const job = await resp.json();
+    setStatus(`${job.status} (${job.duration_ms}ms)`);
+    await loadModel();
+  } catch(e) { setStatus('Error: ' + e.message); }
+}
+
+async function loadModel() {
+  try {
+    const resp = await fetch(`${API}/projects/${PROJECT_ID}/geometry/model`);
+    geoData = await resp.json();
+    render();
+    updateSidebar();
+    setStatus(`Model v${geoData.version} loaded`);
+  } catch(e) { setStatus('No model yet. Click Reconstruct.'); }
+}
+
+async function revalidate() {
+  await fetch(`${API}/projects/${PROJECT_ID}/geometry/revalidate`, { method: 'POST' });
+  await loadModel();
+}
+
+async function undo() {
+  await fetch(`${API}/projects/${PROJECT_ID}/geometry/undo`, { method: 'POST' });
+  await loadModel();
+}
+
+async function redo() {
+  await fetch(`${API}/projects/${PROJECT_ID}/geometry/redo`, { method: 'POST' });
+  await loadModel();
+}
+
+function setMode(m) {
+  mode = m;
+  document.querySelectorAll('#controls button').forEach(b => b.classList.remove('active'));
+  document.getElementById('btn-' + m)?.classList.add('active');
+}
+
+function setStatus(msg) { document.getElementById('status').textContent = msg; }
+
+function updateSidebar() {
+  if (!geoData?.floor) return;
+  const f = geoData.floor;
+
+  // Rooms
+  const rl = document.getElementById('room-list');
+  rl.innerHTML = f.rooms.map(r => `
+    <div class="room-item" onclick="selectRoom('${r.room_id}')" id="room-${r.room_id}">
+      ${r.label || 'Unnamed'} <span class="metric">${r.area_m2?.toFixed(1)}m² ${r.is_closed ? '✓' : '⚠'}</span>
+    </div>
+  `).join('');
+
+  // Issues
+  const il = document.getElementById('issues-list');
+  const decisions = geoData.validation?.decisions || [];
+  il.innerHTML = decisions.filter(d => d.decision === 'fail' || d.decision === 'warn').slice(0, 10).map(d => `
+    <div class="issue ${d.decision}">${d.description}</div>
+  `).join('') || '<div class="metric">No issues</div>';
+
+  document.getElementById('geom-status').textContent =
+    `v${geoData.version} · ${geoData.state || 'draft'}`;
+}
+
+function selectRoom(id) {
+  selectedRoom = id;
+  selectedWall = null;
+  const r = geoData.floor.rooms.find(r => r.room_id === id);
+  document.getElementById('selected-info').innerHTML = r
+    ? `<b>${r.label}</b><br>Area: ${r.area_m2?.toFixed(2)}m²<br>Closed: ${r.is_closed}<br>Walls: ${r.wall_ids?.length || 0}`
+    : '';
+  document.querySelectorAll('.room-item').forEach(el => el.classList.remove('selected'));
+  document.getElementById('room-' + id)?.classList.add('selected');
+  render();
+}
+
+// ── Canvas Rendering ──
+
+function initCanvas() {
+  canvas = document.getElementById('canvas');
+  canvas.width = canvas.parentElement.clientWidth;
+  canvas.height = canvas.parentElement.clientHeight;
+  ctx = canvas.getContext('2d');
+
+  canvas.addEventListener('mousedown', onMouseDown);
+  canvas.addEventListener('mousemove', onMouseMove);
+  canvas.addEventListener('mouseup', onMouseUp);
+  canvas.addEventListener('wheel', onWheel);
+  window.addEventListener('resize', () => {
+    canvas.width = canvas.parentElement.clientWidth;
+    canvas.height = canvas.parentElement.clientHeight;
+    render();
+  });
+
+  loadModel();
+}
+
+function toScreen(px, py) {
+  return [px * scale + offsetX, py * scale + offsetY];
+}
+
+function render() {
+  if (!geoData?.floor) return;
+  const f = geoData.floor;
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  // Simple grid
+  ctx.strokeStyle = '#e0e0e0';
+  ctx.lineWidth = 0.5;
+  for (let x = 0; x < canvas.width; x += 50) {
+    ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, canvas.height); ctx.stroke();
+  }
+  for (let y = 0; y < canvas.height; y += 50) {
+    ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(canvas.width, y); ctx.stroke();
+  }
+
+  // Rooms
+  f.rooms.forEach(r => {
+    if (r.polygon.length < 3) return;
+    ctx.beginPath();
+    const [sx, sy] = toScreen(r.polygon[0][0], r.polygon[0][1]);
+    ctx.moveTo(sx, sy);
+    for (let i = 1; i < r.polygon.length; i++) {
+      const [px, py] = toScreen(r.polygon[i][0], r.polygon[i][1]);
+      ctx.lineTo(px, py);
+    }
+    ctx.closePath();
+    ctx.fillStyle = r.room_id === selectedRoom ? '#e9456030' : '#0f346020';
+    ctx.fill();
+    ctx.strokeStyle = r.room_id === selectedRoom ? '#e94560' : '#0f3460';
+    ctx.lineWidth = r.room_id === selectedRoom ? 3 : 1;
+    ctx.stroke();
+
+    // Label
+    const [cx, cy] = toScreen(r.polygon[0][0] + 20, r.polygon[0][1] + 20);
+    ctx.fillStyle = '#1a1a2e';
+    ctx.font = '12px Segoe UI';
+    ctx.fillText(r.label || '?', cx, cy);
+  });
+
+  // Walls
+  f.walls.forEach(w => {
+    if (w.centerline.length < 2) return;
+    ctx.beginPath();
+    const [sx, sy] = toScreen(w.centerline[0][0], w.centerline[0][1]);
+    ctx.moveTo(sx, sy);
+    for (let i = 1; i < w.centerline.length; i++) {
+      const [px, py] = toScreen(w.centerline[i][0], w.centerline[i][1]);
+      ctx.lineTo(px, py);
+    }
+    const isSelected = selectedWall === w.body_id;
+    ctx.strokeStyle = isSelected ? '#e94560' : '#333';
+    ctx.lineWidth = isSelected ? 4 : w.thickness ? Math.max(2, w.thickness / 30) : 3;
+    ctx.stroke();
+
+    // Endpoints
+    w.centerline.forEach(pt => {
+      const [ex, ey] = toScreen(pt[0], pt[1]);
+      ctx.beginPath(); ctx.arc(ex, ey, 4, 0, Math.PI * 2);
+      ctx.fillStyle = '#e94560';
+      ctx.fill();
+    });
+  });
+
+  // Openings
+  f.openings.forEach(o => {
+    if (!o.position) return;
+    const [ox, oy] = toScreen(o.position[0], o.position[1]);
+    ctx.beginPath();
+    ctx.arc(ox, oy, 6, 0, Math.PI * 2);
+    ctx.fillStyle = o.type === 'door' ? '#4ecca3' : '#3490de';
+    ctx.fill();
+    ctx.fillStyle = '#fff';
+    ctx.font = '10px Segoe UI';
+    ctx.fillText(o.type === 'door' ? 'D' : 'W', ox - 3, oy + 4);
+  });
+}
+
+// ── Interaction ──
+
+function getCanvasPos(e) {
+  const rect = canvas.getBoundingClientRect();
+  return [(e.clientX - rect.left - offsetX) / scale, (e.clientY - rect.top - offsetY) / scale];
+}
+
+function onMouseDown(e) {
+  if (mode === 'pan') {
+    isDragging = true;
+    lastX = e.clientX;
+    lastY = e.clientY;
+    return;
+  }
+  const [gx, gy] = getCanvasPos(e);
+  // Click detection — find nearest wall or room
+  if (geoData?.floor) {
+    let nearest = null, nearestDist = 30 / scale;
+    geoData.floor.walls.forEach(w => {
+      w.centerline.forEach(pt => {
+        const d = Math.hypot(pt[0] - gx, pt[1] - gy);
+        if (d < nearestDist) { nearestDist = d; nearest = { type: 'wall', id: w.body_id, pt: pt }; }
+      });
+    });
+    if (nearest?.type === 'wall') {
+      selectedWall = nearest.id;
+      selectedRoom = null;
+      dragTarget = nearest;
+      isDragging = true;
+      lastX = e.clientX; lastY = e.clientY;
+      render();
+      return;
+    }
+  }
+  selectedWall = null;
+  render();
+}
+
+function onMouseMove(e) {
+  if (!isDragging) return;
+  if (mode === 'pan') {
+    offsetX += e.clientX - lastX;
+    offsetY += e.clientY - lastY;
+    lastX = e.clientX; lastY = e.clientY;
+    render();
+    return;
+  }
+  if (dragTarget) {
+    const [gx, gy] = getCanvasPos(e);
+    dragTarget.pt[0] = gx; dragTarget.pt[1] = gy;
+    render();
+  }
+}
+
+function onMouseUp(e) {
+  if (isDragging && dragTarget && geoData?.floor) {
+    // Send edit to API
+    const wall = geoData.floor.walls.find(w => w.body_id === dragTarget.id);
+    if (wall) {
+      const epIdx = wall.centerline.indexOf(dragTarget.pt);
+      fetch(`${API}/projects/${PROJECT_ID}/geometry/edit`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          edit_type: 'move_wall_endpoint',
+          wall_id: dragTarget.id,
+          endpoint_index: epIdx >= 0 ? epIdx : 0,
+          params: { x: dragTarget.pt[0], y: dragTarget.pt[1] }
+        })
+      }).then(() => loadModel());
+    }
+  }
+  isDragging = false;
+  dragTarget = null;
+}
+
+function onWheel(e) {
+  e.preventDefault();
+  const zoom = e.deltaY < 0 ? 1.1 : 0.9;
+  const cx = e.clientX, cy = e.clientY;
+  offsetX = cx - (cx - offsetX) * zoom;
+  offsetY = cy - (cy - offsetY) * zoom;
+  scale *= zoom;
+  render();
+}
+
+initCanvas();
+</script>
+</body>
+</html>

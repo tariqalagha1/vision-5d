@@ -1,0 +1,118 @@
+{
+  "project_id": "6e1587e7-d86e-4df0-849e-41667ac1b490",
+  "job_id": "c94e2346-e158-449d-b321-5d977b1228c3",
+  "source_type": "PHOTO",
+  "scene_type": "INTERIOR",
+  "room_type": {
+    "value": "living_room",
+    "confidence": 1.0
+  },
+  "visible_architecture": [
+    {
+      "object_id": "arch_1",
+      "class": "wall",
+      "category": "architecture",
+      "confidence": 1.0,
+      "visible_evidence": "the wall panels are visible and well-lit"
+    },
+    {
+      "object_id": "arch_2",
+      "class": "staircase",
+      "category": "architecture",
+      "confidence": 1.0,
+      "visible_evidence": "the staircase is visible and well-lit"
+    }
+  ],
+  "visible_furniture": [
+    {
+      "object_id": "furn_1",
+      "class": "sofa",
+      "category": "furniture",
+      "confidence": 1.0,
+      "partially_occluded": false,
+      "against_wall": true,
+      "visible_evidence": "the sofa is against the wall and visible in its entirety",
+      "uncertainty": "none"
+    },
+    {
+      "object_id": "furn_2",
+      "class": "table",
+      "category": "furniture",
+      "confidence": 1.0,
+      "partially_occluded": false,
+      "against_wall": false,
+      "visible_evidence": "the table is in the center of the room and visible in its entirety",
+      "uncertainty": "none"
+    }
+  ],
+  "visible_lighting": [
+    {
+      "object_id": "light_1",
+      "class": "recessed",
+      "category": "lighting",
+      "confidence": 1.0,
+      "visible_evidence": "the recessed lighting is visible and well-lit"
+    }
+  ],
+  "visible_decoration": [
+    {
+      "object_id": "deco_1",
+      "class": "rug",
+      "category": "decoration",
+      "confidence": 1.0,
+      "visible_evidence": "the rug is visible and well-lit"
+    }
+  ],
+  "visible_openings": [
+    {
+      "type": "window",
+      "count": 1,
+      "position_hint": "right",
+      "confidence": 1.0
+    }
+  ],
+  "visible_relationships": [
+    {
+      "subject": "sofa",
+      "relationship": "against",
+      "object": "wall",
+      "confidence": 1.0,
+      "visible_evidence": "the sofa is against the wall"
+    },
+    {
+      "subject": "table",
+      "relationship": "in_front_of",
+      "object": "sofa",
+      "confidence": 1.0,
+      "visible_evidence": "the table is in front of the sofa"
+    }
+  ],
+  "occlusions": [
+    {
+      "object": "sofa",
+      "occluded_by": "none",
+      "extent": "none"
+    },
+    {
+      "object": "table",
+      "occluded_by": "none",
+      "extent": "none"
+    }
+  ],
+  "unknowns": [
+    "the color of the walls, the type of flooring, the type of lighting fixtures"
+  ],
+  "source_image": {
+    "path": "C:\\Users\\admin\\workspaces\\vision-5d\\storage\\projects\\photo-room-c94e2346-e158-449d-b321-5d977b1228c3\\source\\photo_original.webp",
+    "sha256": "3b39eeaa3907409677fa205f13c3bc93f49a1a5f6d4bbec52878df4d76ed8732",
+    "width": 1200,
+    "height": 1500
+  },
+  "model_provenance": {
+    "provider": "NVIDIA",
+    "model": "meta/llama-3.2-11b-vision-instruct",
+    "endpoint": "https://integrate.api.nvidia.com/v1/chat/completions",
+    "request_id": "chatcmpl-7bf05594a3274625b5c4d27441cbadbd",
+    "timestamp": "2026-07-29T06:22:04.185232+00:00"
+  }
+}

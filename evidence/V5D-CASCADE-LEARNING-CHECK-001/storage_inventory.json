@@ -1,0 +1,74 @@
+{
+  "mission": "V5D-CASCADE-LEARNING-CHECK-001",
+  "timestamp": "2026-07-29",
+  "methodology": "Full filesystem scan + database schema analysis + source code audit",
+  "storage_locations": {
+    "database": {
+      "path": "vision5d.db",
+      "engine": "SQLite",
+      "tables": 20,
+      "project_scoped_tables": [
+        "projects", "artifacts", "jobs", "job_attempts", "checkpoints",
+        "understanding_graphs", "graph_nodes", "graph_edges",
+        "geometry_models", "geometry_floors", "geometry_walls", "geometry_rooms",
+        "geometry_openings", "geometry_edits",
+        "scene3d_versions", "scene3d_objects", "scene3d_meshes",
+        "durable_artifact_refs", "upload_sessions", "progress_events"
+      ],
+      "key_finding": "Every table has project_id foreign key. Zero cross-project foreign keys exist.",
+      "isolation_level": "tenant_id + workspace_id + project_id (triple-layer)"
+    },
+    "file_storage": {
+      "storage_dir": "storage/projects/",
+      "projects_found": 3,
+      "naming_convention": "project-UUID-suffix",
+      "key_finding": "Each project directory contains only its own files. No shared directories."
+    },
+    "object_storage_mock": {
+      "path": ".storage/",
+      "files": 27,
+      "naming_pattern": "{category}_{tenant_id}_projects_{project_id}_{type}_v{version}_{hash}",
+      "key_finding": "Every file encodes its project_id in the filename. Impossible to read cross-project without explicit lookup."
+    },
+    "output_storage": {
+      "path": "output/RE-SingDetch-FH_AS/",
+      "subdirs": ["assets", "cinematic", "design", "exports", "geometry", "input", "logs", "reports", "scene"],
+      "key_finding": "Single-project output directory. No cross-project data."
+    },
+    "evidence_archive": {
+      "path": "evidence/",
+      "folders": 16,
+      "key_finding": "Each evidence folder is mission-scoped. No cross-project evidence references found."
+    },
+    "mission_outputs": {
+      "path": "missions/",
+      "folders": 2,
+      "key_finding": "Mission outputs are spec documents, not project data."
+    },
+    "vector_stores": {
+      "searched_paths": [".", "storage/", ".storage/", "evidence/"],
+      "extensions_checked": [".npy", ".pt", ".onnx", ".pkl", ".index", "chroma", "faiss", ".bin"],
+      "found": [],
+      "key_finding": "ZERO vector stores, embedding databases, or similarity indexes exist anywhere in the project."
+    },
+    "caches": {
+      "python_bytecode": "__pycache__ directories (19 found)",
+      "pytest_cache": ".pytest_cache (test artifacts only)",
+      "key_finding": "Only Python bytecode caches and pytest cache exist. Neither stores project data."
+    },
+    "memory_files": {
+      "searched_patterns": ["*memory*", "*mem*", "*state*", "*session*"],
+      "found": [],
+      "key_finding": "No memory files, no session state files, no shared state between projects."
+    }
+  },
+  "database_content_summary": {
+    "total_projects": 24,
+    "total_understanding_graphs": 2,
+    "total_geometry_models": 3,
+    "total_scene3d_versions": 25,
+    "total_jobs": 12,
+    "cross_project_foreign_keys_found": 0,
+    "shared_references_found": 0
+  }
+}

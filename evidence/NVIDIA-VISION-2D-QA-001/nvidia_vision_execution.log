@@ -1,0 +1,14 @@
+NVIDIA Vision QA Execution Log
+Model: nvidia/llama-3.1-nemotron-nano-vl-8b-v1
+Timestamp: 2026-07-27T09:25:42.281444
+Images tested: 5
+
+call-center/architectural_plan_01.png: CLEAR_ARCHITECTURAL_PLAN (6719ms)
+
+call-center/full_source_drawing.png: CLEAR_ARCHITECTURAL_PLAN (5675ms)
+
+two-storey/region_ground_floor.png: CLEAR_ARCHITECTURAL_PLAN (5476ms)
+
+two-storey/region_first_floor.png: CLEAR_ARCHITECTURAL_PLAN (4813ms)
+
+two-storey/region_elevations_sections.png: CLEAR_ARCHITECTURAL_PLAN (4665ms)

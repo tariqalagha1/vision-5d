@@ -1,0 +1,26 @@
+{
+  "mission": "V5D-PLAN-UNDERSTANDING-UUID-FIX-001",
+  "timestamp": "2026-08-26T09:05:00Z",
+  "verdict": "VERIFIED",
+  "root_cause": "packages/domain/models.py leaked SQLAlchemy UUID type via star import, shadowing stdlib uuid.UUID in apps/worker/main.py",
+  "changed_files": [
+    {
+      "path": "packages/domain/models.py",
+      "change": "from sqlalchemy.dialects.postgresql import UUID -> UUID as PG_UUID; 142x UUID(as_uuid -> PG_UUID(as_uuid",
+      "status": "fixed"
+    },
+    {
+      "path": "tests/test_domain_models_import.py",
+      "change": "3 regression tests asserting star import does not shadow uuid.UUID",
+      "status": "added"
+    }
+  ],
+  "verification": {
+    "repro_before": "UUID is uuid.UUID = False; PreprocessedImage rejected source_asset_id",
+    "repro_after": "UUID is uuid.UUID = True; PreprocessedImage accepts source_asset_id",
+    "e2e_pipeline": "plan_pipeline.process(test_plan.png) -> graph_built complete=True, nodes=30, edges=34, rooms=4, walls=5",
+    "worker_restart": "worker_started cleanly, no UUID error",
+    "test_suite": {"passed": 167, "failed": 0, "duration_s": 41.0}
+  },
+  "regression_risk": "none — PG_UUID is the identical SQLAlchemy UUID type; schema unchanged"
+}

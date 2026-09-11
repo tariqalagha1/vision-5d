@@ -1,0 +1,70 @@
+{
+  "mission_id": "V5D-LOCAL-EXTERNAL-SERVICES-READINESS-001",
+  "timestamp": "2026-08-02T09:20:00Z",
+  "verdict": "PARTIALLY_PASSED",
+  "project": {
+    "id": "d32124bb-6e5e-4905-89b1-d92a8e01c752",
+    "name": "LOCAL-REAL-CASE-TEST-20260801",
+    "workspace": "af09dab2-54ad-4a08-8c0d-c5cfc76cdc62"
+  },
+  "nvidia_understanding": {
+    "provider": "nvidia",
+    "model": "meta/llama-3.2-11b-vision-instruct",
+    "drawing_type": "floor_plan",
+    "rooms": [{"label": "Living Room", "has_furniture": true}],
+    "furniture": [{"type": "sofa", "count": 1, "room": "Living Room"}],
+    "language": "en",
+    "latency_ms": 12812,
+    "input_tokens": 6682,
+    "output_tokens": 451,
+    "verified": true
+  },
+  "blender_render": {
+    "engine": "CYCLES",
+    "device": "CPU",
+    "blender_version": "5.2.0 LTS",
+    "resolution": "1280x720",
+    "samples": 32,
+    "denoising": true,
+    "expected_frames": 30,
+    "actual_frames": 30,
+    "failed_frames": 0,
+    "verified": true
+  },
+  "mp4": {
+    "path": "evidence/V5D-LOCAL-EXTERNAL-SERVICES-READINESS-001/vision5d_living_room.mp4",
+    "size_bytes": 54050,
+    "sha256": "e6f3ae2a57aba52cb03d2e9e6e13d16ffe55420c8f56523a240a059c1a31433a",
+    "codec": "h264",
+    "pix_fmt": "yuv420p",
+    "resolution": "1280x720",
+    "fps": 30,
+    "duration_s": 1.0,
+    "frames": 30,
+    "encoder": "FFmpeg 8.1.1"
+  },
+  "glb": {
+    "path": "evidence/V5D-LOCAL-EXTERNAL-SERVICES-READINESS-001/authoritative_scene.glb",
+    "size_bytes": 2088,
+    "sha256": "0609bf7da6d9e5430281eedc7b0542ef927ad9d18d1fb118acbf122ceed87192",
+    "format": "glTF 2.0 binary"
+  },
+  "tests": {
+    "passed": 131,
+    "failed": 0,
+    "total": 131,
+    "duration_s": 39
+  },
+  "blockers": [
+    "API pipeline: 3 import bugs in geometry endpoint (Point, RoomDetector, WallExtruder)",
+    "API pipeline: SQLAlchemy stale-read on FAILED state transitions",
+    "API pipeline: SourceAsset unmapped in asset_register",
+    "Visual: primitive box geometry not recognizable as architectural room"
+  ],
+  "services": {
+    "v5d_api": {"port": 8000, "pid": 15812, "status": "healthy"},
+    "v5d_static": {"port": 8100, "pid": 6824, "status": "serving"},
+    "pascal_mcp_rest": {"port": 3917, "pid": 15180, "status": "running"},
+    "pascal_editor": {"port": 3002, "pid": 15712, "status": "running"}
+  }
+}

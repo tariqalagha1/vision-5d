@@ -1,0 +1,47 @@
+# Vision 5D — Prometheus Configuration
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+  external_labels:
+    monitor: vision5d
+
+alerting:
+  alertmanagers:
+    - static_configs:
+        - targets: []
+
+rule_files:
+  - "alerts.yml"
+
+scrape_configs:
+  - job_name: vision5d-api
+    metrics_path: /metrics
+    static_configs:
+      - targets: ["api:8000"]
+        labels:
+          service: api
+          env: production
+
+  - job_name: vision5d-worker
+    metrics_path: /metrics
+    static_configs:
+      - targets: ["worker:8001"]
+        labels:
+          service: worker
+          env: production
+
+  - job_name: postgres
+    static_configs:
+      - targets: ["postgres:5432"]
+        labels:
+          service: database
+
+  - job_name: redis
+    static_configs:
+      - targets: ["redis:6379"]
+        labels:
+          service: cache
+
+  - job_name: prometheus
+    static_configs:
+      - targets: ["localhost:9090"]

@@ -1,0 +1,52 @@
+{
+  "unchanged_geometry": {
+    "unchanged_node_count": 59,
+    "average_delta_m": 0.0,
+    "all_unchanged": true
+  },
+  "id_preservation": {
+    "all_stable": true,
+    "missing_ids": []
+  },
+  "provenance_preservation": {
+    "all_preserved": true,
+    "missing_provenance": []
+  },
+  "opening_relationships": {
+    "valid": true,
+    "checks": [
+      {
+        "opening_id": "door_v5d_000",
+        "opening_type": "door",
+        "wall_id": "wall_v5d_001",
+        "wall_exists": true,
+        "wall_not_deleted": true
+      },
+      {
+        "opening_id": "door_v5d_001",
+        "opening_type": "door",
+        "wall_id": "wall_v5d_002",
+        "wall_exists": true,
+        "wall_not_deleted": true
+      },
+      {
+        "opening_id": "window_v5d_000",
+        "opening_type": "window",
+        "wall_id": "wall_v5d_000",
+        "wall_exists": true,
+        "wall_not_deleted": true
+      },
+      {
+        "opening_id": "window_v5d_001",
+        "opening_type": "window",
+        "wall_id": "wall_v5d_027",
+        "wall_exists": true,
+        "wall_not_deleted": true
+      }
+    ]
+  },
+  "deletion_cleanliness": {
+    "deleted_nodes_absent": true,
+    "remaining_opening_refs": 0
+  }
+}

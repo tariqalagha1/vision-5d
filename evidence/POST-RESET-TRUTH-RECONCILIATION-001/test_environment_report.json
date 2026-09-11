@@ -1,0 +1,53 @@
+{
+  "mission": "V5D-POST-RESET-TRUTH-RECONCILIATION-001",
+  "gate": "GATE_3",
+  "timestamp": "2026-07-27T08:22:53.925159",
+  "discovered_config": "pyproject.toml [tool.pytest.ini_options]: asyncio_mode=auto, testpaths=['tests']",
+  "authoritative_interpreter": "C:\\Users\\admin\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+  "authoritative_interpreter_version": "Python 3.14.3",
+  "hermes_misinvocation": {
+    "command": "C:\\Users\\admin\\AppData\\Local\\Programs\\Python\\Python311\\python.exe -m pytest tests/ -v",
+    "interpreter_path": "C:\\Users\\admin\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+    "python_version": "Python 3.11.9",
+    "verdict": "WRONG INTERPRETER \u2014 Hermes ran tests with Python 3.11 instead of project Python 3.14. The 'test suite broken' health-check report was a false alarm caused by environment mismatch.",
+    "classification": "ENVIRONMENT_MISMATCH"
+  },
+  "correct_collection_attempt": {
+    "command": "C:\\Users\\admin\\AppData\\Local\\Programs\\Python\\Python314\\python.exe -m pytest tests/ -v --collect-only",
+    "exit_code": 0,
+    "stdout_last_30_lines": [
+      "        <Function test_change_scale>",
+      "      <Class TestValidation>",
+      "        <Function test_valid_floor>",
+      "        <Function test_invalid_zero_thickness>",
+      "        <Function test_room_not_closed>",
+      "        <Function test_overlapping_rooms>",
+      "        <Function test_metrics>",
+      "      <Class TestScenarioA_CleanOrthogonalPlan>",
+      "        <Function test_e2e_clean_orthogonal>",
+      "      <Class TestScenarioB_FragmentedWalls>",
+      "        <Function test_fragmented_repair>",
+      "      <Class TestScenarioC_ConflictingScale>",
+      "        <Function test_conflicting_dimensions>",
+      "      <Class TestScenarioD_DiagonalGeometry>",
+      "        <Function test_diagonal_preserved>",
+      "      <Class TestScenarioE_InvalidOpening>",
+      "        <Function test_door_outside_wall_validation>",
+      "      <Class TestScenarioF_UserCorrection>",
+      "        <Function test_move_wall_endpoint_then_undo>",
+      "      <Class TestScenarioG_WorkerInterruption>",
+      "        <Function test_checkpoint_recovery>",
+      "      <Class TestScenarioH_PartialGeometry>",
+      "        <Function test_partial_room_flagged>",
+      "      <Class TestEdgeCases>",
+      "        <Function test_empty_centerline_list>",
+      "        <Function test_single_point_centerline>",
+      "        <Function test_scale_round_trip>",
+      "",
+      "========================= 98 tests collected in 1.83s =========================",
+      ""
+    ],
+    "stderr_last_10_lines": [],
+    "verdict": "COLLECTED SUCCESSFULLY"
+  }
+}

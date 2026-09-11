@@ -1,0 +1,106 @@
+{
+  "mission": "V5D-FRONTEND-INVENTORY-001",
+  "timestamp": "2026-07-31T13:32:43.056888",
+  "api_service_modules": [
+    {
+      "module": "services/api.js",
+      "purpose": "Base API client \u2014 fetch wrapper with auth, error handling, retries"
+    },
+    {
+      "module": "services/auth.js",
+      "purpose": "Authentication \u2014 login, logout, session check, session persistence"
+    },
+    {
+      "module": "services/projects.js",
+      "purpose": "Project CRUD \u2014 create, list, get, update, delete"
+    },
+    {
+      "module": "services/ai-providers.js",
+      "purpose": "AI provider management \u2014 register, test, models, credentials"
+    },
+    {
+      "module": "services/jobs.js",
+      "purpose": "Job status polling, job submission"
+    },
+    {
+      "module": "services/scenes.js",
+      "purpose": "Scene retrieval, GLB export"
+    },
+    {
+      "module": "services/pascal.js",
+      "purpose": "Pascal integration \u2014 scene status, editor, corrections, revisions"
+    }
+  ],
+  "frontend_types": [
+    {
+      "type": "Project",
+      "fields": [
+        "id",
+        "name",
+        "state",
+        "project_type",
+        "created_at"
+      ]
+    },
+    {
+      "type": "Workspace",
+      "fields": [
+        "id",
+        "name",
+        "state",
+        "created_at"
+      ]
+    },
+    {
+      "type": "ProviderConfig",
+      "fields": [
+        "provider_id",
+        "type",
+        "name",
+        "default_model",
+        "status"
+      ]
+    },
+    {
+      "type": "JobStatus",
+      "fields": [
+        "job_id",
+        "state",
+        "progress_pct",
+        "current_stage",
+        "message"
+      ]
+    },
+    {
+      "type": "Scene3D",
+      "fields": [
+        "scene_id",
+        "version",
+        "state",
+        "statistics",
+        "bbox"
+      ]
+    }
+  ],
+  "state_ownership": {
+    "auth_state": "services/auth.js \u2014 session token, user_id, tenant_id",
+    "active_project": "services/projects.js \u2014 current project selection",
+    "provider_list": "services/ai-providers.js \u2014 registered providers",
+    "job_polling": "Per-component intervals \u2014 understanding, geometry, scene3d"
+  },
+  "loading_states": {
+    "strategy": "Skeleton cards during initial load, progress bars during job polling, spinners on button actions"
+  },
+  "empty_states": {
+    "projects": "No projects yet \u2014 create your first project",
+    "scenes": "No 3D scenes \u2014 run geometry reconstruction first",
+    "jobs": "No active jobs",
+    "providers": "No AI providers configured \u2014 add one to enable AI features"
+  },
+  "error_states": {
+    "network": "API unreachable \u2014 check if backend is running on port 8000",
+    "auth": "Session expired \u2014 please sign in again",
+    "not_found": "Resource not found",
+    "permission": "You do not have access to this resource"
+  }
+}

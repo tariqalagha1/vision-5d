@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vision 5D — 3D Viewer</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter','Segoe UI',sans-serif;background:#000;color:#c9d1d9;height:100vh;display:flex;flex-direction:column}
+#toolbar{padding:10px 16px;background:#161b22;border-bottom:1px solid #30363d;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+#toolbar button{padding:6px 12px;background:#0d1117;border:1px solid #30363d;color:#c9d1d9;border-radius:4px;cursor:pointer;font-size:12px}
+#toolbar button:hover{background:#1f2937}
+#toolbar button.active{background:#238636;border-color:#2ea043}
+#toolbar .separator{width:1px;height:20px;background:#30363d;margin:0 4px}
+#toolbar .info{font-size:11px;color:#8b949e}
+#viewer{flex:1;position:relative}
+#info-panel{position:absolute;bottom:16px;left:16px;background:rgba(22,27,34,0.9);border:1px solid #30363d;border-radius:6px;padding:12px;font-size:12px;max-width:300px;display:none}
+#info-panel h3{font-size:13px;color:#58a6ff;margin-bottom:6px}
+#info-panel table{width:100%}
+#info-panel td{padding:2px 8px 2px 0;font-size:11px}
+#info-panel .val{color:#58a6ff;font-family:monospace}
+#stats{position:absolute;top:8px;right:8px;font-size:10px;color:#8b949e;background:rgba(22,27,34,0.8);padding:4px 8px;border-radius:4px}
+#loading{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center}
+#loading .spinner{width:40px;height:40px;border:3px solid #30363d;border-top-color:#58a6ff;border-radius:50%;animation:spin 0.8s linear infinite;margin:0 auto 12px}
+@keyframes spin{to{transform:rotate(360deg)}}
+</style>
+</head>
+<body>
+
+<div id="toolbar">
+  <button onclick="loadScene()" title="Load latest 3D scene">Load Scene</button>
+  <button onclick="resetCamera()">Reset View</button>
+  <button onclick="setView('top')">Top</button>
+  <button onclick="setView('front')">Front</button>
+  <button onclick="setView('perspective')">3D</button>
+  <div class="separator"></div>
+  <span class="info" id="version-info">No scene loaded</span>
+  <div class="separator"></div>
+  <span class="info" id="mesh-info"></span>
+</div>
+
+<div id="viewer">
+  <div id="loading"><div class="spinner"></div><div>Loading 3D Scene...</div></div>
+  <div id="info-panel"><h3 id="info-title">Object</h3><table id="info-table"></table></div>
+  <div id="stats"></div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.160.0/examples/js/controls/OrbitControls.js"></script>
+
+<script>
+const API = 'http://localhost:8000';
+let scene, camera, renderer, controls;
+let meshObjects = [];
+let selectedObject = null;
+const raycaster = new THREE.Raycaster();
+const mouse = new THREE.Vector2();
+
+function initViewer() {
+  const container = document.getElementById('viewer');
+  scene = new THREE.Scene();
+  scene.background = new THREE.Color(0x1a1a2e);
+  scene.fog = new THREE.Fog(0x1a1a2e, 5000, 50000);
+
+  camera = new THREE.PerspectiveCamera(50, container.clientWidth / container.clientHeight, 10, 100000);
+  camera.position.set(8000, 6000, 8000);
+  camera.lookAt(0, 1200, 0);
+
+  renderer = new THREE.WebGLRenderer({antialias: true});
+  renderer.setSize(container.clientWidth, container.clientHeight);
+  renderer.setPixelRatio(window.devicePixelRatio);
+  renderer.shadowMap.enabled = true;
+  renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+  container.appendChild(renderer.domElement);
+
+  controls = new THREE.OrbitControls(camera, renderer.domElement);
+  controls.enableDamping = true;
+  controls.dampingFactor = 0.1;
+  controls.target.set(0, 1200, 0);
+  controls.update();
+
+  // Lights
+  const ambient = new THREE.AmbientLight(0x666677, 0.5);
+  scene.add(ambient);
+  const sun = new THREE.DirectionalLight(0xfffaf0, 1.2);
+  sun.position.set(5000, 8000, 5000);
+  sun.castShadow = true;
+  sun.shadow.mapSize.width = 2048;
+  sun.shadow.mapSize.height = 2048;
+  scene.add(sun);
+
+  // Ground
+  const ground = new THREE.Mesh(
+    new THREE.PlaneGeometry(20000, 20000),
+    new THREE.MeshStandardMaterial({color: 0x333333, roughness: 0.9})
+  );
+  ground.rotation.x = -Math.PI / 2;
+  ground.receiveShadow = true;
+  scene.add(ground);
+
+  // Grid
+  const grid = new THREE.GridHelper(20000, 40, 0x444444, 0x222222);
+  scene.add(grid);
+
+  // Click handler
+  renderer.domElement.addEventListener('click', onObjectClick);
+  window.addEventListener('resize', onResize);
+
+  animate();
+}
+
+function animate() {
+  requestAnimationFrame(animate);
+  controls.update();
+  renderer.render(scene, camera);
+  document.getElementById('stats').textContent =
+    `Triangles: ${renderer.info.render.triangles} · Draws: ${renderer.info.render.calls}`;
+}
+
+function onResize() {
+  const container = document.getElementById('viewer');
+  camera.aspect = container.clientWidth / container.clientHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(container.clientWidth, container.clientHeight);
+}
+
+// ── API ──
+
+async function apiCall(method, path) {
+  const r = await fetch(API + path, {method, credentials: 'include'});
+  if (!r.ok) throw await r.json().catch(() => ({message: r.statusText}));
+  return r.json();
+}
+
+// ── Scene Loading ──
+
+async function loadScene() {
+  document.getElementById('loading').style.display = 'block';
+  try {
+    if (!projId()) { alert('No project selected in main workspace'); return; }
+    const data = await apiCall('GET', '/api/v4/projects/' + projId() + '/scene');
+    renderScene(data);
+  } catch(e) {
+    alert('Failed to load scene: ' + (e.message || 'Unknown error'));
+    document.getElementById('loading').style.display = 'none';
+  }
+}
+
+function projId() {
+  // Access parent window project ID
+  try { return window.parent.projId || ''; } catch(e) { return ''; }
+}
+
+function renderScene(data) {
+  // Clear existing meshes
+  meshObjects.forEach(m => scene.remove(m));
+  meshObjects = [];
+
+  document.getElementById('version-info').textContent =
+    `Scene v${data.version} · ${data.state}${data.is_stale?' ⚠ STALE':''}`;
+  document.getElementById('mesh-info').textContent =
+    `Objects: ${(data.objects||[]).length} · Meshes: ${(data.meshes||[]).length}`;
+
+  if (!data.meshes || data.meshes.length === 0) {
+    document.getElementById('loading').style.display = 'none';
+    return;
+  }
+
+  // Load GLB
+  const glbUrl = API + '/api/v4/projects/' + projId() + '/scene/export/glb';
+  const loader = new THREE.GLTFLoader ? new THREE.GLTFLoader() : null;
+
+  // Fallback: build from scene metadata
+  buildSceneFromData(data);
+
+  document.getElementById('loading').style.display = 'none';
+  fitCameraToScene();
+}
+
+function buildSceneFromData(data) {
+  // Build simple visual representation from objects data
+  const colors = {
+    wall_solid: 0xd4c5b9, floor_slab: 0xb8956b, ceiling_surface: 0xffffff,
+    door_element: 0x8b6914, window_element: 0xa8c8e8, roof_element: 0x4a4a55,
+  };
+
+  if (!data.objects) return;
+
+  data.objects.forEach(obj => {
+    const color = colors[obj.type] || 0x888888;
+    let mesh;
+
+    if (obj.type === 'wall_solid' && obj.properties?.bbox) {
+      const b = obj.properties.bbox;
+      const sx = (b.max_x - b.min_x) || 100;
+      const sy = (b.max_y - b.min_y) || 2500;
+      const sz = (b.max_z - b.min_z) || 100;
+      mesh = new THREE.Mesh(
+        new THREE.BoxGeometry(sx, sy, sz),
+        new THREE.MeshStandardMaterial({color, roughness: 0.8})
+      );
+      mesh.position.set(
+        (b.min_x + b.max_x) / 2,
+        (b.min_y + b.max_y) / 2,
+        (b.min_z + b.max_z) / 2
+      );
+    } else if (obj.type === 'room_volume' && obj.properties?.area_m2) {
+      mesh = new THREE.Mesh(
+        new THREE.PlaneGeometry(Math.sqrt(obj.properties.area_m2 * 1000000), Math.sqrt(obj.properties.area_m2 * 1000000)),
+        new THREE.MeshStandardMaterial({color, roughness: 0.6, side: THREE.DoubleSide})
+      );
+      mesh.rotation.x = -Math.PI / 2;
+    } else {
+      // Placeholder
+      mesh = new THREE.Mesh(
+        new THREE.BoxGeometry(200, 200, 200),
+        new THREE.MeshStandardMaterial({color, roughness: 0.7})
+      );
+    }
+
+    mesh.castShadow = true;
+    mesh.receiveShadow = true;
+    mesh.userData = obj;
+    meshObjects.push(mesh);
+    scene.add(mesh);
+  });
+}
+
+function fitCameraToScene() {
+  if (meshObjects.length === 0) return;
+  const box = new THREE.Box3();
+  meshObjects.forEach(m => box.expandByObject(m));
+  const center = box.getCenter(new THREE.Vector3());
+  const size = box.getSize(new THREE.Vector3());
+  const dist = Math.max(size.x, size.y, size.z) * 1.5;
+  camera.position.set(center.x + dist * 0.6, center.y + dist * 0.5, center.z + dist * 0.6);
+  controls.target.copy(center);
+  controls.update();
+}
+
+// ── View Presets ──
+
+function resetCamera() { fitCameraToScene(); }
+
+function setView(view) {
+  if (meshObjects.length === 0) return;
+  const box = new THREE.Box3();
+  meshObjects.forEach(m => box.expandByObject(m));
+  const c = box.getCenter(new THREE.Vector3());
+  const s = box.getSize(new THREE.Vector3());
+  const d = Math.max(s.x, s.y, s.z) * 1.5;
+
+  if (view === 'top') camera.position.set(c.x, c.y + d, c.z + 1);
+  else if (view === 'front') camera.position.set(c.x, c.y + d * 0.3, c.z + d);
+  else camera.position.set(c.x + d * 0.6, c.y + d * 0.5, c.z + d * 0.6);
+
+  controls.target.copy(c);
+  controls.update();
+}
+
+// ── Object Selection ──
+
+function onObjectClick(event) {
+  mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+  mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+
+  raycaster.setFromCamera(mouse, camera);
+  const intersects = raycaster.intersectObjects(meshObjects);
+
+  if (intersects.length > 0) {
+    selectObject(intersects[0].object);
+  } else {
+    deselectObject();
+  }
+}
+
+function selectObject(obj) {
+  if (selectedObject) selectedObject.material.emissive?.setHex(0x000000);
+  selectedObject = obj;
+  obj.material.emissive = new THREE.Color(0x333333);
+  showObjectInfo(obj.userData);
+}
+
+function deselectObject() {
+  if (selectedObject) selectedObject.material.emissive?.setHex(0x000000);
+  selectedObject = null;
+  document.getElementById('info-panel').style.display = 'none';
+}
+
+function showObjectInfo(data) {
+  const panel = document.getElementById('info-panel');
+  document.getElementById('info-title').textContent = data.label || data.type || 'Object';
+  let html = '';
+  html += `<tr><td>Type</td><td class="val">${data.type}</td></tr>`;
+  if (data.id) html += `<tr><td>ID</td><td class="val">${data.id.substring(0,8)}...</td></tr>`;
+  if (data.properties) {
+    for (const [k, v] of Object.entries(data.properties)) {
+      if (v !== null && v !== undefined && typeof v !== 'object') {
+        html += `<tr><td>${k}</td><td class="val">${v}</td></tr>`;
+      }
+    }
+  }
+  document.getElementById('info-table').innerHTML = html;
+  panel.style.display = 'block';
+}
+
+// ── Init ──
+
+initViewer();
+
+// Auto-load if accessed with project context
+setTimeout(() => {
+  try {
+    if (window.parent && window.parent.projId) {
+      loadScene();
+    }
+  } catch(e) {}
+}, 500);
+</script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+{
+  "mission": "VISION5D-FINAL-CERTIFICATION-REPAIR-001",
+  "date": "2026-09-11",
+  "verdict": "VISION5D_PLAN_IMPLEMENTATION_CERTIFIED",
+  "high_restrictions_closed": "2/2",
+  "artifacts": [
+    {"file": "RE-SingDetch-FH_AS.glb", "sha256": "ea9003b37ce2a88d1b33ad3e4356671744146891c1b4bb75555bf378e8015461", "note": "full-building GLB, 11.2MB, 288 meshes, 609792 triangles"},
+    {"file": "RE-SingDetch-FH_AS_tour.mp4", "sha256": "565f40bec00ace6f1b570c58f31493c5430d3a0fa4c79ab9ba23242fb7603606", "note": "multi-shot tour MP4, h264 960x540 3.0s"},
+    {"file": "viewer.html", "sha256": "6f155cfe56baa6abdf94c0b1af4f61f99beaa98095b28bde326c719ad1653c16", "note": "GLTFLoader-based customer viewer"},
+    {"file": "viewer_runtime_screenshot.png", "sha256": "142366b9a78f8df3302ebf093620fc9ad708ab1a09a5076f9151ea549fd1db45", "note": "runtime proof viewer loaded GLB"},
+    {"file": "pipeline_summary.json", "sha256": "ff4055cece251d5e8a050ca6569e02d8b56f9cca9313dd35cea17f06c0aa1032"},
+    {"file": "VISION5D_FINAL_CERTIFICATION_REPAIR_REPORT.md", "sha256": "8ea5550a6fb1aed8bc2641e7723170c39020281b9e72dc38078351ac7d8fd2ad"}
+  ],
+  "regression": {"passed": 170, "total": 170},
+  "reference_building": {"wall_segments": 1020, "rooms": 18, "doors": 105, "reconstructed_walls": 146, "scene_meshes": 288, "scene_vertices": 305656, "scene_triangles": 609792}
+}

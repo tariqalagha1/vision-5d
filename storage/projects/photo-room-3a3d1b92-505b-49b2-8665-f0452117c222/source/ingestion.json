@@ -1,0 +1,12 @@
+{
+  "source_path": "C:\\Users\\admin\\workspaces\\vision-5d\\test_data\\1.webp",
+  "project_path": "C:\\Users\\admin\\workspaces\\vision-5d\\storage\\projects\\photo-room-3a3d1b92-505b-49b2-8665-f0452117c222\\source\\photo_original.webp",
+  "filename": "photo_original.webp",
+  "file_type": "WEBP",
+  "file_size_bytes": 161854,
+  "width": 1200,
+  "height": 1500,
+  "sha256": "3b39eeaa3907409677fa205f13c3bc93f49a1a5f6d4bbec52878df4d76ed8732",
+  "copy_hash_match": true,
+  "ingestion_timestamp": "2026-07-29T06:20:45.858113+00:00"
+}

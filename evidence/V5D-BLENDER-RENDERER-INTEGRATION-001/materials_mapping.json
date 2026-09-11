@@ -1,0 +1,23 @@
+{
+  "mission": "V5D-BLENDER-RENDERER-INTEGRATION-001",
+  "timestamp": "2026-07-31T21:43:56.649733",
+  "materials": [
+    "wood_light",
+    "wood_dark",
+    "paint_white",
+    "paint_warm",
+    "aluminum",
+    "glass",
+    "concrete",
+    "marble",
+    "fabric",
+    "default"
+  ],
+  "blender_node": "Principled BSDF",
+  "properties": [
+    "base_color",
+    "roughness",
+    "metallic",
+    "transmission"
+  ]
+}

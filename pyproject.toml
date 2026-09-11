@@ -1,0 +1,44 @@
+[project]
+name = "vision5d"
+version = "0.1.0"
+description = "Vision 5D — AI-Native Architectural Platform"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi>=0.115",
+    "uvicorn[standard]>=0.30",
+    "pydantic>=2.0",
+    "sqlalchemy>=2.0",
+    "alembic>=1.13",
+    "python-jose[cryptography]>=3.3",
+    "passlib[bcrypt]>=1.7",
+    "python-multipart>=0.0.9",
+    "httpx>=0.27",
+    "aiofiles>=24.0",
+    "python-magic>=0.4.27",
+    "structlog>=24.0",
+    "cryptography>=43.0",
+    "tenacity>=9.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "pytest-asyncio>=0.24",
+    "pytest-cov>=6.0",
+    "httpx>=0.27",
+    "ruff>=0.6",
+]
+worker = [
+    "redis>=5.0",
+]
+db-postgres = [
+    "asyncpg>=0.29",
+    "psycopg2-binary>=2.9",
+]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100

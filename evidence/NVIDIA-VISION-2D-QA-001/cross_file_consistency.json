@@ -1,0 +1,6 @@
+{
+  "call_center": "```json\n{\n    \"1\": \"yes\",\n    \"2\": \"no\",\n    \"3\": \"no\",\n    \"4\": \"yes\",\n    \"description\": \"The clean architectural plan is missing some geometry present in the full-source drawing, specifically the circles and lines in the center of the image. The full-source drawing also contains blocks, annotations, and text that are not present in the clean architectural plan.\"\n}\n```",
+  "two_storey": "[\n    {\n        \"response\": {\n            \"yes\": true,\n            \"no\": false,\n            \"missing_geometry\": false,\n            \"missing_blocks\": false,\n            \"missing_annotations\": false,\n            \"missing_text\": false\n        }\n    }\n]",
+  "model": "nvidia/llama-3.1-nemotron-nano-vl-8b-v1",
+  "timestamp": "2026-07-27T09:26:38.541976"
+}

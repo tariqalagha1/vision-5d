@@ -1,0 +1,52 @@
+{
+  "schema_source": "@pascal-app/core / schema",
+  "base_node": {
+    "fields": {
+      "object": "literal 'node' (default: 'node')",
+      "id": "string — nanoid with type prefix (e.g., 'wall_abc123')",
+      "type": "string — literal node type (e.g., 'wall', 'slab', 'door')",
+      "name": "optional string — display name",
+      "parentId": "nullable string — parent node id for hierarchy",
+      "visible": "boolean (default: true)",
+      "camera": "optional CameraSchema",
+      "metadata": "JSON (default: {}) — ARBITRARY USER DATA — VISION 5D PROVENANCE TARGET"
+    }
+  },
+  "key_node_schemas": {
+    "BuildingNode": {
+      "id_prefix": "building_",
+      "key_fields": ["children (level IDs + elevator IDs)", "position [x,y,z]", "rotation [x,y,z]"]
+    },
+    "LevelNode": {
+      "id_prefix": "level_",
+      "key_fields": ["children (wall, slab, door, window, etc. IDs)", "elevation (number)", "position", "rotation"]
+    },
+    "WallNode": {
+      "id_prefix": "wall_",
+      "key_fields": ["position [x,y,z] — start point in world coords", "thickness (default: varies)", "height (default: 2.7m)", "curve support for arcs"],
+      "geometry_representation": "Centerline-based with thickness. Supports straight and curved segments. Auto-mitering at junctions."
+    },
+    "SlabNode": {
+      "id_prefix": "slab_",
+      "key_fields": ["polygon (array of [x,z] points)", "elevation", "thickness", "position", "rotation"],
+      "geometry_representation": "Extruded polygon at given elevation."
+    },
+    "DoorNode": {
+      "id_prefix": "door_",
+      "key_fields": ["position [x,y,z] — wall-local coords", "wallId — host wall reference", "width, height", "doorType (hinged, sliding, pocket, etc.)", "openingKind, openingShape", "hingesSide, swingDirection"],
+      "geometry_representation": "Wall-mounted child. Position is center of door on wall face. Creates opening cutout in host wall."
+    },
+    "WindowNode": {
+      "id_prefix": "window_",
+      "key_fields": ["position [x,y,z] — wall-local coords", "wallId — host wall reference", "width, height", "windowType (fixed, sliding, casement, etc.)", "openingKind, openingShape"],
+      "geometry_representation": "Wall-mounted child. Position is center on wall face. Creates opening cutout in host wall."
+    }
+  },
+  "metadata_capability": {
+    "field": "BaseNode.metadata",
+    "type": "z.json()",
+    "default": {},
+    "vision5d_usage": "Store all Vision 5D provenance: project_id, source_sha256, dxf_handles, source_layer, extraction_confidence, validation_status, unit, etc.",
+    "constraint": "Pascal does NOT rename, validate, or restrict metadata content. Vision 5D owns its metadata namespace ('vision5d' key)."
+  }
+}

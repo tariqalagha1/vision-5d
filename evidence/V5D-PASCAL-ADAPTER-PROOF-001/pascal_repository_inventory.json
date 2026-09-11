@@ -1,0 +1,66 @@
+{
+  "repository": "https://github.com/pascalorg/editor.git",
+  "clone_path": "C:\\Users\\admin\\workspaces\\pascal-editor-eval",
+  "commit_sha": "42ac4be1ce5f3fee74806aa093267b6fee77d47d",
+  "commit_message": "feat(editor): hide crop switcher when host preselects a capture crop (#558)",
+  "license": "MIT",
+  "copyright": "Pascal Group Inc. (2026)",
+  "monorepo_structure": "Turborepo with bun workspaces",
+  "package_manager": "bun@1.3.0",
+  "runtime": "Node >= 18, Bun",
+  "language": "TypeScript 6.0.3",
+  "build_tool": "turbo + tsc/tsgo",
+  "test_runner": "bun test",
+  "packages": {
+    "@pascal-app/core": {
+      "version": "0.9.2",
+      "description": "Core library for Pascal 3D building editor",
+      "dependencies": ["zod@4.3.5", "zustand@5", "nanoid@5", "mitt@3", "idb-keyval@6", "zundo@2", "dedent@1"],
+      "peer_dependencies": ["@react-three/drei@10", "@react-three/fiber@9", "react@18/19", "three@0.185"],
+      "exports": [".", "./schema", "./registry", "./store", "./material-library", "./spatial-grid", "./wall", "./clone-scene-graph"]
+    },
+    "@pascal-app/editor": {
+      "version": "0.9.2",
+      "description": "Pascal building editor component (React)"
+    },
+    "@pascal-app/viewer": {
+      "version": "0.9.2",
+      "description": "3D viewer component (React Three Fiber)"
+    },
+    "@pascal-app/nodes": {
+      "version": "0.1.1",
+      "description": "Built-in node bundles for the Pascal 3D editor"
+    },
+    "@pascal-app/mcp": {
+      "version": "0.3.2",
+      "description": "Model Context Protocol server for Pascal 3D editor"
+    },
+    "@pascal-app/ifc-converter": {
+      "version": "0.1.2",
+      "description": "IFC to Pascal scene-graph conversion"
+    }
+  },
+  "node_types_supported": [
+    "building", "level", "wall", "slab", "door", "window",
+    "column", "beam", "ceiling", "roof", "stair", "fence",
+    "cabinet", "shelf", "chimney", "dormer", "skylight",
+    "elevator", "gutter", "downspout", "duct-segment",
+    "duct-fitting", "duct-terminal", "pipe-segment", "pipe-fitting",
+    "solar-panel", "zone", "guide", "measurement",
+    "construction-dimension", "structural-grid", "scan", "spawn"
+  ],
+  "build_command": "bun install && bun run build",
+  "test_command": "bun test",
+  "scene_persistence_format": "JSON scene graph (array of nodes with parentId hierarchy)",
+  "export_capabilities": ["IFC (via @pascal-app/ifc-converter)", "GLB/GLTF (via Three.js)"],
+  "key_architectural_features": [
+    "Zod-validated node schemas with strong typing",
+    "BaseNode with id, type, name, parentId, visible, metadata (JSON) fields",
+    "metadata field supports arbitrary JSON — perfect for Vision 5D provenance",
+    "Parametric wall system with curve support, mitering, junction handling",
+    "Auto space detection and slab/ceiling/zone generation",
+    "Door/window wall-mounted children with opening cutouts",
+    "Undo/redo history via zundo",
+    "IFC import/export for BIM interoperability"
+  ]
+}

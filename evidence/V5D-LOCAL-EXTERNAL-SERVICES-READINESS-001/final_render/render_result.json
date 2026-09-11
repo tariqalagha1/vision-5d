@@ -1,0 +1,13 @@
+{
+  "success": true,
+  "error": "",
+  "traceback": "",
+  "objects": 14,
+  "vertices": 112,
+  "frames": 30,
+  "expected": 30,
+  "duration_s": 392.2,
+  "engine": "CYCLES",
+  "device": "CPU",
+  "samples": 8
+}

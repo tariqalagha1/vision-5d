@@ -1,0 +1,110 @@
+[
+  {
+    "timestamp_s": 0,
+    "path": "C:\\Users\\admin\\workspaces\\vision-5d\\evidence\\DELIVERY-CHALLENGE-001\\frames\\frame_00s.png",
+    "sha256": "9a3b21a86626a396b582f0c9a1abbe6d298cee5bc95d394d2b8cff96ccc9a33e",
+    "size_bytes": 27075,
+    "dimensions": "1920x1080",
+    "non_background_pct": 55.51,
+    "avg_brightness": 41.91,
+    "phash": "0000000000001111000011110001111100011100000000000000000000000000",
+    "diff_from_prev": "first frame",
+    "blank_frame": false
+  },
+  {
+    "timestamp_s": 5,
+    "path": "C:\\Users\\admin\\workspaces\\vision-5d\\evidence\\DELIVERY-CHALLENGE-001\\frames\\frame_05s.png",
+    "sha256": "693920caa9ce31fb214191eb410bdedd86a264b62554a70bc84f924e6ee3e0d6",
+    "size_bytes": 61472,
+    "dimensions": "1920x1080",
+    "non_background_pct": 55.81,
+    "avg_brightness": 42.34,
+    "phash": "0000000000001111000011110000111100011100000000000000000000000000",
+    "diff_from_prev": "hamming=1 vs t=0s",
+    "blank_frame": false
+  },
+  {
+    "timestamp_s": 10,
+    "path": "C:\\Users\\admin\\workspaces\\vision-5d\\evidence\\DELIVERY-CHALLENGE-001\\frames\\frame_10s.png",
+    "sha256": "1b5472c09e673636f9a5e06ce9dea7257b560f6f49227456120d5c06e1e8da65",
+    "size_bytes": 41344,
+    "dimensions": "1920x1080",
+    "non_background_pct": 55.77,
+    "avg_brightness": 42.47,
+    "phash": "0000000000001111000011110000111100011100000000000000000000000000",
+    "diff_from_prev": "hamming=0 vs t=5s",
+    "blank_frame": false
+  },
+  {
+    "timestamp_s": 20,
+    "path": "C:\\Users\\admin\\workspaces\\vision-5d\\evidence\\DELIVERY-CHALLENGE-001\\frames\\frame_20s.png",
+    "sha256": "66a48ef16b6681e0f7291fdc737b79279da2db040c1d5c82c4d1efda0b9c1dd6",
+    "size_bytes": 48055,
+    "dimensions": "1920x1080",
+    "non_background_pct": 55.7,
+    "avg_brightness": 42.35,
+    "phash": "0000000000001111000011110000111100011100000000000000000000000000",
+    "diff_from_prev": "hamming=0 vs t=5s",
+    "blank_frame": false
+  },
+  {
+    "timestamp_s": 30,
+    "path": "C:\\Users\\admin\\workspaces\\vision-5d\\evidence\\DELIVERY-CHALLENGE-001\\frames\\frame_30s.png",
+    "sha256": "fb92b4674dd6cd86394f63aaae3155e20240f1250187ef25aa070537be01affb",
+    "size_bytes": 41471,
+    "dimensions": "1920x1080",
+    "non_background_pct": 55.73,
+    "avg_brightness": 42.35,
+    "phash": "0000000000001111000011110000111100011100000000000000000000000000",
+    "diff_from_prev": "hamming=0 vs t=5s",
+    "blank_frame": false
+  },
+  {
+    "timestamp_s": 45,
+    "path": "C:\\Users\\admin\\workspaces\\vision-5d\\evidence\\DELIVERY-CHALLENGE-001\\frames\\frame_45s.png",
+    "sha256": "a0665519a9feec4603f14a862c4d58e19ce12976c710bb2a4d931581573ee536",
+    "size_bytes": 36614,
+    "dimensions": "1920x1080",
+    "non_background_pct": 55.62,
+    "avg_brightness": 42.17,
+    "phash": "0000000000001111000011110000111100011100000000000000000000000000",
+    "diff_from_prev": "hamming=0 vs t=5s",
+    "blank_frame": false
+  },
+  {
+    "timestamp_s": 60,
+    "path": "C:\\Users\\admin\\workspaces\\vision-5d\\evidence\\DELIVERY-CHALLENGE-001\\frames\\frame_60s.png",
+    "sha256": "2ed18aeec6f848a78386a899535546512e1193e4edd64c8425a78aa18450dd6c",
+    "size_bytes": 38811,
+    "dimensions": "1920x1080",
+    "non_background_pct": 55.68,
+    "avg_brightness": 42.28,
+    "phash": "0000000000001111000011110000111100011100000000000000000000000000",
+    "diff_from_prev": "hamming=0 vs t=5s",
+    "blank_frame": false
+  },
+  {
+    "timestamp_s": 75,
+    "path": "C:\\Users\\admin\\workspaces\\vision-5d\\evidence\\DELIVERY-CHALLENGE-001\\frames\\frame_75s.png",
+    "sha256": "586bdd241f055afbd2fb6ac52382feba17e7a776068047e2503878b99320f3af",
+    "size_bytes": 50639,
+    "dimensions": "1920x1080",
+    "non_background_pct": 55.73,
+    "avg_brightness": 42.31,
+    "phash": "0000000000001111000011110000111100011100000000000000000000000000",
+    "diff_from_prev": "hamming=0 vs t=5s",
+    "blank_frame": false
+  },
+  {
+    "timestamp_s": 90,
+    "path": "C:\\Users\\admin\\workspaces\\vision-5d\\evidence\\DELIVERY-CHALLENGE-001\\frames\\frame_90s.png",
+    "sha256": "1287c3ff8a84dc4510a5e97177e65366e6d6223b060a766fd2465292502b723b",
+    "size_bytes": 56106,
+    "dimensions": "1920x1080",
+    "non_background_pct": 55.77,
+    "avg_brightness": 42.18,
+    "phash": "0000000000001111000011110000111100011100000000000000000000000000",
+    "diff_from_prev": "hamming=0 vs t=5s",
+    "blank_frame": false
+  }
+]

@@ -1,0 +1,13 @@
+{
+  "mission": "V5D-BLENDER-RENDERER-INTEGRATION-001",
+  "timestamp": "2026-07-31T21:43:56.649733",
+  "consistency_checks": [
+    "Source GLB hash in render manifest",
+    "Authoritative revision ID in render manifest",
+    "Imported object count vs GLB mesh count",
+    "Material count matches applied materials",
+    "Light count matches lighting config",
+    "Camera count matches cinematic shots"
+  ],
+  "stable_id_preservation": "Vision 5D IDs in object names where Blender preserves them"
+}

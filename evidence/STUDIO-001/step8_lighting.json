@@ -1,0 +1,32 @@
+{
+  "lights": [
+    {
+      "label": "LED Panel 1",
+      "position": [
+        2000,
+        2700,
+        -2000
+      ],
+      "color": "#FFF8F0",
+      "intensity": 1.2,
+      "temperature": 4000
+    },
+    {
+      "label": "LED Panel 2",
+      "position": [
+        3500,
+        2700,
+        -4000
+      ],
+      "color": "#FFF8F0",
+      "intensity": 1.0,
+      "temperature": 4000
+    },
+    {
+      "label": "Ambient Light",
+      "color": "#FFF5E6",
+      "intensity": 0.5,
+      "type": "ambient"
+    }
+  ]
+}

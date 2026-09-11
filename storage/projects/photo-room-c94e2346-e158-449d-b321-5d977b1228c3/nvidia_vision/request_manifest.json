@@ -1,0 +1,9 @@
+{
+  "provider": "NVIDIA",
+  "model": "meta/llama-3.2-11b-vision-instruct",
+  "endpoint": "https://integrate.api.nvidia.com/v1/chat/completions",
+  "request_id": "chatcmpl-7bf05594a3274625b5c4d27441cbadbd",
+  "timestamp": "2026-07-29T06:22:04.185232+00:00",
+  "latency_ms": 15748.258352279663,
+  "image_sha256": "3b39eeaa3907409677fa205f13c3bc93f49a1a5f6d4bbec52878df4d76ed8732"
+}

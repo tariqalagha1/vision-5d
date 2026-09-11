@@ -1,0 +1,46 @@
+{
+  "cameras": [
+    {
+      "name": "Entrance View",
+      "position": [
+        1000,
+        1600,
+        500
+      ],
+      "target": [
+        2000,
+        1200,
+        -2000
+      ],
+      "fov": 65
+    },
+    {
+      "name": "Main Workspace",
+      "position": [
+        3000,
+        1800,
+        -3500
+      ],
+      "target": [
+        2500,
+        1200,
+        -4000
+      ],
+      "fov": 55
+    },
+    {
+      "name": "Meeting Room",
+      "position": [
+        2000,
+        1600,
+        -5500
+      ],
+      "target": [
+        3000,
+        1200,
+        -5000
+      ],
+      "fov": 60
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "required_fields": [
+    "project_id",
+    "source_revision_id",
+    "source_file_sha256",
+    "source_file",
+    "adapter_version",
+    "pascal_core_version",
+    "pascal_schema_version",
+    "coordinate_system",
+    "units",
+    "created_at",
+    "updated_at"
+  ],
+  "optional_fields": [
+    "source_entity_handles",
+    "source_layers",
+    "updated_at"
+  ],
+  "validation": "All values must be JSON serializable",
+  "storage": "metadata.vision5d on every V5D-originated Pascal node"
+}

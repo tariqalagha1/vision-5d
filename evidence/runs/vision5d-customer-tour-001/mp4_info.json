@@ -1,0 +1,24 @@
+{
+  "mp4": "C:/Users/admin/workspaces/vision-5d/evidence/runs/vision5d-customer-tour-001\\RE-SingDetch-FH_AS_tour.mp4",
+  "size": 5717297,
+  "sha256": "253544a773f8995de342b4631fa0198ca53a8189f78de0dfcd10f4153087beee",
+  "fps": 30,
+  "frames": 260,
+  "probe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "width": 960,
+        "height": 540,
+        "r_frame_rate": "30/1",
+        "nb_frames": "260"
+      }
+    ],
+    "format": {
+      "duration": "8.666667",
+      "size": "5717297"
+    }
+  }
+}

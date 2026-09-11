@@ -1,0 +1,17 @@
+{
+  "total_entities": 17680,
+  "arch_entities": 17407,
+  "inserts": 78,
+  "entity_types": {
+    "LINE": 17407,
+    "INSERT": 78,
+    "MTEXT": 78,
+    "POINT": 117
+  },
+  "layer_count": 1,
+  "bounds": {
+    "w": 360.78857360157207,
+    "h": 67.22400468436412
+  },
+  "regions": 2
+}

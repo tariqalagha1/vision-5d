@@ -1,0 +1,44 @@
+{
+  "schema_version": "3.0.0-production",
+  "validated_fields": [
+    {
+      "field": "pascalRestBaseUrl",
+      "value": "http://localhost:3131",
+      "valid": true
+    },
+    {
+      "field": "expectedPascalCoreVersion",
+      "value": "0.9.2",
+      "valid": true
+    },
+    {
+      "field": "requestTimeoutMs",
+      "value": 30000,
+      "valid": true
+    },
+    {
+      "field": "retryCount",
+      "value": 3,
+      "valid": true
+    },
+    {
+      "field": "retryBackoffMs",
+      "value": 1000,
+      "valid": true
+    },
+    {
+      "field": "maxRoundTripDeltaM",
+      "value": 0.0005,
+      "valid": true
+    },
+    {
+      "field": "featureFlags.enableMcpAutomation",
+      "value": true,
+      "valid": true
+    }
+  ],
+  "no_production_secrets": true,
+  "no_dev_defaults_silent": true,
+  "all_required_fail_clearly": true,
+  "verdict": "PASS"
+}

@@ -1,0 +1,37 @@
+{
+  "mission": "V5D-1.1-FULL-5D-CUSTOMER-VALIDATION-001",
+  "timestamp": "2026-07-24T17:08:09.821961+00:00",
+  "import": {
+    "time_ms": 1813.0290508270264,
+    "walls": 1087,
+    "doors": 722
+  },
+  "reconstruction": {
+    "triangles": 228,
+    "meshes": 17,
+    "vertices": 160
+  },
+  "ai": {
+    "provider": "structured",
+    "options": [
+      "OPTION A \u2014 Minimal Scandinavian Office",
+      "OPTION B \u2014 Premium Scandinavian Office"
+    ],
+    "selected": "OPTION A \u2014 Minimal Scandinavian Office"
+  },
+  "export": {
+    "v1_size": 13160,
+    "v2_size": 13160,
+    "v1_hash": "1579f70691d15b411bc39c58fa65464e83cb69cb53310a954c5cbd1067108de0",
+    "v2_hash": "1579f70691d15b411bc39c58fa65464e83cb69cb53310a954c5cbd1067108de0"
+  },
+  "performance": {
+    "import_ms": 1813.0290508270264,
+    "total_ms": 2115.5495643615723
+  },
+  "files": {
+    "total": 22,
+    "total_size_kb": 2643.2
+  },
+  "verdict": "COMPLETE"
+}

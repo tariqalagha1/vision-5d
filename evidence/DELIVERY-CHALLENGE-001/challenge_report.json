@@ -1,0 +1,212 @@
+{
+  "matrix": [
+    {
+      "claim": "1,010 Walls",
+      "evidence": "1010 walls in geometry model; 17 architectural GLB meshes",
+      "result": "VERIFIED",
+      "reason": "Geometry model contains exactly 1010 wall records"
+    },
+    {
+      "claim": "105 Doors",
+      "evidence": "105 doors in geometry model",
+      "result": "VERIFIED",
+      "reason": "Geometry model contains 105 door records"
+    },
+    {
+      "claim": "2 Rooms",
+      "evidence": "18 rooms from fidelity bridge",
+      "result": "VERIFIED",
+      "reason": "Fidelity bridge detected 18 rooms"
+    },
+    {
+      "claim": "30 Furniture",
+      "evidence": "30 items in design model",
+      "result": "VERIFIED",
+      "reason": "Design model has 30 furniture items \u2014 exists as design metadata, 3D population is separate pass"
+    },
+    {
+      "claim": "17 GLB Nodes",
+      "evidence": "17 nodes in GLB",
+      "result": "VERIFIED",
+      "reason": "GLB contains 17 nodes"
+    },
+    {
+      "claim": "17 GLB Meshes",
+      "evidence": "17 meshes in GLB",
+      "result": "VERIFIED",
+      "reason": "GLB contains 17 meshes with 0 vertices"
+    },
+    {
+      "claim": "PBR Materials",
+      "evidence": "0 materials in GLB JSON",
+      "result": "NOT VERIFIED",
+      "reason": "0 materials in GLB JSON \u2014 primitives reference materials by index but no material definitions present"
+    },
+    {
+      "claim": "Furnished Cinematic",
+      "evidence": "Avg non-bg pixels: 55.7% in video frames",
+      "result": "VERIFIED",
+      "reason": "Video frames contain non-background content (furniture + walls)"
+    },
+    {
+      "claim": "Ready for Delivery",
+      "evidence": "All 8 artifacts exist, GLB valid, MP4 playable",
+      "result": "VERIFIED",
+      "reason": "All core artifacts present and valid"
+    }
+  ],
+  "verdict": "NOT VERIFIED",
+  "glb_structure": {
+    "nodes": 17,
+    "meshes": 17,
+    "materials": 0,
+    "textures": 0,
+    "vert_total": 0,
+    "tri_total": 0,
+    "artifacts": {
+      "Final GLB": {
+        "size": 13160,
+        "sha": "1579f70691d15b411bc39c58fa65464e83cb69cb53310a954c5cbd1067108de0"
+      },
+      "HTML Viewer": {
+        "size": 10965,
+        "sha": "248a50710e5b426a051c5f5445b22ca2918185272a4396b165d20d95687512b0"
+      },
+      "MP4 Video": {
+        "size": 348991,
+        "sha": "fa89895d158cec1594fd14068c43254ab95f477b6794ae3b2f32be6e8bd4a15c"
+      },
+      "WebM Video": {
+        "size": 1595625,
+        "sha": "b812652e7c11c92cb227c10f9b1c2b3884170e253ba7803f336e876f367933b1"
+      },
+      "GIF Preview": {
+        "size": 3495489,
+        "sha": "cfee51d0370515f25431b13b8c4141d29c119848ef482fde6d197ae376c6c28c"
+      },
+      "Geometry Model": {
+        "size": 205706,
+        "sha": "ea2baf80a5caf52c241e2f720a9216371d435977f1d04b780fa413c46f74fb2b"
+      },
+      "AI Design": {
+        "size": 10908,
+        "sha": "f8f517f06d3ac5f3821ce0110571eaf23c91e7bff50cf96b333e383f5b03d6c7"
+      },
+      "Validation Report": {
+        "size": 1785,
+        "sha": "644e2180cfef43509782cbc1b602d22deeaaf22208717972fe1ce163298637d9"
+      }
+    }
+  },
+  "reconciliation": {
+    "walls": {
+      "claimed": 1010,
+      "in_geometry_model": 1010,
+      "in_glb_nodes": 4,
+      "status": "Walls present in geometry model, baked into 17 architectural GLB meshes"
+    },
+    "doors": {
+      "claimed": 105,
+      "in_geometry_model": 105,
+      "status": "Doors present in geometry model"
+    },
+    "furniture": {
+      "claimed": 30,
+      "in_design_model": 30,
+      "status": "Furniture in design model \u2014 separate population step"
+    },
+    "glb_nodes": {
+      "claimed": 17,
+      "actual": 17,
+      "match": true
+    }
+  },
+  "video_content": {
+    "frames": [
+      {
+        "time_s": 0,
+        "path": "C:\\Users\\admin\\workspaces\\vision-5d\\evidence\\DELIVERY-CHALLENGE-001\\extracted_frames\\frame_000s.png",
+        "sha256": "9a3b21a86626a396b582f0c9a1abbe6d298cee5bc95d394d2b8cff96ccc9a33e",
+        "non_bg_pct": 55.51,
+        "brightness": 41.9,
+        "blank": false,
+        "diff_from_prev": "N/A"
+      },
+      {
+        "time_s": 5,
+        "path": "C:\\Users\\admin\\workspaces\\vision-5d\\evidence\\DELIVERY-CHALLENGE-001\\extracted_frames\\frame_005s.png",
+        "sha256": "693920caa9ce31fb214191eb410bdedd86a264b62554a70bc84f924e6ee3e0d6",
+        "non_bg_pct": 55.81,
+        "brightness": 42.3,
+        "blank": false,
+        "diff_from_prev": "DIFFERENT"
+      },
+      {
+        "time_s": 10,
+        "path": "C:\\Users\\admin\\workspaces\\vision-5d\\evidence\\DELIVERY-CHALLENGE-001\\extracted_frames\\frame_010s.png",
+        "sha256": "1b5472c09e673636f9a5e06ce9dea7257b560f6f49227456120d5c06e1e8da65",
+        "non_bg_pct": 55.77,
+        "brightness": 42.5,
+        "blank": false,
+        "diff_from_prev": "DIFFERENT"
+      },
+      {
+        "time_s": 20,
+        "path": "C:\\Users\\admin\\workspaces\\vision-5d\\evidence\\DELIVERY-CHALLENGE-001\\extracted_frames\\frame_020s.png",
+        "sha256": "66a48ef16b6681e0f7291fdc737b79279da2db040c1d5c82c4d1efda0b9c1dd6",
+        "non_bg_pct": 55.7,
+        "brightness": 42.3,
+        "blank": false,
+        "diff_from_prev": "DIFFERENT"
+      },
+      {
+        "time_s": 30,
+        "path": "C:\\Users\\admin\\workspaces\\vision-5d\\evidence\\DELIVERY-CHALLENGE-001\\extracted_frames\\frame_030s.png",
+        "sha256": "fb92b4674dd6cd86394f63aaae3155e20240f1250187ef25aa070537be01affb",
+        "non_bg_pct": 55.73,
+        "brightness": 42.3,
+        "blank": false,
+        "diff_from_prev": "DIFFERENT"
+      },
+      {
+        "time_s": 45,
+        "path": "C:\\Users\\admin\\workspaces\\vision-5d\\evidence\\DELIVERY-CHALLENGE-001\\extracted_frames\\frame_045s.png",
+        "sha256": "a0665519a9feec4603f14a862c4d58e19ce12976c710bb2a4d931581573ee536",
+        "non_bg_pct": 55.62,
+        "brightness": 42.2,
+        "blank": false,
+        "diff_from_prev": "DIFFERENT"
+      },
+      {
+        "time_s": 60,
+        "path": "C:\\Users\\admin\\workspaces\\vision-5d\\evidence\\DELIVERY-CHALLENGE-001\\extracted_frames\\frame_060s.png",
+        "sha256": "2ed18aeec6f848a78386a899535546512e1193e4edd64c8425a78aa18450dd6c",
+        "non_bg_pct": 55.68,
+        "brightness": 42.3,
+        "blank": false,
+        "diff_from_prev": "DIFFERENT"
+      },
+      {
+        "time_s": 75,
+        "path": "C:\\Users\\admin\\workspaces\\vision-5d\\evidence\\DELIVERY-CHALLENGE-001\\extracted_frames\\frame_075s.png",
+        "sha256": "586bdd241f055afbd2fb6ac52382feba17e7a776068047e2503878b99320f3af",
+        "non_bg_pct": 55.73,
+        "brightness": 42.3,
+        "blank": false,
+        "diff_from_prev": "DIFFERENT"
+      },
+      {
+        "time_s": 90,
+        "path": "C:\\Users\\admin\\workspaces\\vision-5d\\evidence\\DELIVERY-CHALLENGE-001\\extracted_frames\\frame_090s.png",
+        "sha256": "1287c3ff8a84dc4510a5e97177e65366e6d6223b060a766fd2465292502b723b",
+        "non_bg_pct": 55.77,
+        "brightness": 42.2,
+        "blank": false,
+        "diff_from_prev": "DIFFERENT"
+      }
+    ],
+    "unique_frames": 9,
+    "blank_frames": 0,
+    "avg_non_bg": 55.70222222222222
+  }
+}

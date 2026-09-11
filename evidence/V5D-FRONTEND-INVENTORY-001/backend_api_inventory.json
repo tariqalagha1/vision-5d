@@ -1,0 +1,401 @@
+{
+  "mission": "V5D-FRONTEND-INVENTORY-001",
+  "timestamp": "2026-07-31T13:32:43.056888",
+  "framework": {
+    "name": "FastAPI",
+    "version": ">=0.115",
+    "server": "uvicorn[standard]>=0.30",
+    "port": 8000
+  },
+  "endpoints": {
+    "auth": [
+      {
+        "method": "POST",
+        "path": "/api/v1/auth/login",
+        "status": "EXISTS",
+        "description": "Login \u2014 sets httponly session cookie"
+      },
+      {
+        "method": "POST",
+        "path": "/api/v1/auth/refresh",
+        "status": "EXISTS",
+        "description": "Refresh session"
+      },
+      {
+        "method": "POST",
+        "path": "/api/v1/auth/logout",
+        "status": "EXISTS",
+        "description": "Clear session"
+      }
+    ],
+    "workspaces": [
+      {
+        "method": "POST",
+        "path": "/api/v1/workspaces",
+        "status": "EXISTS",
+        "description": "Create workspace"
+      }
+    ],
+    "projects": [
+      {
+        "method": "POST",
+        "path": "/api/v1/workspaces/{ws_id}/projects",
+        "status": "EXISTS",
+        "description": "Create project"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/workspaces/{ws_id}/projects",
+        "status": "EXISTS",
+        "description": "List projects"
+      },
+      {
+        "method": "PATCH",
+        "path": "/api/v1/projects/{proj_id}",
+        "status": "EXISTS",
+        "description": "Configure project"
+      },
+      {
+        "method": "PATCH",
+        "path": "/api/v1/projects/{proj_id}/metadata",
+        "status": "EXISTS",
+        "description": "Update metadata"
+      },
+      {
+        "method": "POST",
+        "path": "/api/v1/projects/{proj_id}/status",
+        "status": "EXISTS",
+        "description": "Transition project status"
+      },
+      {
+        "method": "POST",
+        "path": "/api/v1/projects/{proj_id}/permissions",
+        "status": "EXISTS",
+        "description": "Grant permission"
+      },
+      {
+        "method": "DELETE",
+        "path": "/api/v1/projects/{proj_id}/permissions/{perm_id}",
+        "status": "EXISTS",
+        "description": "Revoke permission"
+      }
+    ],
+    "ai_providers": [
+      {
+        "method": "POST",
+        "path": "/api/v1/workspaces/{ws_id}/providers",
+        "status": "EXISTS",
+        "description": "Register AI provider"
+      },
+      {
+        "method": "POST",
+        "path": "/api/v1/providers/{prov_id}/credentials",
+        "status": "EXISTS",
+        "description": "Submit encrypted API key"
+      },
+      {
+        "method": "POST",
+        "path": "/api/v1/providers/{prov_id}/test",
+        "status": "EXISTS",
+        "description": "Test provider connection"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/providers/{prov_id}/models",
+        "status": "EXISTS",
+        "description": "Discover models"
+      },
+      {
+        "method": "PUT",
+        "path": "/api/v1/providers/{prov_id}/default-model",
+        "status": "EXISTS",
+        "description": "Set default model"
+      }
+    ],
+    "asset_intake": [
+      {
+        "method": "POST",
+        "path": "/api/v1/projects/{proj_id}/assets/upload/init",
+        "status": "EXISTS"
+      },
+      {
+        "method": "PUT",
+        "path": "/api/v1/projects/{proj_id}/assets/upload/{sid}/chunk",
+        "status": "EXISTS"
+      },
+      {
+        "method": "POST",
+        "path": "/api/v1/projects/{proj_id}/assets/{asset_id}/register",
+        "status": "EXISTS"
+      },
+      {
+        "method": "POST",
+        "path": "/api/v1/assets/{asset_id}/verify",
+        "status": "EXISTS"
+      },
+      {
+        "method": "POST",
+        "path": "/api/v1/assets/{asset_id}/screen",
+        "status": "EXISTS"
+      },
+      {
+        "method": "POST",
+        "path": "/api/v1/assets/{asset_id}/identify",
+        "status": "EXISTS"
+      }
+    ],
+    "plan_understanding": [
+      {
+        "method": "POST",
+        "path": "/api/v2/projects/{proj_id}/understand",
+        "status": "EXISTS",
+        "description": "Submit plan understanding job"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v2/projects/{proj_id}/jobs",
+        "status": "EXISTS",
+        "description": "List jobs for project"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v2/projects/{proj_id}/latest-output",
+        "status": "EXISTS",
+        "description": "Latest pipeline outputs"
+      }
+    ],
+    "geometry": [
+      {
+        "method": "POST",
+        "path": "/api/v3/projects/{proj_id}/geometry/reconstruct",
+        "status": "EXISTS"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v3/projects/{proj_id}/geometry/model",
+        "status": "EXISTS"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v3/projects/{proj_id}/geometry/progress",
+        "status": "EXISTS"
+      },
+      {
+        "method": "POST",
+        "path": "/api/v3/projects/{proj_id}/geometry/edit",
+        "status": "EXISTS"
+      },
+      {
+        "method": "POST",
+        "path": "/api/v3/projects/{proj_id}/geometry/undo",
+        "status": "EXISTS"
+      },
+      {
+        "method": "POST",
+        "path": "/api/v3/projects/{proj_id}/geometry/redo",
+        "status": "EXISTS"
+      },
+      {
+        "method": "POST",
+        "path": "/api/v3/projects/{proj_id}/geometry/revalidate",
+        "status": "EXISTS"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v3/projects/{proj_id}/geometry/validation",
+        "status": "EXISTS"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v3/projects/{proj_id}/geometry/versions",
+        "status": "EXISTS"
+      }
+    ],
+    "scene3d": [
+      {
+        "method": "POST",
+        "path": "/api/v4/projects/{proj_id}/scene/reconstruct",
+        "status": "EXISTS"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v4/projects/{proj_id}/scene",
+        "status": "EXISTS"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v4/projects/{proj_id}/scene/versions",
+        "status": "EXISTS"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v4/projects/{proj_id}/scene/export/glb",
+        "status": "EXISTS",
+        "note": "GLB export from scene data"
+      }
+    ],
+    "studio": [
+      {
+        "method": "GET",
+        "path": "/api/v5/studio/draft/{proj_id}",
+        "status": "EXISTS"
+      },
+      {
+        "method": "POST",
+        "path": "/api/v5/studio/draft/{proj_id}",
+        "status": "EXISTS"
+      },
+      {
+        "method": "POST",
+        "path": "/api/v5/studio/draft/{proj_id}/edits",
+        "status": "EXISTS"
+      },
+      {
+        "method": "POST",
+        "path": "/api/v5/studio/draft/{proj_id}/undo",
+        "status": "EXISTS"
+      },
+      {
+        "method": "POST",
+        "path": "/api/v5/studio/draft/{proj_id}/redo",
+        "status": "EXISTS"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v5/studio/draft/{proj_id}/history",
+        "status": "EXISTS"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v5/studio/furniture",
+        "status": "EXISTS"
+      },
+      {
+        "method": "POST",
+        "path": "/api/v5/studio/draft/{proj_id}/commit",
+        "status": "EXISTS"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v5/studio/versions/{proj_id}",
+        "status": "EXISTS"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v5/studio/version/{version_id}",
+        "status": "EXISTS"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v5/studio/versions/{proj_id}/{version_id}/export/glb",
+        "status": "EXISTS"
+      },
+      {
+        "method": "POST",
+        "path": "/api/v5/studio/draft/{proj_id}/validate-placement",
+        "status": "EXISTS"
+      }
+    ],
+    "ai_intelligence": [
+      {
+        "method": "POST",
+        "path": "/api/v6/ai/projects/{proj_id}/design",
+        "status": "EXISTS"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v6/ai/projects/{proj_id}/proposals",
+        "status": "EXISTS"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v6/ai/proposals/{proposal_id}",
+        "status": "EXISTS"
+      },
+      {
+        "method": "POST",
+        "path": "/api/v6/ai/proposals/{proposal_id}/approve",
+        "status": "EXISTS"
+      },
+      {
+        "method": "POST",
+        "path": "/api/v6/ai/proposals/{proposal_id}/validate",
+        "status": "EXISTS"
+      },
+      {
+        "method": "POST",
+        "path": "/api/v6/ai/proposals/{proposal_id}/approve-edit",
+        "status": "EXISTS"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v6/ai/proposals/{proposal_id}/edit-decisions",
+        "status": "EXISTS"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v6/ai/usage/{proj_id}",
+        "status": "EXISTS"
+      }
+    ],
+    "jobs": [
+      {
+        "method": "POST",
+        "path": "/api/v1/projects/{proj_id}/jobs",
+        "status": "EXISTS"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/jobs/{job_id}",
+        "status": "EXISTS"
+      }
+    ],
+    "validation": [
+      {
+        "method": "POST",
+        "path": "/api/v1/validate/input",
+        "status": "EXISTS"
+      },
+      {
+        "method": "POST",
+        "path": "/api/v1/validate/contract",
+        "status": "EXISTS"
+      }
+    ],
+    "health": [
+      {
+        "method": "GET",
+        "path": "/health",
+        "status": "EXISTS"
+      },
+      {
+        "method": "GET",
+        "path": "/ready",
+        "status": "EXISTS"
+      },
+      {
+        "method": "GET",
+        "path": "/metrics",
+        "status": "EXISTS"
+      }
+    ]
+  },
+  "missing_endpoints": {
+    "pascal_scene_status": "MISSING \u2014 no endpoint to query Pascal scene status",
+    "pascal_scene_create": "MISSING \u2014 no endpoint to create Pascal scenes",
+    "pascal_scene_readback": "MISSING \u2014 no endpoint to read Pascal scene data",
+    "pascal_editor_launch": "MISSING \u2014 no endpoint to get Pascal editor URL",
+    "pascal_sync_state": "MISSING \u2014 no endpoint to query Pascal synchronization state",
+    "pascal_correction_events": "MISSING \u2014 no endpoint to list correction events",
+    "pascal_revision_create": "MISSING \u2014 no endpoint to create Pascal revisions",
+    "pascal_conflict_reports": "MISSING \u2014 no endpoint to query conflict reports",
+    "dashboard_aggregate_status": "MISSING \u2014 no single endpoint aggregating all pipeline statuses"
+  },
+  "browser_unsafe_endpoints": [
+    "/api/v1/providers/{prov_id}/credentials \u2014 exposes API key submission (must be server-side)",
+    "/health \u2014 health check safe to call",
+    "/metrics \u2014 Prometheus metrics safe to call"
+  ],
+  "total_existing_endpoints": 48,
+  "total_missing": 9
+}

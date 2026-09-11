@@ -1,0 +1,86 @@
+{
+  "from_@pascal-app/core/schema": [
+    "BaseNode",
+    "generateId",
+    "Material",
+    "nodeType",
+    "objectId",
+    "WallNode",
+    "DoorNode",
+    "WindowNode",
+    "SlabNode",
+    "BuildingNode",
+    "LevelNode",
+    "SiteNode",
+    "AnyNode",
+    "AnyNodeId",
+    "AnyNodeType",
+    "CameraSchema",
+    "MaterialSchema"
+  ],
+  "from_@pascal-app/core/clone-scene-graph": [
+    "SceneGraph",
+    "cloneSceneGraph",
+    "cloneLevelSubtree",
+    "forkSceneGraph"
+  ],
+  "rest_api_endpoints": [
+    {
+      "method": "POST",
+      "path": "/api/scenes",
+      "schema": "apiGraphSchema"
+    },
+    {
+      "method": "GET",
+      "path": "/api/scenes",
+      "query": "projectId, limit"
+    },
+    {
+      "method": "GET",
+      "path": "/api/scenes/[id]",
+      "response": "SceneWithGraph"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/scenes/[id]",
+      "schema": "apiGraphSchema"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/scenes/[id]"
+    },
+    {
+      "method": "POST",
+      "path": "/api/scenes/[id]/events",
+      "schema": "SceneEventAppendOptions"
+    },
+    {
+      "method": "GET",
+      "path": "/api/scenes/[id]/events",
+      "response": "SceneEvent[]"
+    }
+  ],
+  "mcp_operations": [
+    "setScene",
+    "exportJSON",
+    "exportSceneGraph",
+    "loadJSON",
+    "getNode",
+    "getNodes",
+    "getRootNodeIds",
+    "getChildren",
+    "getAncestry",
+    "findNodes",
+    "resolveLevelId",
+    "createNode",
+    "updateNode",
+    "deleteNode",
+    "applyPatch",
+    "undo",
+    "redo",
+    "validateScene",
+    "saveScene",
+    "loadStoredScene",
+    "listScenes"
+  ]
+}

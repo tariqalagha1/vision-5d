@@ -1,0 +1,21 @@
+{
+  "mission": "V5D-BLENDER-RENDERER-INTEGRATION-001",
+  "timestamp": "2026-07-31T21:43:56.649733",
+  "module": "packages/rendering/blender_scene_builder.py",
+  "size_bytes": 17054,
+  "sha256": "6c451aaf716f196192f234e9211dc9c2a51b7e168ea8fe253397bd87ca4c7a69",
+  "functions": [
+    "validate_glb",
+    "build_blender_script",
+    "build_blender_command"
+  ],
+  "material_presets": 10,
+  "shot_types": [
+    "static",
+    "orbit",
+    "dolly",
+    "walkthrough",
+    "crane",
+    "reveal"
+  ]
+}

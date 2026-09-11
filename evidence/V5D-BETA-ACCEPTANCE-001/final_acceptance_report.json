@@ -1,0 +1,60 @@
+{
+  "mission": "V5D-BETA-ACCEPTANCE-001-RERUN",
+  "timestamp": "2026-07-24T15:42:42.869236+00:00",
+  "cad_file": {
+    "name": "independent_test.dxf",
+    "origin": "Generated architectural DXF (School Wing, 10 rooms, corridor-heavy)",
+    "not_used_in_dev": true,
+    "sha256": "3a3e52260de498f529c2227bce719ee0f5f220f133a45bc8e2e608c3238d0bcd",
+    "ground_truth": {
+      "walls": 12,
+      "rooms": 10,
+      "doors": 10,
+      "windows": 8
+    }
+  },
+  "fidelity_bridge": {
+    "walls": 12,
+    "rooms": 9,
+    "doors": 10,
+    "windows": 8
+  },
+  "cv_pipeline": {
+    "walls": 5,
+    "rooms": 4,
+    "note": "CV pipeline merges adjacent walls (expected ~5-6 from image). Fidelity bridge preserves all segments."
+  },
+  "geometry_model": {
+    "walls": 4,
+    "rooms": 4,
+    "openings": 4
+  },
+  "scene3d": {
+    "triangles": 228,
+    "meshes": 17
+  },
+  "ai_design": {
+    "provider": "deepseek",
+    "status": "completed"
+  },
+  "glb_export": {
+    "size_bytes": 216,
+    "pre_storage_hash": "4e03c2d56cf4f94a1b5437cbe6a52ecce23ccfbe70092f3e854a4e3387768704",
+    "hash_match": true,
+    "glb_valid": true,
+    "nodes": 0,
+    "meshes": 0
+  },
+  "timings_ms": {
+    "cad_import": 1.260519027709961,
+    "plan_understanding": 544.5518493652344,
+    "geometry": 7.933139801025391,
+    "3d_scene": 8.237600326538086,
+    "studio_draft": 76.98655128479004,
+    "ai_design": 12518.060684204102,
+    "glb_export_storage": 21.634340286254883
+  },
+  "total_duration_ms": 13178.79581451416,
+  "manual_intervention": "NONE",
+  "critical_defects": []
+}

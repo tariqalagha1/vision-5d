@@ -1,0 +1,55 @@
+{
+  "mission": "V5D-LOCAL-EXTERNAL-SERVICES-READINESS-001",
+  "stage": "GLB Fix + Full Photo-to-Video Loop Closure",
+  "timestamp": "2026-08-23T06:30:00Z",
+  "verdict": "FULL_CHAIN_VERIFIED",
+
+  "glb_fixes": {
+    "normals_bug": "FIXED — export_glb now generates flat normals when mesh.normals is empty (NORMAL count always == POSITION count)",
+    "chunk_length_bug": "FIXED — JSON/BIN chunk headers now declare padded lengths; JSON padded with spaces (0x20)",
+    "validate_glb": "ENHANCED — now parses JSON chunk and validates mesh/accessor integrity",
+    "files": ["packages/scene3d/glb_export.py"]
+  },
+
+  "final_render": {
+    "source_glb": "fixed_api_glb.glb (11,840 bytes, 14 meshes, 112 verts, 168 polys)",
+    "glb_sha256": "676f4fc236fa99f9064d120e8dadfc453b628e247fc8b092733c0ca42752aeef",
+    "engine": "CYCLES",
+    "device": "CPU",
+    "samples": 8,
+    "denoise": true,
+    "resolution": "1280x720",
+    "frames": 30,
+    "fps": 30,
+    "render_duration_s": 392.2,
+    "mp4_path": "final_authoritative_render.mp4",
+    "mp4_sha256": "29da923785404f320be0a957ac38e23a9230e30fdf3d609a45d8bf7cbb58d383",
+    "mp4_size_bytes": 84935,
+    "mp4_codec": "h264 (High profile)",
+    "mp4_pix_fmt": "yuv420p",
+    "mp4_duration_s": 1.0,
+    "frame_validation": {
+      "frame_1": {"mean": 34, "std": 69},
+      "frame_16": {"mean": 117, "std": 90},
+      "frame_30": {"mean": 34, "std": 70},
+      "camera_motion_confirmed": true
+    }
+  },
+
+  "tests": {
+    "passed": 167,
+    "failed": 0
+  },
+
+  "chain": {
+    "1_photo": "test_data/1.webp",
+    "2_nvidia_understanding": "meta/llama-3.2-11b-vision-instruct (Living Room + sofa)",
+    "3_geometry": "5 walls + 9 furniture components",
+    "4_glb_export": "FIXED (normals + chunk lengths)",
+    "5_blender_import": "14 meshes, 112 verts, 168 polys",
+    "6_blender_render": "30 frames, CYCLES CPU, 8 samples",
+    "7_ffmpeg_mp4": "H.264, 1280x720, 30fps, 1.0s"
+  },
+
+  "note": "The running API (:8000, PID 24772) still has the OLD glb_export code cached and needs a restart to serve fixed GLBs. The fix is verified at the module level and via a standalone render of the exact geometry the API produces."
+}

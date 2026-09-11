@@ -1,0 +1,45 @@
+{
+  "success": true,
+  "exit_code": 0,
+  "error": "",
+  "traceback": "",
+  "glb_path": "C:\\Users\\admin\\workspaces\\vision-5d\\evidence\\V5D-LOCAL-EXTERNAL-SERVICES-READINESS-001\\authoritative_living_room.glb",
+  "glb_sha256": "05847523f75fa3c56eb0919cdf0ec11fb4297d60804abba71f3a0b433520134e",
+  "engine_requested": "CYCLES",
+  "engine_resolved": "CYCLES",
+  "device": "CPU",
+  "samples": 16,
+  "expected_frames": 1,
+  "actual_frames": 1,
+  "failed_frames": 0,
+  "missing_frames": [],
+  "render_duration_s": 13.0,
+  "first_frame_size": 392332,
+  "total_frame_size": 392332,
+  "objects_imported": 1,
+  "meshes_imported": 1,
+  "vertices_imported": 48,
+  "bounds": {
+    "x": [
+      0.0,
+      5.0
+    ],
+    "y": [
+      -6.0,
+      0.0
+    ],
+    "z": [
+      -0.15000000596046448,
+      2.700000047683716
+    ]
+  },
+  "available_engines": [
+    "BLENDER_EEVEE",
+    "BLENDER_WORKBENCH",
+    "CYCLES"
+  ],
+  "cycles_devices": {
+    "12th Gen Intel Core i7-12700": "CPU"
+  },
+  "eevee_headless_crashed": false
+}

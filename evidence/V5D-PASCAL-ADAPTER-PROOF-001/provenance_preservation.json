@@ -1,0 +1,15 @@
+{
+  "fields_preserved": [
+    "project_id",
+    "source_sha256",
+    "dxf_handles",
+    "source_layer",
+    "extraction_confidence",
+    "validation_status",
+    "unit",
+    "length_m",
+    "wall_type"
+  ],
+  "nodes_with_provenance": 63,
+  "verdict": "ALL_NODES_HAVE_PROVENANCE"
+}

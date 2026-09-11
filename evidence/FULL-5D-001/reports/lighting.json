@@ -1,0 +1,29 @@
+[
+  {
+    "label": "LED Panel 1",
+    "position": [
+      2.0,
+      2.7,
+      -2.0
+    ],
+    "color": "#FFF8F0",
+    "intensity": 1.2,
+    "temperature": 4000
+  },
+  {
+    "label": "LED Panel 2",
+    "position": [
+      3.5,
+      2.7,
+      -4.0
+    ],
+    "color": "#FFF8F0",
+    "intensity": 1.0,
+    "temperature": 4000
+  },
+  {
+    "label": "Ambient Warm",
+    "color": "#FFF5E6",
+    "intensity": 0.5
+  }
+]

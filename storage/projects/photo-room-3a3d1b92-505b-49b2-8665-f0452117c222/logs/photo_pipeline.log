@@ -1,0 +1,31 @@
+2026-07-29 09:20:45,823 [INFO] MISSION: V5D-PHOTO-PIPELINE-REPO-TEST-001
+2026-07-29 09:20:45,823 [INFO] Job ID: 3a3d1b92-505b-49b2-8665-f0452117c222
+2026-07-29 09:20:45,823 [INFO] Project ID: 15da9358-7387-4956-86db-bb92586bf9a7
+2026-07-29 09:20:45,823 [INFO] Project: PHOTO-ROOM-3a3d1b92
+2026-07-29 09:20:45,823 [INFO] ============================================================
+2026-07-29 09:20:45,823 [INFO] STAGE 1: PHOTO INGESTION
+2026-07-29 09:20:45,858 [INFO] Source: C:\Users\admin\workspaces\vision-5d\test_data\1.webp
+2026-07-29 09:20:45,858 [INFO] Size: 161854 bytes, 1200x1500
+2026-07-29 09:20:45,858 [INFO] SHA-256: 3b39eeaa3907409677fa205f13c3bc93f49a1a5f6d4bbec52878df4d76ed8732
+2026-07-29 09:20:45,858 [INFO] Copy verified: True
+2026-07-29 09:20:45,858 [INFO] ============================================================
+2026-07-29 09:20:45,858 [INFO] STAGE 2: PHOTO VALIDATION
+2026-07-29 09:20:45,976 [INFO] Validation: PASS
+2026-07-29 09:20:45,976 [INFO]   readable_image: True
+2026-07-29 09:20:45,976 [INFO]   not_blank: True
+2026-07-29 09:20:45,976 [INFO]   pixel_std_dev: 59.308407633645835
+2026-07-29 09:20:45,976 [INFO]   not_corrupted: True
+2026-07-29 09:20:45,976 [INFO]   dimensions_reasonable: True
+2026-07-29 09:20:45,976 [INFO]   valid_photo_format: True
+2026-07-29 09:20:45,976 [INFO]   reasonable_file_size: True
+2026-07-29 09:20:45,976 [INFO] ============================================================
+2026-07-29 09:20:45,976 [INFO] STAGE 3: NVIDIA VISION ADAPTER
+2026-07-29 09:20:46,096 [INFO] NVIDIA adapter created for endpoint: https://integrate.api.nvidia.com/v1/chat/completions
+2026-07-29 09:20:46,096 [INFO] Model: nvidia/llama-3.1-nemotron-nano-vl-8b-v1
+2026-07-29 09:20:46,096 [INFO] ============================================================
+2026-07-29 09:20:46,096 [INFO] STAGE 4: NVIDIA VISION ANALYSIS
+2026-07-29 09:20:46,096 [INFO] Calling NVIDIA Vision on: C:\Users\admin\workspaces\vision-5d\storage\projects\photo-room-3a3d1b92-505b-49b2-8665-f0452117c222\source\photo_original.webp
+2026-07-29 09:20:48,306 [INFO] HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 500 Internal Server Error"
+2026-07-29 09:20:48,308 [INFO] API response: status=500, latency=2211ms
+2026-07-29 09:20:48,308 [INFO] Request ID: 
+2026-07-29 09:20:48,308 [ERROR] NVIDIA API call failed: {"error":"cannot identify image file <_io.BytesIO object at 0x7fd5de451cb0>"}

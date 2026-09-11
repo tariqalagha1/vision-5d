@@ -1,0 +1,20 @@
+{
+  "mission": "V5D-STARTUP-REPAIR-001",
+  "timestamp": "2026-08-26T09:32:00Z",
+  "checks": {
+    "api_health": {"status": "PASS", "http": 200, "body": {"status": "healthy", "version": "1.0.0", "phase": 7, "mode": "production"}},
+    "worker_liveness": {"status": "PASS", "note": "running 405s+, claims/executes jobs, no crash"},
+    "dashboard_visual": {"status": "PASS", "note": "88 projects, 29 active, 0 3D scenes, System Health green, header connected"},
+    "encryption_roundtrip": {"status": "PASS", "note": "encrypt->decrypt == 'test-secret-123'"},
+    "encryption_stability": {"status": "PASS", "note": "key_hash 2e50a605a06e3559 identical across 2 processes"},
+    "test_suite": {"status": "PASS", "passed": 167, "failed": 0, "duration_s": 43.29},
+    "docker_compose_config": {"status": "PASS", "note": "docker compose config --quiet returned 0"},
+    "sh_syntax": {"status": "PASS", "note": "bash -n clean"},
+    "bat_db_substitution": {"status": "PASS", "note": "produces C:/Users/admin/workspaces/vision-5d/vision5d.db"}
+  },
+  "out_of_scope": {
+    "pipeline_uuid_bug": "worker stale-job failure: PreprocessedImage.source_asset_id UUID validation (pre-existing, packages/plan_understanding/contracts.py:51)",
+    "docker_engine": "not running; build/up validated structurally only",
+    "infra_prod_compose": "untouched"
+  }
+}

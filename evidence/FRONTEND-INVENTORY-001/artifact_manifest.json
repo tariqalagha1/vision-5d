@@ -1,0 +1,155 @@
+{
+  "mission": "FRONTEND-INVENTORY-001",
+  "timestamp": "2026-07-31T13:27:03.342187",
+  "project": "vision-5d",
+  "summary": {
+    "total_html_pages": 7,
+    "total_ts_modules": 19,
+    "total_static_assets": 2,
+    "has_package_json": false,
+    "has_tsconfig": false,
+    "has_frontend_build_tool": false
+  },
+  "html_pages": {
+    "3d-viewer.html": {
+      "file": "3d-viewer.html",
+      "path": "C:\\Users\\admin\\workspaces\\vision-5d\\apps\\web\\3d-viewer.html",
+      "lines": 322,
+      "size_bytes": 11136,
+      "type": "3d-viewer",
+      "dependencies": {
+        "three_cdn": true,
+        "importmap": false,
+        "glb_loader": true,
+        "glb_reference": false,
+        "procedural_geometry": true,
+        "api_integration": true
+      }
+    },
+    "cinematic.html": {
+      "file": "cinematic.html",
+      "path": "C:\\Users\\admin\\workspaces\\vision-5d\\apps\\web\\cinematic.html",
+      "lines": 178,
+      "size_bytes": 17611,
+      "type": "cinematic",
+      "dependencies": {
+        "three_cdn": true,
+        "importmap": true,
+        "glb_loader": false,
+        "glb_reference": false,
+        "procedural_geometry": true,
+        "api_integration": false
+      }
+    },
+    "cinematic_luxury.html": {
+      "file": "cinematic_luxury.html",
+      "path": "C:\\Users\\admin\\workspaces\\vision-5d\\apps\\web\\cinematic_luxury.html",
+      "lines": 72,
+      "size_bytes": 22713,
+      "type": "cinematic",
+      "dependencies": {
+        "three_cdn": true,
+        "importmap": true,
+        "glb_loader": false,
+        "glb_reference": false,
+        "procedural_geometry": true,
+        "api_integration": false
+      }
+    },
+    "cinematic_v2.html": {
+      "file": "cinematic_v2.html",
+      "path": "C:\\Users\\admin\\workspaces\\vision-5d\\apps\\web\\cinematic_v2.html",
+      "lines": 72,
+      "size_bytes": 18278,
+      "type": "cinematic",
+      "dependencies": {
+        "three_cdn": true,
+        "importmap": true,
+        "glb_loader": false,
+        "glb_reference": false,
+        "procedural_geometry": true,
+        "api_integration": false
+      }
+    },
+    "geometry-editor.html": {
+      "file": "geometry-editor.html",
+      "path": "C:\\Users\\admin\\workspaces\\vision-5d\\apps\\web\\geometry-editor.html",
+      "lines": 339,
+      "size_bytes": 11253,
+      "type": "geometry-editor",
+      "dependencies": {
+        "three_cdn": false,
+        "importmap": false,
+        "glb_loader": false,
+        "glb_reference": false,
+        "procedural_geometry": false,
+        "api_integration": true
+      }
+    },
+    "index.html": {
+      "file": "index.html",
+      "path": "C:\\Users\\admin\\workspaces\\vision-5d\\apps\\web\\index.html",
+      "lines": 665,
+      "size_bytes": 29240,
+      "type": "dashboard",
+      "dependencies": {
+        "three_cdn": false,
+        "importmap": false,
+        "glb_loader": false,
+        "glb_reference": false,
+        "procedural_geometry": false,
+        "api_integration": true
+      }
+    },
+    "studio.html": {
+      "file": "studio.html",
+      "path": "C:\\Users\\admin\\workspaces\\vision-5d\\apps\\web\\studio.html",
+      "lines": 1070,
+      "size_bytes": 52509,
+      "type": "studio",
+      "dependencies": {
+        "three_cdn": true,
+        "importmap": false,
+        "glb_loader": false,
+        "glb_reference": false,
+        "procedural_geometry": true,
+        "api_integration": true
+      }
+    }
+  },
+  "pascal_integration_ts": {
+    "count": 19,
+    "files": [
+      "index.ts",
+      "adapters\\metadata_adapter.ts",
+      "adapters\\opening_adapter.ts",
+      "adapters\\pascal_to_vision5d.ts",
+      "adapters\\slab_adapter.ts",
+      "adapters\\vision5d_to_pascal.ts",
+      "adapters\\wall_adapter.ts",
+      "client\\pascal_client_errors.ts",
+      "client\\pascal_mcp_client.ts",
+      "client\\pascal_rest_client.ts",
+      "migration\\migrate_proof_pascal_scene.ts",
+      "observability\\pascal_metrics.ts",
+      "revisions\\correction_event_applier.ts",
+      "revisions\\correction_event_normalizer.ts",
+      "revisions\\revision_manager.ts",
+      "schemas\\correction_event.ts",
+      "schemas\\identity_map.ts",
+      "schemas\\integration_config.ts",
+      "schemas\\scene_revision.ts"
+    ]
+  },
+  "static_assets": [
+    {
+      "file": "cinematic.mp4",
+      "size_bytes": 1179329
+    },
+    {
+      "file": "cinematic.webm",
+      "size_bytes": 0
+    }
+  ],
+  "verdict": "INVENTORY_COMPLETE"
+}

@@ -1,0 +1,48 @@
+{
+  "mission": "V5D-FRONTEND-INVENTORY-001",
+  "timestamp": "2026-07-31T13:32:43.056888",
+  "repository": "C:\\Users\\admin\\workspaces\\vision-5d",
+  "version_control": {
+    "git_repository": false,
+    "branch": null,
+    "commit_sha": null,
+    "default_branch": null,
+    "remotes": [],
+    "note": "Not a git repository \u2014 no version control detected"
+  },
+  "modified_files": [
+    "packages/scene3d/glb_export.py",
+    "packages/plan_understanding/ocr.py"
+  ],
+  "untracked_files": [
+    "evidence/FRONTEND-INVENTORY-001/"
+  ],
+  "build_system": {
+    "python": {
+      "manager": "pip",
+      "config": "pyproject.toml",
+      "project_name": "vision5d",
+      "version": "0.1.0",
+      "requires_python": ">=3.11"
+    },
+    "frontend": {
+      "manager": null,
+      "lockfile": null,
+      "bundler": null,
+      "note": "NO package.json, NO lockfiles, NO frontend build tool"
+    }
+  },
+  "deployment": {
+    "docker_compose": "docker-compose.yml",
+    "dockerfile": "infrastructure/Dockerfile",
+    "deploy_script": "infrastructure/deploy.sh",
+    "nginx_config": "infrastructure/nginx.conf",
+    "prometheus": "infrastructure/prometheus.yml",
+    "grafana": "infrastructure/grafana-dashboard.json"
+  },
+  "environment_files": {
+    ".env": "exists (secrets \u2014 not inspected)",
+    ".env.example": "V5D_DATABASE_URL, V5D_ENCRYPTION_KEY, V5D_API_PORT, V5D_WORKER_POLL_INTERVAL",
+    ".env.production": "exists (secrets \u2014 not inspected)"
+  }
+}

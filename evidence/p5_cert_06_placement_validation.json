@@ -1,0 +1,35 @@
+{
+  "scenarios": 3,
+  "issues_found": [
+    {
+      "object_id": "efc12598-109b-4357-ad34-922f7d7d1804",
+      "code": "DOORWAY_OBSTRUCTION",
+      "severity": "blocking"
+    },
+    {
+      "object_id": "08f4bb64-65c1-4104-a5f6-e2ac5e48ee7f",
+      "code": "MISSING_ASSET",
+      "severity": "blocking"
+    },
+    {
+      "object_id": "e77bcd07-dd39-4276-9e74-1a2793521332",
+      "code": "FLOOR_ELEVATION_MISMATCH",
+      "severity": "warning"
+    }
+  ],
+  "issues_after_resolution": [
+    {
+      "object_id": "08f4bb64-65c1-4104-a5f6-e2ac5e48ee7f",
+      "code": "MISSING_ASSET",
+      "severity": "blocking"
+    },
+    {
+      "object_id": "e77bcd07-dd39-4276-9e74-1a2793521332",
+      "code": "FLOOR_ELEVATION_MISMATCH",
+      "severity": "warning"
+    }
+  ],
+  "doorway_detected": true,
+  "elevation_detected": true,
+  "missing_asset_detected": true
+}

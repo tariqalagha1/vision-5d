@@ -1,0 +1,831 @@
+[
+  {
+    "plan": "architectural_plan_01",
+    "crop": "top_left",
+    "image_path": "C:\\Users\\admin\\workspaces\\vision-5d\\storage\\projects\\real-2d-45x45-32c4e1ba-151\\nvidia_vision_qa\\architectural_plan_01_top_left.png",
+    "image_sha256": "92b423d34abd8ed261193c96e6e5993c0cfbc4f708b43c360c7ad5321a66acb0",
+    "image_size": 6607,
+    "model": "nvidia/llama-3.1-nemotron-nano-vl-8b-v1",
+    "status": 200,
+    "latency_ms": 23783.628,
+    "timestamp": "2026-07-27T09:47:31.982813",
+    "request_id": "chatcmpl-bebf58c4515c47f383adedc46d01dab9",
+    "input_tokens": 3725,
+    "output_tokens": 435,
+    "answers": {
+      "responses": [
+        {
+          "question": "Is architectural linework visible?",
+          "answer": "yes",
+          "confidence": 1.0
+        },
+        {
+          "question": "Are external wall boundaries visible?",
+          "answer": "yes",
+          "confidence": 1.0
+        },
+        {
+          "question": "Are internal partitions visible?",
+          "answer": "yes",
+          "confidence": 1.0
+        },
+        {
+          "question": "Are door openings or door symbols visible?",
+          "answer": "yes",
+          "confidence": 1.0
+        },
+        {
+          "question": "Are windows visible?",
+          "answer": "yes",
+          "confidence": 1.0
+        },
+        {
+          "question": "Are stairs visible where present?",
+          "answer": "yes",
+          "confidence": 1.0
+        },
+        {
+          "question": "Are enclosed rooms or spaces recognizable?",
+          "answer": "yes",
+          "confidence": 1.0
+        },
+        {
+          "question": "Are dimensions or annotations visible?",
+          "answer": "no",
+          "confidence": 1.0
+        },
+        {
+          "question": "Is geometry clipped or fragmented?",
+          "answer": "no",
+          "confidence": 1.0
+        },
+        {
+          "question": "Is unrelated construction geometry dominating the image?",
+          "answer": "no",
+          "confidence": 1.0
+        },
+        {
+          "question": "Is the output suitable for human architectural review?",
+          "answer": "yes",
+          "confidence": 1.0
+        }
+      ],
+      "visible_evidence": [
+        "architectural linework",
+        "external wall boundaries",
+        "internal partitions",
+        "door openings or door symbols",
+        "windows",
+        "stairs",
+        "enclosed rooms or spaces"
+      ],
+      "defects": [
+        "lack of dimensions or annotations"
+      ],
+      "classification": "CLEAR_ARCHITECTURAL_PLAN"
+    },
+    "classification": "CLEAR_ARCHITECTURAL_PLAN"
+  },
+  {
+    "plan": "architectural_plan_01",
+    "crop": "top_right",
+    "image_path": "C:\\Users\\admin\\workspaces\\vision-5d\\storage\\projects\\real-2d-45x45-32c4e1ba-151\\nvidia_vision_qa\\architectural_plan_01_top_right.png",
+    "image_sha256": "b9c9fe3cab905a2227de4255d06afe49096ad637cd60a409633d3eed8ae9e557",
+    "image_size": 6577,
+    "model": "nvidia/llama-3.1-nemotron-nano-vl-8b-v1",
+    "status": 200,
+    "latency_ms": 13931.174,
+    "timestamp": "2026-07-27T09:47:55.771623",
+    "request_id": "chatcmpl-db8670d5e6e34264ba874245c9b79265",
+    "input_tokens": 3725,
+    "output_tokens": 453,
+    "answers": {
+      "responses": [
+        {
+          "question": "Is architectural linework visible?",
+          "answer": "yes",
+          "confidence": 1.0
+        },
+        {
+          "question": "Are external wall boundaries visible?",
+          "answer": "yes",
+          "confidence": 1.0
+        },
+        {
+          "question": "Are internal partitions visible?",
+          "answer": "yes",
+          "confidence": 1.0
+        },
+        {
+          "question": "Are door openings or door symbols visible?",
+          "answer": "no",
+          "confidence": 1.0
+        },
+        {
+          "question": "Are windows visible?",
+          "answer": "no",
+          "confidence": 1.0
+        },
+        {
+          "question": "Are stairs visible where present?",
+          "answer": "no",
+          "confidence": 1.0
+        },
+        {
+          "question": "Are enclosed rooms or spaces recognizable?",
+          "answer": "yes",
+          "confidence": 1.0
+        },
+        {
+          "question": "Are dimensions or annotations visible?",
+          "answer": "no",
+          "confidence": 1.0
+        },
+        {
+          "question": "Is geometry clipped or fragmented?",
+          "answer": "yes",
+          "confidence": 1.0
+        },
+        {
+          "question": "Is unrelated construction geometry dominating the image?",
+          "answer": "no",
+          "confidence": 1.0
+        },
+        {
+          "question": "Is the output suitable for human architectural review?",
+          "answer": "no",
+          "confidence": 1.0
+        }
+      ],
+      "visible_evidence": [
+        "architectural linework",
+        "external wall boundaries",
+        "internal partitions",
+        "enclosed rooms or spaces"
+      ],
+      "defects": [
+        "no door openings or door symbols",
+        "no windows",
+        "no stairs",
+        "geometry clipped or fragmented",
+        "no dimensions or annotations",
+        "output not suitable for human architectural review"
+      ],
+      "classification": "PARTIALLY_RENDERED"
+    },
+    "classification": "PARTIALLY_RENDERED"
+  },
+  {
+    "plan": "architectural_plan_01",
+    "crop": "bottom_left",
+    "image_path": "C:\\Users\\admin\\workspaces\\vision-5d\\storage\\projects\\real-2d-45x45-32c4e1ba-151\\nvidia_vision_qa\\architectural_plan_01_bottom_left.png",
+    "image_sha256": "f08b7d657bb6626ee57e82b791cd3707536ab32dad4dda9cda584b313a752109",
+    "image_size": 18345,
+    "model": "nvidia/llama-3.1-nemotron-nano-vl-8b-v1",
+    "status": 200,
+    "latency_ms": 44521.003,
+    "timestamp": "2026-07-27T09:48:09.709797",
+    "request_id": "chatcmpl-b52d39113909407cae41a9b1ac6e7b18",
+    "input_tokens": 3725,
+    "output_tokens": 445,
+    "answers": {
+      "responses": [
+        {
+          "question": "Is architectural linework visible?",
+          "answer": "yes",
+          "confidence": 1.0
+        },
+        {
+          "question": "Are external wall boundaries visible?",
+          "answer": "yes",
+          "confidence": 1.0
+        },
+        {
+          "question": "Are internal partitions visible?",
+          "answer": "yes",
+          "confidence": 1.0
+        },
+        {
+          "question": "Are door openings or door symbols visible?",
+          "answer": "no",
+          "confidence": 1.0
+        },
+        {
+          "question": "Are windows visible?",
+          "answer": "no",
+          "confidence": 1.0
+        },
+        {
+          "question": "Are stairs visible where present?",
+          "answer": "no",
+          "confidence": 1.0
+        },
+        {
+          "question": "Are enclosed rooms or spaces recognizable?",
+          "answer": "yes",
+          "confidence": 1.0
+        },
+        {
+          "question": "Are dimensions or annotations visible?",
+          "answer": "no",
+          "confidence": 1.0
+        },
+        {
+          "question": "Is geometry clipped or fragmented?",
+          "answer": "no",
+          "confidence": 1.0
+        },
+        {
+          "question": "Is unrelated construction geometry dominating the image?",
+          "answer": "no",
+          "confidence": 1.0
+        },
+        {
+          "question": "Is the output suitable for human architectural review?",
+          "answer": "yes",
+          "confidence": 1.0
+        }
+      ],
+      "visible_evidence": [
+        "architectural linework",
+        "external wall boundaries",
+        "internal partitions",
+        "enclosed rooms or spaces"
+      ],
+      "defects": [
+        "absence of door openings or door symbols",
+        "absence of windows",
+        "absence of stairs",
+        "absence of dimensions or annotations"
+      ],
+      "classification": "CLEAR_ARCHITECTURAL_PLAN"
+    },
+    "classification": "CLEAR_ARCHITECTURAL_PLAN"
+  },
+  {
+    "plan": "architectural_plan_01",
+    "crop": "bottom_right",
+    "image_path": "C:\\Users\\admin\\workspaces\\vision-5d\\storage\\projects\\real-2d-45x45-32c4e1ba-151\\nvidia_vision_qa\\architectural_plan_01_bottom_right.png",
+    "image_sha256": "4d0537f285653a6153131666934c8c2ceb43d3c4207e0f67df0e9d32cba1b8d6",
+    "image_size": 8458,
+    "model": "nvidia/llama-3.1-nemotron-nano-vl-8b-v1",
+    "status": 200,
+    "latency_ms": 9723.869999999999,
+    "timestamp": "2026-07-27T09:48:54.246775",
+    "request_id": "chatcmpl-f228f4d3b41e4bd2816d39f4b96c69c0",
+    "input_tokens": 3725,
+    "output_tokens": 168,
+    "answers": {
+      "1": "yes",
+      "2": "yes",
+      "3": "yes",
+      "4": "yes",
+      "5": "yes",
+      "6": "yes",
+      "7": "yes",
+      "8": "no",
+      "9": "no",
+      "10": "no",
+      "11": "yes",
+      "visible_evidence": [
+        "architectural linework",
+        "external wall boundaries",
+        "internal partitions",
+        "door openings or door symbols",
+        "windows",
+        "stairs",
+        "enclosed rooms or spaces"
+      ],
+      "defects": [
+        "lack of dimensions or annotations",
+        "unrelated construction geometry dominating the image"
+      ],
+      "classification": "PARTIALLY_RENDERED"
+    },
+    "classification": "PARTIALLY_RENDERED"
+  },
+  {
+    "plan": "architectural_plan_01",
+    "crop": "center",
+    "image_path": "C:\\Users\\admin\\workspaces\\vision-5d\\storage\\projects\\real-2d-45x45-32c4e1ba-151\\nvidia_vision_qa\\architectural_plan_01_center.png",
+    "image_sha256": "274e24c2ee3385fd4639943a26317b378c4c988308e62660203c62187246cb9f",
+    "image_size": 15401,
+    "model": "nvidia/llama-3.1-nemotron-nano-vl-8b-v1",
+    "status": 200,
+    "latency_ms": 13395.386999999999,
+    "timestamp": "2026-07-27T09:49:03.980711",
+    "request_id": "chatcmpl-e8a7470d976a452ca34a08e20c834952",
+    "input_tokens": 3725,
+    "output_tokens": 435,
+    "answers": {
+      "responses": [
+        {
+          "question": "Is architectural linework visible?",
+          "answer": "yes",
+          "confidence": 1.0
+        },
+        {
+          "question": "Are external wall boundaries visible?",
+          "answer": "yes",
+          "confidence": 1.0
+        },
+        {
+          "question": "Are internal partitions visible?",
+          "answer": "yes",
+          "confidence": 1.0
+        },
+        {
+          "question": "Are door openings or door symbols visible?",
+          "answer": "yes",
+          "confidence": 1.0
+        },
+        {
+          "question": "Are windows visible?",
+          "answer": "yes",
+          "confidence": 1.0
+        },
+        {
+          "question": "Are stairs visible where present?",
+          "answer": "yes",
+          "confidence": 1.0
+        },
+        {
+          "question": "Are enclosed rooms or spaces recognizable?",
+          "answer": "yes",
+          "confidence": 1.0
+        },
+        {
+          "question": "Are dimensions or annotations visible?",
+          "answer": "no",
+          "confidence": 0.0
+        },
+        {
+          "question": "Is geometry clipped or fragmented?",
+          "answer": "no",
+          "confidence": 1.0
+        },
+        {
+          "question": "Is unrelated construction geometry dominating the image?",
+          "answer": "no",
+          "confidence": 1.0
+        },
+        {
+          "question": "Is the output suitable for human architectural review?",
+          "answer": "yes",
+          "confidence": 1.0
+        }
+      ],
+      "visible_evidence": [
+        "architectural linework",
+        "external wall boundaries",
+        "internal partitions",
+        "door openings or door symbols",
+        "windows",
+        "stairs",
+        "enclosed rooms or spaces"
+      ],
+      "defects": [
+        "lack of dimensions or annotations"
+      ],
+      "classification": "CLEAR_ARCHITECTURAL_PLAN"
+    },
+    "classification": "CLEAR_ARCHITECTURAL_PLAN"
+  },
+  {
+    "plan": "elevation_detail_01",
+    "crop": "top_left",
+    "image_path": "C:\\Users\\admin\\workspaces\\vision-5d\\storage\\projects\\real-2d-45x45-32c4e1ba-151\\nvidia_vision_qa\\elevation_detail_01_top_left.png",
+    "image_sha256": "31f5354832e697e3725deedb3386e98aee83471e10d76d72a9696ce1316f9f05",
+    "image_size": 8583,
+    "model": "nvidia/llama-3.1-nemotron-nano-vl-8b-v1",
+    "status": 200,
+    "latency_ms": 14704.057999999999,
+    "timestamp": "2026-07-27T09:49:30.923808",
+    "request_id": "chatcmpl-08776791ff6448059a28ab6c3e1eb4cb",
+    "input_tokens": 3725,
+    "output_tokens": 435,
+    "answers": {
+      "responses": [
+        {
+          "question": "Is architectural linework visible?",
+          "answer": "yes",
+          "confidence": 1.0
+        },
+        {
+          "question": "Are external wall boundaries visible?",
+          "answer": "yes",
+          "confidence": 1.0
+        },
+        {
+          "question": "Are internal partitions visible?",
+          "answer": "yes",
+          "confidence": 1.0
+        },
+        {
+          "question": "Are door openings or door symbols visible?",
+          "answer": "yes",
+          "confidence": 1.0
+        },
+        {
+          "question": "Are windows visible?",
+          "answer": "yes",
+          "confidence": 1.0
+        },
+        {
+          "question": "Are stairs visible where present?",
+          "answer": "yes",
+          "confidence": 1.0
+        },
+        {
+          "question": "Are enclosed rooms or spaces recognizable?",
+          "answer": "yes",
+          "confidence": 1.0
+        },
+        {
+          "question": "Are dimensions or annotations visible?",
+          "answer": "no",
+          "confidence": 0.0
+        },
+        {
+          "question": "Is geometry clipped or fragmented?",
+          "answer": "no",
+          "confidence": 1.0
+        },
+        {
+          "question": "Is unrelated construction geometry dominating the image?",
+          "answer": "no",
+          "confidence": 1.0
+        },
+        {
+          "question": "Is the output suitable for human architectural review?",
+          "answer": "yes",
+          "confidence": 1.0
+        }
+      ],
+      "visible_evidence": [
+        "architectural linework",
+        "external wall boundaries",
+        "internal partitions",
+        "door openings or door symbols",
+        "windows",
+        "stairs",
+        "enclosed rooms or spaces"
+      ],
+      "defects": [
+        "dimensions or annotations not visible"
+      ],
+      "classification": "CLEAR_ARCHITECTURAL_PLAN"
+    },
+    "classification": "CLEAR_ARCHITECTURAL_PLAN"
+  },
+  {
+    "plan": "elevation_detail_01",
+    "crop": "top_right",
+    "image_path": "C:\\Users\\admin\\workspaces\\vision-5d\\storage\\projects\\real-2d-45x45-32c4e1ba-151\\nvidia_vision_qa\\elevation_detail_01_top_right.png",
+    "image_sha256": "3db4222150143571c479488b939b3b1b3bbf322db96c45d630a91678db637e02",
+    "image_size": 8762,
+    "model": "nvidia/llama-3.1-nemotron-nano-vl-8b-v1",
+    "status": 200,
+    "latency_ms": 12917.130000000001,
+    "timestamp": "2026-07-27T09:49:45.632986",
+    "request_id": "chatcmpl-3e0252db31a84053881a589bcaa3cc65",
+    "input_tokens": 3725,
+    "output_tokens": 453,
+    "answers": {
+      "responses": [
+        {
+          "question": "Is architectural linework visible?",
+          "answer": "yes",
+          "confidence": 0.9
+        },
+        {
+          "question": "Are external wall boundaries visible?",
+          "answer": "yes",
+          "confidence": 0.8
+        },
+        {
+          "question": "Are internal partitions visible?",
+          "answer": "yes",
+          "confidence": 0.7
+        },
+        {
+          "question": "Are door openings or door symbols visible?",
+          "answer": "no",
+          "confidence": 0.0
+        },
+        {
+          "question": "Are windows visible?",
+          "answer": "no",
+          "confidence": 0.0
+        },
+        {
+          "question": "Are stairs visible where present?",
+          "answer": "no",
+          "confidence": 0.0
+        },
+        {
+          "question": "Are enclosed rooms or spaces recognizable?",
+          "answer": "yes",
+          "confidence": 0.6
+        },
+        {
+          "question": "Are dimensions or annotations visible?",
+          "answer": "no",
+          "confidence": 0.0
+        },
+        {
+          "question": "Is geometry clipped or fragmented?",
+          "answer": "yes",
+          "confidence": 0.5
+        },
+        {
+          "question": "Is unrelated construction geometry dominating the image?",
+          "answer": "no",
+          "confidence": 0.0
+        },
+        {
+          "question": "Is the output suitable for human architectural review?",
+          "answer": "no",
+          "confidence": 0.0
+        }
+      ],
+      "visible_evidence": [
+        "architectural linework",
+        "external wall boundaries",
+        "internal partitions",
+        "enclosed rooms or spaces"
+      ],
+      "defects": [
+        "no door openings or door symbols",
+        "no windows",
+        "no stairs",
+        "geometry clipped or fragmented",
+        "unrelated construction geometry",
+        "output not suitable for human architectural review"
+      ],
+      "classification": "PARTIALLY_RENDERED"
+    },
+    "classification": "PARTIALLY_RENDERED"
+  },
+  {
+    "plan": "elevation_detail_01",
+    "crop": "bottom_left",
+    "image_path": "C:\\Users\\admin\\workspaces\\vision-5d\\storage\\projects\\real-2d-45x45-32c4e1ba-151\\nvidia_vision_qa\\elevation_detail_01_bottom_left.png",
+    "image_sha256": "30df95f08f0d5cc4aab88ef169cb132317fac395c0fc949f615f6de277599e7d",
+    "image_size": 8577,
+    "model": "nvidia/llama-3.1-nemotron-nano-vl-8b-v1",
+    "status": 200,
+    "latency_ms": 13628.244,
+    "timestamp": "2026-07-27T09:49:58.568392",
+    "request_id": "chatcmpl-ad9b6cb9081044feafdfdf542641a4d5",
+    "input_tokens": 3725,
+    "output_tokens": 435,
+    "answers": {
+      "responses": [
+        {
+          "question": "Is architectural linework visible?",
+          "answer": "yes",
+          "confidence": 1.0
+        },
+        {
+          "question": "Are external wall boundaries visible?",
+          "answer": "yes",
+          "confidence": 1.0
+        },
+        {
+          "question": "Are internal partitions visible?",
+          "answer": "yes",
+          "confidence": 1.0
+        },
+        {
+          "question": "Are door openings or door symbols visible?",
+          "answer": "yes",
+          "confidence": 1.0
+        },
+        {
+          "question": "Are windows visible?",
+          "answer": "yes",
+          "confidence": 1.0
+        },
+        {
+          "question": "Are stairs visible where present?",
+          "answer": "yes",
+          "confidence": 1.0
+        },
+        {
+          "question": "Are enclosed rooms or spaces recognizable?",
+          "answer": "yes",
+          "confidence": 1.0
+        },
+        {
+          "question": "Are dimensions or annotations visible?",
+          "answer": "no",
+          "confidence": 0.0
+        },
+        {
+          "question": "Is geometry clipped or fragmented?",
+          "answer": "no",
+          "confidence": 1.0
+        },
+        {
+          "question": "Is unrelated construction geometry dominating the image?",
+          "answer": "no",
+          "confidence": 1.0
+        },
+        {
+          "question": "Is the output suitable for human architectural review?",
+          "answer": "yes",
+          "confidence": 1.0
+        }
+      ],
+      "visible_evidence": [
+        "architectural linework",
+        "external wall boundaries",
+        "internal partitions",
+        "door openings or door symbols",
+        "windows",
+        "stairs",
+        "enclosed rooms or spaces"
+      ],
+      "defects": [
+        "lack of dimensions or annotations"
+      ],
+      "classification": "CLEAR_ARCHITECTURAL_PLAN"
+    },
+    "classification": "CLEAR_ARCHITECTURAL_PLAN"
+  },
+  {
+    "plan": "elevation_detail_01",
+    "crop": "bottom_right",
+    "image_path": "C:\\Users\\admin\\workspaces\\vision-5d\\storage\\projects\\real-2d-45x45-32c4e1ba-151\\nvidia_vision_qa\\elevation_detail_01_bottom_right.png",
+    "image_sha256": "d88c8b526e40bb583170a9ae7d6fe510c8a8af1c92e757e4971dabbde521e99d",
+    "image_size": 8950,
+    "model": "nvidia/llama-3.1-nemotron-nano-vl-8b-v1",
+    "status": 200,
+    "latency_ms": 18640.767,
+    "timestamp": "2026-07-27T09:50:12.218477",
+    "request_id": "chatcmpl-bf62049bd7144a9486fc45a97e4d3e1c",
+    "input_tokens": 3725,
+    "output_tokens": 435,
+    "answers": {
+      "responses": [
+        {
+          "question": "Is architectural linework visible?",
+          "answer": "yes",
+          "confidence": 1.0
+        },
+        {
+          "question": "Are external wall boundaries visible?",
+          "answer": "yes",
+          "confidence": 1.0
+        },
+        {
+          "question": "Are internal partitions visible?",
+          "answer": "yes",
+          "confidence": 1.0
+        },
+        {
+          "question": "Are door openings or door symbols visible?",
+          "answer": "yes",
+          "confidence": 1.0
+        },
+        {
+          "question": "Are windows visible?",
+          "answer": "yes",
+          "confidence": 1.0
+        },
+        {
+          "question": "Are stairs visible where present?",
+          "answer": "yes",
+          "confidence": 1.0
+        },
+        {
+          "question": "Are enclosed rooms or spaces recognizable?",
+          "answer": "yes",
+          "confidence": 1.0
+        },
+        {
+          "question": "Are dimensions or annotations visible?",
+          "answer": "no",
+          "confidence": 0.0
+        },
+        {
+          "question": "Is geometry clipped or fragmented?",
+          "answer": "no",
+          "confidence": 1.0
+        },
+        {
+          "question": "Is unrelated construction geometry dominating the image?",
+          "answer": "no",
+          "confidence": 1.0
+        },
+        {
+          "question": "Is the output suitable for human architectural review?",
+          "answer": "yes",
+          "confidence": 1.0
+        }
+      ],
+      "visible_evidence": [
+        "architectural linework",
+        "external wall boundaries",
+        "internal partitions",
+        "door openings or door symbols",
+        "windows",
+        "stairs",
+        "enclosed rooms or spaces"
+      ],
+      "defects": [
+        "dimensions or annotations not visible"
+      ],
+      "classification": "CLEAR_ARCHITECTURAL_PLAN"
+    },
+    "classification": "CLEAR_ARCHITECTURAL_PLAN"
+  },
+  {
+    "plan": "elevation_detail_01",
+    "crop": "center",
+    "image_path": "C:\\Users\\admin\\workspaces\\vision-5d\\storage\\projects\\real-2d-45x45-32c4e1ba-151\\nvidia_vision_qa\\elevation_detail_01_center.png",
+    "image_sha256": "745c408fbf0cc9cd4374edf2de0c43ec423e783a19562e60c778c624b9a31dd2",
+    "image_size": 8742,
+    "model": "nvidia/llama-3.1-nemotron-nano-vl-8b-v1",
+    "status": 200,
+    "latency_ms": 12463.376,
+    "timestamp": "2026-07-27T09:50:30.884245",
+    "request_id": "chatcmpl-bc752b32b4e844819f29c627267ab888",
+    "input_tokens": 3725,
+    "output_tokens": 435,
+    "answers": {
+      "responses": [
+        {
+          "question": "Is architectural linework visible?",
+          "answer": "yes",
+          "confidence": 1.0
+        },
+        {
+          "question": "Are external wall boundaries visible?",
+          "answer": "yes",
+          "confidence": 1.0
+        },
+        {
+          "question": "Are internal partitions visible?",
+          "answer": "yes",
+          "confidence": 1.0
+        },
+        {
+          "question": "Are door openings or door symbols visible?",
+          "answer": "yes",
+          "confidence": 1.0
+        },
+        {
+          "question": "Are windows visible?",
+          "answer": "yes",
+          "confidence": 1.0
+        },
+        {
+          "question": "Are stairs visible where present?",
+          "answer": "yes",
+          "confidence": 1.0
+        },
+        {
+          "question": "Are enclosed rooms or spaces recognizable?",
+          "answer": "yes",
+          "confidence": 1.0
+        },
+        {
+          "question": "Are dimensions or annotations visible?",
+          "answer": "no",
+          "confidence": 0.0
+        },
+        {
+          "question": "Is geometry clipped or fragmented?",
+          "answer": "no",
+          "confidence": 1.0
+        },
+        {
+          "question": "Is unrelated construction geometry dominating the image?",
+          "answer": "no",
+          "confidence": 1.0
+        },
+        {
+          "question": "Is the output suitable for human architectural review?",
+          "answer": "yes",
+          "confidence": 1.0
+        }
+      ],
+      "visible_evidence": [
+        "architectural linework",
+        "external wall boundaries",
+        "internal partitions",
+        "door openings or door symbols",
+        "windows",
+        "stairs",
+        "enclosed rooms or spaces"
+      ],
+      "defects": [
+        "lack of dimensions or annotations"
+      ],
+      "classification": "CLEAR_ARCHITECTURAL_PLAN"
+    },
+    "classification": "CLEAR_ARCHITECTURAL_PLAN"
+  }
+]

@@ -1,0 +1,42 @@
+{
+  "thresholds": {
+    "min_distance_m": 2.5,
+    "max_fill": 0.85,
+    "min_fill": 0.15
+  },
+  "hfov_half_deg": 19.8,
+  "vfov_half_deg": 11.45,
+  "shot_05_original": {
+    "min_distance_m": 1.36,
+    "end_fill_h": 1.212,
+    "end_fill_v": 1.202,
+    "valid": false,
+    "issues": [
+      "too_close@6=2.45m",
+      "too_close@7=2.37m",
+      "too_close@8=2.29m",
+      "too_close@9=2.21m",
+      "too_close@10=2.13m",
+      "too_close@11=2.05m",
+      "too_close@12=1.97m",
+      "too_close@13=1.89m",
+      "too_close@14=1.81m",
+      "too_close@15=1.73m",
+      "too_close@16=1.66m",
+      "too_close@17=1.58m",
+      "too_close@18=1.51m",
+      "too_close@19=1.43m",
+      "too_close@20=1.36m",
+      "overfill_h=1.21_v=1.20"
+    ],
+    "shot": "shot_05_original"
+  },
+  "shot_05_replacement": {
+    "min_distance_m": 3.239,
+    "end_fill_h": 0.671,
+    "end_fill_v": 0.646,
+    "valid": true,
+    "issues": [],
+    "shot": "shot_05_replacement"
+  }
+}

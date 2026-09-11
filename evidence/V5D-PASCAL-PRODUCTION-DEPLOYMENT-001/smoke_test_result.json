@@ -1,0 +1,16 @@
+{
+  "referenceProject": "real-2d-45x45-32c4e1ba-151",
+  "exportedNodes": 64,
+  "expectedNodes": 64,
+  "typesMatch": true,
+  "nodeValidation": "64/64 pass",
+  "graphValidation": "PASS",
+  "restCreate": 201,
+  "restRead": 200,
+  "readbackNodes": 64,
+  "metadataIntact": true,
+  "identityMapPresent": true,
+  "provenancePreserved": true,
+  "sceneId": "e0fbce1e3d7b",
+  "verdict": "PASS"
+}

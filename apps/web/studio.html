@@ -1,0 +1,1202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vision 5D — Design Studio</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter','Segoe UI',sans-serif;background:#0d1117;color:#c9d1d9;height:100vh;display:flex;flex-direction:column;overflow:hidden}
+#topbar{height:40px;background:#161b22;border-bottom:1px solid #30363d;display:flex;align-items:center;padding:0 12px;gap:10px;font-size:12px}
+#topbar .title{font-weight:700;color:#58a6ff;font-size:14px}
+#topbar button{padding:4px 10px;background:#0d1117;border:1px solid #30363d;color:#c9d1d9;border-radius:4px;cursor:pointer;font-size:11px}
+#topbar button:hover{background:#1f2937}
+#topbar button.primary{background:#238636;border-color:#2ea043}
+#topbar button.warn{background:#da3633;border-color:#f85149}
+#topbar .sep{width:1px;height:20px;background:#30363d}
+#topbar .spacer{flex:1}
+#topbar .save-state{font-size:10px;color:#8b949e}
+#main{flex:1;display:flex;overflow:hidden}
+#left-panel{width:260px;background:#161b22;border-right:1px solid #30363d;display:flex;flex-direction:column;overflow:hidden}
+#right-panel{width:280px;background:#161b22;border-left:1px solid #30363d;display:flex;flex-direction:column;overflow-y:auto}
+#viewport{flex:1;position:relative;background:#000}
+.panel-section{border-bottom:1px solid #30363d}
+.panel-header{padding:8px 12px;background:#1f2937;font-size:11px;font-weight:600;text-transform:uppercase;color:#8b949e;cursor:pointer;display:flex;justify-content:space-between}
+.panel-body{padding:8px 12px;font-size:11px;max-height:300px;overflow-y:auto}
+.panel-body.collapsed{display:none}
+.tree-item{padding:3px 8px;cursor:pointer;border-radius:3px;display:flex;align-items:center;gap:6px;font-size:11px}
+.tree-item:hover{background:#1f2937}
+.tree-item.selected{background:#1f6feb;color:#fff}
+.tree-item .icon{font-size:12px;width:16px;text-align:center}
+.tree-item .count{font-size:9px;color:#8b949e;margin-left:auto}
+.tree-item.hidden{opacity:0.4}
+.tree-item.locked{opacity:0.6}
+input,select,button{outline:none}
+input[type=range]{width:100%;margin:4px 0;accent-color:#58a6ff}
+input[type=color]{width:28px;height:20px;border:1px solid #30363d;border-radius:3px;padding:0;cursor:pointer;background:none}
+input[type=text],select{width:100%;padding:4px 8px;background:#0d1117;border:1px solid #30363d;color:#c9d1d9;border-radius:4px;font-size:11px}
+label{display:block;font-size:10px;color:#8b949e;margin-top:6px}
+.row{display:flex;gap:6px;align-items:center}
+.col2{display:grid;grid-template-columns:1fr 1fr;gap:4px}
+.furniture-card{display:inline-block;width:70px;text-align:center;margin:4px;padding:4px;border:1px solid #30363d;border-radius:4px;cursor:grab;font-size:9px}
+.furniture-card:hover{background:#1f2937;border-color:#58a6ff}
+.furniture-card .thumb{width:50px;height:40px;background:#30363d;border-radius:2px;margin:0 auto 4px;display:flex;align-items:center;justify-content:center;font-size:18px}
+#coord-display{font-size:10px;color:#8b949e;padding:4px 8px}
+</style>
+</head>
+<body>
+
+<div id="topbar">
+  <div class="title">Studio</div>
+  <button onclick="studioUndo()" title="Undo (Ctrl+Z)">Undo</button>
+  <button onclick="studioRedo()" title="Redo (Ctrl+Y)">Redo</button>
+  <div class="sep"></div>
+  <button onclick="setTool('select')" id="btn-select" class="primary">Select</button>
+  <button onclick="setTool('translate')" id="btn-translate">Move</button>
+  <button onclick="setTool('rotate')" id="btn-rotate">Rotate</button>
+  <button onclick="setTool('scale')" id="btn-scale">Scale</button>
+  <div class="sep"></div>
+  <button onclick="deleteSelected()" class="warn">Delete</button>
+  <button onclick="duplicateSelected()">Duplicate</button>
+  <button onclick="toggleVisibility()">Hide/Show</button>
+  <div class="spacer"></div>
+  <span id="save-state" class="save-state">No changes</span>
+  <div class="sep"></div>
+  <button onclick="commitVersion()" class="primary">Save Version</button>
+  <button onclick="exportStudioScene()">Export GLB</button>
+</div>
+
+<div id="main">
+  <div id="left-panel">
+    <div class="panel-section">
+      <div class="panel-header" onclick="togglePanel(this)">Scene Tree</div>
+      <div class="panel-body" id="scene-tree"><div class="tree-item" style="color:#8b949e">Loading...</div></div>
+    </div>
+    <div class="panel-section">
+      <div class="panel-header" onclick="togglePanel(this)">Furniture Library <input type="text" id="furniture-search" placeholder="Search..." oninput="renderFurniture()" style="width:100px;margin-left:8px;padding:2px 6px"></div>
+      <div class="panel-body" id="furniture-grid"><div style="color:#8b949e">Loading...</div></div>
+    </div>
+  </div>
+
+  <div id="viewport"><div id="coord-display"></div></div>
+
+  <div id="right-panel">
+    <div class="panel-section">
+      <div class="panel-header" onclick="togglePanel(this)">Properties</div>
+      <div class="panel-body" id="props-panel"><div style="color:#8b949e">Select an object</div></div>
+    </div>
+    <div class="panel-section">
+      <div class="panel-header" onclick="togglePanel(this)">Materials & Finishes</div>
+      <div class="panel-body" id="materials-panel">
+        <label>Floor Type</label><select id="finish-floor-type" onchange="updateFloorFinish()">
+          <option value="wood">Wood</option><option value="ceramic">Ceramic</option><option value="marble">Marble</option>
+          <option value="granite">Granite</option><option value="carpet">Carpet</option><option value="concrete">Concrete</option>
+          <option value="vinyl">Vinyl</option><option value="laminate">Laminate</option></select>
+        <label>Floor Color</label><input type="color" id="finish-floor-color" value="#996633" onchange="updateFloorFinish()">
+        <label>Wall Color</label><input type="color" id="finish-wall-color" value="#f0f0f0" onchange="updateWallFinish()">
+        <label>Ceiling Color</label><input type="color" id="finish-ceiling-color" value="#ffffff" onchange="updateCeilingFinish()">
+        <label>Room (empty = all)</label><select id="finish-room-select"><option value="">All Rooms</option></select>
+        <button onclick="applyFinishes()" style="margin-top:6px;width:100%">Apply Finishes</button>
+      </div>
+    </div>
+    <div class="panel-section">
+      <div class="panel-header" onclick="togglePanel(this)">Lighting</div>
+      <div class="panel-body" id="lighting-panel">
+        <label>Color</label><input type="color" id="light-color" value="#ffffff" onchange="updateLight('color')">
+        <label>Intensity</label><input type="range" id="light-intensity" min="0" max="3" step="0.1" value="1" oninput="updateLight('intensity')">
+        <label>Direction X</label><input type="range" id="light-dir-x" min="-1" max="1" step="0.1" value="-0.5" oninput="updateLight('dir')">
+        <label>Direction Y</label><input type="range" id="light-dir-y" min="-1" max="1" step="0.1" value="-1" oninput="updateLight('dir')">
+        <label>Direction Z</label><input type="range" id="light-dir-z" min="-1" max="1" step="0.1" value="-0.5" oninput="updateLight('dir')">
+        <div class="row" style="margin-top:6px">
+          <button onclick="addLight('point')">+ Point</button>
+          <button onclick="addLight('spot')">+ Spot</button>
+          <button onclick="presetLight('daylight')">Daylight</button>
+          <button onclick="presetLight('evening')">Evening</button>
+        </div>
+      </div>
+    </div>
+    <div class="panel-section">
+      <div class="panel-header" onclick="togglePanel(this)">Camera</div>
+      <div class="panel-body" id="camera-panel">
+        <label>FOV</label><input type="range" min="20" max="120" value="50" oninput="camera.fov=this.value;camera.updateProjectionMatrix()">
+        <div class="row" style="margin-top:6px">
+          <button onclick="saveCameraView()">Save View</button>
+          <button onclick="addPathKeyframe()">+ Keyframe</button>
+          <button onclick="previewPath()">Preview Path</button>
+        </div>
+        <div id="camera-views" style="margin-top:8px;max-height:120px;overflow-y:auto"></div>
+      </div>
+    </div>
+    <div class="panel-section">
+      <div class="panel-header" onclick="togglePanel(this)">Placement Validation <button onclick="validatePlacement()" style="font-size:9px;padding:2px 6px" class="primary">Check</button></div>
+      <div class="panel-body" id="validation-panel-body"><div style="color:#8b949e;font-size:10px">Click Check to validate</div></div>
+    </div>
+    <div class="panel-section">
+      <div class="panel-header" onclick="togglePanel(this)" style="color:#3fb950">AI Design</div>
+      <div class="panel-body" id="ai-panel">
+        <label>What would you like to design?</label>
+        <textarea id="ai-request" style="width:100%;height:60px;background:#0d1117;border:1px solid #30363d;color:#c9d1d9;border-radius:4px;font-size:11px;padding:4px;resize:vertical" placeholder="e.g. Furnish the living room with a modern 6-seat layout"></textarea>
+        <label>Goal</label>
+        <select id="ai-objective">
+          <option value="furnish_room">Furnish Room</option><option value="improve_layout">Improve Layout</option>
+          <option value="modern_interior">Modern Interior</option><option value="minimal_interior">Minimal Interior</option>
+          <option value="family_friendly">Family Friendly</option><option value="office_layout">Office Layout</option>
+          <option value="improve_lighting">Improve Lighting</option>
+          <option value="recommend_floor_finishes">Floor Finishes</option>
+          <option value="recommend_wall_finishes">Wall Finishes</option>
+          <option value="custom">Custom</option>
+        </select>
+        <label>Style</label>
+        <select id="ai-style"><option value="">Auto</option><option value="modern">Modern</option><option value="minimal">Minimal</option><option value="family">Family</option><option value="office">Office</option></select>
+        <label>Budget</label>
+        <select id="ai-budget"><option value="unspecified">Any</option><option value="economy">Economy</option><option value="standard">Standard</option><option value="premium">Premium</option></select>
+        <div class="row" style="margin-top:6px">
+          <button onclick="submitAIRequest()" class="primary">Generate AI Proposal</button>
+        </div>
+        <div id="ai-status" style="font-size:10px;color:#8b949e;margin-top:4px"></div>
+        <div id="ai-proposal-list" style="margin-top:8px;max-height:300px;overflow-y:auto"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://unpkg.com/three@0.147.0/build/three.min.js"></script>
+<script src="https://unpkg.com/three@0.147.0/examples/js/controls/OrbitControls.js"></script>
+<script src="https://unpkg.com/three@0.147.0/examples/js/controls/TransformControls.js"></script>
+
+<script>
+// ════════════════════════ STATE ════════════════════════
+const API = 'http://localhost:8000';
+let projId = '', sceneId = '', draftId = '', sceneVersion = 1;
+let scene, camera, renderer, controls, transformControls;
+let studioObjects = [], selectedObject = null, currentTool = 'select';
+let furnitureItems = [], cameraViews = [], cameraPathPoints = [];
+let undoStack = [], redoStack = [], saveCounter = 0, dirty = false;
+let autosaveTimer = null, pendingSyncOps = [];
+const raycaster = new THREE.Raycaster(), mouse = new THREE.Vector2();
+
+// ════════════════════════ API ════════════════════════
+
+async function api(method, path, body) {
+  const h = {'Content-Type':'application/json'};
+  const r = await fetch(API+path, {method,headers:h,credentials:'include',
+    body: body ? JSON.stringify(body) : undefined});
+  if (!r.ok) { const e = await r.json().catch(()=>({})); throw e; }
+  return r.json();
+}
+
+function setSaveState(msg) { document.getElementById('save-state').textContent = msg||'No changes'; }
+
+// ════════════════════════ INIT ════════════════════════
+
+async function init() {
+  // Auto-login for standalone window
+  await ensureAuth();
+
+  projId = (window.opener||window.parent||{}).projId || '';
+  if (!projId) projId = prompt('Project ID:') || '';
+
+  initViewer();
+  await loadFurniture();
+  await loadDraft();
+  if (projId) renderSceneTree();
+}
+
+async function ensureAuth() {
+  try {
+    const r = await fetch(API+'/api/v1/auth/refresh',{method:'POST',credentials:'include'});
+    if (r.ok) return; // Session still valid
+  } catch(e) { /* network error, continue to login */ }
+  // No valid session — auto-login
+  try {
+    const r = await fetch(API+'/api/v1/auth/login',{
+      method:'POST',credentials:'include',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({provider:'google',oauth_token:'demo'})
+    });
+    if (!r.ok) console.log('Auth login failed', r.status);
+  } catch(e2) { console.log('Auth failed',e2); }
+}
+
+function initViewer() {
+  const vp = document.getElementById('viewport');
+  scene = new THREE.Scene(); scene.background = new THREE.Color(0x1a1a2e);
+  scene.fog = new THREE.Fog(0x1a1a2e, 5000, 50000);
+
+  camera = new THREE.PerspectiveCamera(50, vp.clientWidth/vp.clientHeight, 10, 100000);
+  camera.position.set(8000, 6000, 8000); camera.lookAt(0, 1200, 0);
+
+  renderer = new THREE.WebGLRenderer({antialias:true});
+  renderer.setSize(vp.clientWidth, vp.clientHeight);
+  renderer.setPixelRatio(window.devicePixelRatio);
+  renderer.shadowMap.enabled = true;
+  vp.appendChild(renderer.domElement);
+
+  controls = new THREE.OrbitControls(camera, renderer.domElement);
+  controls.enableDamping = true; controls.dampingFactor = 0.1;
+  controls.target.set(0, 1200, 0); controls.update();
+
+  transformControls = new THREE.TransformControls(camera, renderer.domElement);
+  transformControls.addEventListener('dragging-changed', e => controls.enabled = !e.value);
+  transformControls.addEventListener('objectChange', onTransformChange);
+  scene.add(transformControls);
+
+  const ambient = new THREE.AmbientLight(0x666677, 0.5); ambient.name = 'ambient'; scene.add(ambient);
+  const sun = new THREE.DirectionalLight(0xfffaf0, 1.2); sun.name = 'sun';
+  sun.position.set(5000, 8000, 5000); sun.castShadow = true; scene.add(sun);
+
+  const grid = new THREE.GridHelper(20000, 40, 0x444444, 0x222222); scene.add(grid);
+  const ground = new THREE.Mesh(new THREE.PlaneGeometry(20000,20000), new THREE.MeshStandardMaterial({color:0x333333,roughness:0.9}));
+  ground.rotation.x = -Math.PI/2; ground.receiveShadow = true; scene.add(ground);
+
+  renderer.domElement.addEventListener('click', onViewportClick);
+  window.addEventListener('resize', ()=>{
+    const w=vp.clientWidth,h=vp.clientHeight;
+    camera.aspect=w/h; camera.updateProjectionMatrix();
+    renderer.setSize(w,h);
+  });
+  window.addEventListener('keydown', onKeyDown);
+  animate();
+}
+
+function animate() {
+  requestAnimationFrame(animate);
+  controls.update();
+  renderer.render(scene, camera);
+  const p = camera.position;
+  document.getElementById('coord-display').textContent =
+    `Pos: ${p.x.toFixed(0)}, ${p.y.toFixed(0)}, ${p.z.toFixed(0)} | Triangles: ${renderer.info.render.triangles}`;
+}
+
+// ════════════════════════ DRAFT ════════════════════════
+
+async function loadDraft() {
+  try {
+    const d = await api('GET', `/api/v5/studio/draft/${projId}`);
+    if (d.has_draft && d.draft) {
+      draftId = d.draft.draft_id;
+      sceneVersion = d.draft.source_scene_version || 1;
+      sceneId = d.draft.source_scene_id;
+      saveCounter = d.draft.save_counter || 0;
+      await loadScene(sceneId);
+      // Restore draft state
+      if (d.draft.draft_data) {
+        restoreDraftState(d.draft.draft_data);
+      }
+      setSaveState('Draft loaded');
+    } else if (d.source_scene) {
+      sceneId = d.source_scene.scene_id;
+      sceneVersion = d.source_scene.version || 1;
+      await loadScene(sceneId);
+    }
+  } catch(e) { console.log('No draft yet', e); }
+}
+
+async function loadScene(sceneId) {
+  if (!sceneId) return;
+  try {
+    const d = await api('GET', `/api/v4/projects/${projId}/scene`);
+    if (d.objects && d.objects.length > 0) {
+      buildSceneObjects(d.objects);
+    }
+    if (d.bbox) fitCameraToBbox(d.bbox);
+    return d;
+  } catch(e) { console.log('No scene to load'); }
+}
+
+function buildSceneObjects(objects) {
+  const colors = {wall_solid:0xd4c5b9,floor_slab:0xb8956b,ceiling_surface:0xffffff,door_element:0x8b6914,window_element:0xa8c8e8,roof_element:0x4a4a55};
+
+  objects.forEach(obj => {
+    const color = colors[obj.type] || 0x888888;
+    let mesh;
+    if (obj.properties?.bbox) {
+      const b = obj.properties.bbox;
+      mesh = new THREE.Mesh(
+        new THREE.BoxGeometry(Math.max((b.max_x-b.min_x)||100,10), Math.max((b.max_y-b.min_y)||2500,10), Math.max((b.max_z-b.min_z)||100,10)),
+        new THREE.MeshStandardMaterial({color, roughness:0.8}));
+      mesh.position.set((b.min_x+b.max_x)/2, (b.min_y+b.max_y)/2, (b.min_z+b.max_z)/2);
+    } else {
+      mesh = new THREE.Mesh(new THREE.BoxGeometry(200,200,200), new THREE.MeshStandardMaterial({color}));
+    }
+    mesh.castShadow = true; mesh.receiveShadow = true;
+    mesh.userData = {id:obj.id, type:obj.type, label:obj.label||obj.type, visible:obj.visible!==false, locked:false, color, originalColor:color};
+    studioObjects.push(mesh);
+    scene.add(mesh);
+  });
+}
+
+function fitCameraToBbox(bbox) {
+  const cx=(bbox.min[0]+bbox.max[0])/2, cy=(bbox.min[1]+bbox.max[1])/2, cz=(bbox.min[2]+bbox.max[2])/2;
+  const sx=bbox.max[0]-bbox.min[0], sy=bbox.max[1]-bbox.min[1], sz=bbox.max[2]-bbox.max[2];
+  const dist = Math.max(sx,sy,sz)*1.5;
+  camera.position.set(cx+dist*0.6, cy+dist*0.5, cz+dist*0.6);
+  controls.target.set(cx,cy,cz); controls.update();
+}
+
+// ════════════════════════ SELECTION ════════════════════════
+
+function onViewportClick(event) {
+  const rect = renderer.domElement.getBoundingClientRect();
+  mouse.x = ((event.clientX-rect.left)/rect.width)*2-1;
+  mouse.y = -((event.clientY-rect.top)/rect.height)*2+1;
+  raycaster.setFromCamera(mouse, camera);
+  // Include children of furniture groups
+  const allTargets = [];
+  studioObjects.forEach(o => {
+    if (o.isGroup) o.children.forEach(c => allTargets.push(c));
+    else allTargets.push(o);
+  });
+  const hits = raycaster.intersectObjects(allTargets.filter(o=>o.visible));
+  if (hits.length>0) {
+    const obj = hits[0].object;
+    // If child of a furniture group, select the group
+    const parent = studioObjects.find(s => s.isGroup && s.children.includes(obj));
+    selectObject(parent || obj);
+  }
+  else deselectObject();
+}
+
+function selectObject(obj) {
+  if (selectedObject) {
+    if (selectedObject.isGroup) selectedObject.children.forEach(c => { if(c.material&&c.material.emissive) c.material.emissive.setHex(0); });
+    else if (selectedObject.material?.emissive) selectedObject.material.emissive.setHex(0);
+  }
+  selectedObject = obj;
+  if (obj.isGroup) obj.children.forEach(c => { if(c.material&&c.material.emissive) c.material.emissive.setHex(0x222222); });
+  else if (obj.material?.emissive) obj.material.emissive.setHex(0x222222);
+  updatePropertiesPanel();
+  if (currentTool !== 'select') transformControls.attach(obj);
+}
+
+function deselectObject() {
+  if (selectedObject) {
+    if (selectedObject.isGroup) selectedObject.children.forEach(c => { if(c.material&&c.material.emissive) c.material.emissive.setHex(0); });
+    else if (selectedObject.material?.emissive) selectedObject.material.emissive.setHex(0);
+  }
+  selectedObject = null;
+  transformControls.detach();
+  document.getElementById('props-panel').innerHTML = '<div style="color:#8b949e">Select an object</div>';
+}
+
+function updatePropertiesPanel() {
+  if (!selectedObject) return;
+  const d = selectedObject.userData;
+  const p = selectedObject.position, r = selectedObject.rotation, s = selectedObject.scale;
+  document.getElementById('props-panel').innerHTML =
+    `<label>Name</label><input value="${d.label||d.type}" onchange="renameObject(this.value)">
+    <label>Type</label><div style="font-size:11px;color:#58a6ff">${d.type}</div>
+    <label>Position (mm)</label>
+    <div class="col2"><input type="number" value="${p.x.toFixed(0)}" onchange="moveObject('x',+this.value)">
+    <input type="number" value="${p.y.toFixed(0)}" onchange="moveObject('y',+this.value)">
+    <input type="number" value="${p.z.toFixed(0)}" onchange="moveObject('z',+this.value)"></div>
+    <label>Rotation</label>
+    <div class="col2"><input type="number" value="${(r.x*180/Math.PI).toFixed(0)}" onchange="rotateObject('x',+this.value)">
+    <input type="number" value="${(r.y*180/Math.PI).toFixed(0)}" onchange="rotateObject('y',+this.value)">
+    <input type="number" value="${(r.z*180/Math.PI).toFixed(0)}" onchange="rotateObject('z',+this.value)"></div>
+    <label>Scale</label>
+    <div class="col2"><input type="number" value="${s.x.toFixed(1)}" onchange="scaleObject('x',+this.value)" step="0.1">
+    <input type="number" value="${s.y.toFixed(1)}" onchange="scaleObject('y',+this.value)" step="0.1">
+    <input type="number" value="${s.z.toFixed(1)}" onchange="scaleObject('z',+this.value)" step="0.1"></div>
+    <label>Color Override</label><input type="color" value="#${d.color?.toString(16).padStart(6,'0')||'888888'}" onchange="changeColor(this.value)">
+    <div class="row" style="margin-top:6px"><button onclick="toggleLock()">${d.locked?'Unlock':'Lock'}</button></div>`;
+}
+
+function moveObject(axis, val) { if(selectedObject){selectedObject.position[axis]=val; markDirty('move');} }
+function rotateObject(axis, deg) { if(selectedObject){selectedObject.rotation[axis]=deg*Math.PI/180; markDirty('rotate');} }
+function scaleObject(axis, val) { if(selectedObject&&val>0.01){selectedObject.scale[axis]=val; markDirty('scale');} }
+function changeColor(hex) { 
+  if(!selectedObject) return; 
+  if(selectedObject.isGroup) {
+    selectedObject.children.forEach(c => { if(c.material&&c.material.color) c.material.color.set(hex); });
+  } else {
+    selectedObject.material.color.set(hex);
+  }
+  selectedObject.userData.color=hex; markDirty('color');
+}
+function renameObject(name) { if(selectedObject){selectedObject.userData.label=name; markDirty('rename');} }
+function toggleLock() { if(selectedObject){selectedObject.userData.locked=!selectedObject.userData.locked; updatePropertiesPanel();} }
+
+// ════════════════════════ TOOLS ════════════════════════
+
+function setTool(tool) {
+  currentTool = tool;
+  ['select','translate','rotate','scale'].forEach(t=>document.getElementById('btn-'+t).classList.remove('primary'));
+  document.getElementById('btn-'+tool).classList.add('primary');
+  if (tool==='select'){transformControls.detach();controls.enabled=true;}
+  else{transformControls.setMode(tool);if(selectedObject)transformControls.attach(selectedObject);controls.enabled=false;}
+}
+
+function onTransformChange() {
+  if (!selectedObject) return;
+  markDirty(currentTool==='translate'?'move':currentTool==='rotate'?'rotate':'scale');
+}
+
+// ════════════════════════ OBJECT OPERATIONS ════════════════════════
+
+function deleteSelected() {
+  if (!selectedObject) return;
+  const obj = selectedObject;
+  pushUndo({type:'ADD_OBJECT',object_id:obj.userData.id,object_type:obj.userData.type,before_state:serializeObject(obj)});
+  scene.remove(obj); studioObjects=studioObjects.filter(o=>o!==obj);
+  transformControls.detach(); selectedObject=null;
+  markDirty('remove'); renderSceneTree();
+}
+
+function duplicateSelected() {
+  if (!selectedObject) return;
+  const orig = selectedObject;
+  const clone = orig.clone(true); // deep clone with children
+  clone.position.x += 500;
+  clone.userData = {...orig.userData, id: crypto.randomUUID?.()||'obj-'+Date.now(), label:(orig.userData.label||'')+' (copy)'};
+  if (!clone.isGroup) clone.material = orig.material.clone();
+  studioObjects.push(clone); scene.add(clone);
+  selectObject(clone); markDirty('add'); renderSceneTree();
+}
+
+function toggleVisibility() {
+  if (!selectedObject) return;
+  selectedObject.visible = !selectedObject.visible;
+  selectedObject.userData.visible = selectedObject.visible;
+  markDirty('visibility'); renderSceneTree();
+}
+
+function serializeObject(obj) {
+  return {id:obj.userData.id, type:obj.userData.type, label:obj.userData.label,
+    position:[obj.position.x,obj.position.y,obj.position.z],
+    rotation:[obj.rotation.x,obj.rotation.y,obj.rotation.z],
+    scale:[obj.scale.x,obj.scale.y,obj.scale.z],
+    visible:obj.visible, color:obj.userData.color, locked:obj.userData.locked};
+}
+
+function applyOp(op) {
+  if (op.type==='ADD_OBJECT' || op.type==='add') {
+    const o = studioObjects.find(o=>o.userData.id===op.object_id);
+    if (!o && op.after_state) {
+      const s = op.after_state;
+      const mesh = new THREE.Mesh(new THREE.BoxGeometry(200,200,200), new THREE.MeshStandardMaterial({color:s.color||0x888888}));
+      mesh.userData = {id:op.object_id, type:op.object_type||'object', label:s.label||'Restored', visible:true, locked:false, color:s.color};
+      if (s.position) mesh.position.set(...s.position);
+      studioObjects.push(mesh); scene.add(mesh);
+    }
+  }
+  if (op.type==='REMOVE_OBJECT' || op.type==='remove' || op.type==='delete') {
+    const o = studioObjects.find(o=>o.userData.id===op.object_id);
+    if (o) { scene.remove(o); studioObjects=studioObjects.filter(x=>x!==o); }
+  }
+  if ((op.type==='move'||op.type==='rotate'||op.type==='scale') && op.after_state?.position) {
+    const o = studioObjects.find(o=>o.userData.id===op.object_id);
+    if (o && op.after_state.position) o.position.set(...op.after_state.position);
+    if (o && op.after_state.rotation) o.rotation.set(...op.after_state.rotation);
+    if (o && op.after_state.scale) o.scale.set(...op.after_state.scale);
+  }
+  renderSceneTree();
+}
+
+function applyReverseOp(op) {
+  if ((op.type==='move'||op.type==='rotate'||op.type==='scale') && op.before_state) {
+    const o = studioObjects.find(o=>o.userData.id===op.object_id);
+    if (o && op.before_state.position) o.position.set(...op.before_state.position);
+    if (o && op.before_state.rotation) o.rotation.set(...op.before_state.rotation);
+    if (o && op.before_state.scale) o.scale.set(...op.before_state.scale);
+  }
+  if (op.type==='add'||op.type==='ADD_OBJECT') {
+    const o = studioObjects.find(o=>o.userData.id===op.object_id);
+    if (o) { scene.remove(o); studioObjects=studioObjects.filter(x=>x!==o); if(selectedObject===o) deselectObject(); }
+  }
+  if (op.type==='remove'||op.type==='REMOVE_OBJECT'||op.type==='delete') {
+    applyOp({...op, type:'ADD_OBJECT'});
+  }
+  if (op.type==='color' && op.before_state?.color) {
+    const o = studioObjects.find(o=>o.userData.id===op.object_id);
+    if (o) {
+      if (o.isGroup) o.children.forEach(c => { if(c.material&&c.material.color) c.material.color.set(op.before_state.color); });
+      else o.material.color.set(op.before_state.color);
+      o.userData.color = op.before_state.color;
+    }
+  }
+  renderSceneTree();
+}
+
+// ════════════════════════ FURNITURE ════════════════════════
+
+async function loadFurniture() {
+  try { const d=await api('GET','/api/v5/studio/furniture'); furnitureItems=d.items; renderFurniture(); }
+  catch(e) { console.log('Furniture load error'); }
+}
+
+function renderFurniture(filter) {
+  const grid = document.getElementById('furniture-grid');
+  const search = (document.getElementById('furniture-search')?.value||'').toLowerCase();
+  const items = furnitureItems.filter(i=>!search||i.name.toLowerCase().includes(search)||i.category.includes(search));
+  const icons = {living_room:'',bedroom:'',dining:'',kitchen:'',office:'',bathroom:'',lighting:'',decoration:''};
+  grid.innerHTML = items.map(i=>
+    `<div class="furniture-card" draggable="true" ondragstart="dragFurniture(event,'${i.asset_id}','${i.name}',${JSON.stringify(i.dimensions)})" onclick="placeFurniture('${i.asset_id}')">
+      <div class="thumb">${icons[i.category]||''}</div><div>${i.name}</div></div>`
+  ).join('') || '<div style="color:#8b949e;padding:8px">No furniture loaded</div>';
+}
+
+function dragFurniture(e, id, name, dims) {
+  e.dataTransfer.setData('text/plain', JSON.stringify({id,name,dims}));
+}
+
+function placeFurniture(assetId) {
+  const item = furnitureItems.find(i=>i.asset_id===assetId);
+  if (!item) return;
+  const dims = item.dimensions;
+  const color = getFurnitureColor(item.category, item.subcategory);
+  const group = buildFurnitureGroup(item, dims, color);
+  group.position.copy(controls.target);
+  group.position.y += 0; // Place on floor
+  group.userData = {id:crypto.randomUUID?.()||'furn-'+Date.now(), type:'furniture', assetId, label:item.name, color, visible:true, locked:false, dimensions:dims};
+  studioObjects.push(group); scene.add(group);
+  selectObject(group); markDirty('add'); renderSceneTree();
+}
+
+// ── Furniture color palette ──
+function getFurnitureColor(category, subcategory) {
+  const palettes = {
+    living_room: {seating:0x4a6fa5, tables:0x8b6914, storage:0x6b4c3b},
+    bedroom: {bed:0x8b7355, storage:0x6b4c3b, seating:0x4a6fa5},
+    dining: {tables:0x8b6914, seating:0x5a4a3a},
+    kitchen: {appliances:0xb0b0b0, cabinets:0x8b7355, tables:0x8b6914},
+    office: {desk:0x6b4c3b, seating:0x333333, storage:0x8b7355},
+    bathroom: {fixtures:0xffffff, storage:0x8b7355},
+    lighting: {fixtures:0xffd700},
+    decoration: {default:0x996633}
+  };
+  const cat = palettes[category] || {};
+  return cat[subcategory] || cat[Object.keys(cat)[0]] || 0x996633;
+}
+
+// ── Build multi-part furniture ──
+function buildFurnitureGroup(item, dims, color) {
+  const group = new THREE.Group();
+  const [w, h, d] = dims;
+  const sub = item.subcategory || '';
+  const name = (item.name||'').toLowerCase();
+  const mat = (c) => new THREE.MeshStandardMaterial({color:c||color, roughness:0.6});
+  const box = (x,y,z,c) => {
+    const m = new THREE.Mesh(new THREE.BoxGeometry(x,y,z), mat(c));
+    m.castShadow=true; m.receiveShadow=true; return m;
+  };
+
+  if (sub === 'tables' || name.includes('table') || name.includes('desk')) {
+    // Table: flat top + 4 legs
+    const top = box(w, h*0.08, d, color); top.position.y = h*0.92; group.add(top);
+    const lw=w*0.06, ld=d*0.06, lh=h*0.88;
+    [[1,1],[-1,1],[1,-1],[-1,-1]].forEach(([sx,sz])=>{
+      const leg = box(lw, lh, ld, 0x5a3a2a);
+      leg.position.set(sx*(w/2-lw), lh/2, sz*(d/2-ld)); group.add(leg);
+    });
+  } else if (sub === 'seating' || name.includes('chair') || name.includes('sofa') || name.includes('armchair')) {
+    // Seat + backrest + armrests
+    const sh = h*0.45, sd = d*0.7;
+    const seat = box(w*0.9, sh*0.15, sd, color); seat.position.y = sh*0.5; group.add(seat);
+    const back = box(w*0.88, h*0.55, sd*0.12, color); back.position.set(0, sh+h*0.28, -sd/2+sd*0.06); group.add(back);
+    // Legs
+    [[1,1],[-1,1],[1,-1],[-1,-1]].forEach(([sx,sz])=>{
+      const leg = box(w*0.07, sh, w*0.07, 0x3a2a1a);
+      leg.position.set(sx*(w/2-w*0.08), sh/2, sz*(sd/2-w*0.08)); group.add(leg);
+    });
+    // Armrests for sofas/armchairs
+    if (name.includes('sofa') || name.includes('armchair')) {
+      [[1],[-1]].forEach(([sx]) => {
+        const arm = box(w*0.07, sh*0.7, sd, color);
+        arm.position.set(sx*(w/2-w*0.08), sh+sh*0.35, 0); group.add(arm);
+      });
+    }
+  } else if (sub === 'bed' || name.includes('bed')) {
+    // Bed: mattress + headboard + frame
+    const mh = h*0.55;
+    const mattress = box(w*0.9, mh, d*0.9, 0xf5f5f0); mattress.position.set(0, mh/2+h*0.03, d*0.02); group.add(mattress);
+    const headboard = box(w, h*0.45, d*0.06, color); headboard.position.set(0, h*0.35, -d/2+d*0.03); group.add(headboard);
+    // Frame base
+    const base = box(w, h*0.08, d, color); base.position.y = h*0.04; group.add(base);
+    // Pillow
+    const pillow = box(w*0.4, mh*0.5, d*0.2, 0xeeeeee); pillow.position.set(0, mh+h*0.15, -d/2+d*0.18); group.add(pillow);
+  } else if (sub === 'storage' || name.includes('wardrobe') || name.includes('cabinet') || name.includes('bedside')) {
+    // Storage: tall box with panel lines
+    const body = box(w, h, d, color); body.position.y = h/2; group.add(body);
+    // Door lines
+    const panelGap = box(w*0.02, h*0.7, d*0.01, 0x4a3a2a);
+    panelGap.position.set(0, h/2, d/2); group.add(panelGap);
+  } else if (sub === 'appliances' || sub === 'fixtures') {
+    const body = box(w, h, d, 0xd0d0d0); body.position.y = h/2; group.add(body);
+  } else if (sub === 'fixtures' && category==='lighting') {
+    // Ceiling lamp
+    const shade = new THREE.Mesh(new THREE.ConeGeometry(w*0.3, h*0.5, 16), mat(0xffeedd));
+    shade.position.y = h; shade.castShadow=true; group.add(shade);
+    const rod = box(w*0.03, h*0.4, w*0.03, 0x888888); rod.position.y = h*0.8; group.add(rod);
+  } else {
+    // Default: simple colored box
+    const body = box(w, h, d, color); body.position.y = h/2; group.add(body);
+  }
+
+  group.children.forEach(c=>{ c.castShadow=true; c.receiveShadow=true; });
+  group.userData = {isGroup:true};
+  return group;
+}
+
+// ════════════════════════ LIGHTING ════════════════════════
+
+let sunLight = null;
+function getSun() { if(!sunLight) sunLight = scene.children.find(c=>c.name==='sun'); return sunLight; }
+
+function updateLight(prop) {
+  const sun = getSun(); if(!sun) return;
+  if (prop==='color') sun.color.set(document.getElementById('light-color').value);
+  if (prop==='intensity') sun.intensity = +document.getElementById('light-intensity').value;
+  if (prop==='dir') {
+    const x=+document.getElementById('light-dir-x').value, y=+document.getElementById('light-dir-y').value, z=+document.getElementById('light-dir-z').value;
+    sun.position.set(x*10000, y*10000, z*10000);
+  }
+  markDirty('light');
+}
+
+function addLight(type) {
+  const pos = controls.target.clone();
+  let light;
+  if (type==='point'){light=new THREE.PointLight(0xffffff,1,5000);light.position.copy(pos).add(new THREE.Vector3(0,2000,0));}
+  else{light=new THREE.SpotLight(0xffffff,1,10000,Math.PI/6);light.position.copy(pos).add(new THREE.Vector3(0,4000,0));}
+  light.castShadow = true; light.name = type+'-'+Date.now();
+  scene.add(light); markDirty('light');
+}
+
+function presetLight(type) {
+  const sun = getSun(); if(!sun) return;
+  if (type==='daylight'){sun.color.set('#fffaf0');sun.intensity=1.2;sun.position.set(5000,8000,5000);document.getElementById('light-color').value='#fffaf0';document.getElementById('light-intensity').value='1.2';}
+  if (type==='evening'){sun.color.set('#ffaa55');sun.intensity=0.4;sun.position.set(5000,2000,8000);document.getElementById('light-color').value='#ffaa55';document.getElementById('light-intensity').value='0.4';}
+  markDirty('light');
+}
+
+// ════════════════════════ CAMERA ════════════════════════
+
+function saveCameraView() {
+  const view = {name:`View ${cameraViews.length+1}`,position: camera.position.toArray(), target:controls.target.toArray(), fov:camera.fov};
+  cameraViews.push(view);
+  renderCameraViews();
+  markDirty('camera');
+}
+
+function addPathKeyframe() {
+  cameraPathPoints.push({position:camera.position.toArray(), target:controls.target.toArray(), duration:2000});
+  renderCameraViews();
+  markDirty('camera');
+}
+
+async function previewPath() {
+  if (cameraPathPoints.length<2) return;
+  for (const pt of cameraPathPoints) {
+    camera.position.set(...pt.position); controls.target.set(...pt.target); controls.update();
+    await new Promise(r=>setTimeout(r, pt.duration));
+  }
+}
+
+function renderCameraViews() {
+  const el = document.getElementById('camera-views');
+  let html = cameraViews.map((v,i)=>`<div style="padding:2px 4px;cursor:pointer;font-size:10px" onclick="activateView(${i})">${i+1}. ${v.name}</div>`).join('');
+  if (cameraPathPoints.length>0) html += `<div style="margin-top:4px;font-size:10px;color:#58a6ff">Path: ${cameraPathPoints.length} keyframes</div>`;
+  el.innerHTML = html || '<div style="font-size:10px;color:#8b949e">No saved views</div>';
+}
+
+function activateView(idx) {
+  const v = cameraViews[idx]; if(!v) return;
+  camera.position.set(...v.position); controls.target.set(...v.target); camera.fov = v.fov; camera.updateProjectionMatrix(); controls.update();
+}
+
+// ════════════════════════ FINISHES ════════════════════════
+
+function updateFloorFinish() { markDirty('floor_finish'); }
+function updateWallFinish() { markDirty('wall_finish'); }
+function updateCeilingFinish() { markDirty('ceiling_finish'); }
+
+function applyFinishes() {
+  const floorColor = document.getElementById('finish-floor-color').value;
+  const wallColor = document.getElementById('finish-wall-color').value;
+  const ceilColor = document.getElementById('finish-ceiling-color').value;
+  const roomId = document.getElementById('finish-room-select').value;
+
+  studioObjects.forEach(o => {
+    if (roomId && o.userData.room_id !== roomId) return;
+    if (o.userData.type==='floor_slab') o.material.color.set(floorColor);
+    if (o.userData.type==='wall_solid') o.material.color.set(wallColor);
+    if (o.userData.type==='ceiling_surface') o.material.color.set(ceilColor);
+  });
+  markDirty('finishes');
+}
+
+// ════════════════════════ SCENE TREE ════════════════════════
+
+function renderSceneTree() {
+  const tree = document.getElementById('scene-tree');
+  const types = {};
+  studioObjects.forEach(o => {
+    const t = o.userData.type||'unknown';
+    if (!types[t]) types[t] = [];
+    types[t].push(o);
+  });
+
+  let html = '';
+  for (const [type, objs] of Object.entries(types)) {
+    html += `<div class="tree-item" style="font-weight:600"> ${type} <span class="count">${objs.length}</span></div>`;
+    objs.forEach((o, i) => {
+      const sel = o === selectedObject ? ' selected' : '';
+      const vis = o.visible ? '' : ' hidden';
+      const lock = o.userData.locked ? ' locked' : '';
+      html += `<div class="tree-item${sel}${vis}${lock}" onclick="selectObject(studioObjects[${studioObjects.indexOf(o)}])" style="padding-left:24px">${o.userData.label||type+' '+i}</div>`;
+    });
+  }
+  tree.innerHTML = html || '<div class="tree-item" style="color:#8b949e">No objects in scene</div>';
+
+  // Populate room selector for finishes
+  const rooms = [...new Set(studioObjects.filter(o=>o.userData.room_id).map(o=>o.userData.room_id))];
+  const sel = document.getElementById('finish-room-select');
+  sel.innerHTML = '<option value="">All Rooms</option>' + rooms.map(id=>`<option value="${id}">Room ${id.substring(0,8)}</option>`).join('');
+}
+
+// ════════════════════════ DURABLE UNDO/REDO (API-backed) ════════════════════════
+
+function pushUndo(op) {
+  undoStack.push({...op, timestamp:Date.now()});
+  if (undoStack.length > 200) undoStack.shift();
+  redoStack = [];
+  // Persist edit to API
+  api('POST', `/api/v5/studio/draft/${projId}/edits`, {
+    operations: [{
+      operation_type: op.type,
+      target_object_id: op.object_id,
+      object_type: op.object_type || 'object',
+      before_state: op.before_state || {},
+      after_state: op.after_state || {},
+    }]
+  }).catch(e => console.log('Edit persist failed', e));
+}
+
+async function studioUndo() {
+  if (undoStack.length === 0) return;
+  try {
+    const d = await api('POST', `/api/v5/studio/draft/${projId}/undo`, {});
+    if (d.undone) {
+      const op = undoStack.pop();
+      redoStack.push(op);
+      applyReverseOp(op);
+      markDirty('undo');
+      setSaveState('Undone: ' + d.operation_type);
+    }
+  } catch(e) {
+    // Fallback to local undo
+    if (undoStack.length > 0) {
+      const op = undoStack.pop();
+      redoStack.push(op);
+      applyReverseOp(op);
+      markDirty('undo');
+    }
+  }
+}
+
+async function studioRedo() {
+  if (redoStack.length === 0) return;
+  try {
+    const d = await api('POST', `/api/v5/studio/draft/${projId}/redo`, {});
+    if (d.redone) {
+      const op = redoStack.pop();
+      undoStack.push(op);
+      applyOp(op);
+      markDirty('redo');
+      setSaveState('Redone: ' + d.operation_type);
+    }
+  } catch(e) {
+    if (redoStack.length > 0) {
+      const op = redoStack.pop();
+      undoStack.push(op);
+      applyOp(op);
+      markDirty('redo');
+    }
+  }
+}
+
+
+// ════════════════════════ AUTOSAVE + RELOAD RESTORATION ════════════════════════
+
+function markDirty(type) {
+  dirty = true;
+  setSaveState('Unsaved changes');
+  if (selectedObject && type && selectedObject.userData.id) {
+    pushUndo({
+      type,
+      object_id: selectedObject.userData.id,
+      object_type: selectedObject.userData.type,
+      before_state: serializeObject(selectedObject),
+      after_state: serializeObject(selectedObject),
+    });
+  }
+  if (autosaveTimer) clearTimeout(autosaveTimer);
+  autosaveTimer = setTimeout(autosave, 2000);
+}
+
+async function autosave() {
+  if (!dirty || !projId) return;
+  setSaveState('Saving...');
+
+  // Collect full draft state
+  const draftData = {
+    objects: studioObjects.filter(o => o.userData.type === 'furniture').map(o => ({
+      ...serializeObject(o),
+      asset_id: o.userData.assetId,
+      dimensions: o.userData.dimensions || [200, 200, 200],
+    })),
+    furniture_instances: studioObjects.filter(o => o.userData.type === 'furniture').map(o => ({
+      instance_id: o.userData.id,
+      asset_id: o.userData.assetId,
+      label: o.userData.label,
+      position: [o.position.x, o.position.y, o.position.z],
+      rotation: [o.rotation.x, o.rotation.y, o.rotation.z],
+      scale: [o.scale.x, o.scale.y, o.scale.z],
+      color_override: o.userData.color,
+      dimensions: o.userData.dimensions || [200, 200, 200],
+      room_id: o.userData.room_id,
+      visible: o.visible,
+      locked: o.userData.locked,
+    })),
+    camera_views: cameraViews,
+    camera_paths: cameraPathPoints,
+    finishes: {
+      floor_color: document.getElementById('finish-floor-color')?.value || '#996633',
+      wall_color: document.getElementById('finish-wall-color')?.value || '#f0f0f0',
+      ceiling_color: document.getElementById('finish-ceiling-color')?.value || '#ffffff',
+      floor_type: document.getElementById('finish-floor-type')?.value || 'wood',
+    },
+    lights: {
+      color: document.getElementById('light-color')?.value || '#ffffff',
+      intensity: +document.getElementById('light-intensity')?.value || 1.0,
+      direction: [
+        +document.getElementById('light-dir-x')?.value || -0.5,
+        +document.getElementById('light-dir-y')?.value || -1.0,
+        +document.getElementById('light-dir-z')?.value || -0.5,
+      ],
+    },
+    source_scene_id: sceneId,
+    source_scene_version: sceneVersion,
+  };
+
+  try {
+    const d = await api('POST', `/api/v5/studio/draft/${projId}`, {
+      source_scene_id: sceneId,
+      source_scene_version: sceneVersion,
+      draft_data: draftData,
+    });
+    draftId = d.draft_id;
+    saveCounter = d.save_counter;
+    dirty = false;
+    setSaveState('Saved (' + saveCounter + ')');
+  } catch(e) {
+    setSaveState('Save failed — retrying');
+    // Queue for sync when back online
+    pendingSyncOps.push(...(draftData._last_ops || []));
+  }
+}
+
+async function restoreDraftState(draftData) {
+  if (!draftData) return;
+
+  // Restore furniture instances
+  const furniture_instances = draftData.furniture_instances || draftData.objects || [];
+  furniture_instances.forEach(fi => {
+    const existing = studioObjects.find(o => o.userData.id === fi.instance_id || o.userData.id === fi.id);
+    if (existing) {
+      existing.position.set(fi.position[0] || 0, fi.position[1] || 0, fi.position[2] || 0);
+      existing.rotation.set(fi.rotation[0] || 0, fi.rotation[1] || 0, fi.rotation[2] || 0);
+      existing.scale.set(fi.scale[0] || 1, fi.scale[1] || 1, fi.scale[2] || 1);
+      if (fi.color_override) {
+        const c = fi.color_override;
+        existing.material.color.set(typeof c === 'string' ? c : `#${c.toString(16).padStart(6, '0')}`);
+        existing.userData.color = c;
+      }
+      existing.visible = fi.visible !== false;
+      existing.userData.visible = fi.visible !== false;
+      existing.userData.locked = fi.locked || false;
+    } else {
+      // Create new furniture mesh using builder
+      const dims = fi.dimensions || [200, 200, 200];
+      const item = {name:fi.label||'Furniture', category:'decoration', subcategory:'default', dimensions:dims};
+      const color = fi.color_override || getFurnitureColor('decoration','default');
+      const group = buildFurnitureGroup(item, dims, color);
+      group.position.set(fi.position[0] || 0, fi.position[1] || 0, fi.position[2] || 0);
+      group.rotation.set(fi.rotation[0] || 0, fi.rotation[1] || 0, fi.rotation[2] || 0);
+      group.scale.set(fi.scale[0] || 1, fi.scale[1] || 1, fi.scale[2] || 1);
+      group.castShadow = true; group.receiveShadow = true;
+      group.userData = {
+        id: fi.instance_id || fi.id || 'furn-' + Date.now(),
+        type: 'furniture',
+        assetId: fi.asset_id,
+        label: fi.label || 'Furniture',
+        color: fi.color_override,
+        dimensions: dims,
+        room_id: fi.room_id,
+        visible: fi.visible !== false,
+        locked: fi.locked || false,
+      };
+      studioObjects.push(group);
+      scene.add(group);
+    }
+  });
+
+  // Restore finishes
+  const finishes = draftData.finishes || {};
+  if (finishes.floor_color) document.getElementById('finish-floor-color').value = finishes.floor_color;
+  if (finishes.wall_color) document.getElementById('finish-wall-color').value = finishes.wall_color;
+  if (finishes.ceiling_color) document.getElementById('finish-ceiling-color').value = finishes.ceiling_color;
+  if (finishes.floor_type) document.getElementById('finish-floor-type').value = finishes.floor_type;
+  applyFinishes();
+
+  // Restore lights
+  const lights = draftData.lights || {};
+  if (lights.color) document.getElementById('light-color').value = lights.color;
+  if (lights.intensity != null) document.getElementById('light-intensity').value = lights.intensity;
+  updateLight('color');
+  updateLight('intensity');
+
+  // Restore camera views
+  cameraViews = draftData.camera_views || [];
+  cameraPathPoints = draftData.camera_paths || [];
+  renderCameraViews();
+
+  // Restore edit history from server
+  try {
+    const hist = await api('GET', `/api/v5/studio/draft/${projId}/history`);
+    if (hist.history && hist.history.length > 0) {
+      // Rebuild undo stack from history markers
+      undoStack = [];
+      hist.history.forEach(op => {
+        undoStack.push({
+          type: op.operation_type,
+          object_id: op.target_object_id,
+          before_state: op.before_state,
+          after_state: op.after_state,
+        });
+      });
+    }
+  } catch(e) {}
+
+  renderSceneTree();
+  setSaveState('Draft restored (' + saveCounter + ')');
+}
+
+
+// ════════════════════════ PLACEMENT VALIDATION ════════════════════════
+
+let placementIssues = [];
+let lastValidationTime = 0;
+
+async function validatePlacement() {
+  const furniture = studioObjects.filter(o => o.userData.type === 'furniture').map(o => ({
+    instance_id: o.userData.id,
+    asset_id: o.userData.assetId,
+    position: [o.position.x, o.position.y, o.position.z],
+    dimensions: o.userData.dimensions || [200, 200, 200],
+    scale: [o.scale.x, o.scale.y, o.scale.z],
+    room_id: o.userData.room_id,
+  }));
+
+  if (furniture.length === 0) {
+    placementIssues = [];
+    renderValidationPanel();
+    return;
+  }
+
+  try {
+    const d = await api('POST', `/api/v5/studio/draft/${projId}/validate-placement`, {
+      furniture_instances: furniture,
+    });
+    placementIssues = d.issues || [];
+    lastValidationTime = Date.now();
+    renderValidationPanel();
+  } catch(e) {
+    // Run local fallback
+    runLocalPlacementCheck(furniture);
+    renderValidationPanel();
+  }
+}
+
+function runLocalPlacementCheck(furniture) {
+  placementIssues = [];
+  furniture.forEach(f => {
+    if (f.position[0] < -2000 || f.position[0] > 2000) {
+      placementIssues.push({object_id: f.instance_id, severity: 'warning', code: 'OUTSIDE_ROOM',
+        message: 'Furniture may be outside room bounds', suggested_action: 'Move inside the room boundary'});
+    }
+    const elev = f.position[1] || 0;
+    if (Math.abs(elev) > 50) {
+      placementIssues.push({object_id: f.instance_id, severity: 'warning', code: 'ELEVATION_CHECK',
+        message: `Elevation ${elev.toFixed(0)}mm may be incorrect`, suggested_action: 'Place at floor level (0mm)'});
+    }
+  });
+}
+
+function resolveAllValidObjects() {
+  // Remove issues for objects that are no longer violating
+  const furnitureIds = new Set(studioObjects.filter(o => o.userData.type === 'furniture').map(o => o.userData.id));
+  placementIssues = placementIssues.filter(issue => furnitureIds.has(issue.object_id));
+  if (placementIssues.length > 0 && Date.now() - lastValidationTime > 10000) {
+    // Re-validate periodically to clear stale issues
+    validatePlacement();
+  }
+}
+
+function renderValidationPanel() {
+  const panel = document.getElementById('validation-panel-body');
+  if (!panel) return;
+
+  const sevCounts = {blocking: 0, warning: 0, advisory: 0};
+  placementIssues.forEach(i => { if (sevCounts[i.severity] !== undefined) sevCounts[i.severity]++; });
+
+  if (placementIssues.length === 0) {
+    panel.innerHTML = '<div style="color:#3fb950;font-size:10px;padding:4px">No placement issues</div>';
+    return;
+  }
+
+  const sevColors = {blocking: '#f85149', warning: '#d29922', advisory: '#8b949e'};
+  let html = `<div style="font-size:9px;color:#8b949e;margin-bottom:4px">` +
+    `${sevCounts.blocking} blocking, ${sevCounts.warning} warnings, ${sevCounts.advisory} advisory</div>`;
+  html += placementIssues.map(i =>
+    `<div style="padding:4px 0;border-bottom:1px solid #21262d;cursor:pointer;font-size:10px" onclick="focusIssue('${i.object_id}')">
+      <span style="color:${sevColors[i.severity]||'#8b949e'}">[${i.severity.toUpperCase()}]</span> ${i.code}: ${i.message}
+      <div style="color:#8b949e;font-size:9px">${i.suggested_action||''}</div>
+    </div>`
+  ).join('');
+  panel.innerHTML = html;
+}
+
+function focusIssue(objectId) {
+  const obj = studioObjects.find(o => o.userData.id === objectId);
+  if (obj) {
+    selectObject(obj);
+    controls.target.copy(obj.position);
+    controls.update();
+  }
+}
+
+
+// ════════════════════════ STUDIO EXPORT ════════════════════════
+
+async function exportStudioScene() {
+  try {
+    // Get the latest committed version or use draft
+    const versions = await api('GET', `/api/v5/studio/versions/${projId}`);
+    const latestVer = versions.versions && versions.versions[0];
+    if (latestVer) {
+      const url = API + `/api/v5/studio/versions/${projId}/${latestVer.version_id}/export/glb`;
+      window.open(url, '_blank');
+      setSaveState('Studio GLB export: v' + latestVer.version_number);
+    } else {
+      alert('No committed version to export. Save a version first.');
+    }
+  } catch(e) {
+    // Fallback to Phase 4 export
+    const url = API + `/api/v4/projects/${projId}/scene/export/glb`;
+    window.open(url, '_blank');
+    setSaveState('Fallback GLB export (no studio version)');
+  }
+}
+
+
+// ════════════════════════ VERSIONING ════════════════════════
+
+async function commitVersion() {
+  if (!draftId) { alert('No draft to commit'); return; }
+  const name = prompt('Version name:', 'Studio Version ' + (saveCounter || 1));
+  if (!name) return;
+  const desc = prompt('Description:', '');
+  try {
+    await autosave();
+    const d = await api('POST', `/api/v5/studio/draft/${projId}/commit`, {name, description: desc || ''});
+    alert('Version ' + d.version_number + ' committed: ' + d.name + '\nLineage: ' + d.lineage);
+    setSaveState('Version ' + d.version_number + ' saved');
+  } catch(e) { alert('Commit failed: ' + (e.message || '')); }
+}
+
+function onKeyDown(e) {
+  if (e.ctrlKey && e.key==='z') { e.preventDefault(); studioUndo(); }
+  if (e.ctrlKey && e.key==='y') { e.preventDefault(); studioRedo(); }
+  if (e.key==='Delete' || e.key==='Backspace') { e.preventDefault(); deleteSelected(); }
+}
+
+function togglePanel(header) {
+  const body = header.nextElementSibling;
+  body.classList.toggle('collapsed');
+}
+
+// ════════════════════════ AI DESIGN ════════════════════════
+
+let aiJobId = null, aiPollTimer = null;
+let currentProposal = null;
+
+async function submitAIRequest() {
+  const text = document.getElementById('ai-request').value.trim();
+  if (!text) { alert('Enter a design request first'); return; }
+  document.getElementById('ai-status').textContent = 'Submitting AI job...';
+  try {
+    const d = await api('POST', `/api/v6/ai/projects/${projId}/design`, {
+      user_text: text, objective: document.getElementById('ai-objective').value,
+      style_preference: document.getElementById('ai-style').value,
+      budget_band: document.getElementById('ai-budget').value,
+    });
+    aiJobId = d.job_id;
+    document.getElementById('ai-status').innerHTML = '<span style="color:#58a6ff">AI job submitted. Polling...</span>';
+    startAIPolling();
+  } catch(e) { document.getElementById('ai-status').innerHTML = '<span style="color:#f85149">Error: '+(e.message||'Failed')+'</span>'; }
+}
+
+async function pollAIJob() {
+  if (!aiJobId) return;
+  try{
+    const d = await api('GET',`/api/v1/jobs/${aiJobId}`);
+    document.getElementById('ai-status').textContent = `AI: ${d.state} — ${(d.progress_pct||0).toFixed(0)}%`;
+    if(d.state==='COMPLETED'){if(aiPollTimer){clearInterval(aiPollTimer);aiPollTimer=null;}loadAIProposals();}
+  }catch(e){}
+}
+
+function startAIPolling(){if(aiPollTimer)clearInterval(aiPollTimer);aiPollTimer=setInterval(pollAIJob,3000);}
+
+async function loadAIProposals(){
+  try{
+    const d=await api('GET',`/api/v6/ai/projects/${projId}/proposals`);
+    const proposals=d.proposals||[];
+    const sc={pending:'#d29922',approved:'#3fb950',partially_approved:'#58a6ff',rejected:'#f85149'};
+    let html='';
+    proposals.forEach(p=>{html+=`<div style="padding:6px 0;border-bottom:1px solid #21262d;cursor:pointer" onclick="viewProposal('${p.proposal_id}')"><div style="font-size:11px;font-weight:600">${(p.objective||'').replace(/_/g,' ')} (${p.option_count||0} opts)</div><div style="font-size:9px;color:#8b949e">${(p.user_text||'').substring(0,60)}</div><span style="color:${sc[p.approval_state]||'#8b949e'};font-size:9px">${p.approval_state}</span></div>`;});
+    document.getElementById('ai-proposal-list').innerHTML=html||'<div style="color:#8b949e;font-size:10px">No proposals yet</div>';
+    document.getElementById('ai-status').textContent=`${proposals.length} proposal(s)`;
+  }catch(e){}
+}
+
+async function viewProposal(pid){
+  try{
+    const d=await api('GET',`/api/v6/ai/proposals/${pid}`);
+    currentProposal=d.proposal_data;
+    const opts=(d.proposal_data?.options||[]);
+    let html=`<div style="font-size:10px;margin-bottom:4px">${opts.length} options — ${d.provider}</div>`;
+    opts.forEach((opt,i)=>{html+=`<div style="padding:6px;margin:4px 0;background:#0d1117;border:1px solid #30363d;border-radius:4px;cursor:pointer" onclick="toggleOpt(${i})"><div style="font-weight:600;font-size:11px">Option ${i+1}: ${opt.name}</div><div style="font-size:9px;color:#8b949e">${opt.summary}</div><div style="margin-top:2px"><span style="color:#3fb950;font-size:9px">${(opt.furniture_additions||[]).length} add</span><span style="color:#f85149;font-size:9px;margin-left:6px">${(opt.furniture_removals||[]).length} rm</span></div><div id="od-${i}" style="display:none;margin-top:4px;font-size:9px">${(opt.proposed_edits||[]).slice(0,8).map(e=>`<div style="padding:2px 4px;margin:2px 0;background:#1f2937;border-radius:2px">${e.operation_type.replace(/_/g,' ')}: ${e.label} ${e.is_valid===false?'<span style="color:#f85149">[BLOCKED]</span>':''}<div style="color:#8b949e">${(e.rationale||'').substring(0,50)}</div></div>`).join('')}<div class="row" style="margin-top:4px"><button onclick="approveEdits('${pid}',${i})" class="primary" style="font-size:9px;padding:2px 6px">Approve</button><button onclick="rejectProposal('${pid}')" style="font-size:9px;padding:2px 6px">Reject</button></div></div></div>`;});
+    document.getElementById('ai-proposal-list').innerHTML=html;
+    document.getElementById('ai-status').textContent=`Viewing proposal — ${d.approval_state}`;
+  }catch(e){}
+}
+
+function toggleOpt(i){const e=document.getElementById('od-'+i);if(e)e.style.display=e.style.display==='none'?'block':'none';}
+
+async function approveEdits(pid,oidx){
+  try{const opt=currentProposal?.options?.[oidx];if(!opt)return;const ids=(opt.proposed_edits||[]).map(e=>e.edit_id);const d=await api('POST',`/api/v6/ai/proposals/${pid}/approve`,{approved_edit_ids:ids,rejected_edit_ids:[],option_index:oidx});document.getElementById('ai-status').innerHTML=`<span style="color:#3fb950">Approved! Branch: ${(d.ai_branch_draft_id||'').substring(0,8)}...</span>`;alert('Approved! '+d.approved_count+' edits applied to AI branch.');}catch(e){}
+}
+
+async function rejectProposal(pid){
+  try{await api('POST',`/api/v6/ai/proposals/${pid}/approve`,{approved_edit_ids:[],rejected_edit_ids:[],option_index:-1});document.getElementById('ai-status').textContent='Proposal rejected';document.getElementById('ai-proposal-list').innerHTML='';}catch(e){}
+}
+
+
+// ════════════════════════ STARTUP ════════════════════════
+
+init();
+</script>
+</body>
+</html>

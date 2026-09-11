@@ -1,0 +1,62 @@
+[
+  {
+    "eventId": "ae8dea31-d0c7-4dbd-bbac-f96173138344",
+    "eventType": "MOVE_WALL_ENDPOINT",
+    "timestamp": "2026-07-30T06:12:03.968680+00:00",
+    "projectId": "real-2d-45x45-32c4e1ba-151",
+    "sourceRevisionId": "rev_001_original",
+    "targetRevisionId": "rev_002_staging_1f1e130d",
+    "pascalSceneId": "93dc61e1b085",
+    "validationStatus": "valid",
+    "origin": "staging_test",
+    "checksum": "5587440ff041012a3e0b5c895371aac2e7253a04d837fbe5ba7accd335c0bd89"
+  },
+  {
+    "eventId": "02b09c4c-86cd-4fcc-be90-b2e44c6ee04c",
+    "eventType": "CHANGE_WALL_THICKNESS",
+    "timestamp": "2026-07-30T06:12:03.968680+00:00",
+    "projectId": "real-2d-45x45-32c4e1ba-151",
+    "sourceRevisionId": "rev_001_original",
+    "targetRevisionId": "rev_002_staging_1f1e130d",
+    "pascalSceneId": "93dc61e1b085",
+    "validationStatus": "valid",
+    "origin": "staging_test",
+    "checksum": "0177ab03bc0a18468c62dbdad203b19045e9b668686208e5f2918ecb26342bfc"
+  },
+  {
+    "eventId": "2ff77b00-2a4d-40ac-90be-e73b30e5ce99",
+    "eventType": "MOVE_DOOR",
+    "timestamp": "2026-07-30T06:12:03.968680+00:00",
+    "projectId": "real-2d-45x45-32c4e1ba-151",
+    "sourceRevisionId": "rev_001_original",
+    "targetRevisionId": "rev_002_staging_1f1e130d",
+    "pascalSceneId": "93dc61e1b085",
+    "validationStatus": "valid",
+    "origin": "staging_test",
+    "checksum": "a123092c7644dedab24e7dd1006aeb5abbd68a188dbf52e1350a12b642f548cd"
+  },
+  {
+    "eventId": "92a155b4-57a1-42ad-a0d1-c6ca6f081bcc",
+    "eventType": "ADD_WINDOW",
+    "timestamp": "2026-07-30T06:12:03.968680+00:00",
+    "projectId": "real-2d-45x45-32c4e1ba-151",
+    "sourceRevisionId": "rev_001_original",
+    "targetRevisionId": "rev_002_staging_1f1e130d",
+    "pascalSceneId": "93dc61e1b085",
+    "validationStatus": "valid",
+    "origin": "staging_test",
+    "checksum": "916750cdddfa6f55316675f44ea9fa70877a4bbd4b76f725d0c7ab40d0050813"
+  },
+  {
+    "eventId": "ffeff547-9017-439c-9a00-ccb7fd7855e5",
+    "eventType": "DELETE_WALL",
+    "timestamp": "2026-07-30T06:12:03.968680+00:00",
+    "projectId": "real-2d-45x45-32c4e1ba-151",
+    "sourceRevisionId": "rev_001_original",
+    "targetRevisionId": "rev_002_staging_1f1e130d",
+    "pascalSceneId": "93dc61e1b085",
+    "validationStatus": "valid",
+    "origin": "staging_test",
+    "checksum": "f12c7d086bf1b77db389fcaeee61b414a9bb42eb39446d550dfc4eb570a2a3a8"
+  }
+]

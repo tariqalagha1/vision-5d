@@ -1,0 +1,7 @@
+{
+  "maxDelta": 0.0,
+  "withinTolerance": true,
+  "toleranceM": 0.0005,
+  "deltas": [],
+  "stableIdPreservation": true
+}

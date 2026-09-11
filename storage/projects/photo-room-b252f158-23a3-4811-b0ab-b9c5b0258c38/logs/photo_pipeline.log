@@ -1,0 +1,27 @@
+2026-07-29 09:20:30,657 [INFO] MISSION: V5D-PHOTO-PIPELINE-REPO-TEST-001
+2026-07-29 09:20:30,657 [INFO] Job ID: b252f158-23a3-4811-b0ab-b9c5b0258c38
+2026-07-29 09:20:30,657 [INFO] Project ID: 94270c73-473b-4b48-8fda-4f7cdf774afb
+2026-07-29 09:20:30,657 [INFO] Project: PHOTO-ROOM-b252f158
+2026-07-29 09:20:30,657 [INFO] ============================================================
+2026-07-29 09:20:30,657 [INFO] STAGE 1: PHOTO INGESTION
+2026-07-29 09:20:30,775 [INFO] Source: C:\Users\admin\workspaces\vision-5d\test_data\1.webp
+2026-07-29 09:20:30,776 [INFO] Size: 161854 bytes, 1200x1500
+2026-07-29 09:20:30,776 [INFO] SHA-256: 3b39eeaa3907409677fa205f13c3bc93f49a1a5f6d4bbec52878df4d76ed8732
+2026-07-29 09:20:30,776 [INFO] Copy verified: True
+2026-07-29 09:20:30,776 [INFO] ============================================================
+2026-07-29 09:20:30,776 [INFO] STAGE 2: PHOTO VALIDATION
+2026-07-29 09:20:31,648 [INFO] Validation: PASS
+2026-07-29 09:20:31,648 [INFO]   readable_image: True
+2026-07-29 09:20:31,648 [INFO]   not_blank: True
+2026-07-29 09:20:31,648 [INFO]   pixel_std_dev: 59.308407633645835
+2026-07-29 09:20:31,648 [INFO]   not_corrupted: True
+2026-07-29 09:20:31,648 [INFO]   dimensions_reasonable: True
+2026-07-29 09:20:31,648 [INFO]   valid_photo_format: True
+2026-07-29 09:20:31,648 [INFO]   reasonable_file_size: True
+2026-07-29 09:20:31,648 [INFO] ============================================================
+2026-07-29 09:20:31,648 [INFO] STAGE 3: NVIDIA VISION ADAPTER
+2026-07-29 09:20:31,858 [INFO] NVIDIA adapter created for endpoint: https://integrate.api.nvidia.com/v1/chat/completions
+2026-07-29 09:20:31,858 [INFO] Model: nvidia/llama-3.1-nemotron-nano-vl-8b-v1
+2026-07-29 09:20:31,858 [INFO] ============================================================
+2026-07-29 09:20:31,858 [INFO] STAGE 4: NVIDIA VISION ANALYSIS
+2026-07-29 09:20:31,858 [ERROR] NVIDIA_API_KEY not configured

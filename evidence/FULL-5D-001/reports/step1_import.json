@@ -1,0 +1,18 @@
+{
+  "file_name": "1.dwg",
+  "file_type": "DWG",
+  "dwg_version": "R2000",
+  "file_size_bytes": 626864,
+  "sha256": "a5333f3c58ceb98d22b1ae7691b09c39c1513f7c13c5cebb6d577006e8a2dc73",
+  "converter_used": "LibreDWG",
+  "fidelity": "FULL FIDELITY",
+  "import_duration_ms": 1813.0290508270264,
+  "entity_count": 4446,
+  "layer_count": 13,
+  "walls": 1087,
+  "rooms": 1,
+  "doors": 722,
+  "windows": 0,
+  "floors": 1,
+  "ceilings": 1
+}

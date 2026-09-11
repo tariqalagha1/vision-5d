@@ -1,0 +1,37 @@
+{
+  "qa_method": "coordinate_comparison (structural overrides visual)",
+  "reviewer": "nvidia_vision",
+  "questions": [
+    {
+      "q": "Are 5 requested edits visibly present?",
+      "a": "Yes \u2014 1 endpoint moved, 1 thickness changed, 1 door moved, 1 window added, 1 wall deleted",
+      "pass": true
+    },
+    {
+      "q": "Did unrelated geometry remain unchanged?",
+      "a": "Yes \u2014 59 unchanged nodes, avg delta 0.0m",
+      "pass": true
+    },
+    {
+      "q": "Is the new window attached to intended wall?",
+      "a": "Confirmed \u2014 window on wall wall_v5d_027 (exterior)",
+      "pass": true
+    },
+    {
+      "q": "Is moved door still attached to intended wall?",
+      "a": "Confirmed \u2014 door door_v5d_000 still references wall wall_v5d_001",
+      "pass": true
+    },
+    {
+      "q": "Is deleted geometry absent?",
+      "a": "Confirmed \u2014 wall wall_v5d_053 removed, 0 residual refs",
+      "pass": true
+    },
+    {
+      "q": "Major visual corruption?",
+      "a": "None detected \u2014 coordinate analysis shows clean edits",
+      "pass": true
+    }
+  ],
+  "verdict": "PASS"
+}

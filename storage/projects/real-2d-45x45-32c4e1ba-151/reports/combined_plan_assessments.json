@@ -1,0 +1,52 @@
+{
+  "architectural_plan_01": {
+    "plan": "architectural_plan_01",
+    "total_assessments": 6,
+    "full_image": "CLEAR_ARCHITECTURAL_PLAN",
+    "crop_classifications": [
+      "CLEAR_ARCHITECTURAL_PLAN",
+      "PARTIALLY_RENDERED",
+      "CLEAR_ARCHITECTURAL_PLAN",
+      "PARTIALLY_RENDERED",
+      "CLEAR_ARCHITECTURAL_PLAN"
+    ],
+    "clear_count": 4,
+    "partial_count": 2,
+    "contradictions": false,
+    "crop_evidence_consensus": {
+      "wall": 5,
+      "partition": 5,
+      "door": 3,
+      "window": 3,
+      "stair": 3,
+      "room": 5,
+      "space": 5
+    },
+    "verdict": "PASS"
+  },
+  "elevation_detail_01": {
+    "plan": "elevation_detail_01",
+    "total_assessments": 6,
+    "full_image": "CLEAR_ARCHITECTURAL_PLAN",
+    "crop_classifications": [
+      "CLEAR_ARCHITECTURAL_PLAN",
+      "PARTIALLY_RENDERED",
+      "CLEAR_ARCHITECTURAL_PLAN",
+      "CLEAR_ARCHITECTURAL_PLAN",
+      "CLEAR_ARCHITECTURAL_PLAN"
+    ],
+    "clear_count": 5,
+    "partial_count": 1,
+    "contradictions": false,
+    "crop_evidence_consensus": {
+      "wall": 5,
+      "partition": 5,
+      "door": 4,
+      "window": 4,
+      "stair": 4,
+      "room": 5,
+      "space": 5
+    },
+    "verdict": "PASS"
+  }
+}

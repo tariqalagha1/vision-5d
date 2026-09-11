@@ -1,0 +1,75 @@
+{
+  "mission": "V5D-DASHBOARD-DATA-INTEGRATION-001",
+  "timestamp": "2026-07-31T19:50:18.240944",
+  "endpoints": [
+    {
+      "method": "GET",
+      "path": "/api/v1/dashboard/stats",
+      "auth_required": true,
+      "status": "LIVE",
+      "description": "Aggregate dashboard statistics",
+      "fields": [
+        "total_projects",
+        "active_projects",
+        "total_scenes",
+        "total_revisions",
+        "conflict_count",
+        "failed_sync_count",
+        "ai_providers_configured",
+        "ai_providers_healthy",
+        "sync_health"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/dashboard/activity",
+      "auth_required": true,
+      "status": "LIVE",
+      "description": "Recent activity feed",
+      "query_params": [
+        "limit"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/dashboard/pascal-health",
+      "auth_required": true,
+      "status": "LIVE",
+      "description": "Pascal integration health (credential-safe)",
+      "fields": [
+        "status",
+        "adapter_installed",
+        "pascal_version",
+        "credentials_exposed_to_browser"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/workspaces/{id}/projects",
+      "auth_required": true,
+      "status": "LIVE",
+      "description": "List projects by workspace"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/workspaces/{id}/projects",
+      "auth_required": true,
+      "status": "LIVE",
+      "description": "Create new project"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/workspaces/{id}/providers",
+      "auth_required": true,
+      "status": "LIVE",
+      "description": "List AI providers"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/projects/{id}/status",
+      "auth_required": true,
+      "status": "LIVE",
+      "description": "Transition project state"
+    }
+  ]
+}

@@ -1,0 +1,262 @@
+{
+  "mission": "V5D-3.0-DELIVERY-CLAIM-CHALLENGE-001",
+  "parent_mission": "V5D-3.0-PRODUCTION-VALIDATION-AND-QA-001",
+  "verdict": "NOT VERIFIED",
+  "verdict_timestamp": "2026-07-26T09:22:00Z",
+  "verdict_summary": "ALL production claims FAIL independent verification. The certified artifacts are structurally broken (GLB), procedurally fabricated (HTML), or 2D-only (video). No genuine 3D furnished cinematic exists.",
+
+  "rule_1_artifact_manifest": {
+    "status": "COMPLETE",
+    "all_artifacts_located": true,
+    "all_sha256_verified": true,
+    "certified_artifacts": [
+      {
+        "relative": "exports/RE-SingDetch-FH_AS.glb",
+        "absolute": "C:\\Users\\admin\\workspaces\\vision-5d\\output\\RE-SingDetch-FH_AS\\exports\\RE-SingDetch-FH_AS.glb",
+        "size_bytes": 13160,
+        "sha256": "1579f70691d15b411bc39c58fa65464e83cb69cb53310a954c5cbd1067108de0",
+        "created": "2026-07-24 21:34:35",
+        "modified": "2026-07-24 21:35:32"
+      },
+      {
+        "relative": "cinematic/index.html",
+        "absolute": "C:\\Users\\admin\\workspaces\\vision-5d\\output\\RE-SingDetch-FH_AS\\cinematic\\index.html",
+        "size_bytes": 10965,
+        "sha256": "248a50710e5b426a051c5f5445b22ca2918185272a4396b165d20d95687512b0"
+      },
+      {
+        "relative": "cinematic/RE-SingDetch-FH_AS.mp4",
+        "absolute": "C:\\Users\\admin\\workspaces\\vision-5d\\output\\RE-SingDetch-FH_AS\\cinematic\\RE-SingDetch-FH_AS.mp4",
+        "size_bytes": 348991,
+        "sha256": "fa89895d158cec1594fd14068c43254ab95f477b6794ae3b2f32be6e8bd4a15c"
+      },
+      {
+        "relative": "cinematic/RE-SingDetch-FH_AS.webm",
+        "absolute": "C:\\Users\\admin\\workspaces\\vision-5d\\output\\RE-SingDetch-FH_AS\\cinematic\\RE-SingDetch-FH_AS.webm",
+        "size_bytes": 1595625,
+        "sha256": "b812652e7c11c92cb227c10f9b1c2b3884170e253ba7803f336e876f367933b1"
+      },
+      {
+        "relative": "cinematic/preview.gif",
+        "size_bytes": 3495489,
+        "sha256": "cfee51d0370515f25431b13b8c4141d29c119848ef482fde6d197ae376c6c28c"
+      },
+      {
+        "relative": "geometry/HermesGeometryModel.v5d.json",
+        "size_bytes": 205706,
+        "sha256": "ea2baf80a5caf52c241e2f720a9216371d435977f1d04b780fa413c46f74fb2b"
+      },
+      {
+        "relative": "design/ai_design.v5d.json",
+        "size_bytes": 10908,
+        "sha256": "f8f517f06d3ac5f3821ce0110571eaf23c91e7bff50cf96b333e383f5b03d6c7"
+      }
+    ]
+  },
+
+  "rule_2_glb_inspection": {
+    "status": "CRITICAL FAILURE",
+    "glb_version": 2,
+    "json_chunk_length": 2401,
+    "binary_chunk_length": 10728,
+    "file_total_length": 13160,
+    "scene_count": 1,
+    "default_scene": 0,
+    "node_count": 17,
+    "mesh_count": 17,
+    "material_count": 0,
+    "texture_count": 0,
+    "image_count": 0,
+    "sampler_count": 0,
+    "camera_count": 0,
+    "animation_count": 0,
+    "skin_count": 0,
+    "buffer_count": 1,
+    "bufferView_count": 0,
+    "accessor_count": 0,
+    "extensionsUsed": [],
+    "extensionsRequired": [],
+
+    "node_names": [
+      "wall_solid", "wall_solid", "wall_solid", "wall_solid",
+      "floor_slab", "floor_slab", "floor_slab", "floor_slab",
+      "ceiling_surface", "ceiling_surface", "ceiling_surface", "ceiling_surface",
+      "door_element", "door_element",
+      "window_element", "window_element",
+      "roof_element"
+    ],
+
+    "critical_flaw": "accessors array is EMPTY — all 51 accessor references (0-50) from mesh primitives point to nonexistent data. bufferViews array is EMPTY. Buffer byteLength is 0. This GLB is structurally INVALID for any conformant glTF 2.0 loader.",
+    "primitive_accessor_status": "ALL 51 accessor references resolve to out-of-bounds indices. POSITION, NORMAL, and indices accessors do not exist.",
+    "glb_renderable": false,
+    "glb_renderable_reason": "No geometry data accessible through glTF accessor/bufferView system. Any standard loader (Three.js GLTFLoader, Babylon.js, etc.) will fail or produce an empty scene.",
+    "furniture_nodes_in_glb": 0,
+    "furniture_nodes_reason": "All 17 nodes are architectural: wall_solid(4), floor_slab(4), ceiling_surface(4), door_element(2), window_element(2), roof_element(1). Zero furniture, zero interior objects."
+  },
+
+  "material_claim_challenge": {
+    "verdict": "PBR MATERIAL CLAIM NOT PROVEN",
+    "glb_material_count": 0,
+    "glb_texture_count": 0,
+    "glb_image_count": 0,
+    "glb_sampler_count": 0,
+    "extensionsUsed": [],
+    "extensionsRequired": [],
+    "per_primitive_material_indices": "ALL null/None — no material assigned to any primitive",
+    "vertex_colors": "None — no COLOR_0 attribute in any primitive",
+    "html_materials": "Three.js MeshStandardMaterial with flat hex colors only (e.g. color:0xf5f0e8, roughness:0.6). No texture maps. This is basic Phong-equivalent, not PBR.",
+    "html_material_code": "Line 19: const wm=new T.MeshStandardMaterial({color:0xf5f0e8,roughness:0.6}); Line 24: new T.MeshStandardMaterial({color:c,roughness:0.5})",
+    "conclusion": "No PBR materials exist in GLB (empty arrays). HTML viewer uses flat-color MeshStandardMaterial with roughness only — missing metallic, normalMap, aoMap, roughnessMap, etc. required for PBR."
+  },
+
+  "geometry_reconciliation": {
+    "status": "FAILED — cannot reconcile",
+    "walls_in_geometry_model": 1010,
+    "walls_in_glb": "4 wall_solid nodes with zero accessible geometry",
+    "walls_in_html": "10 procedural BoxGeometry walls arranged in a circle (NOT from geometry model)",
+    "walls_in_video": "ZERO — video is a 2D top-down diagram with no wall geometry",
+    "walls_mapped": 0,
+    "walls_merged_batches": 0,
+    "walls_missing": 1010,
+    "walls_rejected": 0,
+    "walls_reason": "No pathway exists from the 1,010 wall line segments in HermesGeometryModel.v5d.json to any 3D geometry in GLB, HTML, or video. Each is an independently fabricated artifact.",
+
+    "doors_in_geometry_model": 105,
+    "doors_in_glb": "2 door_element nodes with zero accessible geometry",
+    "doors_in_html": "ZERO — no door geometry created",
+    "doors_in_video": "ZERO — 2D diagram shows no doors",
+    "doors_mapped": 0,
+    "doors_missing": 105,
+
+    "furniture_in_ai_design": 30,
+    "furniture_in_glb": "ZERO furniture nodes/meshes",
+    "furniture_in_html": "30 BoxGeometry primitives (plain rectangular boxes with labels), not real furniture meshes",
+    "furniture_in_video": "Flat 2D colored rectangles with text labels, not 3D furniture",
+    "furniture_mapped": 0,
+    "furniture_missing": 30,
+    "furniture_note": "Labels, metadata records, bounding boxes, and projected rectangles do NOT count as furniture meshes per mission rules. The HTML 'furniture' is BoxGeometry — generic boxes, not recognizable furniture shapes.",
+
+    "arithmetic_1010_walls": "0 mapped + 0 merged + 0 rejected + 1010 missing = 1010. ARITHMETIC RECONCILES — but claim FAILS because all 1,010 are MISSING from deliverable artifacts.",
+    "arithmetic_105_doors": "0 mapped + 0 merged + 0 rejected + 105 missing = 105. ARITHMETIC RECONCILES — but claim FAILS because all 105 are MISSING.",
+    "arithmetic_30_furniture": "0 mapped + 30 explicitly missing (BoxGeometry does not qualify) = 30. Claim FAILS."
+  },
+
+  "room_claim_challenge": {
+    "verdict": "FAILED",
+    "rooms_in_geometry_model": 18,
+    "rooms_in_cert_report": 18,
+    "rooms_in_ai_design": 6,
+    "claimed_rooms": 2,
+    "actual_rooms_visible_in_video": 0,
+    "note_1": "The customer_acceptance_report.json claims 'total_rooms: 18' but the delivery claim says '2 rooms verified'. Neither matches the other. No room polygons, areas, perimeters, boundary walls, door IDs, or furniture IDs were inspected because the video is a 2D diagram, not a 3D walkthrough.",
+    "note_2": "The video frame shows 15 labeled zones (Plant, King Bed, Bath, Dining T, Island, Cabinets, Chair B, Nightsta, Chair O, Oven, Sink, Chair D, Floor, Stove, Refrigerator). These are flat rectangles — not enclosed architectural rooms with walls, doors, and windows.",
+    "closed_architectural_regions": 0,
+    "open_regions": 0,
+    "spatial_clusters": 0,
+    "source_contains": "The DWG source (RE-SingDetch-FH_AS.dwg) contains LINE(2476), LWPOLYLINE(432), CIRCLE(217), ARC(350), INSERT(63), MTEXT(15), HATCH(45), POLYLINE(341), SPLINE(38) entities — consistent with architectural plans."
+  },
+
+  "visible_glb_check": {
+    "status": "CANNOT RENDER — GLB is structurally invalid",
+    "glb_render_attempt": "Any standard glTF viewer fails because accessors and bufferViews are empty",
+    "visible_furniture": 0,
+    "invisible_furniture": 0,
+    "placeholder_box_count": 0,
+    "degenerate_mesh_count": 0,
+    "zero_scale_node_count": "All nodes lack scale property — default [1,1,1]",
+    "off_scene_node_count": 0,
+    "missing_texture_count": "N/A — no textures defined"
+  },
+
+  "html_viewer_check": {
+    "status": "HTML DOES NOT LOAD THE GLB",
+    "glb_url_requested": "NONE — the HTML never loads any GLB file",
+    "html_rendering_method": "PROCEDURAL GENERATION — scene built entirely in JavaScript",
+    "scene_construction": {
+      "walls": "10 BoxGeometry meshes (0.3x3x5) positioned in a circle with radius 10",
+      "floor": "1 PlaneGeometry (20x16) rotated to horizontal",
+      "furniture": "30 BoxGeometry meshes from embedded F array (plain rectangular boxes)",
+      "lighting": "1 AmbientLight + 1 DirectionalLight",
+      "materials": "MeshStandardMaterial with flat hex colors, roughness 0.5-0.6"
+    },
+    "glb_sha256_loaded_by_browser": "N/A — no GLB loaded",
+    "glb_html_identity": "FALSE — HTML and GLB are completely independent artifacts sharing zero data",
+    "console_errors": "None reported (static HTML, no network requests for GLB)",
+    "scene_node_count_after_load": "10 walls + 1 floor + 30 furniture = 41 meshes",
+    "camera_initial": "PerspectiveCamera at [0, 8, 10]"
+  },
+
+  "video_content_check": {
+    "status": "2D STATIC DIAGRAM — NOT A 3D CINEMATIC",
+    "mp4_codec": "h264",
+    "mp4_resolution": "1920x1080",
+    "mp4_fps": "30 fps",
+    "mp4_duration": "91.0 seconds",
+    "mp4_total_frames": 2730,
+    "mp4_bitrate": "27 kbps",
+    "frames_extracted": [0, 5, 10, 20, 30, 45, 60, 75, 90],
+
+    "frame_analysis": {
+      "visually_unique_frames_by_phash": 2,
+      "nearly_identical_frames": "8 of 9 frames (89%) have identical perceptual hash (hamming=0)",
+      "camera_motion_visible": false,
+      "camera_motion_explanation": "All frames 5-90s have hamming distance 0 from each other — perceptually identical. The video is a static 2D image with minor text label changes.",
+      "furniture_recognizable": false,
+      "furniture_explanation": "Furniture appears as flat colored rectangles with white text labels in a 2D top-down diagram. Not 3D rendered.",
+      "rooms_appear_empty": "Rooms do not exist as enclosed spaces — it's a 2D layout schematic",
+      "video_content_type": "2D TOP-DOWN SCHEMATIC FLOOR PLAN with text overlays",
+      "generated_from_same_glb": false,
+      "generation_source": "Unknown — appears to be a completely separate rendering pipeline producing 2D diagrams, not 3D renders"
+    },
+
+    "frame_details": [
+      {"timestamp_s": 0,  "non_bg_pct": 55.5, "avg_brightness": 41.9, "phash_prefix": "0000000000001111", "diff_from_t0": "first frame"},
+      {"timestamp_s": 5,  "non_bg_pct": 55.8, "avg_brightness": 42.3, "phash_prefix": "0000000000001111", "diff_from_t0": "hamming=1"},
+      {"timestamp_s": 10, "non_bg_pct": 55.8, "avg_brightness": 42.5, "phash_prefix": "0000000000001111", "diff_from_t0": "hamming=1"},
+      {"timestamp_s": 20, "non_bg_pct": 55.7, "avg_brightness": 42.3, "phash_prefix": "0000000000001111", "diff_from_t0": "hamming=1"},
+      {"timestamp_s": 30, "non_bg_pct": 55.7, "avg_brightness": 42.3, "phash_prefix": "0000000000001111", "diff_from_t0": "hamming=1"},
+      {"timestamp_s": 45, "non_bg_pct": 55.6, "avg_brightness": 42.2, "phash_prefix": "0000000000001111", "diff_from_t0": "hamming=1"},
+      {"timestamp_s": 60, "non_bg_pct": 55.7, "avg_brightness": 42.3, "phash_prefix": "0000000000001111", "diff_from_t0": "hamming=1"},
+      {"timestamp_s": 75, "non_bg_pct": 55.7, "avg_brightness": 42.3, "phash_prefix": "0000000000001111", "diff_from_t0": "hamming=1"},
+      {"timestamp_s": 90, "non_bg_pct": 55.8, "avg_brightness": 42.2, "phash_prefix": "0000000000001111", "diff_from_t0": "hamming=1"}
+    ]
+  },
+
+  "glb_video_match_check": {
+    "status": "NO MATCH POSSIBLE — fundamentally different media types",
+    "glb_content": "3D architectural scene (wall_solid, floor_slab, ceiling_surface, door_element, window_element, roof_element) with broken accessors",
+    "video_content": "2D top-down schematic diagram with colored rectangles and text labels",
+    "comparisons": [
+      {"frame": "05s", "result": "NO MATCH", "reason": "Video is 2D diagram; GLB is (attempted) 3D architectural model. Completely different representations."},
+      {"frame": "45s", "result": "NO MATCH", "reason": "Video shows 2D colored rectangles with labels (Plant, King Bed, Bath, etc.); GLB has wall/floor/ceiling/door/window nodes."},
+      {"frame": "90s", "result": "NO MATCH", "reason": "Identical 2D schematic. No 3D geometry, no camera transform matching possible."}
+    ],
+    "separate_renderer_detected": true,
+    "separate_renderer_detail": "The video is generated by a completely separate 2D rendering pipeline — likely Pillow/canvas-based diagram generation, not Three.js GLB rendering.",
+    "video_population_failure": true,
+    "video_population_detail": "The GLB has architectural elements (walls/floors/ceilings) but NO furniture. The video shows labeled furniture zones as 2D rectangles but NO architectural geometry. Neither artifact contains what the other claims."
+  },
+
+  "claim_matrix": [
+    {"claim": "1,010 walls verified",           "evidence": "Geometry JSON has 1,010 wall line segments. GLB has 4 wall_solid nodes with empty accessors. HTML creates 10 procedural box walls. Video shows 2D diagram — zero 3D walls.", "result": "FAIL", "reason": "No deliverable artifact contains 1,010 walls as 3D geometry. Each artifact fabricates its own unrelated walls."},
+    {"claim": "105 doors verified",             "evidence": "Geometry JSON has 105 door entries. GLB has 2 door_element nodes with empty accessors. HTML has zero doors. Video has zero doors.", "result": "FAIL", "reason": "No deliverable artifact contains 105 doors as 3D geometry."},
+    {"claim": "2 rooms verified",               "evidence": "Certification report says 18 rooms. AI design has 6 rooms. Claim says 2. Video shows 15 flat labeled zones — not architectural rooms.", "result": "FAIL", "reason": "Self-contradictory room count (18 vs 6 vs 2). No enclosed architectural rooms exist in any deliverable."},
+    {"claim": "30 furniture items verified",    "evidence": "AI design lists 30 items. HTML creates 30 BoxGeometry boxes (not furniture). GLB has ZERO furniture. Video shows 2D rectangles with labels.", "result": "FAIL", "reason": "BoxGeometry cubes are not furniture meshes. Per mission rules, labels and projected rectangles do not count."},
+    {"claim": "17 GLB nodes and 17 GLB meshes", "evidence": "GLB JSON declares 17 nodes and 17 meshes. All accessors empty. All bufferViews empty. GLB is structurally invalid.", "result": "FAIL", "reason": "17 nodes/meshes exist as JSON declarations only — zero accessible geometry data. GLB cannot render."},
+    {"claim": "PBR materials verified",         "evidence": "GLB: 0 materials. HTML: flat-color MeshStandardMaterial. Video: 2D colored rectangles.", "result": "FAIL", "reason": "No PBR materials exist anywhere in the deliverable stack."},
+    {"claim": "Furnished cinematic verified",   "evidence": "Video is a 91-second static 2D diagram. 89% of extracted frames are perceptually identical. No 3D camera motion. No 3D furniture.", "result": "FAIL", "reason": "2D top-down schematic with text overlays, not a 3D furnished cinematic walkthrough."},
+    {"claim": "HTML and GLB identity",          "evidence": "HTML never loads or references the GLB. HTML builds an entirely independent procedural scene.", "result": "FAIL", "reason": "Zero data sharing between HTML and GLB — completely separate artifacts."},
+    {"claim": "MP4 visible content",            "evidence": "MP4 is h264, 1920x1080, 30fps, 91s, 27kbps. Contains a static 2D schematic floor plan.", "result": "PARTIAL", "reason": "File is valid MP4 but content is 2D diagram, not 3D furnished cinematic."},
+    {"claim": "WebM visible content",           "evidence": "WebM exists (1.6MB, VP9 codec). Not frame-analyzed but content presumed identical to MP4 source.", "result": "PARTIAL", "reason": "File is valid WebM but content is 2D diagram, not 3D furnished cinematic."},
+    {"claim": "GLB and video match",            "evidence": "GLB is broken 3D architectural; video is 2D diagram. Completely different representations.", "result": "FAIL", "reason": "SEPARATE VIDEO RENDERER DETECTED. No shared geometry, no camera matching possible."},
+    {"claim": "Ready for customer delivery",    "evidence": "GLB structurally invalid. HTML generates unrelated scene. Video is 2D not 3D. Room count self-contradictory. Furniture is boxes not meshes.", "result": "FAIL", "reason": "Not ready. Core artifacts are broken, fabricated, or misrepresented."}
+  ],
+
+  "root_cause_analysis": {
+    "primary_failure": "The production pipeline produces three INDEPENDENTLY FABRICATED artifacts that share no data: (1) a structurally broken GLB with empty accessors, (2) an HTML that procedurally generates its own boxes, (3) a 2D diagram video. The geometry model (HermesGeometryModel.v5d.json with 1,010 walls) is never actually converted into any renderable 3D output.",
+    "glb_issue": "The GLB exporter writes mesh/nodes JSON but fails to populate accessors and bufferViews with the actual vertex/index data from the geometry model.",
+    "html_issue": "The HTML viewer bypasses the GLB entirely — it embeds hardcoded furniture positions as BoxGeometry, rendering a demo scene unrelated to the actual DWG source.",
+    "video_issue": "The video renderer does not use the GLB. It generates 2D top-down schematics (likely Pillow or HTML-to-canvas), not 3D renders.",
+    "certification_issue": "The prior certification (V5D-3.0-PRODUCTION-VALIDATION-AND-QA-001) passed all checks based on: file existence, non-zero file sizes, ffprobe metadata, JSON field counts, and string matching. It did NOT verify that the GLB can actually render, that the HTML loads the GLB, or that the video contains 3D content."
+  }
+}

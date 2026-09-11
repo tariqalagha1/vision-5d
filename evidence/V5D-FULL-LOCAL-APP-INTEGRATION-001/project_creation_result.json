@@ -1,0 +1,12 @@
+{
+  "mission": "V5D-FULL-LOCAL-APP-INTEGRATION-001",
+  "timestamp": "2026-07-31T21:14:49.398963",
+  "project": {
+    "project_id": "1567be11-617d-414a-99cd-d0ddaf3f23a5",
+    "name": "Full Integration Test",
+    "state": "DRAFT",
+    "project_type": "residential",
+    "created_at": "2026-07-31T18:15:05",
+    "workspace_id": "ec3f5a1a-6b8f-4ecd-b639-5630fe053147"
+  }
+}

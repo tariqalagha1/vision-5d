@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vision 5D — RE-SingDetch-FH — Real Building Viewer</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0d1117;color:#c9d1d9;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;overflow:hidden}
+#canvas{position:fixed;top:0;left:0;width:100%;height:100%;z-index:1}
+#hud{position:fixed;top:16px;left:16px;z-index:3;font-size:13px;line-height:1.5;pointer-events:none}
+#hud .title{font-size:18px;font-weight:700;color:#fff}
+#hud .meta{color:#8b949e}
+#hud .ok{color:#3fb950}
+#hud .err{color:#f85149}
+#status{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);z-index:3;font-size:13px;color:#8b949e}
+#loading{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;z-index:5}
+#loading .spinner{width:40px;height:40px;border:3px solid #30363d;border-top-color:#58a6ff;border-radius:50%;animation:spin 0.8s linear infinite;margin:0 auto 12px}
+@keyframes spin{to{transform:rotate(360deg)}}
+</style>
+</head>
+<body>
+<canvas id="canvas"></canvas>
+<div id="hud">
+  <div class="title" id="hud-title">Vision 5D — RE-SingDetch-FH</div>
+  <div class="meta" id="hud-meta">Loading real generated GLB…</div>
+  <div class="ok" id="hud-ok" style="display:none"></div>
+  <div class="err" id="hud-err" style="display:none"></div>
+</div>
+<div id="loading"><div class="spinner"></div><div>Loading building…</div></div>
+<div id="status">Drag to orbit · Scroll to zoom</div>
+
+<script type="importmap">
+{"imports":{"three":"./js/three/three.module.js","three/addons/":"./js/three/addons/"}}
+</script>
+<script type="module">
+import * as THREE from 'three';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+
+// The exact generated GLB for the reference building. Override with ?glb=URL.
+const params = new URLSearchParams(location.search);
+const GLB_URL = params.get('glb') || './RE-SingDetch-FH_AS.glb';
+
+const canvas = document.getElementById('canvas');
+const scene = new THREE.Scene();
+scene.background = new THREE.Color(0x0d1117);
+
+const camera = new THREE.PerspectiveCamera(55, innerWidth/innerHeight, 1, 200000);
+camera.position.set(0, 5000, 8000);
+
+const renderer = new THREE.WebGLRenderer({canvas, antialias:true});
+renderer.setSize(innerWidth, innerHeight);
+renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+renderer.shadowMap.enabled = true;
+renderer.toneMapping = THREE.ACESFilmicToneMapping;
+
+scene.add(new THREE.HemisphereLight(0xffffff, 0x444444, 0.9));
+const sun = new THREE.DirectionalLight(0xffffff, 1.6);
+sun.position.set(8000, 12000, 6000);
+sun.castShadow = true;
+scene.add(sun);
+
+const controls = new OrbitControls(camera, renderer.domElement);
+controls.enableDamping = true;
+controls.dampingFactor = 0.08;
+
+function frameBounds(box) {
+  const center = box.getCenter(new THREE.Vector3());
+  const size = box.getSize(new THREE.Vector3());
+  const maxDim = Math.max(size.x, size.y, size.z) || 1;
+  const dist = maxDim * 1.4;
+  camera.near = Math.max(0.01, maxDim / 10000);
+  camera.far = maxDim * 20;
+  camera.position.set(center.x + dist * 0.6, center.y + dist * 0.5, center.z + dist * 0.7);
+  controls.target.copy(center);
+  controls.update();
+}
+
+const hudTitle = document.getElementById('hud-title');
+const hudMeta = document.getElementById('hud-meta');
+const hudOk = document.getElementById('hud-ok');
+const hudErr = document.getElementById('hud-err');
+const loading = document.getElementById('loading');
+
+function report(ok, msg) {
+  loading.style.display = 'none';
+  if (ok) { hudOk.style.display = 'block'; hudOk.textContent = msg; }
+  else { hudErr.style.display = 'block'; hudErr.textContent = msg; }
+}
+
+const loader = new GLTFLoader();
+loader.load(GLB_URL, (gltf) => {
+  const model = gltf.scene;
+  scene.add(model);
+
+  const box = new THREE.Box3().setFromObject(model);
+  frameBounds(box);
+
+  const meshes = gltf.parser ? gltf.parser.json.meshes.length : 0;
+  let verts = 0;
+  model.traverse(o => { if (o.isMesh && o.geometry) verts += o.geometry.attributes.position?.count || 0; });
+
+  hudTitle.textContent = 'Vision 5D — RE-SingDetch-FH — Real Building';
+  hudMeta.textContent = `Loaded ${GLB_URL}`;
+  report(true, `✓ GLTFLoader OK — ${meshes} meshes, ${verts.toLocaleString()} vertices, ${box.max.x-box.min.x < 0 ? 0 : ''} bounds ${(box.max.x-box.min.x).toFixed(0)}×${(box.max.y-box.min.y).toFixed(0)}×${(box.max.z-box.min.z).toFixed(0)}`);
+  document.getElementById('status').textContent = 'Drag to orbit · Scroll to zoom · Real generated GLB';
+}, undefined, (err) => {
+  console.error('GLB load error', err);
+  report(false, '✗ GLTFLoader failed: ' + (err?.message || err?.target?.status || 'load error'));
+});
+
+addEventListener('resize', () => {
+  camera.aspect = innerWidth/innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(innerWidth, innerHeight);
+});
+
+function animate() {
+  requestAnimationFrame(animate);
+  controls.update();
+  renderer.render(scene, camera);
+}
+animate();
+</script>
+</body>
+</html>

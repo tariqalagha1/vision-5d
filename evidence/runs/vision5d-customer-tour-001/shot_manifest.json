@@ -1,0 +1,49 @@
+{
+  "manifest": [
+    {
+      "shot": "overview",
+      "frames": 40,
+      "fps": 30,
+      "duration_s": 1.33
+    },
+    {
+      "shot": "entry",
+      "frames": 40,
+      "fps": 30,
+      "duration_s": 1.33
+    },
+    {
+      "shot": "circulation",
+      "frames": 60,
+      "fps": 30,
+      "duration_s": 2.0
+    },
+    {
+      "shot": "major-space",
+      "frames": 40,
+      "fps": 30,
+      "duration_s": 1.33
+    },
+    {
+      "shot": "spatial",
+      "frames": 40,
+      "fps": 30,
+      "duration_s": 1.33
+    },
+    {
+      "shot": "closing",
+      "frames": 40,
+      "fps": 30,
+      "duration_s": 1.33
+    }
+  ],
+  "total_frames": 260,
+  "fps": 30,
+  "extent_mm": [
+    16894,
+    30305,
+    2500
+  ],
+  "walls": 146,
+  "doors_hidden": 142
+}

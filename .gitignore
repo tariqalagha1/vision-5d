@@ -1,0 +1,39 @@
+# Environment / secrets
+.env
+.env.*
+!.env.example
+*.local
+
+# Output / exports
+output/
+.exports/
+.storage/
+.uploads/
+*.mp4
+*.webm
+
+# API tracking
+token_counter.csv
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# DB
+*.db
+*.db-shm
+*.db-wal
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Windows reserved device names (accidental redirect artifacts)
+nul
+nul.*
+con
+con.*
+prn
+prn.*

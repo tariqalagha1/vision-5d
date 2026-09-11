@@ -1,0 +1,24 @@
+{
+  "stages_completed": [
+    "load_graph",
+    "coordinate_systems",
+    "scale_calibrate",
+    "wall_centerlines",
+    "metric_transform",
+    "wall_thickness",
+    "wall_bodies",
+    "openings",
+    "rooms",
+    "topology",
+    "constraints",
+    "repairs",
+    "validation",
+    "metrics",
+    "ambiguity",
+    "persist_model"
+  ],
+  "stages_failed": [],
+  "duration_ms": 5.892515182495117,
+  "walls": 4,
+  "rooms": 4
+}

@@ -1,0 +1,18 @@
+{
+  "mission": "V5D-BLENDER-RENDERER-INTEGRATION-001",
+  "timestamp": "2026-07-31T21:43:56.649733",
+  "glb_validation": {
+    "module": "packages/rendering/blender_scene_builder.py::validate_glb",
+    "checks": [
+      "glTF magic",
+      "version=2",
+      "BIN chunk non-zero",
+      "accessors>0",
+      "bufferViews>0",
+      "vertices>0",
+      "meshes>0",
+      "bounding box"
+    ],
+    "block_on_failure": true
+  }
+}

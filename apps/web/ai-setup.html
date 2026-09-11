@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vision 5D — AI Setup</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',sans-serif;background:#0d1117;color:#c9d1d9;display:flex;justify-content:center;align-items:center;min-height:100vh;padding:20px}
+.container{max-width:600px;width:100%}
+h1{font-size:20px;margin-bottom:4px;color:#58a6ff}
+h2{font-size:14px;color:#8b949e;margin-bottom:20px;font-weight:400}
+.card{background:#161b22;border:1px solid #30363d;border-radius:8px;padding:20px;margin-bottom:16px}
+.card-title{font-size:13px;font-weight:600;margin-bottom:12px;color:#c9d1d9}
+label{display:block;font-size:12px;font-weight:500;margin-bottom:4px;color:#8b949e}
+input,select{width:100%;padding:8px 12px;border:1px solid #30363d;border-radius:6px;font-size:13px;background:#0d1117;color:#c9d1d9;font-family:monospace;margin-bottom:12px}
+input:focus,select:focus{outline:none;border-color:#58a6ff}
+.btn{padding:8px 16px;border-radius:6px;border:1px solid #30363d;cursor:pointer;font-size:13px;font-weight:500;transition:all 150ms;color:#c9d1d9;background:#21262d}
+.btn:hover{border-color:#58a6ff}
+.btn.primary{background:#238636;border-color:#2ea043;color:#fff}
+.btn.primary:hover{background:#2ea043}
+.btn-group{display:flex;gap:8px;margin-top:12px}
+.status{font-size:12px;padding:8px 12px;border-radius:6px;margin-top:8px}
+.status.info{background:#1f2937;color:#8b949e}
+.status.success{background:#0d3322;color:#3fb950}
+.status.error{background:#3d1f1f;color:#f85149}
+.status.warning{background:#332b0d;color:#d29922}
+.provider-list{display:flex;flex-direction:column;gap:6px}
+.provider-opt{display:flex;align-items:center;gap:10px;padding:10px 14px;border:1px solid #30363d;border-radius:6px;cursor:pointer;transition:all 150ms;font-size:13px}
+.provider-opt:hover{border-color:#58a6ff;background:#1f2937}
+.provider-opt.selected{border-color:#58a6ff;background:#1f2937}
+.provider-opt .icon{font-size:20px;width:28px;text-align:center}
+.provider-opt .name{font-weight:600;flex:1}
+.provider-opt .badge{font-size:10px;padding:2px 6px;border-radius:10px;background:#1f2937;color:#8b949e}
+.hidden{display:none}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>🤖 AI Provider Setup</h1>
+<h2>Connect Vision 5D to an AI provider for photo analysis</h2>
+
+<!-- Step 1: Provider Select -->
+<div class="card" id="step-provider">
+  <div class="card-title">1. Choose Provider</div>
+  <div class="provider-list" id="provider-list"></div>
+</div>
+
+<!-- Step 2: API Key -->
+<div class="card hidden" id="step-key">
+  <div class="card-title">2. Enter API Key</div>
+  <label for="api-key">API Key</label>
+  <input type="password" id="api-key" placeholder="sk-... or nvapi-...">
+  <div style="font-size:10px;color:#8b949e;margin-bottom:12px">
+    Key is encrypted before storage. Never stored in browser.
+  </div>
+  <div class="btn-group">
+    <button class="btn primary" onclick="saveKey()">💾 Save & Test</button>
+    <button class="btn" onclick="showProviderStep()">← Back</button>
+  </div>
+  <div id="key-status"></div>
+</div>
+
+<!-- Step 3: Result -->
+<div class="card hidden" id="step-done">
+  <div class="card-title">3. Setup Complete</div>
+  <div id="done-status"></div>
+  <div class="btn-group">
+    <button class="btn primary" onclick="location.reload()">Configure Another</button>
+    <button class="btn" onclick="window.close()">Close</button>
+  </div>
+</div>
+</div>
+
+<script>
+var PROVIDERS = {
+  nvidia:   { name:'NVIDIA NIM', icon:'🔵', keyName:'NVIDIA_API_KEY', keyPrefix:'nvapi-',
+              base_url:'https://integrate.api.nvidia.com/v1', defaultModel:'meta/llama-3.2-11b-vision-instruct' },
+  google:   { name:'Google AI', icon:'🌐', keyName:'GEMINI_API_KEY', keyPrefix:'AIza',
+              base_url:'https://generativelanguage.googleapis.com/v1beta', defaultModel:'gemini-2.0-flash' },
+  openai:   { name:'OpenAI', icon:'🤖', keyName:'OPENAI_API_KEY', keyPrefix:'sk-',
+              base_url:'https://api.openai.com/v1', defaultModel:'gpt-4o' },
+  anthropic:{ name:'Anthropic', icon:'🧠', keyName:'ANTHROPIC_API_KEY', keyPrefix:'sk-ant-',
+              base_url:'https://api.anthropic.com/v1', defaultModel:'claude-sonnet-4-20250514' },
+  deepseek: { name:'DeepSeek', icon:'🔍', keyName:'DEEPSEEK_API_KEY', keyPrefix:'sk-',
+              base_url:'https://api.deepseek.com/v1', defaultModel:'deepseek-chat' }
+};
+
+var selectedProvider = null;
+var BASE = window.location.origin;
+
+/* ── Render Provider List ── */
+(function init() {
+  var list = document.getElementById('provider-list');
+  var html = '';
+  Object.keys(PROVIDERS).forEach(function(key) {
+    var p = PROVIDERS[key];
+    html += '<div class="provider-opt" onclick="selectProvider(\'' + key + '\')" id="prov-' + key + '">' +
+      '<span class="icon">' + p.icon + '</span>' +
+      '<span class="name">' + p.name + '</span>' +
+      '<span class="badge">vision</span>' +
+      '</div>';
+  });
+  list.innerHTML = html;
+
+  /* Auto-detect best provider from env: check if we can infer */
+  /* Try NVIDIA first (most likely configured) */
+  checkExistingProviders();
+})();
+
+function selectProvider(key) {
+  selectedProvider = key;
+  /* Highlight */
+  document.querySelectorAll('.provider-opt').forEach(function(el) { el.classList.remove('selected'); });
+  var el = document.getElementById('prov-' + key);
+  if (el) el.classList.add('selected');
+
+  /* Show API key step */
+  document.getElementById('step-provider').classList.add('hidden');
+  document.getElementById('step-key').classList.remove('hidden');
+  document.getElementById('api-key').focus();
+
+  var p = PROVIDERS[key];
+  document.getElementById('api-key').placeholder = p.keyPrefix + '...';
+  document.querySelector('#step-key label').textContent = p.keyName + ' / API Key';
+}
+
+function showProviderStep() {
+  document.getElementById('step-key').classList.add('hidden');
+  document.getElementById('step-provider').classList.remove('hidden');
+  selectedProvider = null;
+}
+
+async function saveKey() {
+  var key = document.getElementById('api-key').value.trim();
+  var status = document.getElementById('key-status');
+
+  if (!key || key.length < 10) {
+    status.innerHTML = '<div class="status warning">API key too short. Please enter a valid key.</div>';
+    return;
+  }
+
+  status.innerHTML = '<div class="status info">⏳ Saving and testing...</div>';
+
+  try {
+    /* Step 1: Ensure we're authenticated */
+    var authResp = await fetch(BASE + '/api/v1/auth/login', {
+      method:'POST', headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({provider:'google', oauth_token:'demo'}),
+      credentials:'include'
+    });
+    if (!authResp.ok) throw new Error('Auth failed: ' + authResp.status);
+    var auth = await authResp.json();
+
+    /* Step 2: Get or create workspace */
+    var wsResp = await fetch(BASE + '/api/v1/workspaces', { credentials:'include' });
+    var wsData = await wsResp.json();
+    var wsId = wsData.default_workspace_id || (wsData.workspaces && wsData.workspaces[0] && wsData.workspaces[0].workspace_id);
+
+    if (!wsId) {
+      var createWs = await fetch(BASE + '/api/v1/workspaces', {
+        method:'POST', headers:{'Content-Type':'application/json'},
+        body:JSON.stringify({name:'AI Setup Workspace', description:'Created during AI setup'}),
+        credentials:'include'
+      });
+      var wsCreated = await createWs.json();
+      wsId = wsCreated.workspace_id;
+    }
+
+    /* Step 3: Find or create provider */
+    var provResp = await fetch(BASE + '/api/v1/workspaces/' + wsId + '/providers', { credentials:'include' });
+    var provData = await provResp.json();
+    var existing = (provData.providers || []).find(function(p) { return p.provider_type === selectedProvider; });
+    var providerId;
+
+    if (existing) {
+      providerId = existing.provider_id;
+    } else {
+      var p = PROVIDERS[selectedProvider];
+      var createResp = await fetch(BASE + '/api/v1/workspaces/' + wsId + '/providers', {
+        method:'POST', headers:{'Content-Type':'application/json'},
+        body:JSON.stringify({
+          workspace_id: wsId, provider_type: selectedProvider,
+          display_name: p.name, base_url: p.base_url, default_model_id: p.defaultModel
+        }),
+        credentials:'include'
+      });
+      var created = await createResp.json();
+      providerId = created.provider_id;
+    }
+
+    /* Step 4: Save credentials */
+    await fetch(BASE + '/api/v1/providers/' + providerId + '/credentials', {
+      method:'POST', headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({provider_id: providerId, api_key: key, key_label: 'default'}),
+      credentials:'include'
+    });
+
+    /* Clear the key */
+    document.getElementById('api-key').value = '';
+
+    /* Step 5: Test connection */
+    var testResp = await fetch(BASE + '/api/v1/providers/' + providerId + '/test', {
+      method:'POST', headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({model_id: null, timeout_seconds: 15}),
+      credentials:'include'
+    });
+    var testData = await testResp.json();
+
+    /* Show result */
+    document.getElementById('step-key').classList.add('hidden');
+    document.getElementById('step-done').classList.remove('hidden');
+
+    var doneStatus = document.getElementById('done-status');
+    if (testData.result_code === 'SUCCESS') {
+      doneStatus.innerHTML = '<div class="status success">✅ Connected! ' +
+        '<strong>' + PROVIDERS[selectedProvider].name + '</strong> is ready. ' +
+        (testData.latency_ms ? '(' + testData.latency_ms + 'ms)' : '') + '</div>' +
+        '<div style="font-size:12px;color:#8b949e;margin-top:8px">Model: ' + (testData.model_tested || PROVIDERS[selectedProvider].defaultModel) + '</div>' +
+        '<div style="font-size:12px;color:#8b949e">You can now use the Photo → Video pipeline.</div>';
+    } else {
+      doneStatus.innerHTML = '<div class="status warning">⚠️ Saved but test returned: ' +
+        (testData.result_code || 'UNKNOWN') + '</div>' +
+        '<div style="font-size:12px;color:#8b949e;margin-top:8px">Check your API key and try again.</div>' +
+        '<button class="btn" style="margin-top:8px" onclick="showProviderStep()">Try Different Key</button>';
+    }
+  } catch(e) {
+    status.innerHTML = '<div class="status error">❌ Error: ' + (e.message || 'Unknown') + '</div>';
+  }
+}
+
+async function checkExistingProviders() {
+  try {
+    var authResp = await fetch(BASE + '/api/v1/auth/login', {
+      method:'POST', headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({provider:'google', oauth_token:'demo'}),
+      credentials:'include'
+    });
+    if (!authResp.ok) return;
+    var wsResp = await fetch(BASE + '/api/v1/workspaces', { credentials:'include' });
+    var wsData = await wsResp.json();
+    var wsId = wsData.default_workspace_id || (wsData.workspaces && wsData.workspaces[0] && wsData.workspaces[0].workspace_id);
+    if (!wsId) return;
+
+    var provResp = await fetch(BASE + '/api/v1/workspaces/' + wsId + '/providers', { credentials:'include' });
+    var provData = await provResp.json();
+    var providers = provData.providers || [];
+
+    providers.forEach(function(p) {
+      var el = document.getElementById('prov-' + p.provider_type);
+      if (el) {
+        var badge = el.querySelector('.badge');
+        badge.textContent = p.has_credentials ? 'configured' : 'no key';
+        badge.style.background = p.has_credentials ? '#0d3322' : '#332b0d';
+        badge.style.color = p.has_credentials ? '#3fb950' : '#d29922';
+      }
+    });
+  } catch(e) { /* silent */ }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,5 @@
+{
+  "duplicateExportTest": "no_duplicate_scene",
+  "duplicateMcpTest": "safe_handling",
+  "idempotencyKeyHonored": true
+}

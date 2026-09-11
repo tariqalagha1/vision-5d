@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-07-29T06:22:04.189823+00:00",
+  "checks": {
+    "photo_ingested_through_repo": true,
+    "nvidia_adapter_called_from_repo": true,
+    "raw_response_exists": true,
+    "normalized_scene_exists": true,
+    "all_objects_have_confidence": true,
+    "visible_and_unknown_separated": true,
+    "no_floor_plan_generated": true,
+    "no_3d_model_generated": true,
+    "no_hidden_geometry_invented": true,
+    "meaningful_scene_information": true
+  },
+  "overall": "PASS"
+}

@@ -1,0 +1,62 @@
+{
+  "mission": "V5D-REAL-CAD-PILOT-001",
+  "timestamp": "2026-09-11T14:50:39.177716+00:00",
+  "stages": {
+    "1. CAD Import": {
+      "status": "PASS",
+      "output": "True",
+      "duration_ms": 86.60697937011719
+    },
+    "2. Plan Understanding": {
+      "status": "PASS",
+      "output": "True",
+      "duration_ms": 347.0618724822998
+    },
+    "3. Geometry Reconstruction": {
+      "status": "PASS",
+      "output": "True",
+      "duration_ms": 5.892515182495117
+    },
+    "4. 3D Scene Generation": {
+      "status": "PASS",
+      "output": "True",
+      "duration_ms": 4.011631011962891
+    },
+    "5. Studio Draft": {
+      "status": "PASS",
+      "output": "True",
+      "duration_ms": 73.21691513061523
+    },
+    "6. AI Design Proposals": {
+      "status": "PASS",
+      "output": "True",
+      "duration_ms": 27.326345443725586
+    },
+    "7. GLB Export + Storage": {
+      "status": "PASS",
+      "output": "True",
+      "duration_ms": 28.896808624267578
+    },
+    "8. Independent GLB Inspection": {
+      "status": "PASS",
+      "output": "True",
+      "duration_ms": 0.0
+    }
+  },
+  "timings": {
+    "1. CAD Import": 86.60697937011719,
+    "2. Plan Understanding": 347.0618724822998,
+    "3. Geometry Reconstruction": 5.892515182495117,
+    "4. 3D Scene Generation": 4.011631011962891,
+    "5. Studio Draft": 73.21691513061523,
+    "6. AI Design Proposals": 27.326345443725586,
+    "7. GLB Export + Storage": 28.896808624267578,
+    "8. Independent GLB Inspection": 0.0
+  },
+  "errors": [],
+  "passed": 8,
+  "warned": 0,
+  "failed": 0,
+  "total_duration_ms": 573.0130672454834,
+  "decision": "COMPLETE"
+}

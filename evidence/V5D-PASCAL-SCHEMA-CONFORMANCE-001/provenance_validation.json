@@ -1,0 +1,19 @@
+{
+  "nodes_with_metadata": 64,
+  "total_nodes": 64,
+  "all_have_provenance": true,
+  "provenance_keys_preserved": [
+    "project_id",
+    "source_file_sha256",
+    "stable_v5d_id",
+    "dxf_entity_handles",
+    "source_layer",
+    "extraction_confidence",
+    "validation_status",
+    "unit",
+    "adapter_version",
+    "pascal_schema_version",
+    "pascal_commit",
+    "conversion_timestamp"
+  ]
+}

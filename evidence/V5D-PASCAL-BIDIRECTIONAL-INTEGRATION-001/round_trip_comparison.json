@@ -1,0 +1,955 @@
+{
+  "edited_node_count": 63,
+  "roundtrip_node_count": 63,
+  "match": true,
+  "max_coordinate_delta_m": 0.0,
+  "deleted_nodes_absent": true,
+  "new_nodes_present": true,
+  "coordinate_deltas": [
+    {
+      "node_id": "wall_v5d_029",
+      "type": "wall",
+      "edited_position": [
+        305.655,
+        0.0,
+        45.527
+      ],
+      "roundtrip_position": [
+        305.655,
+        0.0,
+        45.527
+      ],
+      "delta": 0.0
+    },
+    {
+      "node_id": "wall_v5d_023",
+      "type": "wall",
+      "edited_position": [
+        313.051,
+        0.0,
+        58.447
+      ],
+      "roundtrip_position": [
+        313.051,
+        0.0,
+        58.447
+      ],
+      "delta": 0.0
+    },
+    {
+      "node_id": "wall_v5d_038",
+      "type": "wall",
+      "edited_position": [
+        317.259,
+        0.0,
+        62.987
+      ],
+      "roundtrip_position": [
+        317.259,
+        0.0,
+        62.987
+      ],
+      "delta": 0.0
+    },
+    {
+      "node_id": "wall_v5d_018",
+      "type": "wall",
+      "edited_position": [
+        326.734,
+        0.0,
+        48.213
+      ],
+      "roundtrip_position": [
+        326.734,
+        0.0,
+        48.213
+      ],
+      "delta": 0.0
+    },
+    {
+      "node_id": "wall_v5d_048",
+      "type": "wall",
+      "edited_position": [
+        332.18,
+        0.0,
+        44.406
+      ],
+      "roundtrip_position": [
+        332.18,
+        0.0,
+        44.406
+      ],
+      "delta": 0.0
+    },
+    {
+      "node_id": "wall_v5d_008",
+      "type": "wall",
+      "edited_position": [
+        309.001,
+        0.0,
+        41.912
+      ],
+      "roundtrip_position": [
+        309.001,
+        0.0,
+        41.912
+      ],
+      "delta": 0.0
+    },
+    {
+      "node_id": "wall_v5d_042",
+      "type": "wall",
+      "edited_position": [
+        326.734,
+        0.0,
+        42.686
+      ],
+      "roundtrip_position": [
+        326.734,
+        0.0,
+        42.686
+      ],
+      "delta": 0.0
+    },
+    {
+      "node_id": "wall_v5d_031",
+      "type": "wall",
+      "edited_position": [
+        307.631,
+        0.0,
+        57.833
+      ],
+      "roundtrip_position": [
+        307.631,
+        0.0,
+        57.833
+      ],
+      "delta": 0.0
+    },
+    {
+      "node_id": "wall_v5d_050",
+      "type": "wall",
+      "edited_position": [
+        333.798,
+        0.0,
+        47.336
+      ],
+      "roundtrip_position": [
+        333.798,
+        0.0,
+        47.336
+      ],
+      "delta": 0.0
+    },
+    {
+      "node_id": "wall_v5d_019",
+      "type": "wall",
+      "edited_position": [
+        329.54,
+        0.0,
+        49.736
+      ],
+      "roundtrip_position": [
+        329.54,
+        0.0,
+        49.736
+      ],
+      "delta": 0.0
+    },
+    {
+      "node_id": "wall_v5d_056",
+      "type": "wall",
+      "edited_position": [
+        340.14,
+        0.0,
+        42.652
+      ],
+      "roundtrip_position": [
+        340.14,
+        0.0,
+        42.652
+      ],
+      "delta": 0.0
+    },
+    {
+      "node_id": "wall_v5d_022",
+      "type": "wall",
+      "edited_position": [
+        307.622,
+        0.0,
+        57.863
+      ],
+      "roundtrip_position": [
+        307.622,
+        0.0,
+        57.863
+      ],
+      "delta": 0.0
+    },
+    {
+      "node_id": "wall_v5d_039",
+      "type": "wall",
+      "edited_position": [
+        318.001,
+        0.0,
+        62.829
+      ],
+      "roundtrip_position": [
+        318.001,
+        0.0,
+        62.829
+      ],
+      "delta": 0.0
+    },
+    {
+      "node_id": "wall_v5d_041",
+      "type": "wall",
+      "edited_position": [
+        319.159,
+        0.0,
+        46.455
+      ],
+      "roundtrip_position": [
+        319.159,
+        0.0,
+        46.455
+      ],
+      "delta": 0.0
+    },
+    {
+      "node_id": "wall_v5d_004",
+      "type": "wall",
+      "edited_position": [
+        335.534,
+        0.0,
+        40.014
+      ],
+      "roundtrip_position": [
+        335.534,
+        0.0,
+        40.014
+      ],
+      "delta": 0.0
+    },
+    {
+      "node_id": "level_ground",
+      "type": "level",
+      "edited_position": [
+        0,
+        0,
+        0
+      ],
+      "roundtrip_position": [
+        0,
+        0,
+        0
+      ],
+      "delta": 0.0
+    },
+    {
+      "node_id": "wall_v5d_027",
+      "type": "wall",
+      "edited_position": [
+        313.051,
+        0.0,
+        64.129
+      ],
+      "roundtrip_position": [
+        313.051,
+        0.0,
+        64.129
+      ],
+      "delta": 0.0
+    },
+    {
+      "node_id": "wall_v5d_030",
+      "type": "wall",
+      "edited_position": [
+        306.253,
+        0.0,
+        42.212
+      ],
+      "roundtrip_position": [
+        306.253,
+        0.0,
+        42.212
+      ],
+      "delta": 0.0
+    },
+    {
+      "node_id": "wall_v5d_055",
+      "type": "wall",
+      "edited_position": [
+        339.8,
+        0.0,
+        38.129
+      ],
+      "roundtrip_position": [
+        339.8,
+        0.0,
+        38.129
+      ],
+      "delta": 0.0
+    },
+    {
+      "node_id": "wall_v5d_026",
+      "type": "wall",
+      "edited_position": [
+        317.259,
+        0.0,
+        62.829
+      ],
+      "roundtrip_position": [
+        317.259,
+        0.0,
+        62.829
+      ],
+      "delta": 0.0
+    },
+    {
+      "node_id": "wall_v5d_040",
+      "type": "wall",
+      "edited_position": [
+        318.572,
+        0.0,
+        35.762
+      ],
+      "roundtrip_position": [
+        318.572,
+        0.0,
+        35.762
+      ],
+      "delta": 0.0
+    },
+    {
+      "node_id": "wall_v5d_037",
+      "type": "wall",
+      "edited_position": [
+        315.155,
+        0.0,
+        45.527
+      ],
+      "roundtrip_position": [
+        315.155,
+        0.0,
+        45.527
+      ],
+      "delta": 0.0
+    },
+    {
+      "node_id": "slab_ground",
+      "type": "slab",
+      "edited_position": [
+        0,
+        0,
+        0
+      ],
+      "roundtrip_position": [
+        0,
+        0,
+        0
+      ],
+      "delta": 0.0
+    },
+    {
+      "node_id": "wall_v5d_045",
+      "type": "wall",
+      "edited_position": [
+        329.989,
+        0.0,
+        44.406
+      ],
+      "roundtrip_position": [
+        329.989,
+        0.0,
+        44.406
+      ],
+      "delta": 0.0
+    },
+    {
+      "node_id": "wall_v5d_035",
+      "type": "wall",
+      "edited_position": [
+        313.481,
+        0.0,
+        58.447
+      ],
+      "roundtrip_position": [
+        313.481,
+        0.0,
+        58.447
+      ],
+      "delta": 0.0
+    },
+    {
+      "node_id": "wall_v5d_007",
+      "type": "wall",
+      "edited_position": [
+        311.809,
+        0.0,
+        41.168
+      ],
+      "roundtrip_position": [
+        311.809,
+        0.0,
+        41.168
+      ],
+      "delta": 0.0
+    },
+    {
+      "node_id": "wall_v5d_024",
+      "type": "wall",
+      "edited_position": [
+        298.609,
+        0.0,
+        59.327
+      ],
+      "roundtrip_position": [
+        298.609,
+        0.0,
+        59.327
+      ],
+      "delta": 0.0
+    },
+    {
+      "node_id": "wall_v5d_044",
+      "type": "wall",
+      "edited_position": [
+        329.019,
+        0.0,
+        42.656
+      ],
+      "roundtrip_position": [
+        329.019,
+        0.0,
+        42.656
+      ],
+      "delta": 0.0
+    },
+    {
+      "node_id": "door_v5d_001",
+      "type": "door",
+      "edited_position": [
+        334.724,
+        0.0,
+        37.574
+      ],
+      "roundtrip_position": [
+        334.724,
+        0.0,
+        37.574
+      ],
+      "delta": 0.0
+    },
+    {
+      "node_id": "building_v5d001",
+      "type": "building",
+      "edited_position": [
+        0,
+        0,
+        0
+      ],
+      "roundtrip_position": [
+        0,
+        0,
+        0
+      ],
+      "delta": 0.0
+    },
+    {
+      "node_id": "wall_v5d_017",
+      "type": "wall",
+      "edited_position": [
+        331.384,
+        0.0,
+        47.862
+      ],
+      "roundtrip_position": [
+        331.384,
+        0.0,
+        47.862
+      ],
+      "delta": 0.0
+    },
+    {
+      "node_id": "door_v5d_000",
+      "type": "door",
+      "edited_position": [
+        322.573,
+        0.0,
+        36.512
+      ],
+      "roundtrip_position": [
+        322.573,
+        0.0,
+        36.512
+      ],
+      "delta": 0.0
+    },
+    {
+      "node_id": "wall_v5d_034",
+      "type": "wall",
+      "edited_position": [
+        313.021,
+        0.0,
+        57.833
+      ],
+      "roundtrip_position": [
+        313.021,
+        0.0,
+        57.833
+      ],
+      "delta": 0.0
+    },
+    {
+      "node_id": "wall_v5d_052",
+      "type": "wall",
+      "edited_position": [
+        336.384,
+        0.0,
+        37.4
+      ],
+      "roundtrip_position": [
+        336.384,
+        0.0,
+        37.4
+      ],
+      "delta": 0.0
+    },
+    {
+      "node_id": "wall_v5d_006",
+      "type": "wall",
+      "edited_position": [
+        336.384,
+        0.0,
+        40.72
+      ],
+      "roundtrip_position": [
+        336.384,
+        0.0,
+        40.72
+      ],
+      "delta": 0.0
+    },
+    {
+      "node_id": "wall_v5d_051",
+      "type": "wall",
+      "edited_position": [
+        335.716,
+        0.0,
+        36.666
+      ],
+      "roundtrip_position": [
+        335.716,
+        0.0,
+        36.666
+      ],
+      "delta": 0.0
+    },
+    {
+      "node_id": "wall_v5d_009",
+      "type": "wall",
+      "edited_position": [
+        305.655,
+        0.0,
+        42.579
+      ],
+      "roundtrip_position": [
+        305.655,
+        0.0,
+        42.579
+      ],
+      "delta": 0.0
+    },
+    {
+      "node_id": "wall_v5d_025",
+      "type": "wall",
+      "edited_position": [
+        314.799,
+        0.0,
+        61.463
+      ],
+      "roundtrip_position": [
+        314.799,
+        0.0,
+        61.463
+      ],
+      "delta": 0.0
+    },
+    {
+      "node_id": "wall_v5d_047",
+      "type": "wall",
+      "edited_position": [
+        331.672,
+        0.0,
+        46.736
+      ],
+      "roundtrip_position": [
+        331.672,
+        0.0,
+        46.736
+      ],
+      "delta": 0.0
+    },
+    {
+      "node_id": "wall_v5d_033",
+      "type": "wall",
+      "edited_position": [
+        311.448,
+        0.0,
+        44.15
+      ],
+      "roundtrip_position": [
+        311.448,
+        0.0,
+        44.15
+      ],
+      "delta": 0.0
+    },
+    {
+      "node_id": "wall_v5d_000",
+      "type": "wall",
+      "edited_position": [
+        317.953,
+        0.0,
+        35.762
+      ],
+      "roundtrip_position": [
+        317.953,
+        0.0,
+        35.762
+      ],
+      "delta": 0.0
+    },
+    {
+      "node_id": "wall_v5d_020",
+      "type": "wall",
+      "edited_position": [
+        311.418,
+        0.0,
+        50.142
+      ],
+      "roundtrip_position": [
+        311.418,
+        0.0,
+        50.142
+      ],
+      "delta": 0.0
+    },
+    {
+      "node_id": "wall_v5d_016",
+      "type": "wall",
+      "edited_position": [
+        333.768,
+        0.0,
+        47.336
+      ],
+      "roundtrip_position": [
+        333.768,
+        0.0,
+        47.336
+      ],
+      "delta": 0.0
+    },
+    {
+      "node_id": "wall_v5d_013",
+      "type": "wall",
+      "edited_position": [
+        326.734,
+        0.0,
+        44.999
+      ],
+      "roundtrip_position": [
+        326.734,
+        0.0,
+        44.999
+      ],
+      "delta": 0.0
+    },
+    {
+      "node_id": "wall_v5d_028",
+      "type": "wall",
+      "edited_position": [
+        298.609,
+        0.0,
+        59.297
+      ],
+      "roundtrip_position": [
+        298.609,
+        0.0,
+        59.297
+      ],
+      "delta": 0.0
+    },
+    {
+      "node_id": "wall_v5d_002",
+      "type": "wall",
+      "edited_position": [
+        333.174,
+        0.0,
+        37.574
+      ],
+      "roundtrip_position": [
+        333.174,
+        0.0,
+        37.574
+      ],
+      "delta": 0.0
+    },
+    {
+      "node_id": "wall_v5d_005",
+      "type": "wall",
+      "edited_position": [
+        328.101,
+        0.0,
+        40.369
+      ],
+      "roundtrip_position": [
+        328.101,
+        0.0,
+        40.369
+      ],
+      "delta": 0.0
+    },
+    {
+      "node_id": "window_v5d_001",
+      "type": "window",
+      "edited_position": [
+        313.615,
+        1.0,
+        64.129
+      ],
+      "roundtrip_position": [
+        313.615,
+        1.0,
+        64.129
+      ],
+      "delta": 0.0
+    },
+    {
+      "node_id": "wall_v5d_046",
+      "type": "wall",
+      "edited_position": [
+        331.234,
+        0.0,
+        39.486
+      ],
+      "roundtrip_position": [
+        331.234,
+        0.0,
+        39.486
+      ],
+      "delta": 0.0
+    },
+    {
+      "node_id": "wall_v5d_012",
+      "type": "wall",
+      "edited_position": [
+        339.77,
+        0.0,
+        44.586
+      ],
+      "roundtrip_position": [
+        339.77,
+        0.0,
+        44.586
+      ],
+      "delta": 0.0
+    },
+    {
+      "node_id": "wall_v5d_021",
+      "type": "wall",
+      "edited_position": [
+        333.768,
+        0.0,
+        50.736
+      ],
+      "roundtrip_position": [
+        333.768,
+        0.0,
+        50.736
+      ],
+      "delta": 0.0
+    },
+    {
+      "node_id": "wall_v5d_003",
+      "type": "wall",
+      "edited_position": [
+        305.655,
+        0.0,
+        38.565
+      ],
+      "roundtrip_position": [
+        305.655,
+        0.0,
+        38.565
+      ],
+      "delta": 0.0
+    },
+    {
+      "node_id": "wall_v5d_010",
+      "type": "wall",
+      "edited_position": [
+        326.734,
+        0.0,
+        43.005
+      ],
+      "roundtrip_position": [
+        326.734,
+        0.0,
+        43.005
+      ],
+      "delta": 0.0
+    },
+    {
+      "node_id": "wall_v5d_011",
+      "type": "wall",
+      "edited_position": [
+        311.418,
+        0.0,
+        44.15
+      ],
+      "roundtrip_position": [
+        311.418,
+        0.0,
+        44.15
+      ],
+      "delta": 0.0
+    },
+    {
+      "node_id": "wall_v5d_054",
+      "type": "wall",
+      "edited_position": [
+        338.567,
+        0.0,
+        37.886
+      ],
+      "roundtrip_position": [
+        338.567,
+        0.0,
+        37.886
+      ],
+      "delta": 0.0
+    },
+    {
+      "node_id": "wall_v5d_049",
+      "type": "wall",
+      "edited_position": [
+        333.174,
+        0.0,
+        37.4
+      ],
+      "roundtrip_position": [
+        333.174,
+        0.0,
+        37.4
+      ],
+      "delta": 0.0
+    },
+    {
+      "node_id": "window_v5d_000",
+      "type": "window",
+      "edited_position": [
+        318.188,
+        1.0,
+        35.762
+      ],
+      "roundtrip_position": [
+        318.188,
+        1.0,
+        35.762
+      ],
+      "delta": 0.0
+    },
+    {
+      "node_id": "wall_v5d_043",
+      "type": "wall",
+      "edited_position": [
+        328.101,
+        0.0,
+        40.129
+      ],
+      "roundtrip_position": [
+        328.101,
+        0.0,
+        40.129
+      ],
+      "delta": 0.0
+    },
+    {
+      "node_id": "wall_v5d_015",
+      "type": "wall",
+      "edited_position": [
+        315.305,
+        0.0,
+        46.485
+      ],
+      "roundtrip_position": [
+        315.305,
+        0.0,
+        46.485
+      ],
+      "delta": 0.0
+    },
+    {
+      "node_id": "wall_v5d_032",
+      "type": "wall",
+      "edited_position": [
+        309.541,
+        0.0,
+        36.512
+      ],
+      "roundtrip_position": [
+        309.541,
+        0.0,
+        36.512
+      ],
+      "delta": 0.0
+    },
+    {
+      "node_id": "wall_v5d_036",
+      "type": "wall",
+      "edited_position": [
+        314.799,
+        0.0,
+        60.923
+      ],
+      "roundtrip_position": [
+        314.799,
+        0.0,
+        60.923
+      ],
+      "delta": 0.0
+    },
+    {
+      "node_id": "wall_v5d_014",
+      "type": "wall",
+      "edited_position": [
+        305.655,
+        0.0,
+        45.557
+      ],
+      "roundtrip_position": [
+        305.655,
+        0.0,
+        45.557
+      ],
+      "delta": 0.0
+    },
+    {
+      "node_id": "wall_v5d_001",
+      "type": "wall",
+      "edited_position": [
+        309.001,
+        0.0,
+        36.512
+      ],
+      "roundtrip_position": [
+        309.001,
+        0.0,
+        36.512
+      ],
+      "delta": 0.0
+    }
+  ]
+}

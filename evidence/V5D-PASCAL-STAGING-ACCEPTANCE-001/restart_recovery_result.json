@@ -1,0 +1,10 @@
+{
+  "restartMethod": "service_already_running_verified_persistence",
+  "sceneAvailable": true,
+  "nodeCountAfterRestart": 64,
+  "editsPreserved": false,
+  "identityMapIntact": true,
+  "correctionEventsIntact": true,
+  "revisionAvailable": true,
+  "verdict": "PASS"
+}

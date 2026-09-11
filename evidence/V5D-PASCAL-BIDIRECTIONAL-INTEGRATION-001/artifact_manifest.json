@@ -1,0 +1,102 @@
+{
+  "mission": "V5D-PASCAL-BIDIRECTIONAL-INTEGRATION-001",
+  "total_artifacts": 21,
+  "artifacts": [
+    {
+      "path": "baseline_pascal_scene.json",
+      "sha256": "ed952933f38bde4a44c003d54fd9d39ad0f8b3d6e971756e59143bc826ce0417",
+      "size_bytes": 78606
+    },
+    {
+      "path": "edited_pascal_scene.json",
+      "sha256": "0e74818fd00ed6ea3c0b9dbd32b6020c805f000a37c3728b277a530999925db0",
+      "size_bytes": 78400
+    },
+    {
+      "path": "change_detection_result.json",
+      "sha256": "4109c1dcfb20165a6905cc27b862f62d0f427035dae2a4fe55278fbe44c03a8d",
+      "size_bytes": 3675
+    },
+    {
+      "path": "correction_event_schema.json",
+      "sha256": "f05809b76bcf1896a0317c78a0729d70ee50cfc5b1f280d876286251d4d87e23",
+      "size_bytes": 413
+    },
+    {
+      "path": "correction_events.json",
+      "sha256": "856132111ece4bfe1c3c39d23c3035eac14c8bde4a002f3fe94a41157a799d15",
+      "size_bytes": 5599
+    },
+    {
+      "path": "correction_event_validation.json",
+      "sha256": "329b78b0f8a3bd96b0eecc6b9ae51e0e161b8283b0d544b5c6b3b4bd397daeed",
+      "size_bytes": 6043
+    },
+    {
+      "path": "original_vision5d_revision.json",
+      "sha256": "5489c56fc7d3884900d0b9615d721499263f13e127b9aea729c9f9a0e25a32e4",
+      "size_bytes": 72820
+    },
+    {
+      "path": "updated_vision5d_revision.json",
+      "sha256": "f7b55854fcfc3be7890470bdde5762c75f21d0b519341c2b7e79ede4e26c2e84",
+      "size_bytes": 72969
+    },
+    {
+      "path": "revision_manifest.json",
+      "sha256": "bc34c2fcf34db9bdab0e011b2a50c0e2a89011fbcd24d6be4ae69cc9b7c34121",
+      "size_bytes": 708
+    },
+    {
+      "path": "round_trip_comparison.json",
+      "sha256": "83b1173bcaa2acca0e17cc49140c852731338780d3bef59648470c4e7f191af6",
+      "size_bytes": 16940
+    },
+    {
+      "path": "coordinate_delta_report.json",
+      "sha256": "4668aeac371d49e0e8bcbc3d7fb74d19dfca44a5779519a205c34b62e9d89a23",
+      "size_bytes": 16875
+    },
+    {
+      "path": "provenance_preservation.json",
+      "sha256": "86eab45cf3d8c7af28c7df8884c5af47436d1ce9ce59039e74ccf274250760f9",
+      "size_bytes": 96
+    },
+    {
+      "path": "structural_validation.json",
+      "sha256": "87dbfedac47ab4147cae0afed942161194023119dc85c7d9e2f4993473b510fb",
+      "size_bytes": 1253
+    },
+    {
+      "path": "nvidia_visual_qa.json",
+      "sha256": "8e9f178b7f7c74bae8cd0177a4b9ba324a7771a638c81e65470a1e787b64f7a3",
+      "size_bytes": 1152
+    },
+    {
+      "path": "learning_ready_corrections.json",
+      "sha256": "9550151636cd109c03aff417de456993f311bd8b2152225b3a012d38fd298219",
+      "size_bytes": 4614
+    },
+    {
+      "path": "integration_architecture.md",
+      "sha256": "768daa947f2515331d0bc3894d2507fd9daa8c677caa4c5f8c5f919436ba9662",
+      "size_bytes": 1452
+    },
+    {
+      "path": "risk_report.md",
+      "sha256": "0da5133e851bba3882bfbced9bf8fdab851939ad49d92552eb84a2b2f9b622ed",
+      "size_bytes": 913
+    },
+    {
+      "path": "final_report.md",
+      "sha256": "4e63f43e91862b899ecd47451f4b54c2b6ab58cc172455b0b0171805158f9da3",
+      "size_bytes": 3445
+    }
+  ],
+  "overlays": [
+    "overlays/baseline_pascal_top_view.svg",
+    "overlays/edited_pascal_top_view.svg",
+    "overlays/revision_pascal_top_view.svg"
+  ],
+  "generated_at": "2026-07-30T05:13:54.419077+00:00"
+}

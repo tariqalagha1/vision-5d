@@ -1,0 +1,29 @@
+storage/
+└── projects/
+    └── 50d62206-724a-4f23-a473-d723ea7863d0/
+        ├── source/
+        │   └── 1.dwg
+        ├── converted/
+        │   └── 1_converted.dxf
+        ├── versions/
+        │   ├── V1/
+        │   │   ├── ed759f68-8f87-479c-8409-8b0d59b6b5a9
+        │   │   └── version1.glb
+        │   └── V2/
+        │       ├── e4be3f01-f041-4252-9fc0-5d520377ff4e
+        │       └── version2.glb
+        ├── reports/
+        │   ├── step1_import.json
+        │   ├── step3_option_a.json
+        │   ├── step3_option_b.json
+        │   ├── step5_validation.json
+        │   ├── step7_verify.json
+        │   ├── step8_export.json
+        │   ├── materials.json
+        │   ├── lighting.json
+        │   ├── cameras.json
+        │   ├── scene_graph.json
+        │   └── operations.json
+        └── exports/
+            ├── version1.glb
+            └── version2.glb

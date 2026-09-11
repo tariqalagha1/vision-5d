@@ -1,0 +1,9 @@
+{
+  "source_traceability": "PASS \u2014 SHA-256 verified",
+  "conversion": "PASS \u2014 LibreDWG 0.13.3, 3,424,051 byte DXF",
+  "parsing": "PASS \u2014 17,680 entities, 17,407 architectural LINE entities",
+  "region_detection": "PASS \u2014 2 regions (main plan + elevation detail)",
+  "block_expansion": "PARTIAL \u2014 78 INSERT entities detected, not fully expanded",
+  "output_provenance": "PASS \u2014 all renders traceable to DXF",
+  "verdict": "PASS"
+}

@@ -1,0 +1,116 @@
+{
+  "mission": "V5D-FRONTEND-INVENTORY-001",
+  "timestamp": "2026-07-31T13:32:43.056888",
+  "authentication": {
+    "mechanism": "Session cookie + Bearer token (dual support)",
+    "login_flow": "POST /api/v1/auth/login \u2192 sets httponly v5d_session cookie + returns Bearer token",
+    "session_store": "In-memory dict (SESSIONS = {}) \u2014 NOT Redis, lost on restart",
+    "session_duration": "86400 seconds (24 hours)",
+    "session_cookie": {
+      "name": "v5d_session",
+      "httponly": true,
+      "samesite": "lax",
+      "secure": false,
+      "note": "secure=False must be True in production with HTTPS"
+    },
+    "token_format": "UUID v4 \u2014 not JWT, no cryptographic signature",
+    "csrf_protection": "None \u2014 samesite=lax provides partial protection",
+    "password_hashing": "N/A \u2014 OAuth-style demo login (no passwords)"
+  },
+  "authorization": {
+    "role_model": {
+      "workspace_level": [
+        "owner",
+        "admin",
+        "member"
+      ],
+      "project_level": [
+        "admin",
+        "write",
+        "read"
+      ],
+      "current_implementation": "owner auto-assigned on workspace create, admin on project create"
+    },
+    "permission_check": {
+      "tenant_isolation": "All queries filter by tenant_id from session",
+      "workspace_access": "Not explicitly checked beyond tenant isolation",
+      "project_access": "Not explicitly checked beyond tenant isolation"
+    },
+    "api_authorization": "get_current_user() extracts user_id + tenant_id from cookie/header \u2014 no role checking"
+  },
+  "cors_policy": {
+    "allow_origins": [
+      "*"
+    ],
+    "allow_credentials": true,
+    "allow_methods": [
+      "*"
+    ],
+    "allow_headers": [
+      "*"
+    ],
+    "risk": "Open CORS in production \u2014 should be restricted to known origins"
+  },
+  "security_headers": {
+    "csp": "default-src 'self'; script-src 'self' 'unsafe-inline' cdn.jsdelivr.net; connect-src 'self' localhost:*",
+    "x_content_type_options": "nosniff",
+    "x_frame_options": "DENY",
+    "x_xss_protection": "1; mode=block",
+    "referrer_policy": "strict-origin-when-cross-origin",
+    "hsts": "max-age=31536000; includeSubDomains",
+    "note": "Security headers in production.py are defined but NOT verified as applied to API responses"
+  },
+  "secret_handling": {
+    "api_key_storage": "AES-256-GCM encrypted, tenant-scoped, stored in encrypted_credentials table",
+    "api_key_retrieval": "Decrypted server-side at test time, immediately zeroed after use",
+    "api_key_never_exposed_to": [
+      "browser",
+      "localStorage",
+      "sessionStorage",
+      "cookies",
+      "committed config"
+    ],
+    "secret_scanning": "Patterns for openai_key, anthropic_key, bearer_token, json_api_key"
+  },
+  "rate_limiting": {
+    "auth": "10 req/min",
+    "api_read": "200 req/min",
+    "api_write": "50 req/min",
+    "export": "10 req/min",
+    "ai": "5 req/min"
+  },
+  "access_matrix": {
+    "view_ai_configuration": [
+      "workspace_owner",
+      "workspace_admin"
+    ],
+    "add_api_key": [
+      "workspace_owner",
+      "workspace_admin"
+    ],
+    "replace_api_key": [
+      "workspace_owner",
+      "workspace_admin"
+    ],
+    "delete_api_key": [
+      "workspace_owner"
+    ],
+    "select_llm_model": [
+      "workspace_owner",
+      "workspace_admin"
+    ],
+    "export_scenes": [
+      "project_admin",
+      "project_write"
+    ],
+    "import_corrections": [
+      "project_admin",
+      "project_write"
+    ],
+    "view_revision_history": [
+      "project_read",
+      "project_write",
+      "project_admin"
+    ]
+  }
+}

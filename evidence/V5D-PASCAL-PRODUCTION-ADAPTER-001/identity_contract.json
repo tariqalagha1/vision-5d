@@ -1,0 +1,11 @@
+{
+  "rule": "Vision 5D stable IDs are AUTHORITATIVE. Pascal IDs are generated per Pascal conventions.",
+  "required_metadata_field": "metadata.vision5d.stable_id",
+  "lifecycle_states": [
+    "ACTIVE",
+    "CREATED_IN_PASCAL",
+    "DELETED_IN_PASCAL",
+    "DELETED_IN_VISION5D",
+    "SUPERSEDED"
+  ]
+}

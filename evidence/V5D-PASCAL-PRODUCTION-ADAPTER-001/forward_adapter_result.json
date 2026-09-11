@@ -1,0 +1,14 @@
+{
+  "graphFormat": "Record<string, AnyNode> + rootNodeIds",
+  "nodeCount": 64,
+  "typeCounts": {
+    "site": 1,
+    "building": 1,
+    "level": 1,
+    "wall": 57,
+    "slab": 1,
+    "door": 2,
+    "window": 1
+  },
+  "schemaConformant": true
+}

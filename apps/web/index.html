@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vision 5D — Architectural Intelligence Platform</title>
+<meta name="description" content="Vision 5D — AI-native architectural platform for plan understanding, 3D reconstruction, and design studio.">
+<link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+
+<!-- ═══════════════════ APP SHELL ═══════════════════ -->
+<div class="app-shell">
+
+  <!-- Sidebar -->
+  <aside class="app-sidebar" id="app-sidebar" role="navigation" aria-label="Main navigation">
+    <div class="sidebar-logo" role="banner">Vision 5D</div>
+    <div class="sidebar-nav">
+      <div class="state-container" style="min-height:100px">
+        <div class="skeleton skeleton-text" style="width:60%"></div>
+        <div class="skeleton skeleton-text short" style="width:80%"></div>
+        <div class="skeleton skeleton-text" style="width:50%"></div>
+        <div class="skeleton skeleton-text short" style="width:70%"></div>
+      </div>
+    </div>
+    <div class="sidebar-footer">Vision 5D v0.1.0</div>
+  </aside>
+
+  <!-- Main Area -->
+  <main class="app-main" role="main">
+    <!-- Header -->
+    <header class="app-header" id="app-header" role="banner">
+      <button class="mobile-menu-btn" onclick="V5D.toggleSidebar()" aria-label="Toggle navigation menu">☰</button>
+      <h1 class="header-title">Dashboard</h1>
+      <div class="header-spacer"></div>
+      <div class="header-status">
+        <span class="dot offline" aria-hidden="true"></span>
+        <span>Connecting...</span>
+      </div>
+    </header>
+
+    <!-- Content -->
+    <div class="app-content" id="app-content">
+      <div class="stats-grid">
+        <div class="stat-card"><div class="skeleton skeleton-stat"></div></div>
+        <div class="stat-card"><div class="skeleton skeleton-stat"></div></div>
+        <div class="stat-card"><div class="skeleton skeleton-stat"></div></div>
+        <div class="stat-card"><div class="skeleton skeleton-stat"></div></div>
+      </div>
+      <div class="content-grid">
+        <div>
+          <div class="card">
+            <div class="card-header"><span class="card-title">Recent Projects</span></div>
+            <div class="project-grid">
+              <div class="project-card"><div class="skeleton skeleton-card"></div></div>
+              <div class="project-card"><div class="skeleton skeleton-card"></div></div>
+              <div class="project-card"><div class="skeleton skeleton-card"></div></div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="card">
+            <div class="card-header"><span class="card-title">Recent Activity</span></div>
+            <div class="activity-feed">
+              <div class="skeleton skeleton-text"></div>
+              <div class="skeleton skeleton-text short"></div>
+              <div class="skeleton skeleton-text"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<!-- ═══════════════════ SCRIPTS ═══════════════════ -->
+<script src="js/services/router.js?v=14"></script>
+<script src="js/services/api.js?v=16"></script>
+<script src="js/services/auth.js?v=14"></script>
+<script src="js/services/projects.js?v=14"></script>
+<script src="js/services/ai-providers.js?v=14"></script>
+<script src="js/components/ui.js?v=15"></script>
+<script src="js/views/dashboard.js?v=14"></script>
+<script src="js/views/ai-config.js?v=14"></script>
+<script src="js/views/pipeline.js?v=15"></script>
+<script src="js/views/cad-viewer.js?v=1"></script>
+<script src="js/app.js?v=17"></script>
+
+</body>
+</html>

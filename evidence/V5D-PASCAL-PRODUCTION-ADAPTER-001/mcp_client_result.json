@@ -1,0 +1,18 @@
+{
+  "operations": [
+    {
+      "operationId": "5c8a0aa7-41ed-4497-b742-474e6c01b43d",
+      "operation": "updateNode",
+      "pascalNodeId": "wall_tot9pwgbz3axsxfr",
+      "vision5dStableId": "wall_v5d_015",
+      "data": {
+        "thickness": 0.25
+      },
+      "timestamp": "2026-07-30T06:01:52.703887+00:00",
+      "validationResult": "pass",
+      "metadataPreserved": true
+    }
+  ],
+  "totalOps": 1,
+  "metadataPreservationRate": 1.0
+}

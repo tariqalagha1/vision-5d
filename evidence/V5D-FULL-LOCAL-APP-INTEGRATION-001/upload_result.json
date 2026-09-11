@@ -1,0 +1,22 @@
+{
+  "mission": "V5D-FULL-LOCAL-APP-INTEGRATION-001",
+  "timestamp": "2026-07-31T21:14:49.398963",
+  "upload": {
+    "detail": [
+      {
+        "type": "missing",
+        "loc": [
+          "body",
+          "project_id"
+        ],
+        "msg": "Field required",
+        "input": {
+          "filename": "test_photo.webp",
+          "file_size_bytes": 1048576,
+          "content_type": "image/webp"
+        }
+      }
+    ]
+  },
+  "note": "Upload session initialized. Actual file chunk upload requires multipart handling."
+}

@@ -1,0 +1,404 @@
+{
+  "name": "OPTION B \u2014 Premium Scandinavian Office",
+  "strategy": "transformative",
+  "furniture": {
+    "additions": [
+      {
+        "label": "Premium Reception Desk",
+        "position": [
+          1800,
+          0,
+          -800
+        ],
+        "color": "#D4C4A8",
+        "dimensions": [
+          2800,
+          1100,
+          800
+        ]
+      },
+      {
+        "label": "Ergonomic Chair B1",
+        "position": [
+          1600,
+          0,
+          -1400
+        ],
+        "color": "#8B7355",
+        "dimensions": [
+          650,
+          950,
+          550
+        ]
+      },
+      {
+        "label": "Executive Workstation 1",
+        "position": [
+          2200,
+          0,
+          -2800
+        ],
+        "color": "#C4B5A5",
+        "dimensions": [
+          1800,
+          750,
+          750
+        ]
+      },
+      {
+        "label": "Executive Workstation 2",
+        "position": [
+          3200,
+          0,
+          -2800
+        ],
+        "color": "#C4B5A5",
+        "dimensions": [
+          1800,
+          750,
+          750
+        ]
+      },
+      {
+        "label": "Ergonomic Chair B2",
+        "position": [
+          2000,
+          0,
+          -3300
+        ],
+        "color": "#8B7355",
+        "dimensions": [
+          650,
+          950,
+          550
+        ]
+      },
+      {
+        "label": "Ergonomic Chair B3",
+        "position": [
+          3000,
+          0,
+          -3300
+        ],
+        "color": "#8B7355",
+        "dimensions": [
+          650,
+          950,
+          550
+        ]
+      },
+      {
+        "label": "Premium Meeting Table",
+        "position": [
+          2800,
+          0,
+          -5000
+        ],
+        "color": "#B8A898",
+        "dimensions": [
+          3600,
+          750,
+          1400
+        ]
+      },
+      {
+        "label": "Meeting Chair B1",
+        "position": [
+          2400,
+          0,
+          -5200
+        ],
+        "color": "#705A4B",
+        "dimensions": [
+          550,
+          950,
+          550
+        ]
+      },
+      {
+        "label": "Meeting Chair B2",
+        "position": [
+          3200,
+          0,
+          -5200
+        ],
+        "color": "#705A4B",
+        "dimensions": [
+          550,
+          950,
+          550
+        ]
+      },
+      {
+        "label": "Meeting Chair B3",
+        "position": [
+          2800,
+          0,
+          -4800
+        ],
+        "color": "#705A4B",
+        "dimensions": [
+          550,
+          950,
+          550
+        ]
+      },
+      {
+        "label": "Storage Cabinet B1",
+        "position": [
+          800,
+          0,
+          -4000
+        ],
+        "color": "#D4C5B9",
+        "dimensions": [
+          1000,
+          2200,
+          450
+        ]
+      },
+      {
+        "label": "Storage Cabinet B2",
+        "position": [
+          4000,
+          0,
+          -1000
+        ],
+        "color": "#D4C5B9",
+        "dimensions": [
+          1000,
+          2200,
+          450
+        ]
+      },
+      {
+        "label": "Indoor Plant B1",
+        "position": [
+          1200,
+          0,
+          -600
+        ],
+        "color": "#4CAF50",
+        "dimensions": [
+          500,
+          1500,
+          500
+        ]
+      },
+      {
+        "label": "Indoor Plant B2",
+        "position": [
+          4500,
+          0,
+          -5000
+        ],
+        "color": "#4CAF50",
+        "dimensions": [
+          500,
+          1200,
+          500
+        ]
+      },
+      {
+        "label": "Indoor Plant B3",
+        "position": [
+          3500,
+          0,
+          -1500
+        ],
+        "color": "#4CAF50",
+        "dimensions": [
+          400,
+          1000,
+          400
+        ]
+      },
+      {
+        "label": "Artwork Panel 1",
+        "position": [
+          2500,
+          2000,
+          -50
+        ],
+        "color": "#6B5B4F",
+        "dimensions": [
+          1500,
+          900,
+          30
+        ]
+      },
+      {
+        "label": "Artwork Panel 2",
+        "position": [
+          3500,
+          1800,
+          -50
+        ],
+        "color": "#8B7D6B",
+        "dimensions": [
+          1000,
+          700,
+          30
+        ]
+      },
+      {
+        "label": "Waiting Sofa",
+        "position": [
+          1200,
+          0,
+          -2200
+        ],
+        "color": "#C4B5A5",
+        "dimensions": [
+          2200,
+          850,
+          900
+        ]
+      },
+      {
+        "label": "Coffee Table",
+        "position": [
+          1500,
+          0,
+          -2800
+        ],
+        "color": "#D4C4A8",
+        "dimensions": [
+          900,
+          450,
+          600
+        ]
+      },
+      {
+        "label": "Decorative Lamp",
+        "position": [
+          800,
+          0,
+          -2200
+        ],
+        "color": "#FFF8E7",
+        "dimensions": [
+          300,
+          1800,
+          300
+        ]
+      }
+    ]
+  },
+  "materials": {
+    "floor": {
+      "type": "premium_light_oak",
+      "color": "#D9C7B0",
+      "roughness": 0.25
+    },
+    "wall": {
+      "color": "#F8F3EC",
+      "roughness": 0.55
+    },
+    "ceiling": {
+      "color": "#FAFAFA",
+      "roughness": 0.4
+    }
+  },
+  "lighting": {
+    "additions": [
+      {
+        "label": "Suspended LED Array 1",
+        "position": [
+          2000,
+          2600,
+          -2000
+        ],
+        "color": "#FFF8F0",
+        "intensity": 1.4,
+        "temperature": 4000
+      },
+      {
+        "label": "Suspended LED Array 2",
+        "position": [
+          3500,
+          2600,
+          -3500
+        ],
+        "color": "#FFF8F0",
+        "intensity": 1.3,
+        "temperature": 4000
+      },
+      {
+        "label": "Suspended LED Array 3",
+        "position": [
+          2800,
+          2600,
+          -5000
+        ],
+        "color": "#FFF8F0",
+        "intensity": 1.2,
+        "temperature": 4000
+      },
+      {
+        "label": "Reception Spotlight",
+        "position": [
+          2000,
+          2500,
+          -1000
+        ],
+        "color": "#FFFAF0",
+        "intensity": 1.5,
+        "temperature": 3800
+      },
+      {
+        "label": "Ambient Warm",
+        "color": "#FFF5E6",
+        "intensity": 0.6,
+        "type": "ambient"
+      }
+    ],
+    "daylight_multiplier": 1.5
+  },
+  "cameras": [
+    {
+      "name": "Grand Entrance",
+      "position": [
+        800,
+        1800,
+        800
+      ],
+      "target": [
+        2000,
+        1200,
+        -1500
+      ],
+      "fov": 70
+    },
+    {
+      "name": "Executive Workspace",
+      "position": [
+        3000,
+        2000,
+        -3500
+      ],
+      "target": [
+        2500,
+        1200,
+        -4000
+      ],
+      "fov": 50
+    },
+    {
+      "name": "Board Room",
+      "position": [
+        2200,
+        1800,
+        -5800
+      ],
+      "target": [
+        2800,
+        1200,
+        -5000
+      ],
+      "fov": 55
+    }
+  ],
+  "estimated_cost_band": "premium",
+  "estimated_time_days": 21
+}

@@ -1,0 +1,16 @@
+{
+  "scenarios": [
+    "rest_unavailable",
+    "timeout",
+    "400_validation",
+    "500_error",
+    "malformed_graph",
+    "missing_parent",
+    "partial_batch"
+  ],
+  "allAtomic": true,
+  "noPartialRevision": true,
+  "noPartialIdentityMap": true,
+  "noDuplicateScenes": true,
+  "deterministicErrorsNotRetried": true
+}

@@ -1,0 +1,25 @@
+{
+  "mission": "V5D-POST-RESET-TRUTH-RECONCILIATION-001",
+  "gate": "GATE_5",
+  "timestamp": "2026-07-27T08:23:44.310816",
+  "file": "C:\\Users\\admin\\workspaces\\vision-5d\\output\\RE-SingDetch-FH_AS\\cinematic\\index.html",
+  "exists": true,
+  "filename": "index.html",
+  "extension": ".html",
+  "size_bytes": 10934,
+  "sha256": "901586222c1751c481d0412129c460d2c158a258ae0cefb1d85a1cf272874a4a",
+  "relative_path": "output/RE-SingDetch-FH_AS/cinematic/index.html",
+  "absolute_path": "C:\\Users\\admin\\workspaces\\vision-5d\\output\\RE-SingDetch-FH_AS\\cinematic\\index.html",
+  "imports_GLTFLoader": false,
+  "references_glb_filename": false,
+  "glb_filename_searched": "exports/RE-SingDetch-FH_AS.glb",
+  "references_any_glb": false,
+  "procedural_geometry_detected": {
+    "BoxGeometry": true,
+    "PlaneGeometry": true
+  },
+  "embedded_F_furniture_array": true,
+  "procedural_walls": false,
+  "classification": "PROCEDURAL_SCENE",
+  "verdict": "HTML DOES NOT LOAD THE GLB \u2014 independently fabricated procedural scene"
+}

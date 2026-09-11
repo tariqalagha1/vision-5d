@@ -1,0 +1,19 @@
+{
+  "mission": "V5D-BLENDER-RENDERER-INTEGRATION-001",
+  "timestamp": "2026-07-31T21:43:56.649733",
+  "light_types": [
+    "SUN",
+    "POINT",
+    "AREA",
+    "SPOT"
+  ],
+  "properties": [
+    "position",
+    "intensity",
+    "color_temperature"
+  ],
+  "modes": [
+    "day",
+    "night"
+  ]
+}

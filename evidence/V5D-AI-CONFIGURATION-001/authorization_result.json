@@ -1,0 +1,8 @@
+{
+  "mission": "V5D-AI-CONFIGURATION-001",
+  "timestamp": "2026-07-31T14:06:52.568851",
+  "mechanism": "get_current_user() from session cookie",
+  "tenant_isolation": true,
+  "unauthenticated": "401",
+  "verdict": "BASIC \u2014 tenant isolation active"
+}

@@ -1,0 +1,8 @@
+{
+  "scenario": "V5D modified + Pascal independently modified",
+  "result": "CONFLICT detected",
+  "autoMerge": false,
+  "bothVersionsPreserved": true,
+  "conflictReportCreated": true,
+  "requiresExplicitResolution": true
+}

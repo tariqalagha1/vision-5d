@@ -1,0 +1,22 @@
+{
+  "pascal_rest": {
+    "reachable": true,
+    "medianLatencyMs": 5
+  },
+  "pascal_mcp": {
+    "reachable": true,
+    "medianLatencyMs": 3
+  },
+  "identity_map": {
+    "persisted": true
+  },
+  "correction_events": {
+    "persisted": true
+  },
+  "revisions": {
+    "persisted": true
+  },
+  "logging": {
+    "working": true
+  }
+}

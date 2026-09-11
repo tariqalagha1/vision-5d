@@ -1,0 +1,11 @@
+{
+  "restAuth": "configurable, disabled by default",
+  "mcpAllowlist": "enforced at MCP operation level",
+  "payloadSizeLimit": "10MB per scene",
+  "schemaValidation": "enforced before any write",
+  "metadataSanitization": "z.json() validates JSON-only values",
+  "secretRedaction": "no secrets in logs or metrics",
+  "pathTraversalProtection": "asset URLs validated by Pascal zod schema",
+  "auditLogging": "correlation IDs on all REST/MCP operations",
+  "mutationAuth": "MCP operations not exposed to anonymous clients"
+}

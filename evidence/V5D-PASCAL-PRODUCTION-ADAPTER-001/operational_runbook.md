@@ -1,0 +1,5 @@
+# Operational Runbook
+
+## V5D-PASCAL-PRODUCTION-ADAPTER-001
+
+Generated: 2026-07-30T06:01:52.703887+00:00

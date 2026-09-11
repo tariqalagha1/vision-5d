@@ -1,0 +1,40 @@
+{
+  "mission": "V5D-STARTUP-REPAIR-001",
+  "timestamp": "2026-08-26T09:32:00Z",
+  "verdict": "VERIFIED",
+  "changed_files": [
+    {
+      "path": "packages/security/crypto.py",
+      "change": "wire V5D_ENCRYPTION_KEY + persist stable key to .storage/encryption.key",
+      "status": "fixed"
+    },
+    {
+      "path": "start_vision5d_local.bat",
+      "change": "launch API+worker; V5D_DB_URL -> V5D_DATABASE_URL; remove :8100 static server",
+      "status": "fixed"
+    },
+    {
+      "path": "scripts/start_api.sh",
+      "change": "launch API+worker; dynamic root path; pwd -W windows DB URL",
+      "status": "fixed"
+    },
+    {
+      "path": "docker-compose.yml",
+      "change": "build context -> infrastructure/Dockerfile; sqlite volume; entrypoint modes",
+      "status": "fixed"
+    }
+  ],
+  "verification_artifacts": [
+    {"name": "dashboard_verified.png", "type": "visual-proof", "note": "88 projects, 29 active, header connected"},
+    {"name": "verification_results.json", "type": "results", "note": "structured checks"},
+    {"name": "final_report.md", "type": "report", "note": "human-readable report"}
+  ],
+  "test_result": {"passed": 167, "failed": 0, "duration_s": 43.29},
+  "docker_compose_config": "VALID",
+  "encryption_key_stability": "key_hash 2e50a605a06e3559 identical across 2 processes",
+  "out_of_scope_findings": [
+    "worker stale-job failure: PreprocessedImage.source_asset_id UUID validation (packages/plan_understanding)",
+    "docker engine not running (structural validation only)",
+    "infrastructure/docker-compose.yml production stack left untouched"
+  ]
+}

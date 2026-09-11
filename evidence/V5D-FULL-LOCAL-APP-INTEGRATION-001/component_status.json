@@ -1,0 +1,46 @@
+{
+  "mission": "V5D-FULL-LOCAL-APP-INTEGRATION-001",
+  "stage": "1 — Component Status Classification",
+  "timestamp": "2026-07-31T21:00:00",
+  "components": {
+    "dashboard": {"status": "WORKING", "detail": "Live authenticated dashboard with stats, projects, activity, health"},
+    "auth": {"status": "WORKING", "detail": "OAuth login, session cookies, session refresh"},
+    "ai_config": {"status": "WORKING", "detail": "Provider CRUD, secure credential storage (AES-256-GCM), masked keys"},
+    "project_crud": {"status": "WORKING", "detail": "Create, list, configure, state transitions"},
+    "workspace_discovery": {"status": "WORKING", "detail": "Auto-discovery with sessionStorage cache, survives restarts"},
+    "pascal_health": {"status": "WORKING", "detail": "Health endpoint, no credential leak"},
+    "dashboard_stats": {"status": "WORKING", "detail": "9 fields: projects, scenes, revisions, conflicts, sync, AI, failed"},
+    "upload_init": {"status": "PARTIAL", "detail": "Upload session init/commit endpoints exist. Actual file storage is simplified (no S3/local fallback wired)."},
+    "photo_understanding": {"status": "PARTIAL", "detail": "Gemini Vision module exists (packages/ai/gemini_vision.py). No API endpoint wires it to upload flow."},
+    "geometry_generation": {"status": "PARTIAL", "detail": "Geometry engine exists (packages/geometry/). No direct API endpoint for photo→geometry pipeline."},
+    "scene3d_generation": {"status": "PARTIAL", "detail": "Scene3D reconstructor + GLB export exist (packages/scene3d/). API route at /api/v4/projects/{id}/scene. Requires geometry input."},
+    "pascal_integration": {"status": "PARTIAL", "detail": "TypeScript adapters exist. No running Pascal MCP/REST service. Health endpoint returns operational based on file presence."},
+    "pascal_editor": {"status": "DISCONNECTED", "detail": "studio.html exists but Pascal MCP client is TypeScript only. No backend bridge for live editing."},
+    "studio_draft_edit": {"status": "WORKING", "detail": "Studio routes for drafts, edits, undo/redo, versions, furniture library. API functional."},
+    "cinematic_engine": {"status": "PARTIAL", "detail": "Cinematic engine + luxury director exist (packages/cinematic/). Not wired as API endpoint. Requires 3D scene input."},
+    "video_rendering": {"status": "MISSING", "detail": "No API endpoint for video rendering from 3D scene. Cinematic engine is standalone script."},
+    "furniture_library": {"status": "WORKING", "detail": "Furniture library seeded via API. List/category endpoints functional."},
+    "materials_lighting": {"status": "MISSING", "detail": "No API endpoints for materials/lighting configuration on scenes."},
+    "camera_setup": {"status": "MISSING", "detail": "No API endpoints for camera/cinematic configuration."},
+    "job_progress": {"status": "WORKING", "detail": "Job status endpoint returns state, progress_pct, current_stage, events."},
+    "artifact_download": {"status": "PARTIAL", "detail": "Artifact references stored in DB. No streaming download endpoint for local files."},
+    "correction_events": {"status": "PARTIAL", "detail": "Studio edit operations recorded. Not exposed as correction-event API."},
+    "revision_system": {"status": "WORKING", "detail": "Studio version commit + list endpoints. Immutable versioning."},
+    "final_results_page": {"status": "MISSING", "detail": "No dedicated results page. Individual endpoints exist but no aggregate view."},
+    "restart_recovery": {"status": "WORKING", "detail": "Workspace auto-discovery, session re-auth, provider config persists."},
+    "error_handling": {"status": "WORKING", "detail": "10/10 failure states handled in frontend + backend."}
+  },
+  "summary": {
+    "working": 14,
+    "partial": 7,
+    "disconnected": 1,
+    "missing": 4
+  },
+  "blockers_for_full_pipeline": [
+    "NVIDIA Vision API key not configured",
+    "Pascal MCP/REST service not running locally",
+    "No API endpoint wiring photo→understanding→geometry→3D pipeline",
+    "No video rendering API endpoint",
+    "No materials/lighting/camera API endpoints"
+  ]
+}

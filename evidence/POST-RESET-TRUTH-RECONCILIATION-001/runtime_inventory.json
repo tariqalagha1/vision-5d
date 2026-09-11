@@ -1,0 +1,64 @@
+{
+  "mission": "V5D-POST-RESET-TRUTH-RECONCILIATION-001",
+  "gate": "GATE_2",
+  "timestamp": "2026-07-27T08:22:53.925159",
+  "interpreters": [
+    {
+      "name": "Hermes Python 3.11",
+      "executable_path": "C:\\Users\\admin\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+      "python_version": "Python 3.11.9",
+      "architecture": "Windows x86-64",
+      "environment_type": "system_python",
+      "environment_root": "C:\\Users\\admin\\AppData\\Local\\Programs\\Python\\Python311",
+      "intended_for": "Hermes agent runtime (NOT Vision 5D development)",
+      "packages": {},
+      "authority": "SUPPORTING (Hermes host only \u2014 NEVER for Vision 5D tests)"
+    },
+    {
+      "name": "Project Python 3.14",
+      "executable_path": "C:\\Users\\admin\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+      "python_version": "Python 3.14.3",
+      "architecture": "Windows x86-64",
+      "environment_type": "system_python",
+      "environment_root": "C:\\Users\\admin\\AppData\\Local\\Programs\\Python\\Python314",
+      "intended_for": "Vision 5D development",
+      "packages": {},
+      "authority": "AUTHORITATIVE (intended project interpreter per pyproject.toml >=3.11)"
+    },
+    {
+      "name": "pyproject.toml (declared dependencies)",
+      "python_constraint": ">=3.11",
+      "declared_deps": [
+        "fastapi",
+        "uvicorn",
+        "pydantic",
+        "sqlalchemy",
+        "alembic",
+        "python-jose",
+        "passlib",
+        "python-multipart",
+        "httpx",
+        "aiofiles",
+        "python-magic",
+        "structlog",
+        "cryptography",
+        "tenacity"
+      ],
+      "dev_deps": [
+        "pytest",
+        "pytest-asyncio",
+        "pytest-cov",
+        "httpx",
+        "ruff"
+      ],
+      "undeclared_deps_found_in_tests": [
+        "numpy (test_phase2.py)"
+      ],
+      "undeclared_deps_found_in_scripts": [
+        "Pillow (render_cinematic_video.py)",
+        "opencv-python (pipeline_9stage.py)"
+      ],
+      "authority": "AUTHORITATIVE (declared dependency source)"
+    }
+  ]
+}

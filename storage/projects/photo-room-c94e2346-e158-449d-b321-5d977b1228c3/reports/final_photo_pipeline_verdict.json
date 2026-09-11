@@ -1,0 +1,31 @@
+{
+  "mission": "V5D-PHOTO-PIPELINE-REPO-TEST-001",
+  "timestamp": "2026-07-29T06:22:04.190825+00:00",
+  "project_id": "6e1587e7-d86e-4df0-849e-41667ac1b490",
+  "job_id": "c94e2346-e158-449d-b321-5d977b1228c3",
+  "project_name": "PHOTO-ROOM-c94e2346",
+  "photo_source": "C:\\Users\\admin\\workspaces\\vision-5d\\test_data\\1.webp",
+  "photo_sha256": "3b39eeaa3907409677fa205f13c3bc93f49a1a5f6d4bbec52878df4d76ed8732",
+  "photo_dimensions": {
+    "width": 1200,
+    "height": 1500
+  },
+  "nvidia_model": "meta/llama-3.2-11b-vision-instruct",
+  "nvidia_endpoint": "https://integrate.api.nvidia.com/v1/chat/completions",
+  "nvidia_request_id": "chatcmpl-7bf05594a3274625b5c4d27441cbadbd",
+  "nvidia_called_from_repo": true,
+  "detected_room_type": {
+    "value": "living_room",
+    "confidence": 1.0
+  },
+  "visible_architecture_count": 2,
+  "visible_furniture_count": 2,
+  "visible_relationships_count": 2,
+  "occlusions_count": 2,
+  "unknowns_count": 1,
+  "structured_scene_path": "C:\\Users\\admin\\workspaces\\vision-5d\\storage\\projects\\photo-room-c94e2346-e158-449d-b321-5d977b1228c3\\parsed\\photo_scene.json",
+  "raw_nvidia_evidence_path": "C:\\Users\\admin\\workspaces\\vision-5d\\storage\\projects\\photo-room-c94e2346-e158-449d-b321-5d977b1228c3\\nvidia_vision\\raw_response.json",
+  "input_validation": "PASS",
+  "scene_validation": "PASS",
+  "final_status": "VERIFIED"
+}

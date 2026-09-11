@@ -1,0 +1,34 @@
+{
+  "mission": "V5D-FULL-LOCAL-APP-INTEGRATION-001",
+  "timestamp": "2026-07-31T21:14:49.398963",
+  "services": [
+    {
+      "name": "Vision 5D API",
+      "port": 8000,
+      "url": "http://localhost:8000",
+      "status": "RUNNING",
+      "health": "/health"
+    },
+    {
+      "name": "Static Files",
+      "port": 8100,
+      "url": "http://localhost:8100",
+      "status": "AVAILABLE",
+      "note": "Python http.server or direct file://"
+    },
+    {
+      "name": "Pascal MCP",
+      "port": "N/A",
+      "url": "N/A",
+      "status": "NOT RUNNING",
+      "note": "TypeScript only, requires separate startup"
+    },
+    {
+      "name": "Job Worker",
+      "port": "N/A",
+      "url": "N/A",
+      "status": "NOT RUNNING",
+      "note": "apps/worker/main.py not started"
+    }
+  ]
+}

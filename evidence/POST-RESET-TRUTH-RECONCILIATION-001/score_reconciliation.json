@@ -1,0 +1,72 @@
+{
+  "mission": "V5D-POST-RESET-TRUTH-RECONCILIATION-001",
+  "gate": "GATE_8",
+  "timestamp": "2026-07-27T08:23:44.310816",
+  "source_report": "C:\\Users\\admin\\workspaces\\vision-5d\\output\\RE-SingDetch-FH_AS\\reports\\customer_acceptance_report.json",
+  "claimed_score": 98.6,
+  "claimed_passes": 70,
+  "claimed_warnings": 1,
+  "claimed_failures": 0,
+  "claimed_total": 71,
+  "phase_results": {
+    "PHASE_10_Geometry": "PASS",
+    "PHASE_11_GLB": "FAIL",
+    "PHASE_12_Video": "PASS",
+    "PHASE_13_HTML": "PASS",
+    "PHASE_14_AI_Design": "PASS",
+    "PHASE_15_Performance": "PASS",
+    "PHASE_16_Output": "PASS"
+  },
+  "check_types_observed": [
+    "MP4 Resolution",
+    "GIF Duration",
+    "GIF Non-Zero",
+    "Exists: validation_report.pdf",
+    "WebM Resolution",
+    "Total Rooms > 0",
+    "WebM Non-Zero",
+    "Exists: pipeline.log",
+    "Exists: ai_design_report.pdf",
+    "Exists: RE-SingDetch-FH_AS.mp4",
+    "Bathroom: Shower",
+    "MP4 Non-Zero",
+    "GLB Opens",
+    "HTML Non-Zero",
+    "Living: TV",
+    "Living: Coffee Table",
+    "GLB Has Nodes",
+    "Kitchen: Oven",
+    "Laundry: Dryer",
+    "All Required Files Present"
+  ],
+  "checks_omitted": [
+    "GLB accessor resolution (rendering test)",
+    "GLB bufferView population",
+    "GLB renderable in any viewer",
+    "HTML loads GLB file",
+    "HTML scene == GLB scene",
+    "Video is 3D rendered (not 2D diagram)",
+    "Video frames are perceptually diverse",
+    "Camera motion visible in video",
+    "Furniture is recognizable 3D meshes (not boxes)",
+    "Walls in GLB == walls in geometry model",
+    "Doors in GLB == doors in geometry model",
+    "Room count consistent across artifacts"
+  ],
+  "glb_phase_11_analysis": {
+    "checks_in_phase": 8,
+    "all_passed": false,
+    "but_phase_marked": "FAIL",
+    "explanation": "Phase 11 has 8 PASS checks but the phase gate is marked FAIL. The scoring logic appears to have a warning-to-failure conversion where 0 materials triggers a PHASE-level failure despite all individual checks passing."
+  },
+  "false_positive_conditions": [
+    "File existence \u2192 classified as 'GLB Valid'",
+    "Non-zero file size \u2192 classified as 'GLB Non-Zero' (passes even with empty accessors)",
+    "ffprobe metadata \u2192 classified as 'Video Valid' (passes even for 2D diagrams)",
+    "String matching for GLB references in HTML \u2192 not performed",
+    "Visual rendering check \u2192 never performed",
+    "Cross-artifact identity verification \u2192 never performed"
+  ],
+  "score_verdict": "LEGACY_SURFACE_SCORE",
+  "verdict_rationale": "The 98.6% score is based on surface-level checks (file exists, non-zero size, ffprobe returns metadata, JSON field counts). It does NOT verify structural validity, rendering capability, cross-artifact identity, or visual content. The GLB is structurally invalid (0 accessors, 0 bufferViews), the HTML never loads the GLB, and the video is a 2D diagram. The score cannot represent customer readiness."
+}

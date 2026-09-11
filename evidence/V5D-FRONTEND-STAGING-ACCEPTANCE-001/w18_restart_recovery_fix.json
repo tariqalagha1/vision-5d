@@ -1,0 +1,29 @@
+{
+  "mission": "V5D-FRONTEND-STAGING-ACCEPTANCE-001",
+  "workflow": "W18: Restart Recovery",
+  "status": "FIXED — VERIFIED",
+  "timestamp": "2026-07-31T20:10:00",
+  "root_cause": "Hardcoded workspace IDs prevented AI configuration discovery after server restart",
+  "details": {
+    "problem": "Frontend used hardcoded workspace IDs (dashboard.js: '00000000-0000-0000-0000-000000000001', ai-config.js: 'ws-001') that never matched actual workspace UUIDs after restart + re-auth",
+    "symptoms": [
+      "After server restart, all provider queries returned empty",
+      "Dashboard showed ai_configured=0, ai_healthy=0",
+      "AI config page showed 'Not configured'",
+      "configured=None in staging test"
+    ],
+    "fix": [
+      "Added GET /api/v1/workspaces endpoint returning tenant's workspaces + default_workspace_id",
+      "Added V5D.Projects.getWorkspaceId() with 3-tier discovery: sessionStorage cache → backend API → auto-create",
+      "Updated dashboard.js _getWorkspaceId() to async auto-discovery",
+      "Updated ai-config.js to use dynamic WS_ID via _getWS()",
+      "All 4 callers of _getWorkspaceId() updated for async"
+    ],
+    "verification": {
+      "restart_simulation": "PASS — re-auth finds same user, workspace auto-discovered, provider listed",
+      "auto_create_fallback": "PASS — new tenant with 0 workspaces auto-creates one",
+      "backend_tests": "98/98 PASS — zero regressions",
+      "staging_acceptance": "6/6 workflows now pass"
+    }
+  }
+}

@@ -1,0 +1,187 @@
+{
+  "mission": "V5D-PASCAL-STAGING-ACCEPTANCE-001",
+  "totalArtifacts": 36,
+  "artifacts": [
+    {
+      "path": "artifact_manifest.json",
+      "sha256": "9e963377bc995a48e8a681b47844cc163501aaa0948a8ee9e19caa312542d106",
+      "sizeBytes": 6068
+    },
+    {
+      "path": "authentication_authorization_result.json",
+      "sha256": "bb6447459ec9c4c9f8a6fdd2db0af6a747b45705fae1c095dfdb142d1b3b26d8",
+      "sizeBytes": 394
+    },
+    {
+      "path": "automated_test_results.json",
+      "sha256": "4cf27a11a905973d0f1ca479a7ec38070ce8a51734062cba17bd1387dc2724ee",
+      "sizeBytes": 1255
+    },
+    {
+      "path": "build_result.json",
+      "sha256": "15f05111d053012e23b0c7c7fbc3b9b123d13acedaf78c602b41f3801a4601a9",
+      "sizeBytes": 82
+    },
+    {
+      "path": "conflict_detection_result.json",
+      "sha256": "b91ad1b94cecd2f3901e3609805ee3569c05bc2d9e5f76af1d20899c491d0744",
+      "sizeBytes": 230
+    },
+    {
+      "path": "connectivity_result.json",
+      "sha256": "7c4800132c7b3e251f1fd6bb2df4a4badca3e0148bffbb0ea692acbddcdc5163",
+      "sizeBytes": 349
+    },
+    {
+      "path": "correction_event_result.json",
+      "sha256": "8523b9815b6083e2287e76322d9e229b493db2e52b60e1af4b02c82b0431e179",
+      "sizeBytes": 2452
+    },
+    {
+      "path": "deployment_result.json",
+      "sha256": "952f8105ec70a1a690924b11283b67f960a0a057407c4efff7e619b456c7dc60",
+      "sizeBytes": 425
+    },
+    {
+      "path": "editor_workflow_result.json",
+      "sha256": "c25565c2acd7711316ca2d10281adb90d82174aa9c807b65bc650e2ec9be332a",
+      "sizeBytes": 162
+    },
+    {
+      "path": "environment_inventory.json",
+      "sha256": "17160258213f5ffbff369549f28ba453661c0a71a65816bf77f4e06a22d6a6e0",
+      "sizeBytes": 733
+    },
+    {
+      "path": "failure_recovery_result.json",
+      "sha256": "7114c1dacadecf9ffffbc31f81b65af4ca55015acb188080f4e54d72dbc7541f",
+      "sizeBytes": 334
+    },
+    {
+      "path": "final_report.md",
+      "sha256": "7e6da6e5d3f8b65c181782e8016e2ba93d48eac26b13cd83dbd0936afd28142c",
+      "sizeBytes": 2045
+    },
+    {
+      "path": "graph_validation_result.json",
+      "sha256": "121bb0ebbd76e2508f19b09cb255db0e537042f814892e1d437b1058be9edbcb",
+      "sizeBytes": 38
+    },
+    {
+      "path": "idempotency_result.json",
+      "sha256": "44166c751b131fdc7c4a1b725c8129e2d1bb5c45da9b59512261bd3026797362",
+      "sizeBytes": 125
+    },
+    {
+      "path": "immutable_revision_result.json",
+      "sha256": "b8d2880d4bfd7865b85c20305fedeedf98d6268456dde8ce3b9edf5c727bd787",
+      "sizeBytes": 397
+    },
+    {
+      "path": "mcp_workflow_result.json",
+      "sha256": "9a3288cf2b1fee32d29e089194dafbc6f61074d1d67b5b5af54866377d842dac",
+      "sizeBytes": 607
+    },
+    {
+      "path": "merge_readiness_checklist.json",
+      "sha256": "c65030daca369e0614acbc52bd5734711fa040cd6e37877bdcdea124110c1e70",
+      "sizeBytes": 593
+    },
+    {
+      "path": "node_validation_result.json",
+      "sha256": "32d66f1d089bf7509569bb280a22cc7abbe1aa3608359fac1de70b11d89a0856",
+      "sizeBytes": 34
+    },
+    {
+      "path": "observability_result.json",
+      "sha256": "3c4e1861cf443739b4ff6bb756a51c59bb1e06db6d85eeec27ed14a202519921",
+      "sizeBytes": 478
+    },
+    {
+      "path": "performance_1000_nodes.json",
+      "sha256": "0f75243089d0a2ef811727b452a2eaba144d0e781602a6dab7f0e51b0c48f5f0",
+      "sizeBytes": 87
+    },
+    {
+      "path": "performance_500_nodes.json",
+      "sha256": "66fc9fd88524795dc6b1527674b4d587f5a9855e4db2202f76a96d2219a25c1b",
+      "sizeBytes": 87
+    },
+    {
+      "path": "performance_64_nodes.json",
+      "sha256": "553b66f180fb012111ebef5593d42f41098d6580499d0e745f51607aa057bea9",
+      "sizeBytes": 84
+    },
+    {
+      "path": "reference_export_result.json",
+      "sha256": "3c5b590ab1dad3cb70852e8f345f7725e9447c0d39e85f8af73dc8ca1cb1c01d",
+      "sizeBytes": 489
+    },
+    {
+      "path": "release_artifact_inventory.json",
+      "sha256": "b8fa5e548791d91fa18f98f0e10d42375fdac7dff4a002709b3650fa07f42f33",
+      "sizeBytes": 638
+    },
+    {
+      "path": "restart_recovery_result.json",
+      "sha256": "a06959606c29be5453cbdf5bdc097a2b6f268b43870d7830d58e66dc380fa49f",
+      "sizeBytes": 275
+    },
+    {
+      "path": "rest_create_result.json",
+      "sha256": "32f764e35daa3c93ef261bba98d29519e0290ff7a4e6c94d748e3aef239d56d5",
+      "sizeBytes": 237
+    },
+    {
+      "path": "rest_readback_result.json",
+      "sha256": "cc27d45a6ea8d5c89748b67600d04dff64179d7f0d1788353eac4b356685240e",
+      "sizeBytes": 91
+    },
+    {
+      "path": "risk_report.md",
+      "sha256": "fbe939dc8e5801a5f94e81f96f58b291772d25b93bda52543f5e13458c73ddbf",
+      "sizeBytes": 303
+    },
+    {
+      "path": "rollback_result.json",
+      "sha256": "ce489b87c879af58754cd07b424a872ba9d58ac8378a74adf37ba66eeff90967",
+      "sizeBytes": 250
+    },
+    {
+      "path": "round_trip_result.json",
+      "sha256": "2880b0215bf306807d97640a7a13dd2d5c6cd979af1a26c1c72bfbeeda41f2f9",
+      "sizeBytes": 99
+    },
+    {
+      "path": "service_health_result.json",
+      "sha256": "a500fd7b862a0e31578ce85462f5383f0105ad9af11280a81b9cae9730b9ac80",
+      "sizeBytes": 129
+    },
+    {
+      "path": "soak_test_result.json",
+      "sha256": "2d6c5e66801d7a230b840893e7181c687314c0cb0891a46a1b0c06e8d6bf3907",
+      "sizeBytes": 197
+    },
+    {
+      "path": "source_verification.json",
+      "sha256": "76d247a7a152754a970f941872a8792032ab4f4f1f684fd8a581c20f157a6aa9",
+      "sizeBytes": 739
+    },
+    {
+      "path": "staging_configuration_validation.json",
+      "sha256": "bf9073ba046d8f08eb699bd49b6c18a4cb8b52ecbb40d1ae0861e70e44de866e",
+      "sizeBytes": 903
+    },
+    {
+      "path": "synchronization_state_result.json",
+      "sha256": "921acc6969a01ce633b343348b9aee4050bebc96eb481b0081c5444c41b4bcfc",
+      "sizeBytes": 213
+    },
+    {
+      "path": "unresolved_issue_register.json",
+      "sha256": "cd7fbb32f30745b693627b5a2944e64cfec59d336e89643ccee9bb7a4ef2644b",
+      "sizeBytes": 493
+    }
+  ],
+  "generatedAt": "2026-07-30T06:12:03.968680+00:00"
+}

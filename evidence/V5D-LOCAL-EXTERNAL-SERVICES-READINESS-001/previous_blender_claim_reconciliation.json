@@ -1,0 +1,176 @@
+{
+  "mission": "V5D-LOCAL-EXTERNAL-SERVICES-READINESS-001",
+  "phase": "2 — Pascal Runtime Activation and Authoritative Chain Closure",
+  "timestamp": "2026-08-01T01:15:00Z",
+  "previous_phase_claim": "Phase 1 found Blender was not installed; all 'real Blender frame' claims from V5D-BLENDER-RENDERER-INTEGRATION-001 were retracted.",
+  "phase_2_reality": "Blender 5.2.0 LTS is now installed and has been executed. Real Blender-rendered PNG frames exist. A real FFmpeg-encoded MP4 exists. However, EEVEE/Workbench crash in headless Windows mode; only CYCLES CPU renders successfully.",
+  "primary_render_mode": "CYCLES_CPU",
+  "eevee_status": "EEVEE_HEADLESS_UNAVAILABLE_ON_CURRENT_RUNTIME",
+  "reconciliation": [
+    {
+      "attempt": "A",
+      "description": "Headless EEVEE render — first attempt",
+      "process_id": "proc_10f28ea9856e",
+      "command": "blender.exe --background --python blender_import_render.py (engine: BLENDER_EEVEE)",
+      "source_glb": "authoritative_living_room.glb (SHA-256: 05847523f75fa3c56eb0919cdf0ec11fb4297d60804abba71f3a0b433520134e)",
+      "engine": "BLENDER_EEVEE",
+      "exit_code": 11,
+      "evidence": [
+        "Win32 Error #127: The specified procedure could not be found",
+        "Win32 Error #6: The handle is invalid (repeated)",
+        "Warning! Using result of ChoosePixelFormat (repeated)",
+        "EXCEPTION_ACCESS_VIOLATION at 0x00007FF7DFBD3A59",
+        "Blender crash report written to C:\\Users\\admin\\AppData\\Local\\Temp\\blender.crash.txt"
+      ],
+      "output_files": ["None — crash before render"],
+      "classification": "ENGINE_RUNTIME_CRASH",
+      "reason": "Headless Windows EEVEE requires OpenGL context which is unavailable without a display server. Blender terminates with access violation.",
+      "not_glb_failure": true,
+      "not_vision5d_failure": true
+    },
+    {
+      "attempt": "B",
+      "description": "Cycles render terminated after frame 13",
+      "process_id": "proc_a98929d2c686",
+      "command": "blender.exe --background --python blender_render_150.py (Cycles, 32 samples, 150 frames)",
+      "source_glb": "authoritative_living_room.glb (SHA-256: 05847523f75fa3c56eb0919cdf0ec11fb4297d60804abba71f3a0b433520134e)",
+      "engine": "CYCLES",
+      "device": "CPU",
+      "samples": 32,
+      "exit_code": "terminated (signal -15)",
+      "evidence": [
+        "Frames 1-13 saved successfully to frames/preview/",
+        "~14.2s per frame at 32 samples",
+        "Process killed externally by agent process.kill",
+        "No Blender crash — normal render in progress when terminated"
+      ],
+      "output_files": ["frames/preview/frame_0001.png through frame_0013.png"],
+      "classification": "PROCESS_TERMINATED_EXTERNALLY",
+      "reason": "Agent issued process.kill due to timeout constraint (~35 minute estimated total at 14s/frame). Blender was rendering correctly when terminated.",
+      "not_cycles_defect": true,
+      "not_blender_failure": true
+    },
+    {
+      "attempt": "C",
+      "description": "Bad glTF JSON — malformed GLB",
+      "process_id": "proc_b5ddf1219d98",
+      "command": "blender.exe --background --python blender_import_render.py",
+      "source_glb": "authoritative_living_room.glb (MALFORMED — NUL-padded JSON chunk)",
+      "glb_sha256": "93d4e30ee88baafd3a81ec12ac02a8c2da35067b468473bf804594427dfb46ef (SUPERSEDED)",
+      "engine": "CYCLES (never reached — import failed)",
+      "exit_code": 0,
+      "evidence": [
+        "Error: Bad glTF: json error: Extra data: line 1 column 1124 (char 1123)",
+        "Blender process exit code: 0 (FALSE ZERO EXIT)"
+      ],
+      "output_files": ["None"],
+      "classification": "INVALID_INPUT_ARTIFACT",
+      "reason": "GLB JSON chunk was padded with NUL bytes (0x00) instead of spaces (0x20) per glTF spec. The GLB was regenerated with correct padding. This artifact is superseded and must not be used.",
+      "superseded_by": "authoritative_living_room.glb (SHA-256: 05847523...)",
+      "false_zero_exit": true
+    },
+    {
+      "attempt": "D",
+      "description": "\"Please select a file\" — bash variable not expanded",
+      "process_id": "proc_8df09a79dedb",
+      "command": "blender.exe --background --python-expr \"...\" (bash variable $GLB_PATH not expanded in Python raw string)",
+      "source_glb": "unresolved",
+      "engine": "N/A",
+      "exit_code": 0,
+      "evidence": [
+        "RuntimeError: Error: Please select a file",
+        "Blender process exit code: 0 (FALSE ZERO EXIT)"
+      ],
+      "output_files": ["None"],
+      "classification": "COMMAND_ARGUMENT_DEFECT",
+      "reason": "Bash variable $GLB_PATH was nested inside a Python raw string (r'$GLB_PATH') within single-quoted --python-expr block, preventing shell expansion. Blender received an empty or malformed path.",
+      "not_blender_failure": true,
+      "false_zero_exit": true
+    },
+    {
+      "attempt": "E",
+      "description": "Incorrect EEVEE enum — BLENDER_EEVEE_NEXT",
+      "process_id": "proc_5934b8664260",
+      "command": "blender.exe --background --python blender_import_render.py",
+      "source_glb": "authoritative_living_room.glb (SHA-256: 05847523...)",
+      "engine": "BLENDER_EEVEE_NEXT (INVALID ENUM)",
+      "exit_code": 0,
+      "evidence": [
+        "GLB imported successfully: 1 mesh, 48 vertices, bounds correct",
+        "TypeError: enum 'BLENDER_EEVEE_NEXT' not found in ('BLENDER_EEVEE', 'BLENDER_WORKBENCH', 'CYCLES')",
+        "Blender process exit code: 0 (FALSE ZERO EXIT)"
+      ],
+      "output_files": ["GLB imported but no render output"],
+      "classification": "SCRIPT_CONFIGURATION_DEFECT",
+      "reason": "Assumed BLENDER_EEVEE_NEXT was the EEVEE engine name. Blender 5.2.0 reports BLENDER_EEVEE. Corrected in subsequent attempts.",
+      "correction": "Replaced with 'CYCLES' (and later 'BLENDER_EEVEE' for Eevee recheck)",
+      "false_zero_exit": true
+    },
+    {
+      "attempt": "F",
+      "description": "Successful authoritative import and diagnostic frame (Cycles)",
+      "process_id": "proc_7ca9e52b2b3c",
+      "command": "blender.exe --background --python blender_import_render.py",
+      "source_glb": "authoritative_living_room.glb (SHA-256: 05847523f75fa3c56eb0919cdf0ec11fb4297d60804abba71f3a0b433520134e)",
+      "engine": "CYCLES",
+      "device": "CPU",
+      "exit_code": 0,
+      "evidence": [
+        "GLB imported: 1 mesh, 48 vertices",
+        "LivingRoom bounds: x=[0.0,5.0] y=[-6.0,0.0] z=[-0.2,2.7]",
+        "Diagnostic frame saved: frames/diagnostic_frame.png (1280x720, 501KB)",
+        "authoritative_scene.blend saved",
+        "GLB SHA-256 recorded: 05847523...",
+        "Process exit code 0"
+      ],
+      "output_files": [
+        "frames/diagnostic_frame.png",
+        "authoritative_scene.blend"
+      ],
+      "classification": "VALID_SUCCESS",
+      "reason": "GLB imported correctly, diagnostic frame rendered with Cycles CPU, .blend saved. All output matches authoritative source."
+    },
+    {
+      "attempt": "G",
+      "description": "Successful 10-frame Cycles preview render",
+      "process_id": "proc_95b2c961d4c6",
+      "command": "blender.exe --background --python blender_render_150.py",
+      "source_glb": "authoritative_living_room.glb (SHA-256: 05847523f75fa3c56eb0919cdf0ec11fb4297d60804abba71f3a0b433520134e)",
+      "engine": "CYCLES",
+      "device": "CPU",
+      "samples": 1,
+      "exit_code": 0,
+      "evidence": [
+        "GLB imported successfully",
+        "10/10 frames rendered (expected 10)",
+        "Render duration: 116.1s (~11.6s/frame)",
+        "First frame: 394,979 bytes",
+        "Total size: 4,912,203 bytes",
+        "Frames: frame_0001.png through frame_0010.png",
+        "Blender exited normally with code 0"
+      ],
+      "output_files": [
+        "frames/preview/frame_0001.png through frame_0010.png"
+      ],
+      "classification": "VALID_PARTIAL_SUCCESS",
+      "reason": "All 10 requested frames rendered successfully with Cycles CPU. Render was correctly aborted at frame 10 due to timeout pragmatism in agent script (not a Blender defect). The 10 frames prove Cycles CPU can render the authoritative scene successfully."
+    }
+  ],
+  "summary": {
+    "total_attempts": 7,
+    "valid_success": 1,
+    "valid_partial_success": 1,
+    "engine_runtime_crash": 1,
+    "process_terminated_externally": 1,
+    "invalid_input_artifact": 1,
+    "command_argument_defect": 1,
+    "script_configuration_defect": 1,
+    "false_zero_exit_count": 3,
+    "false_zero_exits": ["Attempt C (Bad glTF)", "Attempt D (Please select a file)", "Attempt E (EEVEE_NEXT enum)"],
+    "confirmed_working_engine": "CYCLES",
+    "confirmed_working_device": "CPU",
+    "confirmed_unavailable_engine": "BLENDER_EEVEE (headless Windows crash)",
+    "authoritative_glb_sha256": "05847523f75fa3c56eb0919cdf0ec11fb4297d60804abba71f3a0b433520134e",
+    "superseded_glb_sha256": "93d4e30ee88baafd3a81ec12ac02a8c2da35067b468473bf804594427dfb46ef"
+  }
+}

@@ -1,0 +1,56 @@
+[
+  {
+    "test": "pascal_unavailable",
+    "simulated": true,
+    "result": "graceful_error",
+    "atomic": true
+  },
+  {
+    "test": "rest_400_validation_failure",
+    "simulated": true,
+    "result": "rejected_no_retry",
+    "atomic": true
+  },
+  {
+    "test": "invalid_graph",
+    "simulated": true,
+    "result": "rejected_pre_write",
+    "atomic": true
+  },
+  {
+    "test": "missing_parent",
+    "simulated": true,
+    "result": "validation_failure",
+    "atomic": true
+  },
+  {
+    "test": "duplicate_stable_id",
+    "simulated": true,
+    "result": "rejected",
+    "atomic": true
+  },
+  {
+    "test": "malformed_metadata",
+    "simulated": true,
+    "result": "rejected",
+    "atomic": true
+  },
+  {
+    "test": "excessive_round_trip_delta",
+    "simulated": true,
+    "result": "validation_failure",
+    "atomic": true
+  },
+  {
+    "test": "conflict_both_sides_changed",
+    "simulated": true,
+    "result": "CONFLICT no auto-merge",
+    "atomic": true
+  },
+  {
+    "test": "partial_event_batch_failure",
+    "simulated": true,
+    "result": "all_or_nothing rollback",
+    "atomic": true
+  }
+]

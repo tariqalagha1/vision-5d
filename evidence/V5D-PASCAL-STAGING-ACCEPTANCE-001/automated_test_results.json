@@ -1,0 +1,75 @@
+{
+  "discovered": 2569,
+  "passed": 2568,
+  "failed": 0,
+  "skipped": 1,
+  "flaky": 0,
+  "durationS": 39.08,
+  "integration_specific": [
+    {
+      "test": "adapter_unit",
+      "pass": true
+    },
+    {
+      "test": "schema_contract",
+      "pass": true
+    },
+    {
+      "test": "coordinate_conversion",
+      "pass": true
+    },
+    {
+      "test": "opening_conversion",
+      "pass": true
+    },
+    {
+      "test": "identity_map",
+      "pass": true
+    },
+    {
+      "test": "provenance",
+      "pass": true
+    },
+    {
+      "test": "rest_client",
+      "pass": true
+    },
+    {
+      "test": "mcp_client",
+      "pass": true
+    },
+    {
+      "test": "correction_events",
+      "pass": true
+    },
+    {
+      "test": "immutable_revisions",
+      "pass": true
+    },
+    {
+      "test": "sync_states",
+      "pass": true
+    },
+    {
+      "test": "conflict_detection",
+      "pass": true
+    },
+    {
+      "test": "failure_atomicity",
+      "pass": true
+    },
+    {
+      "test": "migration",
+      "pass": true
+    },
+    {
+      "test": "reference_e2e",
+      "pass": true
+    }
+  ],
+  "pascal_core_tests": {
+    "pass": 2549,
+    "skip": 1,
+    "fail": 0
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "mission": "VISION 5D PROCESS REPAIR 002",
+  "verdict": "VISION 5D PROCESS REPAIR 002: CERTIFIED",
+  "source_glb": "C:\\Users\\admin\\workspaces\\vision-5d\\evidence\\V5D-LOCAL-EXTERNAL-SERVICES-READINESS-001\\fixed_api_glb.glb",
+  "source_glb_sha256": "676f4fc236fa99f9064d120e8dadfc453b628e247fc8b092733c0ca42752aeef",
+  "glb_stats": {"meshes": 14, "vertices": 112, "triangles": 168},
+  "render": {
+    "engine": "CYCLES",
+    "device": "CPU",
+    "samples": 4,
+    "denoise": true,
+    "resolution": "1280x720",
+    "fps": 24,
+    "frame_count": 120,
+    "duration_s": 5.0,
+    "camera_positions": [
+      [2.5, -10.0, 6.0],
+      [9.0, -8.0, 3.5],
+      [2.5, 3.0, 7.5]
+    ]
+  },
+  "mp4": {
+    "path": "C:\\Users\\admin\\workspaces\\vision-5d\\evidence\\V5D-PROCESS-REPAIR-002\\pr002_first_video.mp4",
+    "codec": "h264",
+    "pix_fmt": "yuv420p",
+    "resolution": "1280x720",
+    "fps": 24,
+    "duration_s": 5.0,
+    "frames": 120,
+    "size_bytes": 474712,
+    "black_frames_detected": 0
+  },
+  "root_cause_fixed": [
+    "GLB had 0 materials -> assigned neutral PBR material to all 14 meshes",
+    "TRACK_TO constraint silently failed headless -> replaced with explicit to_track_quat camera aim",
+    "No world lighting -> added sky background + SUN + AREA lights"
+  ],
+  "scores": {
+    "architecture_visibility": 70,
+    "camera_framing": 75,
+    "camera_movement": 80,
+    "scene_comprehension": 70,
+    "visual_stability": 75,
+    "video_technical_quality": 85,
+    "client_comprehension": 70,
+    "overall": 72
+  },
+  "artifacts": [
+    "diagnostic_frame.png",
+    "keyframes/keyframe_start_f0001.png",
+    "keyframes/keyframe_middle_f0060.png",
+    "keyframes/keyframe_end_f0120.png",
+    "frames/frame_0001.png ... frame_0120.png (120 frames)",
+    "contact_sheet.png",
+    "pr002_first_video.mp4",
+    "diagnose_result.json",
+    "animate_result.json",
+    "debug_result.json",
+    "final_report.md"
+  ],
+  "known_restriction": "SQLite UUID columns require proper TEXT/CHAR(32) migration before production hardening."
+}

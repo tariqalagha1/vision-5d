@@ -1,0 +1,14 @@
+{
+  "mission": "V5D-BLENDER-RUNTIME-VERIFICATION-001",
+  "timestamp": "2026-07-31T22:23:19.856746",
+  "path": "C:/Users/admin/workspaces/vision-5d\\.exports\\render_test_001\\test_scene.glb",
+  "size_bytes": 5052,
+  "sha256": "0638c6331ee87b12df9110a39d56ab613ab7f2a82585271f242484b6338b87cd",
+  "meshes": 1,
+  "vertices": 144,
+  "indices": 216,
+  "description": "Test building model: floor + 4 walls + roof, generated programmatically for render verification",
+  "validated": true,
+  "glb_magic": "glTF",
+  "glb_version": 2
+}

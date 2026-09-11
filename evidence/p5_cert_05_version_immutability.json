@@ -1,0 +1,8 @@
+{
+  "version_a_hash": "36adbf35bd2ae1613daef0a238fe10a6ab80830ff487b50baec241f60e700bc9",
+  "version_a_recheck": "36adbf35bd2ae1613daef0a238fe10a6ab80830ff487b50baec241f60e700bc9",
+  "version_b_hash": "caf3b2a8edc6a8ec1a68dbbd65e6d37c352f46b7b49a19206348d826970377ea",
+  "version_b_recheck": "caf3b2a8edc6a8ec1a68dbbd65e6d37c352f46b7b49a19206348d826970377ea",
+  "versions_differ": true,
+  "both_immutable": true
+}

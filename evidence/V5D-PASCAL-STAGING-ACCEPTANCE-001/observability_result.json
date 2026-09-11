@@ -1,0 +1,24 @@
+{
+  "correlationIds": [
+    "1f1e130d-f136-4285-bbed-82b61a7207ff"
+  ],
+  "structuredLogs": true,
+  "secretsAbsent": true,
+  "metrics": {
+    "exports": 1,
+    "imports": 1,
+    "validationFailures": 0,
+    "restLatencyMs": [
+      5,
+      15
+    ],
+    "mcpLatencyMs": [
+      3
+    ],
+    "correctionEvents": 5,
+    "roundTripDeltaM": 0.0,
+    "conflicts": 0,
+    "failedSyncs": 0
+  },
+  "traceability": "Vision 5D \u2192 REST \u2192 MCP chain: full"
+}

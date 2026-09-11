@@ -1,0 +1,49 @@
+{
+  "mission": "V5D-AI-CONFIGURATION-001",
+  "timestamp": "2026-07-31T14:06:52.568851",
+  "endpoints": [
+    {
+      "method": "GET",
+      "path": "/api/v1/workspaces/{ws_id}/providers",
+      "status": "NEW"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/workspaces/{ws_id}/providers",
+      "status": "EXISTING"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/providers/{prov_id}/credentials",
+      "status": "EXISTING"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/providers/{prov_id}/credentials",
+      "status": "NEW"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/providers/{prov_id}/credentials",
+      "status": "NEW"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/providers/{prov_id}/test",
+      "status": "EXISTING"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/providers/{prov_id}/models",
+      "status": "EXISTING"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/providers/{prov_id}/default-model",
+      "status": "EXISTING"
+    }
+  ],
+  "total": 8,
+  "new": 3,
+  "existing": 5
+}

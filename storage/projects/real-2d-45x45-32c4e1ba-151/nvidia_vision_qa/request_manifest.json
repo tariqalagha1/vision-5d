@@ -1,0 +1,91 @@
+{
+  "model": "nvidia/llama-3.1-nemotron-nano-vl-8b-v1",
+  "endpoint": "https://integrate.api.nvidia.com/v1/chat/completions",
+  "total_requests": 12,
+  "requests": [
+    {
+      "plan": "architectural_plan_01",
+      "crop": "full_plan",
+      "classification": "CLEAR_ARCHITECTURAL_PLAN",
+      "latency_ms": 13785.958,
+      "tokens": 4160
+    },
+    {
+      "plan": "architectural_plan_01",
+      "crop": "top_left",
+      "classification": "CLEAR_ARCHITECTURAL_PLAN",
+      "latency_ms": 23783.628,
+      "tokens": 4160
+    },
+    {
+      "plan": "architectural_plan_01",
+      "crop": "top_right",
+      "classification": "PARTIALLY_RENDERED",
+      "latency_ms": 13931.174,
+      "tokens": 4178
+    },
+    {
+      "plan": "architectural_plan_01",
+      "crop": "bottom_left",
+      "classification": "CLEAR_ARCHITECTURAL_PLAN",
+      "latency_ms": 44521.003,
+      "tokens": 4170
+    },
+    {
+      "plan": "architectural_plan_01",
+      "crop": "bottom_right",
+      "classification": "PARTIALLY_RENDERED",
+      "latency_ms": 9723.869999999999,
+      "tokens": 3893
+    },
+    {
+      "plan": "architectural_plan_01",
+      "crop": "center",
+      "classification": "CLEAR_ARCHITECTURAL_PLAN",
+      "latency_ms": 13395.386999999999,
+      "tokens": 4160
+    },
+    {
+      "plan": "elevation_detail_01",
+      "crop": "full_plan",
+      "classification": "CLEAR_ARCHITECTURAL_PLAN",
+      "latency_ms": 13516.605,
+      "tokens": 4160
+    },
+    {
+      "plan": "elevation_detail_01",
+      "crop": "top_left",
+      "classification": "CLEAR_ARCHITECTURAL_PLAN",
+      "latency_ms": 14704.057999999999,
+      "tokens": 4160
+    },
+    {
+      "plan": "elevation_detail_01",
+      "crop": "top_right",
+      "classification": "PARTIALLY_RENDERED",
+      "latency_ms": 12917.130000000001,
+      "tokens": 4178
+    },
+    {
+      "plan": "elevation_detail_01",
+      "crop": "bottom_left",
+      "classification": "CLEAR_ARCHITECTURAL_PLAN",
+      "latency_ms": 13628.244,
+      "tokens": 4160
+    },
+    {
+      "plan": "elevation_detail_01",
+      "crop": "bottom_right",
+      "classification": "CLEAR_ARCHITECTURAL_PLAN",
+      "latency_ms": 18640.767,
+      "tokens": 4160
+    },
+    {
+      "plan": "elevation_detail_01",
+      "crop": "center",
+      "classification": "CLEAR_ARCHITECTURAL_PLAN",
+      "latency_ms": 12463.376,
+      "tokens": 4160
+    }
+  ]
+}

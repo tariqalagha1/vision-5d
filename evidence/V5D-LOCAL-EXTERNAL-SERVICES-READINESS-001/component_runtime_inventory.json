@@ -1,0 +1,107 @@
+{
+  "mission": "V5D-LOCAL-EXTERNAL-SERVICES-READINESS-001",
+  "timestamp": "2026-07-31T21:59:37.902388",
+  "components": {
+    "ai_provider_resolution": {
+      "file": "packages/ai/provider_client.py",
+      "status": "IMPLEMENTED_NOT_EXECUTED",
+      "needs": "API key in .env"
+    },
+    "photo_understanding": {
+      "file": "packages/ai/gemini_vision.py",
+      "status": "IMPLEMENTED_NOT_EXECUTED",
+      "needs": "NVIDIA/Gemini API key"
+    },
+    "pascal_rest_client": {
+      "file": "src/integrations/pascal/client/pascal_rest_client.ts",
+      "status": "IMPLEMENTED_NOT_EXECUTED",
+      "needs": "Pascal REST service running"
+    },
+    "pascal_mcp_client": {
+      "file": "src/integrations/pascal/client/pascal_mcp_client.ts",
+      "status": "IMPLEMENTED_NOT_EXECUTED",
+      "needs": "Pascal MCP service running"
+    },
+    "pascal_correction_import": {
+      "file": "apps/api/pipeline_routes.py",
+      "status": "IMPLEMENTED_NOT_EXECUTED",
+      "needs": "Pascal services"
+    },
+    "scene3d_generation": {
+      "file": "packages/scene3d/reconstruction.py",
+      "status": "IMPLEMENTED_NOT_EXECUTED",
+      "needs": "Geometry input from pipeline"
+    },
+    "glb_export": {
+      "file": "packages/scene3d/glb_export.py",
+      "status": "IMPLEMENTED_NOT_EXECUTED",
+      "needs": "Scene3D input"
+    },
+    "blender_scene_builder": {
+      "file": "packages/rendering/blender_scene_builder.py",
+      "status": "IMPLEMENTED_NOT_EXECUTED",
+      "needs": "Blender 4.2+ installation"
+    },
+    "blender_command_execution": {
+      "file": "apps/api/pipeline_routes.py (render endpoint)",
+      "status": "IMPLEMENTED_NOT_EXECUTED",
+      "needs": "Blender.exe in PATH"
+    },
+    "material_mapping": {
+      "file": "packages/rendering/blender_scene_builder.py",
+      "status": "IMPLEMENTED_NOT_EXECUTED",
+      "needs": "Blender runtime"
+    },
+    "lighting_mapping": {
+      "file": "packages/rendering/blender_scene_builder.py",
+      "status": "IMPLEMENTED_NOT_EXECUTED",
+      "needs": "Blender runtime"
+    },
+    "camera_animation": {
+      "file": "packages/rendering/blender_scene_builder.py",
+      "status": "IMPLEMENTED_NOT_EXECUTED",
+      "needs": "Blender runtime"
+    },
+    "frame_rendering": {
+      "file": "packages/rendering/blender_scene_builder.py (Blender script)",
+      "status": "IMPLEMENTED_NOT_EXECUTED",
+      "needs": "Blender runtime"
+    },
+    "ffmpeg_encoding": {
+      "file": "apps/api/pipeline_routes.py (render endpoint)",
+      "status": "IMPLEMENTED_AND_EXECUTED",
+      "needs": "None"
+    },
+    "ffprobe_validation": {
+      "file": "apps/api/pipeline_routes.py (render endpoint)",
+      "status": "IMPLEMENTED_AND_EXECUTED",
+      "needs": "None"
+    },
+    "artifact_registration": {
+      "file": "apps/api/pipeline_routes.py (render endpoint)",
+      "status": "IMPLEMENTED_AND_EXECUTED",
+      "needs": "None"
+    },
+    "render_restart_recovery": {
+      "file": "apps/api/pipeline_routes.py (render endpoint)",
+      "status": "IMPLEMENTED_NOT_EXECUTED",
+      "needs": "Render execution"
+    },
+    "dashboard": {
+      "file": "apps/web/index.html",
+      "status": "IMPLEMENTED_AND_EXECUTED"
+    },
+    "api_server": {
+      "file": "apps/api/main.py",
+      "status": "IMPLEMENTED_AND_EXECUTED"
+    },
+    "pipeline_endpoints": {
+      "file": "apps/api/pipeline_routes.py",
+      "status": "IMPLEMENTED_AND_EXECUTED"
+    }
+  },
+  "summary": {
+    "IMPLEMENTED_AND_EXECUTED": 6,
+    "IMPLEMENTED_NOT_EXECUTED": 14
+  }
+}

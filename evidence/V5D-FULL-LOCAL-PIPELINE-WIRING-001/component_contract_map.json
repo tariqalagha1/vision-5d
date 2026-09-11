@@ -1,0 +1,76 @@
+{
+  "mission": "V5D-FULL-LOCAL-PIPELINE-WIRING-001",
+  "timestamp": "2026-07-31T21:35:59.525750",
+  "wiring": [
+    {
+      "component": "GeminiVisionAnalyzer",
+      "file": "packages/ai/gemini_vision.py",
+      "input": "image_path",
+      "output": "VisionAnalysisResult",
+      "wired_to": "POST /understand"
+    },
+    {
+      "component": "ProviderAdapter",
+      "file": "packages/ai/provider_client.py",
+      "input": "ProviderConfig",
+      "output": "dict",
+      "wired_to": "POST /understand (provider resolution)"
+    },
+    {
+      "component": "Geometry pipeline",
+      "file": "packages/geometry/",
+      "input": "understanding_result",
+      "output": "geometry_data",
+      "wired_to": "POST /geometry"
+    },
+    {
+      "component": "Pascal adapters",
+      "file": "src/integrations/pascal/adapters/ (TS)",
+      "input": "geometry",
+      "output": "Pascal nodes",
+      "wired_to": "POST /pascal (metadata only, needs service)"
+    },
+    {
+      "component": "Scene3DReconstructor",
+      "file": "packages/scene3d/reconstruction.py",
+      "input": "revision",
+      "output": "Scene3D",
+      "wired_to": "POST /scene3d"
+    },
+    {
+      "component": "export_glb",
+      "file": "packages/scene3d/glb_export.py",
+      "input": "Scene3D",
+      "output": "GLB bytes",
+      "wired_to": "POST /scene3d"
+    },
+    {
+      "component": "validate_glb",
+      "file": "packages/scene3d/glb_export.py",
+      "input": "GLB bytes",
+      "output": "validation dict",
+      "wired_to": "POST /scene3d"
+    },
+    {
+      "component": "CameraDirector",
+      "file": "packages/cinematic/engine.py",
+      "input": "bounds",
+      "output": "CameraShot",
+      "wired_to": "POST /render"
+    },
+    {
+      "component": "LuxuryCinematicDirector",
+      "file": "packages/cinematic/luxury_director.py",
+      "input": "project_data",
+      "output": "cinematic scene",
+      "wired_to": "POST /render"
+    },
+    {
+      "component": "FFmpeg",
+      "file": "system",
+      "input": "frames",
+      "output": "MP4",
+      "wired_to": "POST /render (encoding)"
+    }
+  ]
+}

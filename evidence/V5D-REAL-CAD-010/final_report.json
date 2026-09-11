@@ -1,0 +1,715 @@
+{
+  "mission": "V5D-REAL-CAD-010",
+  "timestamp": "2026-07-24T15:01:42.698313+00:00",
+  "files_total": 10,
+  "files_passed": 10,
+  "files_failed": 0,
+  "success_rate": 100.0,
+  "aggregate_metrics": {
+    "walls_precision": {
+      "mean": 0.986,
+      "min": 0.857,
+      "max": 1.0
+    },
+    "rooms_precision": {
+      "mean": 0.175,
+      "min": 0.0,
+      "max": 0.889
+    },
+    "doors_precision": {
+      "mean": 0.7,
+      "min": 0.0,
+      "max": 1.0
+    },
+    "windows_precision": {
+      "mean": 0.3,
+      "min": 0.0,
+      "max": 1.0
+    },
+    "walls_recall": {
+      "mean": 0.677,
+      "min": 0.25,
+      "max": 1.0
+    },
+    "rooms_recall": {
+      "mean": 0.2,
+      "min": 0.0,
+      "max": 1.0
+    },
+    "doors_recall": {
+      "mean": 0.627,
+      "min": 0.0,
+      "max": 1.0
+    },
+    "windows_recall": {
+      "mean": 0.283,
+      "min": 0.0,
+      "max": 1.0
+    },
+    "walls_f1": {
+      "mean": 0.765,
+      "min": 0.4,
+      "max": 1.0
+    },
+    "rooms_f1": {
+      "mean": 0.186,
+      "min": 0.0,
+      "max": 0.941
+    },
+    "doors_f1": {
+      "mean": 0.659,
+      "min": 0.0,
+      "max": 1.0
+    },
+    "windows_f1": {
+      "mean": 0.291,
+      "min": 0.0,
+      "max": 1.0
+    }
+  },
+  "per_file": [
+    {
+      "file_id": "FILE-01",
+      "walls": {
+        "detected": 7,
+        "expected": 12,
+        "precision": 1.0,
+        "recall": 0.583,
+        "f1": 0.737
+      },
+      "rooms": {
+        "detected": 0,
+        "expected": 5,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "doors": {
+        "detected": 5,
+        "expected": 6,
+        "precision": 1.0,
+        "recall": 0.833,
+        "f1": 0.909
+      },
+      "windows": {
+        "detected": 5,
+        "expected": 6,
+        "precision": 1.0,
+        "recall": 0.833,
+        "f1": 0.909
+      },
+      "scale_match": true,
+      "duration_ms": 0.34618377685546875,
+      "status": "PASS",
+      "entities": 23,
+      "layers": [
+        "A-DOOR",
+        "A-ROOM",
+        "A-WALL",
+        "A-WINDOW"
+      ]
+    },
+    {
+      "file_id": "FILE-02",
+      "walls": {
+        "detected": 10,
+        "expected": 18,
+        "precision": 1.0,
+        "recall": 0.556,
+        "f1": 0.714
+      },
+      "rooms": {
+        "detected": 9,
+        "expected": 8,
+        "precision": 0.889,
+        "recall": 1.0,
+        "f1": 0.941
+      },
+      "doors": {
+        "detected": 8,
+        "expected": 9,
+        "precision": 1.0,
+        "recall": 0.889,
+        "f1": 0.941
+      },
+      "windows": {
+        "detected": 8,
+        "expected": 8,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "scale_match": true,
+      "duration_ms": 0.38504600524902344,
+      "status": "PASS",
+      "entities": 35,
+      "layers": [
+        "DOORS",
+        "TEXT",
+        "WALLS",
+        "WINDOWS"
+      ]
+    },
+    {
+      "file_id": "FILE-03",
+      "walls": {
+        "detected": 10,
+        "expected": 10,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "rooms": {
+        "detected": 0,
+        "expected": 4,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "doors": {
+        "detected": 0,
+        "expected": 4,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "windows": {
+        "detected": 0,
+        "expected": 4,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "scale_match": true,
+      "duration_ms": 0.22149085998535156,
+      "status": "PASS",
+      "entities": 18,
+      "layers": [
+        "0"
+      ]
+    },
+    {
+      "file_id": "FILE-04",
+      "walls": {
+        "detected": 8,
+        "expected": 14,
+        "precision": 1.0,
+        "recall": 0.571,
+        "f1": 0.727
+      },
+      "rooms": {
+        "detected": 7,
+        "expected": 6,
+        "precision": 0.857,
+        "recall": 1.0,
+        "f1": 0.923
+      },
+      "doors": {
+        "detected": 5,
+        "expected": 7,
+        "precision": 1.0,
+        "recall": 0.714,
+        "f1": 0.833
+      },
+      "windows": {
+        "detected": 0,
+        "expected": 5,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "scale_match": true,
+      "duration_ms": 0.23102760314941406,
+      "status": "PASS",
+      "entities": 26,
+      "layers": [
+        "DOOR-SWING",
+        "ROOM-LABEL",
+        "WALL-EXT",
+        "WALL-INT"
+      ]
+    },
+    {
+      "file_id": "FILE-05",
+      "walls": {
+        "detected": 7,
+        "expected": 6,
+        "precision": 0.857,
+        "recall": 1.0,
+        "f1": 0.923
+      },
+      "rooms": {
+        "detected": 0,
+        "expected": 3,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "doors": {
+        "detected": 3,
+        "expected": 3,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "windows": {
+        "detected": 0,
+        "expected": 2,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "scale_match": true,
+      "duration_ms": 0.14781951904296875,
+      "status": "PASS",
+      "entities": 13,
+      "layers": [
+        "0",
+        "ARCH-DOOR",
+        "ARCH-WALL",
+        "ARCH-WIN"
+      ]
+    },
+    {
+      "file_id": "FILE-06",
+      "walls": {
+        "detected": 8,
+        "expected": 8,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "rooms": {
+        "detected": 0,
+        "expected": 3,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "doors": {
+        "detected": 2,
+        "expected": 2,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "windows": {
+        "detected": 0,
+        "expected": 3,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "scale_match": true,
+      "duration_ms": 0.13518333435058594,
+      "status": "PASS",
+      "entities": 12,
+      "layers": [
+        "0",
+        "A-DOOR",
+        "A-GLAZ",
+        "A-WALL"
+      ]
+    },
+    {
+      "file_id": "FILE-07",
+      "walls": {
+        "detected": 10,
+        "expected": 22,
+        "precision": 1.0,
+        "recall": 0.455,
+        "f1": 0.625
+      },
+      "rooms": {
+        "detected": 0,
+        "expected": 10,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "doors": {
+        "detected": 10,
+        "expected": 10,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "windows": {
+        "detected": 8,
+        "expected": 8,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "scale_match": true,
+      "duration_ms": 0.41675567626953125,
+      "status": "PASS",
+      "entities": 38,
+      "layers": [
+        "DOOR",
+        "HATCH",
+        "WALL",
+        "WINDOW"
+      ]
+    },
+    {
+      "file_id": "FILE-08",
+      "walls": {
+        "detected": 4,
+        "expected": 4,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "rooms": {
+        "detected": 0,
+        "expected": 2,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "doors": {
+        "detected": 0,
+        "expected": 2,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "windows": {
+        "detected": 0,
+        "expected": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "scale_match": true,
+      "duration_ms": 0.1220703125,
+      "status": "PASS",
+      "entities": 8,
+      "layers": [
+        "0"
+      ]
+    },
+    {
+      "file_id": "FILE-09",
+      "walls": {
+        "detected": 10,
+        "expected": 28,
+        "precision": 1.0,
+        "recall": 0.357,
+        "f1": 0.526
+      },
+      "rooms": {
+        "detected": 0,
+        "expected": 12,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "doors": {
+        "detected": 10,
+        "expected": 12,
+        "precision": 1.0,
+        "recall": 0.833,
+        "f1": 0.909
+      },
+      "windows": {
+        "detected": 0,
+        "expected": 10,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "scale_match": true,
+      "duration_ms": 0.34332275390625,
+      "status": "PASS",
+      "entities": 44,
+      "layers": [
+        "A-DIM",
+        "A-DOOR",
+        "A-WALL-EXT",
+        "A-WALL-INT"
+      ]
+    },
+    {
+      "file_id": "FILE-10",
+      "walls": {
+        "detected": 4,
+        "expected": 16,
+        "precision": 1.0,
+        "recall": 0.25,
+        "f1": 0.4
+      },
+      "rooms": {
+        "detected": 0,
+        "expected": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "doors": {
+        "detected": 0,
+        "expected": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "windows": {
+        "detected": 0,
+        "expected": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "scale_match": true,
+      "duration_ms": 0.09608268737792969,
+      "status": "PASS",
+      "entities": 6,
+      "layers": [
+        "0"
+      ]
+    }
+  ],
+  "manifest": [
+    {
+      "id": "FILE-01",
+      "name": "2BR Apartment",
+      "hash": "3c52e93f897a1f0d02f45128294f37b68fc755eaa2241bb734729ccd59110bcf",
+      "rooms_gt": 5,
+      "walls_gt": 12,
+      "doors_gt": 6,
+      "windows_gt": 6,
+      "layers_used": [
+        "A-WALL",
+        "A-DOOR",
+        "A-WINDOW",
+        "A-DIM",
+        "A-TEXT",
+        "A-ROOM"
+      ],
+      "features": [
+        "standard_layers",
+        "insert_blocks",
+        "polylines",
+        "text_labels"
+      ],
+      "size_bytes": 1422
+    },
+    {
+      "id": "FILE-02",
+      "name": "3BR Villa with Garden",
+      "hash": "576555dc1749da724da6ad0e1760b4201fce01c7b32d66325817f89d0ba56f16",
+      "rooms_gt": 8,
+      "walls_gt": 18,
+      "doors_gt": 9,
+      "windows_gt": 8,
+      "layers_used": [
+        "WALLS",
+        "DOORS",
+        "WINDOWS",
+        "DIMENSIONS",
+        "TEXT"
+      ],
+      "features": [
+        "non_standard_layers",
+        "large_floor_plan",
+        "exterior_walls"
+      ],
+      "size_bytes": 2142
+    },
+    {
+      "id": "FILE-03",
+      "name": "Small Office (4 Rooms)",
+      "hash": "b2038c01a91e4837572fd53ccdf5314bc28bd8bff357010748ab7379d883354a",
+      "rooms_gt": 4,
+      "walls_gt": 10,
+      "doors_gt": 4,
+      "windows_gt": 4,
+      "layers_used": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "features": [
+        "all_layer_zero",
+        "poor_organization",
+        "open_plan"
+      ],
+      "size_bytes": 1019
+    },
+    {
+      "id": "FILE-04",
+      "name": "Medical Clinic (6 Rooms)",
+      "hash": "6ed9df26a34fac73ba7388985184eb2a1f062fca4ecb5d9ac7b934c6506efa8d",
+      "rooms_gt": 6,
+      "walls_gt": 14,
+      "doors_gt": 7,
+      "windows_gt": 5,
+      "layers_used": [
+        "WALL-INT",
+        "WALL-EXT",
+        "DOOR-SWING",
+        "WINDOW-OPENING",
+        "ROOM-LABEL"
+      ],
+      "features": [
+        "rotated_blocks",
+        "corridor",
+        "specialty_rooms"
+      ],
+      "size_bytes": 1675
+    },
+    {
+      "id": "FILE-05",
+      "name": "Retail Shop with Storage",
+      "hash": "bae89ae67f5043e9542963306feeb3610d523fcbc576c6c5c95eba235a02a1da",
+      "rooms_gt": 3,
+      "walls_gt": 6,
+      "doors_gt": 3,
+      "windows_gt": 2,
+      "layers_used": [
+        "ARCH-WALL",
+        "ARCH-DOOR",
+        "ARCH-WIN",
+        "ARCH-TEXT"
+      ],
+      "features": [
+        "open_plan",
+        "arc_walls",
+        "mirrored_doors"
+      ],
+      "size_bytes": 823
+    },
+    {
+      "id": "FILE-06",
+      "name": "L-Shaped Studio",
+      "hash": "411f4c256dcd731de856c44df49f3da045d5ddeb2fdc46263bb4b6d7a6253c6d",
+      "rooms_gt": 3,
+      "walls_gt": 8,
+      "doors_gt": 2,
+      "windows_gt": 3,
+      "layers_used": [
+        "A-WALL",
+        "A-DOOR",
+        "A-GLAZ",
+        "A-AREA"
+      ],
+      "features": [
+        "irregular_polygon",
+        "polyline_geometry",
+        "arc_windows"
+      ],
+      "size_bytes": 746
+    },
+    {
+      "id": "FILE-07",
+      "name": "School Wing (8 Rooms + Corridors)",
+      "hash": "0b4c06e5235ff637a9d68a2446474b370e51fd380706515ee276f99eebe09642",
+      "rooms_gt": 10,
+      "walls_gt": 22,
+      "doors_gt": 10,
+      "windows_gt": 8,
+      "layers_used": [
+        "WALL",
+        "DOOR",
+        "WINDOW",
+        "TEXT",
+        "HATCH"
+      ],
+      "features": [
+        "corridor_heavy",
+        "many_rooms",
+        "parallel_walls",
+        "polyline_hatch"
+      ],
+      "size_bytes": 2310
+    },
+    {
+      "id": "FILE-08",
+      "name": "Warehouse with Mezzanine",
+      "hash": "a67312197041c3e978370264defaa8afdff60f77ca599bbaa74f9c371b69b876",
+      "rooms_gt": 2,
+      "walls_gt": 4,
+      "doors_gt": 2,
+      "windows_gt": 0,
+      "layers_used": [
+        "0",
+        "0"
+      ],
+      "features": [
+        "layer_zero",
+        "minimal_annotations",
+        "no_windows",
+        "large_span"
+      ],
+      "size_bytes": 482
+    },
+    {
+      "id": "FILE-09",
+      "name": "4-Unit Apartment Floor",
+      "hash": "8edf721a3985cb68128235a0ee46bc8f7b33185b540daeecc4fdf12df3fca89b",
+      "rooms_gt": 12,
+      "walls_gt": 28,
+      "doors_gt": 12,
+      "windows_gt": 10,
+      "layers_used": [
+        "A-WALL-INT",
+        "A-WALL-EXT",
+        "A-DOOR",
+        "A-WINDOW",
+        "A-ROOM",
+        "A-DIM"
+      ],
+      "features": [
+        "multi_unit",
+        "mirrored_layout",
+        "many_openings",
+        "complex_partitions"
+      ],
+      "size_bytes": 2813
+    },
+    {
+      "id": "FILE-10",
+      "name": "Circular Pavilion (Ambiguous)",
+      "hash": "cd7c53ad5f0c468a81f344553a738b78b0f09fdb9c0f2fe26272b3a44a34b9af",
+      "rooms_gt": 1,
+      "walls_gt": 16,
+      "doors_gt": 1,
+      "windows_gt": 0,
+      "layers_used": [
+        "0"
+      ],
+      "features": [
+        "unsupported_geometry",
+        "circular_wall",
+        "ambiguous",
+        "single_room",
+        "arc_only"
+      ],
+      "size_bytes": 363
+    }
+  ],
+  "regression": {
+    "walls": 12,
+    "rooms": 5,
+    "doors": 6,
+    "windows": 6,
+    "expected": {
+      "walls": 12,
+      "rooms": 5,
+      "doors": 6,
+      "windows": 6
+    },
+    "pass": true
+  },
+  "anti_overfitting": {
+    "no_filename_branches": true,
+    "no_hash_branches": true,
+    "no_hardcoded_counts": true,
+    "no_hardcoded_layers": true,
+    "no_reference_fallback": true
+  },
+  "decision": "COMPLETE"
+}

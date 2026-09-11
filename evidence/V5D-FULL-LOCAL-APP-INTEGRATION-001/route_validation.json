@@ -1,0 +1,113 @@
+{
+  "mission": "V5D-FULL-LOCAL-APP-INTEGRATION-001",
+  "timestamp": "2026-07-31T21:14:49.398963",
+  "routes_tested": 15,
+  "routes_accessible": 14,
+  "results": [
+    {
+      "route": "/",
+      "desc": "Dashboard (static)",
+      "method": "HTML",
+      "status": "{\"status\":\"healthy\",\"version\":\"1.0.0\",\"phase\":7,\"mode\":\"production\"}",
+      "working": false
+    },
+    {
+      "route": "/api/v1/auth/login",
+      "desc": "Auth",
+      "method": "POST",
+      "status": "422",
+      "working": true
+    },
+    {
+      "route": "/api/v1/dashboard/stats",
+      "desc": "Dashboard Stats",
+      "method": "GET",
+      "status": "200",
+      "working": true
+    },
+    {
+      "route": "/api/v1/dashboard/activity",
+      "desc": "Activity Feed",
+      "method": "GET",
+      "status": "200",
+      "working": true
+    },
+    {
+      "route": "/api/v1/dashboard/pascal-health",
+      "desc": "Pascal Health",
+      "method": "GET",
+      "status": "200",
+      "working": true
+    },
+    {
+      "route": "/api/v1/workspaces",
+      "desc": "Workspace List",
+      "method": "GET",
+      "status": "200",
+      "working": true
+    },
+    {
+      "route": "/api/v1/workspaces/{id}/projects",
+      "desc": "Project List",
+      "method": "GET",
+      "status": "200",
+      "working": true
+    },
+    {
+      "route": "/api/v1/workspaces/{id}/providers",
+      "desc": "AI Providers",
+      "method": "GET",
+      "status": "200",
+      "working": true
+    },
+    {
+      "route": "/api/v1/projects/{id}/status",
+      "desc": "Project Status",
+      "method": "POST",
+      "status": "422",
+      "working": true
+    },
+    {
+      "route": "/api/v4/projects/{id}/scene",
+      "desc": "Scene3D",
+      "method": "GET",
+      "status": "404",
+      "working": true
+    },
+    {
+      "route": "/api/v5/studio/draft/{id}",
+      "desc": "Studio Draft",
+      "method": "GET",
+      "status": "200",
+      "working": true
+    },
+    {
+      "route": "/api/v5/studio/versions/{id}",
+      "desc": "Studio Versions",
+      "method": "GET",
+      "status": "200",
+      "working": true
+    },
+    {
+      "route": "/api/v5/studio/furniture",
+      "desc": "Furniture Library",
+      "method": "GET",
+      "status": "200",
+      "working": true
+    },
+    {
+      "route": "/api/v1/projects/{id}/jobs",
+      "desc": "Job Create",
+      "method": "POST",
+      "status": "422",
+      "working": true
+    },
+    {
+      "route": "/health",
+      "desc": "Health",
+      "method": "GET",
+      "status": "200",
+      "working": true
+    }
+  ]
+}

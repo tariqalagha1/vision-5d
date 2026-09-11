@@ -1,0 +1,169 @@
+{
+  "artifacts": [
+    {
+      "relative_path": "converted\\45x45-Modern-House-4-Bedrooms.dxf",
+      "size_bytes": 3424051
+    },
+    {
+      "relative_path": "logs\\rendering.log",
+      "size_bytes": 54
+    },
+    {
+      "relative_path": "nvidia_vision_qa\\architectural_plan_01_4800px.png",
+      "size_bytes": 37183
+    },
+    {
+      "relative_path": "nvidia_vision_qa\\architectural_plan_01_bottom_left.png",
+      "size_bytes": 18345
+    },
+    {
+      "relative_path": "nvidia_vision_qa\\architectural_plan_01_bottom_right.png",
+      "size_bytes": 8458
+    },
+    {
+      "relative_path": "nvidia_vision_qa\\architectural_plan_01_center.png",
+      "size_bytes": 15401
+    },
+    {
+      "relative_path": "nvidia_vision_qa\\architectural_plan_01_crop_contact_sheet.png",
+      "size_bytes": 41183
+    },
+    {
+      "relative_path": "nvidia_vision_qa\\architectural_plan_01_top_left.png",
+      "size_bytes": 6607
+    },
+    {
+      "relative_path": "nvidia_vision_qa\\architectural_plan_01_top_right.png",
+      "size_bytes": 6577
+    },
+    {
+      "relative_path": "nvidia_vision_qa\\crop_assessments.json",
+      "size_bytes": 26052
+    },
+    {
+      "relative_path": "nvidia_vision_qa\\elevation_detail_01_4800px.png",
+      "size_bytes": 30835
+    },
+    {
+      "relative_path": "nvidia_vision_qa\\elevation_detail_01_bottom_left.png",
+      "size_bytes": 8577
+    },
+    {
+      "relative_path": "nvidia_vision_qa\\elevation_detail_01_bottom_right.png",
+      "size_bytes": 8950
+    },
+    {
+      "relative_path": "nvidia_vision_qa\\elevation_detail_01_center.png",
+      "size_bytes": 8742
+    },
+    {
+      "relative_path": "nvidia_vision_qa\\elevation_detail_01_crop_contact_sheet.png",
+      "size_bytes": 33959
+    },
+    {
+      "relative_path": "nvidia_vision_qa\\elevation_detail_01_top_left.png",
+      "size_bytes": 8583
+    },
+    {
+      "relative_path": "nvidia_vision_qa\\elevation_detail_01_top_right.png",
+      "size_bytes": 8762
+    },
+    {
+      "relative_path": "nvidia_vision_qa\\full_image_assessments.json",
+      "size_bytes": 5403
+    },
+    {
+      "relative_path": "nvidia_vision_qa\\raw_responses.json",
+      "size_bytes": 31452
+    },
+    {
+      "relative_path": "nvidia_vision_qa\\request_manifest.json",
+      "size_bytes": 2463
+    },
+    {
+      "relative_path": "parsed\\entity_inventory.json",
+      "size_bytes": 117
+    },
+    {
+      "relative_path": "parsed\\layer_inventory.json",
+      "size_bytes": 54
+    },
+    {
+      "relative_path": "parsed\\parsing_report.json",
+      "size_bytes": 295
+    },
+    {
+      "relative_path": "parsed\\region_inventory.json",
+      "size_bytes": 490
+    },
+    {
+      "relative_path": "parsed\\_entities.pkl",
+      "size_bytes": 1437234
+    },
+    {
+      "relative_path": "renders\\45x45-Modern-House-4-Bedrooms.pdf",
+      "size_bytes": 40523
+    },
+    {
+      "relative_path": "renders\\45x45-Modern-House-4-Bedrooms.svg",
+      "size_bytes": 2453424
+    },
+    {
+      "relative_path": "renders\\architectural_plan_01.png",
+      "size_bytes": 37183
+    },
+    {
+      "relative_path": "renders\\architectural_regions.png",
+      "size_bytes": 11200
+    },
+    {
+      "relative_path": "renders\\blocks_and_inserts.png",
+      "size_bytes": 7974
+    },
+    {
+      "relative_path": "renders\\corrected_layer_contact_sheet.png",
+      "size_bytes": 5246
+    },
+    {
+      "relative_path": "renders\\elevation_detail_01.png",
+      "size_bytes": 30835
+    },
+    {
+      "relative_path": "renders\\full_source_diagnostic.png",
+      "size_bytes": 11200
+    },
+    {
+      "relative_path": "renders\\full_source_drawing.png",
+      "size_bytes": 47388
+    },
+    {
+      "relative_path": "renders\\text_and_dimensions.png",
+      "size_bytes": 42823
+    },
+    {
+      "relative_path": "reports\\combined_plan_assessments.json",
+      "size_bytes": 1261
+    },
+    {
+      "relative_path": "reports\\contradiction_check.json",
+      "size_bytes": 43
+    },
+    {
+      "relative_path": "reports\\final_2d_verdict.json",
+      "size_bytes": 240
+    },
+    {
+      "relative_path": "reports\\final_nvidia_verdict.json",
+      "size_bytes": 2024
+    },
+    {
+      "relative_path": "reports\\structural_2d_qa.json",
+      "size_bytes": 467
+    },
+    {
+      "relative_path": "source\\45x45-Modern-House-4-Bedrooms.dwg",
+      "size_bytes": 13301741
+    }
+  ],
+  "total": 41
+}

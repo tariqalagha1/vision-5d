@@ -1,0 +1,7 @@
+2026-07-29 09:20:19,351 [INFO] MISSION: V5D-PHOTO-PIPELINE-REPO-TEST-001
+2026-07-29 09:20:19,351 [INFO] Job ID: c81ceb29-737e-4d20-b7dd-6aaa202ed753
+2026-07-29 09:20:19,351 [INFO] Project ID: 26a640ce-d1c2-4360-8d7d-399a6c436956
+2026-07-29 09:20:19,351 [INFO] Project: PHOTO-ROOM-c81ceb29
+2026-07-29 09:20:19,351 [INFO] ============================================================
+2026-07-29 09:20:19,351 [INFO] STAGE 1: PHOTO INGESTION
+2026-07-29 09:20:19,351 [ERROR] Source photo not found: C:\Users\admin\workspaces\vision-5d\scripts\test_data\1.webp

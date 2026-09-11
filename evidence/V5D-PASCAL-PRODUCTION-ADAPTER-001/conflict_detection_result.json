@@ -1,0 +1,7 @@
+{
+  "detectionLogic": "Compare source V5D revision hash vs current V5D hash AND exported Pascal baseline vs current Pascal scene hash",
+  "autoMerge": false,
+  "requiresExplicitResolution": true,
+  "conflictTestResult": "no_conflicts_detected",
+  "versionsPreserved": true
+}

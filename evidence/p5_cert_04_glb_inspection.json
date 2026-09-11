@@ -1,0 +1,157 @@
+{
+  "valid": true,
+  "node_count": 7,
+  "mesh_count": 7,
+  "material_count": 6,
+  "fidelity": {
+    "all_match": false,
+    "comparisons": [
+      {
+        "property": "furniture_count",
+        "studio_value": 2,
+        "exported_value": 2,
+        "match": true
+      },
+      {
+        "property": "furniture[0].position",
+        "studio_value": [
+          1250.0,
+          0.0,
+          850.0
+        ],
+        "exported_value": [
+          0,
+          0,
+          0
+        ],
+        "match": false
+      },
+      {
+        "property": "furniture[1].position",
+        "studio_value": [
+          2500.0,
+          0.0,
+          1200.0
+        ],
+        "exported_value": [
+          0,
+          0,
+          0
+        ],
+        "match": false
+      }
+    ],
+    "studio_furniture_count": 2,
+    "exported_furniture_count": 2
+  },
+  "summary": {
+    "total_nodes": 7,
+    "total_meshes": 7,
+    "total_materials": 6,
+    "furniture_objects": [
+      {
+        "name": "Test Chair",
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "material_color": "#3366cc"
+      },
+      {
+        "name": "Test Table",
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "material_color": "#8b4513"
+      }
+    ],
+    "architectural_objects": [
+      {
+        "name": "Wall N",
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "material_color": "#f5f0e8"
+      },
+      {
+        "name": "Floor",
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "material_color": "#c4a882"
+      },
+      {
+        "name": "Ceiling",
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "material_color": "#ffffff"
+      },
+      {
+        "name": "Living Room",
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "material_color": "#888888"
+      },
+      {
+        "name": "Front Door",
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "material_color": "#888888"
+      }
+    ],
+    "materials_summary": [
+      {
+        "index": 0,
+        "color": "#f5f0e8",
+        "roughness": 0.8,
+        "name": "#F5F0E8"
+      },
+      {
+        "index": 1,
+        "color": "#c4a882",
+        "roughness": 0.8,
+        "name": "#C4A882"
+      },
+      {
+        "index": 2,
+        "color": "#ffffff",
+        "roughness": 0.8,
+        "name": "#FFFFFF"
+      },
+      {
+        "index": 3,
+        "color": "#888888",
+        "roughness": 0.8,
+        "name": "#888888"
+      },
+      {
+        "index": 4,
+        "color": "#3366cc",
+        "roughness": 0.6,
+        "name": "#3366CC"
+      },
+      {
+        "index": 5,
+        "color": "#8b4513",
+        "roughness": 0.6,
+        "name": "#8B4513"
+      }
+    ]
+  }
+}

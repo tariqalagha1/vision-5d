@@ -1,0 +1,8 @@
+{
+  "mission": "V5D-BLENDER-RENDERER-INTEGRATION-001",
+  "timestamp": "2026-07-31T21:43:56.649733",
+  "existing_cinematic_mp4": true,
+  "cinematic_mp4_path": "C:/Users/admin/workspaces/vision-5d\\apps/web/cinematic.mp4",
+  "cinematic_mp4_size": 1179329,
+  "note": "Existing cinematic.mp4 is a pre-rendered demo. Blender renderer will produce authoritative renders from the project GLB."
+}

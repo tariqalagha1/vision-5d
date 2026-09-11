@@ -1,0 +1,70 @@
+{
+  "mission": "V5D-AI-CONFIGURATION-001",
+  "timestamp": "2026-07-31T14:06:52.568851",
+  "providers": {
+    "openai": {
+      "name": "OpenAI",
+      "models": [
+        "gpt-4o",
+        "gpt-4o-mini",
+        "gpt-4-turbo"
+      ],
+      "capabilities": [
+        "chat",
+        "vision",
+        "structured_output",
+        "tool_calling",
+        "reasoning"
+      ]
+    },
+    "anthropic": {
+      "name": "Anthropic",
+      "models": [
+        "claude-sonnet-4-20250514",
+        "claude-opus-4-20250514",
+        "claude-3-5-haiku-20241022"
+      ],
+      "capabilities": [
+        "chat",
+        "vision",
+        "tool_calling"
+      ]
+    },
+    "google": {
+      "name": "Google AI",
+      "models": [
+        "gemini-2.5-pro",
+        "gemini-2.5-flash"
+      ],
+      "capabilities": [
+        "chat",
+        "vision",
+        "structured_output"
+      ]
+    },
+    "deepseek": {
+      "name": "DeepSeek",
+      "models": [
+        "deepseek-chat",
+        "deepseek-reasoner"
+      ],
+      "capabilities": [
+        "chat",
+        "tool_calling"
+      ]
+    },
+    "mistral": {
+      "name": "Mistral AI",
+      "models": [
+        "mistral-large-latest",
+        "mistral-small-latest"
+      ],
+      "capabilities": [
+        "chat",
+        "tool_calling"
+      ]
+    }
+  },
+  "total": 5,
+  "total_models": 13
+}

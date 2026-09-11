@@ -1,0 +1,110 @@
+{
+  "mission": "V5D-FRONTEND-STAGING-ACCEPTANCE-001",
+  "timestamp": "2026-07-31T20:27:07.735096",
+  "verdict": "ALL 20/20 WORKFLOWS PASS",
+  "workflows": [
+    {
+      "workflow": "W1: Sign in",
+      "result": "PASS",
+      "detail": "OAuth login with session cookie"
+    },
+    {
+      "workflow": "W2: Dashboard stats",
+      "result": "PASS",
+      "detail": "GET /dashboard/stats returns 9 fields"
+    },
+    {
+      "workflow": "W3: Live statistics",
+      "result": "PASS",
+      "detail": "Projects=1, configured=1, sync=healthy"
+    },
+    {
+      "workflow": "W4: Workspace discovery",
+      "result": "PASS",
+      "detail": "Auto-discovered default workspace"
+    },
+    {
+      "workflow": "W5: Create project",
+      "result": "PASS",
+      "detail": "Project created via POST"
+    },
+    {
+      "workflow": "W6: List projects",
+      "result": "PASS",
+      "detail": "Projects listed with tenant isolation"
+    },
+    {
+      "workflow": "W7: Pascal health",
+      "result": "PASS",
+      "detail": "operational, credentials_exposed=false"
+    },
+    {
+      "workflow": "W8: Sync state",
+      "result": "PASS",
+      "detail": "sync_health=healthy, conflicts=0"
+    },
+    {
+      "workflow": "W9: AI providers",
+      "result": "PASS",
+      "detail": "Provider listed with default model"
+    },
+    {
+      "workflow": "W10: Activity feed",
+      "result": "PASS",
+      "detail": "Activity items returned"
+    },
+    {
+      "workflow": "W11: Create provider",
+      "result": "PASS",
+      "detail": "OpenAI provider created with gpt-4o default"
+    },
+    {
+      "workflow": "W12: Set default model",
+      "result": "PASS",
+      "detail": "PUT /default-model confirmed"
+    },
+    {
+      "workflow": "W13: Save API key",
+      "result": "PASS",
+      "detail": "Key encrypted, secret_ref returned, NEVER logged"
+    },
+    {
+      "workflow": "W14: Masked status",
+      "result": "PASS",
+      "detail": "masked_key=\u2022\u2022\u2022\u2022, raw key NEVER returned"
+    },
+    {
+      "workflow": "W15: Replace key",
+      "result": "PASS",
+      "detail": "Old key marked deleted, new key encrypted"
+    },
+    {
+      "workflow": "W16: Delete key",
+      "result": "PASS",
+      "detail": "Soft-delete, audit event logged"
+    },
+    {
+      "workflow": "W17: Unauthorized",
+      "result": "PASS",
+      "detail": "HTTP 401 \u2014 no session cookie"
+    },
+    {
+      "workflow": "W18: 404 handling",
+      "result": "PASS",
+      "detail": "HTTP 404 \u2014 nonexistent endpoint"
+    },
+    {
+      "workflow": "W19: Restart recovery",
+      "result": "PASS",
+      "detail": "Workspace auto-discovered, providers listed after restart"
+    },
+    {
+      "workflow": "W20: Rollback",
+      "result": "PASS",
+      "detail": "Workspace intact, provider config persisted"
+    }
+  ],
+  "passed": 20,
+  "total": 20,
+  "w18_fix": "Hardcoded workspace IDs replaced with async auto-discovery"
+}

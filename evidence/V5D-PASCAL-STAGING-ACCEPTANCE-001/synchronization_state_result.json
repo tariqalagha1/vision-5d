@@ -1,0 +1,11 @@
+{
+  "states_exercised": [
+    "NOT_EXPORTED",
+    "EXPORTED",
+    "EDITED_IN_PASCAL",
+    "IMPORTED"
+  ],
+  "validTransitions": 4,
+  "invalidTransitionRejected": true,
+  "stateAfterRestart": "IMPORTED"
+}

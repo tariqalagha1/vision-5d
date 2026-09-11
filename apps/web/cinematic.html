@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vision 5D — Premium Scandinavian Office — Cinematic Reveal</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0d1117;color:#c9d1d9;font-family:-apple-system,BlinkMacSystemFont,sans-serif;overflow:hidden}
+#canvas{position:fixed;top:0;left:0;width:100%;height:100%;z-index:1}
+#overlay{position:fixed;top:0;left:0;width:100%;height:100%;z-index:2;pointer-events:none;display:flex;flex-direction:column;justify-content:center;align-items:center}
+.overlay-text{position:absolute;transition:opacity 0.5s;text-align:center;text-shadow:0 0 20px rgba(0,0,0,0.8)}
+.overlay-text.title{font-size:3vw;font-weight:700;letter-spacing:0.1em}
+.overlay-text.subtitle{font-size:1.5vw;opacity:0.9}
+.overlay-text.stat{font-size:1.2vw;opacity:0.8}
+.overlay-text.counter{font-size:2.5vw;font-weight:700;font-variant-numeric:tabular-nums}
+.overlay-text.badge{font-size:1vw;padding:8px 20px;border-radius:20px;background:rgba(255,255,255,0.1)}
+.top{top:8%}.center{top:50%;transform:translateY(-50%)}.bottom{bottom:8%}
+#controls{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);z-index:3;display:flex;gap:12px;align-items:center}
+button{background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);color:#c9d1d9;padding:10px 20px;border-radius:8px;cursor:pointer;font-size:14px;transition:all 0.2s}
+button:hover{background:rgba(255,255,255,0.2)}
+button.primary{background:#238636;border-color:#238636;color:#fff;font-weight:600;padding:12px 32px;font-size:16px}
+button.primary:hover{background:#2ea043}
+#progress{width:200px;height:4px;background:rgba(255,255,255,0.1);border-radius:2px;overflow:hidden}
+#progress-bar{height:100%;background:#58a6ff;transition:width 0.3s}
+#scene-name{color:#58a6ff;font-size:12px;min-width:120px;text-align:center}
+</style>
+</head>
+<body>
+<div id="overlay"></div>
+<canvas id="canvas"></canvas>
+<div id="controls">
+  <button onclick="prevScene()">⏮</button>
+  <button id="playBtn" class="primary" onclick="togglePlay()">▶ WATCH REVEAL</button>
+  <button onclick="nextScene()">⏭</button>
+  <div id="progress"><div id="progress-bar" style="width:0%"></div></div>
+  <span id="scene-name">Scene 1/12</span>
+</div>
+
+<script type="importmap">
+{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}
+</script>
+<script type="module">
+import * as THREE from 'three';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+
+const SCENES = [{"number": 1, "name": "Opening", "description": "Project: 1.dwg", "camera": {"position": [17.5, 20.0, 18.0], "target": [17.5, 10.0, -2.0], "fov": 45, "duration_ms": 4000}, "overlays": [{"text": "VISION 5D", "position": "center", "style": "title", "appear_ms": 0, "duration_ms": 3000, "color": "#3FB950"}, {"text": "1.dwg", "position": "center", "style": "subtitle", "appear_ms": 500, "duration_ms": 2500, "color": "#FFFFFF"}, {"text": "AutoCAD DWG R2000 | 612 KB | Import Success", "position": "bottom", "style": "stat", "appear_ms": 800, "duration_ms": 2000, "color": "#8B949E"}], "duration_ms": 4000, "transition": "fade"}, {"number": 2, "name": "CAD Recognition", "description": "Detecting architectural elements", "camera": {"position": [17.5, 30.0, 8.0], "target": [17.5, 0, -2.0], "fov": 50, "duration_ms": 5000}, "overlays": [{"text": "Walls: 1087", "position": "bottom", "style": "counter", "appear_ms": 200, "duration_ms": 2500, "color": "#58A6FF"}, {"text": "Doors: 722", "position": "bottom", "style": "counter", "appear_ms": 500, "duration_ms": 2500, "color": "#58A6FF"}, {"text": "Windows: 0", "position": "bottom", "style": "counter", "appear_ms": 800, "duration_ms": 2500, "color": "#58A6FF"}, {"text": "Rooms: 1", "position": "bottom", "style": "counter", "appear_ms": 1100, "duration_ms": 2500, "color": "#58A6FF"}], "duration_ms": 5000, "transition": "fade"}, {"number": 3, "name": "Geometry Reconstruction", "description": "Walls rise, doors appear, the building assembles", "camera": {"position": [7.5, 3, 13.0], "target": [17.5, 2, -2.0], "fov": 55, "duration_ms": 6000}, "overlays": [{"text": "2D \u2192 3D Reconstruction", "position": "top", "style": "title", "appear_ms": 0, "duration_ms": 3000, "color": "#FFFFFF"}, {"text": "1087 Walls | 722 Doors | 0 Windows", "position": "bottom", "style": "stat", "appear_ms": 500, "duration_ms": 3000, "color": "#79C0FF"}, {"text": "228 Triangles | 17 Meshes | 160 Vertices", "position": "bottom", "style": "stat", "appear_ms": 1000, "duration_ms": 2500, "color": "#8B949E"}], "duration_ms": 6000, "transition": "fade"}, {"number": 4, "name": "AI Analysis", "description": "Holographic analysis of spaces, circulation, lighting", "camera": {"position": [17.5, 40.0, -2.0], "target": [17.5, 10.0, -2.0], "fov": 60, "duration_ms": 5000}, "overlays": [{"text": "AI ANALYSIS", "position": "top", "style": "title", "appear_ms": 0, "duration_ms": 3000, "color": "#D2A8FF"}, {"text": "Analyzing 1 rooms...", "position": "center", "style": "subtitle", "appear_ms": 500, "duration_ms": 2000, "color": "#FFFFFF"}, {"text": "Circulation paths   \u2713", "position": "center", "style": "stat", "appear_ms": 1200, "duration_ms": 1500, "color": "#56D364"}, {"text": "Lighting analysis   \u2713", "position": "center", "style": "stat", "appear_ms": 1700, "duration_ms": 1500, "color": "#56D364"}, {"text": "Furniture zones     \u2713", "position": "center", "style": "stat", "appear_ms": 2200, "duration_ms": 1500, "color": "#56D364"}], "duration_ms": 5000, "transition": "fade"}, {"number": 5, "name": "AI Interior Design", "description": "Furniture appears \u2014 the design comes to life", "camera": {"position": [12.5, 10.0, -7.0], "target": [17.5, 10.0, -7.0], "fov": 50, "duration_ms": 7000}, "overlays": [{"text": "DESIGN COMING TO LIFE", "position": "top", "style": "title", "appear_ms": 0, "duration_ms": 3000, "color": "#FFA657"}, {"text": "+12 furniture items", "position": "bottom", "style": "counter", "appear_ms": 1000, "duration_ms": 3000, "color": "#FFA657"}, {"text": "Floor: #D4C4A8  |  Walls: #F5F0E8", "position": "bottom", "style": "stat", "appear_ms": 2000, "duration_ms": 2500, "color": "#8B949E"}], "duration_ms": 7000, "transition": "fade"}, {"number": 6, "name": "Design Alternatives", "description": "Comparing options, selecting the best", "camera": {"position": [32.5, 20.0, 8.0], "target": [17.5, 10.0, -2.0], "fov": 55, "duration_ms": 6000}, "overlays": [{"text": "DESIGN ALTERNATIVES", "position": "top", "style": "title", "appear_ms": 0, "duration_ms": 2500, "color": "#D2A8FF"}, {"text": "Option A \u2014 Minimal \u2605 SELECTED", "position": "center", "style": "stat", "appear_ms": 500, "duration_ms": 3000, "color": "#56D364"}, {"text": "Option B \u2014 Premium", "position": "center", "style": "stat", "appear_ms": 1100, "duration_ms": 3000, "color": "#8B949E"}], "duration_ms": 6000, "transition": "fade"}, {"number": 7, "name": "Validation", "description": "Quality check \u2014 clearance, doors, walkways, lighting", "camera": {"position": [17.5, 30.0, -12.0], "target": [17.5, 10.0, -7.0], "fov": 50, "duration_ms": 5000}, "overlays": [{"text": "VALIDATION", "position": "top", "style": "title", "appear_ms": 0, "duration_ms": 2500, "color": "#56D364"}, {"text": "Door clearance     \u2713", "position": "center", "style": "stat", "appear_ms": 400, "duration_ms": 1200, "color": "#56D364"}, {"text": "Furniture spacing  \u2713", "position": "center", "style": "stat", "appear_ms": 900, "duration_ms": 1200, "color": "#56D364"}, {"text": "Walkways           \u2713", "position": "center", "style": "stat", "appear_ms": 1400, "duration_ms": 1200, "color": "#56D364"}, {"text": "Lighting coverage  \u2713", "position": "center", "style": "stat", "appear_ms": 1900, "duration_ms": 1200, "color": "#56D364"}, {"text": "Validation Score: 94%", "position": "bottom", "style": "badge", "appear_ms": 2500, "duration_ms": 2000, "color": "#56D364"}], "duration_ms": 5000, "transition": "fade"}, {"number": 8, "name": "Lighting Simulation", "description": "Morning \u2192 Afternoon \u2192 Sunset \u2192 Night", "camera": {"position": [17.5, 20.0, -17.0], "target": [17.5, 10.0, -7.0], "fov": 45, "duration_ms": 8000}, "overlays": [{"text": "\u2600\ufe0f MORNING", "position": "top", "style": "title", "appear_ms": 0, "duration_ms": 1800, "color": "#FFD700"}, {"text": "\ud83c\udf24 AFTERNOON", "position": "top", "style": "title", "appear_ms": 2000, "duration_ms": 1800, "color": "#FFA500"}, {"text": "\ud83c\udf05 SUNSET", "position": "top", "style": "title", "appear_ms": 4000, "duration_ms": 1800, "color": "#FF6347"}, {"text": "\ud83c\udf19 NIGHT", "position": "top", "style": "title", "appear_ms": 6000, "duration_ms": 1800, "color": "#4169E1"}], "duration_ms": 8000, "transition": "fade"}, {"number": 9, "name": "Guided Walkthrough", "description": "Tour the completed project", "camera": {"position": [17.5, 15.0, 3.0], "target": [22.5, 10.0, -7.0], "fov": 50, "duration_ms": 10000}, "overlays": [{"text": "GUIDED WALKTHROUGH", "position": "top", "style": "title", "appear_ms": 0, "duration_ms": 3000, "color": "#FFFFFF"}, {"text": "\u2192 Entrance", "position": "center", "style": "subtitle", "appear_ms": 1000, "duration_ms": 1000, "color": "#79C0FF"}, {"text": "\u2192 Workspace", "position": "center", "style": "subtitle", "appear_ms": 2200, "duration_ms": 1000, "color": "#79C0FF"}, {"text": "\u2192 Meeting Room", "position": "center", "style": "subtitle", "appear_ms": 3400, "duration_ms": 1000, "color": "#79C0FF"}], "duration_ms": 10000, "transition": "fade"}, {"number": 10, "name": "Before vs After", "description": "Original CAD \u2192 AI-Designed V2.0", "camera": {"position": [17.5, 30.0, -7.0], "target": [17.5, 10.0, -7.0], "fov": 60, "duration_ms": 6000}, "overlays": [{"text": "BEFORE  \u21c4  AFTER", "position": "top", "style": "title", "appear_ms": 0, "duration_ms": 3000, "color": "#FFFFFF"}, {"text": "Furniture: 0 \u2192 12", "position": "center", "style": "stat", "appear_ms": 500, "duration_ms": 1500, "color": "#FFA657"}, {"text": "Lights: 0 \u2192 3", "position": "center", "style": "stat", "appear_ms": 1200, "duration_ms": 1500, "color": "#FFA657"}, {"text": "Materials: default \u2192 custom palette", "position": "center", "style": "stat", "appear_ms": 1900, "duration_ms": 1500, "color": "#FFA657"}, {"text": "V1: a0fb1df2...  \u2192  V2: a45c896e...", "position": "bottom", "style": "stat", "appear_ms": 2500, "duration_ms": 2000, "color": "#8B949E"}], "duration_ms": 6000, "transition": "fade"}, {"number": 11, "name": "Project Intelligence", "description": "Statistics, cost, timeline", "camera": {"position": [17.5, 40.0, -2.0], "target": [17.5, 10.0, -2.0], "fov": 70, "duration_ms": 6000}, "overlays": [{"text": "PROJECT INTELLIGENCE", "position": "top", "style": "title", "appear_ms": 0, "duration_ms": 2500, "color": "#D2A8FF"}, {"text": "Building Area: 140 m\u00b2", "position": "center", "style": "stat", "appear_ms": 400, "duration_ms": 1500, "color": "#FFFFFF"}, {"text": "Rooms: 1  |  Furniture: 12  |  Lights: 3", "position": "center", "style": "stat", "appear_ms": 1000, "duration_ms": 1500, "color": "#8B949E"}, {"text": "Est. Cost: Standard  |  Est. Time: 14-21 days", "position": "center", "style": "stat", "appear_ms": 1600, "duration_ms": 1500, "color": "#8B949E"}, {"text": "AI Confidence: 92%  |  Validation: 94%", "position": "center", "style": "stat", "appear_ms": 2200, "duration_ms": 1500, "color": "#56D364"}, {"text": "Version: 2.0  |  Cameras: 3", "position": "bottom", "style": "stat", "appear_ms": 2800, "duration_ms": 1500, "color": "#8B949E"}], "duration_ms": 6000, "transition": "fade"}, {"number": 12, "name": "Final Reveal", "description": "Orbit around the completed project", "camera": {"position": [32.5, 20.0, 8.0], "target": [17.5, 10.0, -2.0], "fov": 55, "duration_ms": 6000}, "overlays": [{"text": "PREMIUM SCANDINAVIAN OFFICE", "position": "center", "style": "title", "appear_ms": 1000, "duration_ms": 2500, "color": "#3FB950"}, {"text": "PROJECT COMPLETE", "position": "center", "style": "subtitle", "appear_ms": 1800, "duration_ms": 1500, "color": "#FFFFFF"}, {"text": "Ready for Review  |  Ready for Sharing  |  Ready for Export", "position": "bottom", "style": "stat", "appear_ms": 2500, "duration_ms": 2000, "color": "#56D364"}, {"text": "VISION 5D", "position": "bottom", "style": "badge", "appear_ms": 3500, "duration_ms": 2000, "color": "#3FB950"}], "duration_ms": 6000, "transition": "fade"}];
+const TOTAL = SCENES.length;
+let currentScene = 0, playing = false, startTime = 0, sceneStart = 0;
+let camera, renderer, scene, controls;
+
+// Init Three.js
+scene = new THREE.Scene();
+scene.background = new THREE.Color(0x0d1117);
+scene.fog = new THREE.Fog(0x0d1117, 20, 80);
+
+camera = new THREE.PerspectiveCamera(60, window.innerWidth/window.innerHeight, 0.5, 200);
+camera.position.set(20, 12, 30);
+
+renderer = new THREE.WebGLRenderer({canvas:document.getElementById('canvas'),antialias:true});
+renderer.setSize(window.innerWidth, window.innerHeight);
+renderer.shadowMap.enabled = true;
+renderer.toneMapping = THREE.ACESFilmicToneMapping;
+
+// Grid + ground
+const grid = new THREE.GridHelper(60, 40, 0x30363d, 0x21262d);
+scene.add(grid);
+
+const groundGeom = new THREE.PlaneGeometry(80, 80);
+const groundMat = new THREE.MeshStandardMaterial({color:0x1a1a2e,roughness:1});
+const ground = new THREE.Mesh(groundGeom, groundMat);
+ground.rotation.x = -Math.PI/2; ground.position.y = -0.5;
+scene.add(ground);
+
+// Demo building geometry
+const buildGroup = new THREE.Group();
+scene.add(buildGroup);
+
+// Walls
+const wallMat = new THREE.MeshStandardMaterial({color:0xf5f0e8,roughness:0.6});
+for (let i = 0; i < 8; i++) {
+    const angle = (i/8)*Math.PI*2;
+    const x = Math.cos(angle)*12, z = Math.sin(angle)*8;
+    const wall = new THREE.Mesh(new THREE.BoxGeometry(0.3,3,4), wallMat);
+    wall.position.set(x, 1.5, z);
+    wall.rotation.y = angle;
+    buildGroup.add(wall);
+}
+
+// Floor
+const floorMat = new THREE.MeshStandardMaterial({color:0xd4c4a8,roughness:0.3});
+const floor = new THREE.Mesh(new THREE.PlaneGeometry(24, 16), floorMat);
+floor.rotation.x = -Math.PI/2; floor.position.y = 0.01;
+buildGroup.add(floor);
+
+// Lights
+const ambient = new THREE.AmbientLight(0x404060, 0.6);
+const sun = new THREE.DirectionalLight(0xfff5e6, 1.2);
+sun.position.set(10, 15, 5); sun.castShadow = true;
+scene.add(ambient, sun);
+
+// Camera animation
+function lerp(a,b,t){return a+(b-a)*t}
+function lerpV3(a,b,t){return new THREE.Vector3(lerp(a.x,b.x,t),lerp(a.y,b.y,t),lerp(a.z,b.z,t))}
+
+function loadScene(idx) {
+    const s = SCENES[idx];
+    const pos = s.camera.position, tgt = s.camera.target;
+    camera.position.set(pos[0], pos[1], pos[2]);
+    camera.lookAt(tgt[0], tgt[1], tgt[2]);
+    camera.fov = s.camera.fov; camera.updateProjectionMatrix();
+    updateOverlays(s);
+    document.getElementById('scene-name').textContent = `Scene ${idx+1}/${TOTAL}: ${s.name}`;
+    document.getElementById('progress-bar').style.width = `${((idx+1)/TOTAL)*100}%`;
+}
+
+function updateOverlays(s) {
+    const overlay = document.getElementById('overlay');
+    overlay.innerHTML = '';
+    const now = Date.now() - sceneStart;
+    s.overlays.forEach(o => {
+        if (now >= o.appear_ms && now < o.appear_ms + o.duration_ms) {
+            const el = document.createElement('div');
+            el.className = `overlay-text ${o.style} ${o.position}`;
+            el.textContent = o.text;
+            el.style.color = o.color;
+            el.style.opacity = Math.min(1, (now-o.appear_ms)/300);
+            overlay.appendChild(el);
+        }
+    });
+}
+
+function prevScene() { currentScene = Math.max(0, currentScene-1); sceneStart = Date.now(); loadScene(currentScene); }
+function nextScene() { currentScene = Math.min(TOTAL-1, currentScene+1); sceneStart = Date.now(); loadScene(currentScene); }
+
+function togglePlay() {
+    playing = !playing;
+    const btn = document.getElementById('playBtn');
+    if (playing) {
+        btn.textContent = '⏸ PAUSE';
+        startTime = Date.now();
+        sceneStart = startTime;
+        loadScene(currentScene);
+        animate();
+    } else {
+        btn.textContent = '▶ WATCH REVEAL';
+    }
+}
+
+function animate() {
+    if (!playing) return;
+    requestAnimationFrame(animate);
+    const elapsed = Date.now() - startTime;
+    const totalDur = SCENES.reduce((a,s)=>a+s.duration_ms, 0);
+    let cumTime = 0, newScene = 0;
+    for (let i = 0; i < TOTAL; i++) {
+        cumTime += SCENES[i].duration_ms;
+        if (elapsed >= cumTime - SCENES[i].duration_ms) newScene = i;
+        if (elapsed >= totalDur) { playing = false; document.getElementById('playBtn').textContent = '🔄 REPLAY'; return; }
+    }
+    if (newScene !== currentScene) { currentScene = newScene; sceneStart = Date.now(); loadScene(currentScene); }
+    updateOverlays(SCENES[currentScene]);
+    // Orbit camera
+    const t = elapsed * 0.0003;
+    const r = 18 + Math.sin(t)*5;
+    camera.position.x = Math.cos(t*0.7) * r;
+    camera.position.z = Math.sin(t*0.7) * r * 0.6;
+    camera.position.y = 8 + Math.sin(t*0.5)*4;
+    camera.lookAt(0, 1.5, 0);
+    renderer.render(scene, camera);
+}
+
+loadScene(0);
+window.addEventListener('resize', () => { camera.aspect = window.innerWidth/window.innerHeight; camera.updateProjectionMatrix(); renderer.setSize(window.innerWidth, window.innerHeight); });
+window.prevScene = prevScene; window.nextScene = nextScene; window.togglePlay = togglePlay;
+</script>
+</body>
+</html>

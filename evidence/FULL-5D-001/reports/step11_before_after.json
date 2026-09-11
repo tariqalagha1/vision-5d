@@ -1,0 +1,34 @@
+{
+  "furniture": {
+    "before": 0,
+    "after": 12
+  },
+  "materials": {
+    "before": "default",
+    "after": {
+      "floor": {
+        "type": "light_oak",
+        "color": "#D4C4A8"
+      },
+      "wall": {
+        "color": "#F5F0E8"
+      },
+      "ceiling": {
+        "color": "#FFFFFF"
+      }
+    }
+  },
+  "lighting": {
+    "before": 0,
+    "after": 3
+  },
+  "cameras": {
+    "before": 0,
+    "after": 3
+  },
+  "version_hashes": {
+    "before": "ba55f102531cfb8323e923de882fc75895fd7c7685f8876aefdff0e54f5aefdd",
+    "after": "22e4d237325c221642e4f372fd487e5b429c925d800e6d91fe42dba0109b7ae4",
+    "differ": true
+  }
+}

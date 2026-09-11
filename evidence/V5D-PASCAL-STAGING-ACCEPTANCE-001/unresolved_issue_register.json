@@ -1,0 +1,20 @@
+[
+  {
+    "id": "M001",
+    "severity": "INFORMATIONAL",
+    "description": "Pascal is pre-1.0",
+    "mitigation": "Pinned to commit 42ac4be1"
+  },
+  {
+    "id": "M002",
+    "severity": "ACCEPTED_FOLLOW_UP",
+    "description": "Staging auth is disabled",
+    "mitigation": "Enable auth in production config"
+  },
+  {
+    "id": "M003",
+    "severity": "INFORMATIONAL",
+    "description": "Soak test was simulated (60min)",
+    "mitigation": "Run full 60-min soak in CI"
+  }
+]

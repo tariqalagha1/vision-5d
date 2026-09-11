@@ -1,0 +1,47 @@
+{
+  "mission": "V5D-LOCAL-EXTERNAL-SERVICES-READINESS-001",
+  "stage": "GLB Persistence Fix + Full Chain Re-Verification",
+  "timestamp": "2026-08-23T06:00:00Z",
+  "verdict": "GLB_BUGS_FIXED_CHAIN_VERIFIED",
+
+  "glb_persistence_bug": {
+    "status": "ALREADY_FIXED",
+    "detail": "The 212-byte skeleton GLB (reported Aug 3) was resolved by prior work: _set_workflow_state no longer calls db.expire_all(), scene3d endpoint no longer filters geometry jobs by state, and geometry_result is persisted via flag_modified + flush. Fresh pipeline run produces a 10,264-byte valid GLB with 14 meshes."
+  },
+
+  "glb_normals_bug": {
+    "status": "FOUND_AND_FIXED",
+    "root_cause": "export_glb always declared a NORMAL attribute in each primitive, but wrote a normals accessor with count=0 when mesh.normals was empty. Blender rejects NORMAL accessors whose count (0) != POSITION count (N).",
+    "error_signature": "IndexError: index 0 is out of bounds for axis 0 with size 0 (Blender glTF importer, do_primitives)",
+    "fix": "Added _compute_flat_normals(vertices, indices) that generates per-vertex normals (flat shading) when normals are missing or undersized. NORMAL accessor count now always matches POSITION count.",
+    "file": "packages/scene3d/glb_export.py"
+  },
+
+  "glb_chunk_length_bug": {
+    "status": "FOUND_AND_FIXED",
+    "root_cause": "JSON and BIN chunk headers declared UNPADDED lengths (len(json_bytes), len(bin_buffer)) while PADDED chunks were written. This corrupted the BIN chunk offset, causing Blender to read a None buffer.",
+    "error_signature": "TypeError: 'NoneType' object is not subscriptable (get_buffer_slice)",
+    "fix": "Chunk headers now declare PADDED lengths (len(json_chunk), len(bin_chunk)). JSON padding uses spaces (0x20) via new _pad_json_to_4 helper; buffer.byteLength stays UNPADDED per glTF spec.",
+    "file": "packages/scene3d/glb_export.py"
+  },
+
+  "validate_glb_enhancement": {
+    "status": "ENHANCED",
+    "detail": "validate_glb now does structural validation: parses JSON chunk, checks mesh presence, POSITION accessor count > 0, and NORMAL count == POSITION count. Previously it only checked magic + version, returning valid=True for GLBs Blender rejects."
+  },
+
+  "verification": {
+    "unit_test": "export_glb with empty-normals mesh → NORMAL count == POSITION count, validate_glb passes",
+    "blender_import": "fixed_api_glb.glb (14 meshes, 112 vertices, 168 polygons) imports into Blender 5.2.0 cleanly — floor_slab + 13 furniture/wall components",
+    "glb_size": "11,840 bytes (with normals), SHA-256 676f4fc236fa99f9064d120e8dadfc453b628e247fc8b092733c0ca42752aeef",
+    "tests": "167/167 pass (suite grew from 131 to 167 since Aug 3)"
+  },
+
+  "chain_status": {
+    "photo_understanding": "VERIFIED (NVIDIA meta/llama-3.2-11b-vision-instruct)",
+    "geometry_generation": "VERIFIED (5 walls + 9 furniture components)",
+    "glb_export": "VERIFIED (now produces normals-complete GLB)",
+    "blender_import": "VERIFIED (14 meshes import cleanly)",
+    "pascal_services": "RUNNING (editor :3002)"
+  }
+}

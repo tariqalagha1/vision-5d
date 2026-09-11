@@ -1,0 +1,314 @@
+{
+  "asset": {
+    "version": "2.0",
+    "generator": "Vision5D-Phase4"
+  },
+  "scene": 0,
+  "scenes": [
+    {
+      "nodes": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "mesh": 0,
+      "name": "wall_solid"
+    },
+    {
+      "mesh": 1,
+      "name": "wall_solid"
+    },
+    {
+      "mesh": 2,
+      "name": "wall_solid"
+    },
+    {
+      "mesh": 3,
+      "name": "wall_solid"
+    },
+    {
+      "mesh": 4,
+      "name": "floor_slab"
+    },
+    {
+      "mesh": 5,
+      "name": "floor_slab"
+    },
+    {
+      "mesh": 6,
+      "name": "floor_slab"
+    },
+    {
+      "mesh": 7,
+      "name": "floor_slab"
+    },
+    {
+      "mesh": 8,
+      "name": "ceiling_surface"
+    },
+    {
+      "mesh": 9,
+      "name": "ceiling_surface"
+    },
+    {
+      "mesh": 10,
+      "name": "ceiling_surface"
+    },
+    {
+      "mesh": 11,
+      "name": "ceiling_surface"
+    },
+    {
+      "mesh": 12,
+      "name": "door_element"
+    },
+    {
+      "mesh": 13,
+      "name": "door_element"
+    },
+    {
+      "mesh": 14,
+      "name": "window_element"
+    },
+    {
+      "mesh": 15,
+      "name": "window_element"
+    },
+    {
+      "mesh": 16,
+      "name": "roof_element"
+    }
+  ],
+  "meshes": [
+    {
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1
+          },
+          "indices": 2
+        }
+      ],
+      "name": "wall_solid"
+    },
+    {
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 3,
+            "NORMAL": 4
+          },
+          "indices": 5
+        }
+      ],
+      "name": "wall_solid"
+    },
+    {
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 6,
+            "NORMAL": 7
+          },
+          "indices": 8
+        }
+      ],
+      "name": "wall_solid"
+    },
+    {
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 9,
+            "NORMAL": 10
+          },
+          "indices": 11
+        }
+      ],
+      "name": "wall_solid"
+    },
+    {
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 12,
+            "NORMAL": 13
+          },
+          "indices": 14
+        }
+      ],
+      "name": "floor_slab"
+    },
+    {
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 15,
+            "NORMAL": 16
+          },
+          "indices": 17
+        }
+      ],
+      "name": "floor_slab"
+    },
+    {
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 18,
+            "NORMAL": 19
+          },
+          "indices": 20
+        }
+      ],
+      "name": "floor_slab"
+    },
+    {
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 21,
+            "NORMAL": 22
+          },
+          "indices": 23
+        }
+      ],
+      "name": "floor_slab"
+    },
+    {
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 24,
+            "NORMAL": 25
+          },
+          "indices": 26
+        }
+      ],
+      "name": "ceiling_surface"
+    },
+    {
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 27,
+            "NORMAL": 28
+          },
+          "indices": 29
+        }
+      ],
+      "name": "ceiling_surface"
+    },
+    {
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 30,
+            "NORMAL": 31
+          },
+          "indices": 32
+        }
+      ],
+      "name": "ceiling_surface"
+    },
+    {
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 33,
+            "NORMAL": 34
+          },
+          "indices": 35
+        }
+      ],
+      "name": "ceiling_surface"
+    },
+    {
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 36,
+            "NORMAL": 37
+          },
+          "indices": 38
+        }
+      ],
+      "name": "door_element"
+    },
+    {
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 39,
+            "NORMAL": 40
+          },
+          "indices": 41
+        }
+      ],
+      "name": "door_element"
+    },
+    {
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 42,
+            "NORMAL": 43
+          },
+          "indices": 44
+        }
+      ],
+      "name": "window_element"
+    },
+    {
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 45,
+            "NORMAL": 46
+          },
+          "indices": 47
+        }
+      ],
+      "name": "window_element"
+    },
+    {
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 48,
+            "NORMAL": 49
+          },
+          "indices": 50
+        }
+      ],
+      "name": "roof_element"
+    }
+  ],
+  "materials": [],
+  "accessors": [],
+  "bufferViews": [],
+  "buffers": [
+    {
+      "byteLength": 0
+    }
+  ]
+}

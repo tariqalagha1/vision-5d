@@ -1,0 +1,12 @@
+{
+  "mission": "V5D-FRONTEND-QUALITY-GATE-001",
+  "timestamp": "2026-07-31T20:20:56.948235",
+  "files_changed_since_last_gate": [
+    "apps/api/main.py \u2014 added GET /api/v1/workspaces, fixed Scene3DVersion import, added failed_sync_count",
+    "apps/web/js/services/projects.js \u2014 added getWorkspaceId(), clearWorkspaceCache(), failed_sync_count",
+    "apps/web/js/views/dashboard.js \u2014 async workspace discovery, Failed Syncs stat card",
+    "apps/web/js/views/ai-config.js \u2014 dynamic workspace ID replacement"
+  ],
+  "no_production_merge": true,
+  "regression_check": "98/98 tests pass"
+}

@@ -1,0 +1,12 @@
+{
+  "version_a": {
+    "id": "4ea7bb39-ed39-4c1f-a948-36d7d5ee07bf",
+    "number": 1,
+    "name": "Interior Option A"
+  },
+  "version_b": {
+    "id": "c39d5f95-f671-41a1-8c2f-7705922a0cfa",
+    "number": 2,
+    "name": "Interior Option B"
+  }
+}

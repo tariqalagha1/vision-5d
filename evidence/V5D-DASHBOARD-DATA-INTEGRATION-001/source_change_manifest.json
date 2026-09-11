@@ -1,0 +1,31 @@
+{
+  "mission": "V5D-DASHBOARD-DATA-INTEGRATION-001",
+  "timestamp": "2026-07-31T19:50:18.240944",
+  "files_changed": [
+    {
+      "file": "apps/api/main.py",
+      "changes": [
+        "Added import: Scene3DVersion, StudioDraft, StudioSceneVersion",
+        "Fixed total_scenes: removed broken dir() check, queries DB directly",
+        "Added total_revisions: queries StudioSceneVersion table",
+        "Added conflict_count: queries DurableJobModel in CONFLICT state",
+        "Added failed_sync_count: queries DurableJobModel in FAILED state",
+        "Added failed_sync_count to dashboard stats response"
+      ]
+    },
+    {
+      "file": "apps/web/js/services/projects.js",
+      "changes": [
+        "Added failed_sync_count to getStats() response mapping",
+        "Added failed_sync_count to error fallback return"
+      ]
+    },
+    {
+      "file": "apps/web/js/views/dashboard.js",
+      "changes": [
+        "Added 5th StatCard for Failed Syncs (\u26a0\ufe0f) to stats grid"
+      ]
+    }
+  ],
+  "no_production_merge": true
+}

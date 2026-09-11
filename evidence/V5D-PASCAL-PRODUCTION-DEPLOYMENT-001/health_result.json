@@ -1,0 +1,9 @@
+{
+  "preDeployment": "healthy",
+  "postDeployment": "healthy",
+  "readinessProbe": "pass",
+  "livenessProbe": "pass",
+  "restEndpoint": "http://localhost:3131/api/health \u2192 200",
+  "logsActive": true,
+  "metricsActive": true
+}

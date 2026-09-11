@@ -1,0 +1,1095 @@
+{
+  "projectId": "real-2d-45x45-32c4e1ba-151",
+  "vision5dRevisionId": "rev_001_original",
+  "pascalSceneId": "pending",
+  "pascalSchemaVersion": "0.9.2",
+  "entries": {
+    "site_v5d_001": {
+      "projectId": "real-2d-45x45-32c4e1ba-151",
+      "vision5dRevisionId": "rev_001_original",
+      "pascalSceneId": "pending",
+      "pascalSchemaVersion": "0.9.2",
+      "vision5dStableId": "site_v5d_001",
+      "pascalNodeId": "site_jj890j3j2p45xgnd",
+      "nodeType": "site",
+      "sourceDxfHandles": [],
+      "createdAt": "2026-07-30T06:01:52.703887+00:00",
+      "lastSyncedAt": "2026-07-30T06:01:52.703887+00:00",
+      "lifecycleState": "ACTIVE"
+    },
+    "building_v5d_001": {
+      "projectId": "real-2d-45x45-32c4e1ba-151",
+      "vision5dRevisionId": "rev_001_original",
+      "pascalSceneId": "pending",
+      "pascalSchemaVersion": "0.9.2",
+      "vision5dStableId": "building_v5d_001",
+      "pascalNodeId": "building_0jrwh82h75bivl7k",
+      "nodeType": "building",
+      "sourceDxfHandles": [],
+      "createdAt": "2026-07-30T06:01:52.703887+00:00",
+      "lastSyncedAt": "2026-07-30T06:01:52.703887+00:00",
+      "lifecycleState": "ACTIVE"
+    },
+    "level_v5d_001": {
+      "projectId": "real-2d-45x45-32c4e1ba-151",
+      "vision5dRevisionId": "rev_001_original",
+      "pascalSceneId": "pending",
+      "pascalSchemaVersion": "0.9.2",
+      "vision5dStableId": "level_v5d_001",
+      "pascalNodeId": "level_n41m6pyw1ofwai8k",
+      "nodeType": "level",
+      "sourceDxfHandles": [],
+      "createdAt": "2026-07-30T06:01:52.703887+00:00",
+      "lastSyncedAt": "2026-07-30T06:01:52.703887+00:00",
+      "lifecycleState": "ACTIVE"
+    },
+    "wall_v5d_000": {
+      "projectId": "real-2d-45x45-32c4e1ba-151",
+      "vision5dRevisionId": "rev_001_original",
+      "pascalSceneId": "pending",
+      "pascalSchemaVersion": "0.9.2",
+      "vision5dStableId": "wall_v5d_000",
+      "pascalNodeId": "wall_ykcsk4jw449g0wrh",
+      "nodeType": "wall",
+      "sourceDxfHandles": [
+        "43D9"
+      ],
+      "createdAt": "2026-07-30T06:01:52.703887+00:00",
+      "lastSyncedAt": "2026-07-30T06:01:52.703887+00:00",
+      "lifecycleState": "ACTIVE"
+    },
+    "wall_v5d_001": {
+      "projectId": "real-2d-45x45-32c4e1ba-151",
+      "vision5dRevisionId": "rev_001_original",
+      "pascalSceneId": "pending",
+      "pascalSchemaVersion": "0.9.2",
+      "vision5dStableId": "wall_v5d_001",
+      "pascalNodeId": "wall_mcbn9or4wb0mugaj",
+      "nodeType": "wall",
+      "sourceDxfHandles": [
+        "43FA",
+        "44F7"
+      ],
+      "createdAt": "2026-07-30T06:01:52.703887+00:00",
+      "lastSyncedAt": "2026-07-30T06:01:52.703887+00:00",
+      "lifecycleState": "ACTIVE"
+    },
+    "wall_v5d_002": {
+      "projectId": "real-2d-45x45-32c4e1ba-151",
+      "vision5dRevisionId": "rev_001_original",
+      "pascalSceneId": "pending",
+      "pascalSchemaVersion": "0.9.2",
+      "vision5dStableId": "wall_v5d_002",
+      "pascalNodeId": "wall_oxrmgz74nvnkbm67",
+      "nodeType": "wall",
+      "sourceDxfHandles": [
+        "44ED",
+        "44EE"
+      ],
+      "createdAt": "2026-07-30T06:01:52.703887+00:00",
+      "lastSyncedAt": "2026-07-30T06:01:52.703887+00:00",
+      "lifecycleState": "ACTIVE"
+    },
+    "wall_v5d_003": {
+      "projectId": "real-2d-45x45-32c4e1ba-151",
+      "vision5dRevisionId": "rev_001_original",
+      "pascalSceneId": "pending",
+      "pascalSchemaVersion": "0.9.2",
+      "vision5dStableId": "wall_v5d_003",
+      "pascalNodeId": "wall_ad815sk2y0lm4888",
+      "nodeType": "wall",
+      "sourceDxfHandles": [
+        "43F0",
+        "43F1",
+        "44D7",
+        "44D8"
+      ],
+      "createdAt": "2026-07-30T06:01:52.703887+00:00",
+      "lastSyncedAt": "2026-07-30T06:01:52.703887+00:00",
+      "lifecycleState": "ACTIVE"
+    },
+    "wall_v5d_004": {
+      "projectId": "real-2d-45x45-32c4e1ba-151",
+      "vision5dRevisionId": "rev_001_original",
+      "pascalSceneId": "pending",
+      "pascalSchemaVersion": "0.9.2",
+      "vision5dStableId": "wall_v5d_004",
+      "pascalNodeId": "wall_5a2fg13bftofxo3k",
+      "nodeType": "wall",
+      "sourceDxfHandles": [
+        "44F6"
+      ],
+      "createdAt": "2026-07-30T06:01:52.703887+00:00",
+      "lastSyncedAt": "2026-07-30T06:01:52.703887+00:00",
+      "lifecycleState": "ACTIVE"
+    },
+    "wall_v5d_005": {
+      "projectId": "real-2d-45x45-32c4e1ba-151",
+      "vision5dRevisionId": "rev_001_original",
+      "pascalSceneId": "pending",
+      "pascalSchemaVersion": "0.9.2",
+      "vision5dStableId": "wall_v5d_005",
+      "pascalNodeId": "wall_qdcyugnnwtnir3jj",
+      "nodeType": "wall",
+      "sourceDxfHandles": [
+        "450E",
+        "450F"
+      ],
+      "createdAt": "2026-07-30T06:01:52.703887+00:00",
+      "lastSyncedAt": "2026-07-30T06:01:52.703887+00:00",
+      "lifecycleState": "ACTIVE"
+    },
+    "wall_v5d_006": {
+      "projectId": "real-2d-45x45-32c4e1ba-151",
+      "vision5dRevisionId": "rev_001_original",
+      "pascalSceneId": "pending",
+      "pascalSchemaVersion": "0.9.2",
+      "vision5dStableId": "wall_v5d_006",
+      "pascalNodeId": "wall_35dmm3vjqgzrb248",
+      "nodeType": "wall",
+      "sourceDxfHandles": [
+        "44CC",
+        "44CD"
+      ],
+      "createdAt": "2026-07-30T06:01:52.703887+00:00",
+      "lastSyncedAt": "2026-07-30T06:01:52.703887+00:00",
+      "lifecycleState": "ACTIVE"
+    },
+    "wall_v5d_007": {
+      "projectId": "real-2d-45x45-32c4e1ba-151",
+      "vision5dRevisionId": "rev_001_original",
+      "pascalSceneId": "pending",
+      "pascalSchemaVersion": "0.9.2",
+      "vision5dStableId": "wall_v5d_007",
+      "pascalNodeId": "wall_15ieega6y48upa68",
+      "nodeType": "wall",
+      "sourceDxfHandles": [
+        "43E5",
+        "43E6",
+        "44B5"
+      ],
+      "createdAt": "2026-07-30T06:01:52.703887+00:00",
+      "lastSyncedAt": "2026-07-30T06:01:52.703887+00:00",
+      "lifecycleState": "ACTIVE"
+    },
+    "wall_v5d_008": {
+      "projectId": "real-2d-45x45-32c4e1ba-151",
+      "vision5dRevisionId": "rev_001_original",
+      "pascalSceneId": "pending",
+      "pascalSchemaVersion": "0.9.2",
+      "vision5dStableId": "wall_v5d_008",
+      "pascalNodeId": "wall_yjg5lej1e805kyky",
+      "nodeType": "wall",
+      "sourceDxfHandles": [
+        "43F9"
+      ],
+      "createdAt": "2026-07-30T06:01:52.703887+00:00",
+      "lastSyncedAt": "2026-07-30T06:01:52.703887+00:00",
+      "lifecycleState": "ACTIVE"
+    },
+    "wall_v5d_009": {
+      "projectId": "real-2d-45x45-32c4e1ba-151",
+      "vision5dRevisionId": "rev_001_original",
+      "pascalSceneId": "pending",
+      "pascalSchemaVersion": "0.9.2",
+      "vision5dStableId": "wall_v5d_009",
+      "pascalNodeId": "wall_wergl2ce7zjjqu0g",
+      "nodeType": "wall",
+      "sourceDxfHandles": [
+        "4411",
+        "4412",
+        "44AB",
+        "44AC",
+        "4539"
+      ],
+      "createdAt": "2026-07-30T06:01:52.703887+00:00",
+      "lastSyncedAt": "2026-07-30T06:01:52.703887+00:00",
+      "lifecycleState": "ACTIVE"
+    },
+    "wall_v5d_010": {
+      "projectId": "real-2d-45x45-32c4e1ba-151",
+      "vision5dRevisionId": "rev_001_original",
+      "pascalSceneId": "pending",
+      "pascalSchemaVersion": "0.9.2",
+      "vision5dStableId": "wall_v5d_010",
+      "pascalNodeId": "wall_bdkt70dn4r1zrq6a",
+      "nodeType": "wall",
+      "sourceDxfHandles": [
+        "4524",
+        "4525",
+        "452F",
+        "4530"
+      ],
+      "createdAt": "2026-07-30T06:01:52.703887+00:00",
+      "lastSyncedAt": "2026-07-30T06:01:52.703887+00:00",
+      "lifecycleState": "ACTIVE"
+    },
+    "wall_v5d_011": {
+      "projectId": "real-2d-45x45-32c4e1ba-151",
+      "vision5dRevisionId": "rev_001_original",
+      "pascalSceneId": "pending",
+      "pascalSchemaVersion": "0.9.2",
+      "vision5dStableId": "wall_v5d_011",
+      "pascalNodeId": "wall_ldtruyciz6rex7vi",
+      "nodeType": "wall",
+      "sourceDxfHandles": [
+        "43AD",
+        "43CE",
+        "43D8",
+        "4473",
+        "4538"
+      ],
+      "createdAt": "2026-07-30T06:01:52.703887+00:00",
+      "lastSyncedAt": "2026-07-30T06:01:52.703887+00:00",
+      "lifecycleState": "ACTIVE"
+    },
+    "wall_v5d_012": {
+      "projectId": "real-2d-45x45-32c4e1ba-151",
+      "vision5dRevisionId": "rev_001_original",
+      "pascalSceneId": "pending",
+      "pascalSchemaVersion": "0.9.2",
+      "vision5dStableId": "wall_v5d_012",
+      "pascalNodeId": "wall_fy5ze5ehch7w4c9m",
+      "nodeType": "wall",
+      "sourceDxfHandles": [
+        "44B4"
+      ],
+      "createdAt": "2026-07-30T06:01:52.703887+00:00",
+      "lastSyncedAt": "2026-07-30T06:01:52.703887+00:00",
+      "lifecycleState": "ACTIVE"
+    },
+    "wall_v5d_013": {
+      "projectId": "real-2d-45x45-32c4e1ba-151",
+      "vision5dRevisionId": "rev_001_original",
+      "pascalSceneId": "pending",
+      "pascalSchemaVersion": "0.9.2",
+      "vision5dStableId": "wall_v5d_013",
+      "pascalNodeId": "wall_8jygfins642jgp5w",
+      "nodeType": "wall",
+      "sourceDxfHandles": [
+        "4550",
+        "4551"
+      ],
+      "createdAt": "2026-07-30T06:01:52.703887+00:00",
+      "lastSyncedAt": "2026-07-30T06:01:52.703887+00:00",
+      "lifecycleState": "ACTIVE"
+    },
+    "wall_v5d_014": {
+      "projectId": "real-2d-45x45-32c4e1ba-151",
+      "vision5dRevisionId": "rev_001_original",
+      "pascalSceneId": "pending",
+      "pascalSchemaVersion": "0.9.2",
+      "vision5dStableId": "wall_v5d_014",
+      "pascalNodeId": "wall_lt43h8fc3dcnscjd",
+      "nodeType": "wall",
+      "sourceDxfHandles": [
+        "43B9",
+        "43BA"
+      ],
+      "createdAt": "2026-07-30T06:01:52.703887+00:00",
+      "lastSyncedAt": "2026-07-30T06:01:52.703887+00:00",
+      "lifecycleState": "ACTIVE"
+    },
+    "wall_v5d_015": {
+      "projectId": "real-2d-45x45-32c4e1ba-151",
+      "vision5dRevisionId": "rev_001_original",
+      "pascalSceneId": "pending",
+      "pascalSchemaVersion": "0.9.2",
+      "vision5dStableId": "wall_v5d_015",
+      "pascalNodeId": "wall_tot9pwgbz3axsxfr",
+      "nodeType": "wall",
+      "sourceDxfHandles": [
+        "43C4",
+        "43C5",
+        "4543"
+      ],
+      "createdAt": "2026-07-30T06:01:52.703887+00:00",
+      "lastSyncedAt": "2026-07-30T06:01:52.703887+00:00",
+      "lifecycleState": "ACTIVE"
+    },
+    "wall_v5d_016": {
+      "projectId": "real-2d-45x45-32c4e1ba-151",
+      "vision5dRevisionId": "rev_001_original",
+      "pascalSceneId": "pending",
+      "pascalSchemaVersion": "0.9.2",
+      "vision5dStableId": "wall_v5d_016",
+      "pascalNodeId": "wall_7k7ulh938imyifii",
+      "nodeType": "wall",
+      "sourceDxfHandles": [
+        "449F"
+      ],
+      "createdAt": "2026-07-30T06:01:52.703887+00:00",
+      "lastSyncedAt": "2026-07-30T06:01:52.703887+00:00",
+      "lifecycleState": "ACTIVE"
+    },
+    "wall_v5d_017": {
+      "projectId": "real-2d-45x45-32c4e1ba-151",
+      "vision5dRevisionId": "rev_001_original",
+      "pascalSceneId": "pending",
+      "pascalSchemaVersion": "0.9.2",
+      "vision5dStableId": "wall_v5d_017",
+      "pascalNodeId": "wall_ccrinxeukb5gd7v0",
+      "nodeType": "wall",
+      "sourceDxfHandles": [
+        "447F",
+        "4480"
+      ],
+      "createdAt": "2026-07-30T06:01:52.703887+00:00",
+      "lastSyncedAt": "2026-07-30T06:01:52.703887+00:00",
+      "lifecycleState": "ACTIVE"
+    },
+    "wall_v5d_018": {
+      "projectId": "real-2d-45x45-32c4e1ba-151",
+      "vision5dRevisionId": "rev_001_original",
+      "pascalSceneId": "pending",
+      "pascalSchemaVersion": "0.9.2",
+      "vision5dStableId": "wall_v5d_018",
+      "pascalNodeId": "wall_5ikpay5n2o334eyl",
+      "nodeType": "wall",
+      "sourceDxfHandles": [
+        "4469",
+        "446A",
+        "4495",
+        "4496"
+      ],
+      "createdAt": "2026-07-30T06:01:52.703887+00:00",
+      "lastSyncedAt": "2026-07-30T06:01:52.703887+00:00",
+      "lifecycleState": "ACTIVE"
+    },
+    "wall_v5d_019": {
+      "projectId": "real-2d-45x45-32c4e1ba-151",
+      "vision5dRevisionId": "rev_001_original",
+      "pascalSceneId": "pending",
+      "pascalSchemaVersion": "0.9.2",
+      "vision5dStableId": "wall_v5d_019",
+      "pascalNodeId": "wall_2xdrm0o4158wkq80",
+      "nodeType": "wall",
+      "sourceDxfHandles": [
+        "4472"
+      ],
+      "createdAt": "2026-07-30T06:01:52.703887+00:00",
+      "lastSyncedAt": "2026-07-30T06:01:52.703887+00:00",
+      "lifecycleState": "ACTIVE"
+    },
+    "wall_v5d_020": {
+      "projectId": "real-2d-45x45-32c4e1ba-151",
+      "vision5dRevisionId": "rev_001_original",
+      "pascalSceneId": "pending",
+      "pascalSchemaVersion": "0.9.2",
+      "vision5dStableId": "wall_v5d_020",
+      "pascalNodeId": "wall_ns2214jlfkimrox3",
+      "nodeType": "wall",
+      "sourceDxfHandles": [
+        "43AC"
+      ],
+      "createdAt": "2026-07-30T06:01:52.703887+00:00",
+      "lastSyncedAt": "2026-07-30T06:01:52.703887+00:00",
+      "lifecycleState": "ACTIVE"
+    },
+    "wall_v5d_021": {
+      "projectId": "real-2d-45x45-32c4e1ba-151",
+      "vision5dRevisionId": "rev_001_original",
+      "pascalSceneId": "pending",
+      "pascalSchemaVersion": "0.9.2",
+      "vision5dStableId": "wall_v5d_021",
+      "pascalNodeId": "wall_7dqoeu04aqcbsgfi",
+      "nodeType": "wall",
+      "sourceDxfHandles": [
+        "449E"
+      ],
+      "createdAt": "2026-07-30T06:01:52.703887+00:00",
+      "lastSyncedAt": "2026-07-30T06:01:52.703887+00:00",
+      "lifecycleState": "ACTIVE"
+    },
+    "wall_v5d_022": {
+      "projectId": "real-2d-45x45-32c4e1ba-151",
+      "vision5dRevisionId": "rev_001_original",
+      "pascalSceneId": "pending",
+      "pascalSchemaVersion": "0.9.2",
+      "vision5dStableId": "wall_v5d_022",
+      "pascalNodeId": "wall_kh4smti78y2b5ijq",
+      "nodeType": "wall",
+      "sourceDxfHandles": [
+        "4432",
+        "4433"
+      ],
+      "createdAt": "2026-07-30T06:01:52.703887+00:00",
+      "lastSyncedAt": "2026-07-30T06:01:52.703887+00:00",
+      "lifecycleState": "ACTIVE"
+    },
+    "wall_v5d_023": {
+      "projectId": "real-2d-45x45-32c4e1ba-151",
+      "vision5dRevisionId": "rev_001_original",
+      "pascalSceneId": "pending",
+      "pascalSchemaVersion": "0.9.2",
+      "vision5dStableId": "wall_v5d_023",
+      "pascalNodeId": "wall_tc2nzvs4odq3lfnn",
+      "nodeType": "wall",
+      "sourceDxfHandles": [
+        "4426",
+        "445D"
+      ],
+      "createdAt": "2026-07-30T06:01:52.703887+00:00",
+      "lastSyncedAt": "2026-07-30T06:01:52.703887+00:00",
+      "lifecycleState": "ACTIVE"
+    },
+    "wall_v5d_024": {
+      "projectId": "real-2d-45x45-32c4e1ba-151",
+      "vision5dRevisionId": "rev_001_original",
+      "pascalSceneId": "pending",
+      "pascalSchemaVersion": "0.9.2",
+      "vision5dStableId": "wall_v5d_024",
+      "pascalNodeId": "wall_yz2tejyg1b32i2h0",
+      "nodeType": "wall",
+      "sourceDxfHandles": [
+        "441C",
+        "441D"
+      ],
+      "createdAt": "2026-07-30T06:01:52.703887+00:00",
+      "lastSyncedAt": "2026-07-30T06:01:52.703887+00:00",
+      "lifecycleState": "ACTIVE"
+    },
+    "wall_v5d_025": {
+      "projectId": "real-2d-45x45-32c4e1ba-151",
+      "vision5dRevisionId": "rev_001_original",
+      "pascalSceneId": "pending",
+      "pascalSchemaVersion": "0.9.2",
+      "vision5dStableId": "wall_v5d_025",
+      "pascalNodeId": "wall_zpii65ftpgmpqc40",
+      "nodeType": "wall",
+      "sourceDxfHandles": [
+        "4453",
+        "4454"
+      ],
+      "createdAt": "2026-07-30T06:01:52.703887+00:00",
+      "lastSyncedAt": "2026-07-30T06:01:52.703887+00:00",
+      "lifecycleState": "ACTIVE"
+    },
+    "wall_v5d_026": {
+      "projectId": "real-2d-45x45-32c4e1ba-151",
+      "vision5dRevisionId": "rev_001_original",
+      "pascalSceneId": "pending",
+      "pascalSchemaVersion": "0.9.2",
+      "vision5dStableId": "wall_v5d_026",
+      "pascalNodeId": "wall_pn1x0gsyuz49kb2u",
+      "nodeType": "wall",
+      "sourceDxfHandles": [
+        "443C",
+        "4448",
+        "4449"
+      ],
+      "createdAt": "2026-07-30T06:01:52.703887+00:00",
+      "lastSyncedAt": "2026-07-30T06:01:52.703887+00:00",
+      "lifecycleState": "ACTIVE"
+    },
+    "wall_v5d_027": {
+      "projectId": "real-2d-45x45-32c4e1ba-151",
+      "vision5dRevisionId": "rev_001_original",
+      "pascalSceneId": "pending",
+      "pascalSchemaVersion": "0.9.2",
+      "vision5dStableId": "wall_v5d_027",
+      "pascalNodeId": "wall_5werzrjdw1e0huav",
+      "nodeType": "wall",
+      "sourceDxfHandles": [
+        "4425",
+        "443B",
+        "445C"
+      ],
+      "createdAt": "2026-07-30T06:01:52.703887+00:00",
+      "lastSyncedAt": "2026-07-30T06:01:52.703887+00:00",
+      "lifecycleState": "ACTIVE"
+    },
+    "wall_v5d_028": {
+      "projectId": "real-2d-45x45-32c4e1ba-151",
+      "vision5dRevisionId": "rev_001_original",
+      "pascalSceneId": "pending",
+      "pascalSchemaVersion": "0.9.2",
+      "vision5dStableId": "wall_v5d_028",
+      "pascalNodeId": "wall_iwjaaldrz2d2gfrn",
+      "nodeType": "wall",
+      "sourceDxfHandles": [
+        "441A"
+      ],
+      "createdAt": "2026-07-30T06:01:52.703887+00:00",
+      "lastSyncedAt": "2026-07-30T06:01:52.703887+00:00",
+      "lifecycleState": "ACTIVE"
+    },
+    "wall_v5d_029": {
+      "projectId": "real-2d-45x45-32c4e1ba-151",
+      "vision5dRevisionId": "rev_001_original",
+      "pascalSceneId": "pending",
+      "pascalSchemaVersion": "0.9.2",
+      "vision5dStableId": "wall_v5d_029",
+      "pascalNodeId": "wall_vblrwo2wgqed2n6g",
+      "nodeType": "wall",
+      "sourceDxfHandles": [
+        "43B7"
+      ],
+      "createdAt": "2026-07-30T06:01:52.703887+00:00",
+      "lastSyncedAt": "2026-07-30T06:01:52.703887+00:00",
+      "lifecycleState": "ACTIVE"
+    },
+    "wall_v5d_030": {
+      "projectId": "real-2d-45x45-32c4e1ba-151",
+      "vision5dRevisionId": "rev_001_original",
+      "pascalSceneId": "pending",
+      "pascalSchemaVersion": "0.9.2",
+      "vision5dStableId": "wall_v5d_030",
+      "pascalNodeId": "wall_1io8xapxhu21g0s9",
+      "nodeType": "wall",
+      "sourceDxfHandles": [
+        "4406",
+        "4407"
+      ],
+      "createdAt": "2026-07-30T06:01:52.703887+00:00",
+      "lastSyncedAt": "2026-07-30T06:01:52.703887+00:00",
+      "lifecycleState": "ACTIVE"
+    },
+    "wall_v5d_031": {
+      "projectId": "real-2d-45x45-32c4e1ba-151",
+      "vision5dRevisionId": "rev_001_original",
+      "pascalSceneId": "pending",
+      "pascalSchemaVersion": "0.9.2",
+      "vision5dStableId": "wall_v5d_031",
+      "pascalNodeId": "wall_jzsfa84xp8h389ts",
+      "nodeType": "wall",
+      "sourceDxfHandles": [
+        "441B",
+        "4430"
+      ],
+      "createdAt": "2026-07-30T06:01:52.703887+00:00",
+      "lastSyncedAt": "2026-07-30T06:01:52.703887+00:00",
+      "lifecycleState": "ACTIVE"
+    },
+    "wall_v5d_032": {
+      "projectId": "real-2d-45x45-32c4e1ba-151",
+      "vision5dRevisionId": "rev_001_original",
+      "pascalSceneId": "pending",
+      "pascalSchemaVersion": "0.9.2",
+      "vision5dStableId": "wall_v5d_032",
+      "pascalNodeId": "wall_hke1udpb9tpfz6mq",
+      "nodeType": "wall",
+      "sourceDxfHandles": [
+        "43FB",
+        "43FC"
+      ],
+      "createdAt": "2026-07-30T06:01:52.703887+00:00",
+      "lastSyncedAt": "2026-07-30T06:01:52.703887+00:00",
+      "lifecycleState": "ACTIVE"
+    },
+    "wall_v5d_033": {
+      "projectId": "real-2d-45x45-32c4e1ba-151",
+      "vision5dRevisionId": "rev_001_original",
+      "pascalSceneId": "pending",
+      "pascalSchemaVersion": "0.9.2",
+      "vision5dStableId": "wall_v5d_033",
+      "pascalNodeId": "wall_hak5k69ijrr8328d",
+      "nodeType": "wall",
+      "sourceDxfHandles": [
+        "43AE",
+        "43AF"
+      ],
+      "createdAt": "2026-07-30T06:01:52.703887+00:00",
+      "lastSyncedAt": "2026-07-30T06:01:52.703887+00:00",
+      "lifecycleState": "ACTIVE"
+    },
+    "wall_v5d_034": {
+      "projectId": "real-2d-45x45-32c4e1ba-151",
+      "vision5dRevisionId": "rev_001_original",
+      "pascalSceneId": "pending",
+      "pascalSchemaVersion": "0.9.2",
+      "vision5dStableId": "wall_v5d_034",
+      "pascalNodeId": "wall_inmx1e1mofyora61",
+      "nodeType": "wall",
+      "sourceDxfHandles": [
+        "4431"
+      ],
+      "createdAt": "2026-07-30T06:01:52.703887+00:00",
+      "lastSyncedAt": "2026-07-30T06:01:52.703887+00:00",
+      "lifecycleState": "ACTIVE"
+    },
+    "wall_v5d_035": {
+      "projectId": "real-2d-45x45-32c4e1ba-151",
+      "vision5dRevisionId": "rev_001_original",
+      "pascalSceneId": "pending",
+      "pascalSchemaVersion": "0.9.2",
+      "vision5dStableId": "wall_v5d_035",
+      "pascalNodeId": "wall_khh4j3e3y5dxrl9g",
+      "nodeType": "wall",
+      "sourceDxfHandles": [
+        "4427",
+        "4428"
+      ],
+      "createdAt": "2026-07-30T06:01:52.703887+00:00",
+      "lastSyncedAt": "2026-07-30T06:01:52.703887+00:00",
+      "lifecycleState": "ACTIVE"
+    },
+    "wall_v5d_036": {
+      "projectId": "real-2d-45x45-32c4e1ba-151",
+      "vision5dRevisionId": "rev_001_original",
+      "pascalSceneId": "pending",
+      "pascalSchemaVersion": "0.9.2",
+      "vision5dStableId": "wall_v5d_036",
+      "pascalNodeId": "wall_stooow1y7r8wahwy",
+      "nodeType": "wall",
+      "sourceDxfHandles": [
+        "4451"
+      ],
+      "createdAt": "2026-07-30T06:01:52.703887+00:00",
+      "lastSyncedAt": "2026-07-30T06:01:52.703887+00:00",
+      "lifecycleState": "ACTIVE"
+    },
+    "wall_v5d_037": {
+      "projectId": "real-2d-45x45-32c4e1ba-151",
+      "vision5dRevisionId": "rev_001_original",
+      "pascalSceneId": "pending",
+      "pascalSchemaVersion": "0.9.2",
+      "vision5dStableId": "wall_v5d_037",
+      "pascalNodeId": "wall_lh2rmnc7v8i55054",
+      "nodeType": "wall",
+      "sourceDxfHandles": [
+        "43B8",
+        "445E",
+        "445F"
+      ],
+      "createdAt": "2026-07-30T06:01:52.703887+00:00",
+      "lastSyncedAt": "2026-07-30T06:01:52.703887+00:00",
+      "lifecycleState": "ACTIVE"
+    },
+    "wall_v5d_038": {
+      "projectId": "real-2d-45x45-32c4e1ba-151",
+      "vision5dRevisionId": "rev_001_original",
+      "pascalSceneId": "pending",
+      "pascalSchemaVersion": "0.9.2",
+      "vision5dStableId": "wall_v5d_038",
+      "pascalNodeId": "wall_lc5paodff0fssfpo",
+      "nodeType": "wall",
+      "sourceDxfHandles": [
+        "4446"
+      ],
+      "createdAt": "2026-07-30T06:01:52.703887+00:00",
+      "lastSyncedAt": "2026-07-30T06:01:52.703887+00:00",
+      "lifecycleState": "ACTIVE"
+    },
+    "wall_v5d_039": {
+      "projectId": "real-2d-45x45-32c4e1ba-151",
+      "vision5dRevisionId": "rev_001_original",
+      "pascalSceneId": "pending",
+      "pascalSchemaVersion": "0.9.2",
+      "vision5dStableId": "wall_v5d_039",
+      "pascalNodeId": "wall_doxgci8239m08cn1",
+      "nodeType": "wall",
+      "sourceDxfHandles": [
+        "443D",
+        "443E"
+      ],
+      "createdAt": "2026-07-30T06:01:52.703887+00:00",
+      "lastSyncedAt": "2026-07-30T06:01:52.703887+00:00",
+      "lifecycleState": "ACTIVE"
+    },
+    "wall_v5d_040": {
+      "projectId": "real-2d-45x45-32c4e1ba-151",
+      "vision5dRevisionId": "rev_001_original",
+      "pascalSceneId": "pending",
+      "pascalSchemaVersion": "0.9.2",
+      "vision5dStableId": "wall_v5d_040",
+      "pascalNodeId": "wall_ej3mvoughu2nzn7a",
+      "nodeType": "wall",
+      "sourceDxfHandles": [
+        "43CF",
+        "43D0",
+        "43DA",
+        "43DB",
+        "4452"
+      ],
+      "createdAt": "2026-07-30T06:01:52.703887+00:00",
+      "lastSyncedAt": "2026-07-30T06:01:52.703887+00:00",
+      "lifecycleState": "ACTIVE"
+    },
+    "wall_v5d_041": {
+      "projectId": "real-2d-45x45-32c4e1ba-151",
+      "vision5dRevisionId": "rev_001_original",
+      "pascalSceneId": "pending",
+      "pascalSchemaVersion": "0.9.2",
+      "vision5dStableId": "wall_v5d_041",
+      "pascalNodeId": "wall_ou4r5bfqoc6qzny3",
+      "nodeType": "wall",
+      "sourceDxfHandles": [
+        "43C3",
+        "4447"
+      ],
+      "createdAt": "2026-07-30T06:01:52.703887+00:00",
+      "lastSyncedAt": "2026-07-30T06:01:52.703887+00:00",
+      "lifecycleState": "ACTIVE"
+    },
+    "wall_v5d_042": {
+      "projectId": "real-2d-45x45-32c4e1ba-151",
+      "vision5dRevisionId": "rev_001_original",
+      "pascalSceneId": "pending",
+      "pascalSchemaVersion": "0.9.2",
+      "vision5dStableId": "wall_v5d_042",
+      "pascalNodeId": "wall_xwbkeo937u7kvw94",
+      "nodeType": "wall",
+      "sourceDxfHandles": [
+        "4467",
+        "4522",
+        "454E"
+      ],
+      "createdAt": "2026-07-30T06:01:52.703887+00:00",
+      "lastSyncedAt": "2026-07-30T06:01:52.703887+00:00",
+      "lifecycleState": "ACTIVE"
+    },
+    "wall_v5d_043": {
+      "projectId": "real-2d-45x45-32c4e1ba-151",
+      "vision5dRevisionId": "rev_001_original",
+      "pascalSceneId": "pending",
+      "pascalSchemaVersion": "0.9.2",
+      "vision5dStableId": "wall_v5d_043",
+      "pascalNodeId": "wall_dv0pd0rqluarm0tp",
+      "nodeType": "wall",
+      "sourceDxfHandles": [
+        "450C"
+      ],
+      "createdAt": "2026-07-30T06:01:52.703887+00:00",
+      "lastSyncedAt": "2026-07-30T06:01:52.703887+00:00",
+      "lifecycleState": "ACTIVE"
+    },
+    "wall_v5d_044": {
+      "projectId": "real-2d-45x45-32c4e1ba-151",
+      "vision5dRevisionId": "rev_001_original",
+      "pascalSceneId": "pending",
+      "pascalSchemaVersion": "0.9.2",
+      "vision5dStableId": "wall_v5d_044",
+      "pascalNodeId": "wall_i826ffvo3f0paus7",
+      "nodeType": "wall",
+      "sourceDxfHandles": [
+        "4519",
+        "451A"
+      ],
+      "createdAt": "2026-07-30T06:01:52.703887+00:00",
+      "lastSyncedAt": "2026-07-30T06:01:52.703887+00:00",
+      "lifecycleState": "ACTIVE"
+    },
+    "wall_v5d_045": {
+      "projectId": "real-2d-45x45-32c4e1ba-151",
+      "vision5dRevisionId": "rev_001_original",
+      "pascalSceneId": "pending",
+      "pascalSchemaVersion": "0.9.2",
+      "vision5dStableId": "wall_v5d_045",
+      "pascalNodeId": "wall_fk0yfje33k5rmgfz",
+      "nodeType": "wall",
+      "sourceDxfHandles": [
+        "4474",
+        "4475"
+      ],
+      "createdAt": "2026-07-30T06:01:52.703887+00:00",
+      "lastSyncedAt": "2026-07-30T06:01:52.703887+00:00",
+      "lifecycleState": "ACTIVE"
+    },
+    "wall_v5d_046": {
+      "projectId": "real-2d-45x45-32c4e1ba-151",
+      "vision5dRevisionId": "rev_001_original",
+      "pascalSceneId": "pending",
+      "pascalSchemaVersion": "0.9.2",
+      "vision5dStableId": "wall_v5d_046",
+      "pascalNodeId": "wall_p6oi9whziuuspps1",
+      "nodeType": "wall",
+      "sourceDxfHandles": [
+        "4468",
+        "4503",
+        "4504",
+        "4523"
+      ],
+      "createdAt": "2026-07-30T06:01:52.703887+00:00",
+      "lastSyncedAt": "2026-07-30T06:01:52.703887+00:00",
+      "lifecycleState": "ACTIVE"
+    },
+    "wall_v5d_047": {
+      "projectId": "real-2d-45x45-32c4e1ba-151",
+      "vision5dRevisionId": "rev_001_original",
+      "pascalSceneId": "pending",
+      "pascalSchemaVersion": "0.9.2",
+      "vision5dStableId": "wall_v5d_047",
+      "pascalNodeId": "wall_224ljl3muq12u3ha",
+      "nodeType": "wall",
+      "sourceDxfHandles": [
+        "448A",
+        "448B"
+      ],
+      "createdAt": "2026-07-30T06:01:52.703887+00:00",
+      "lastSyncedAt": "2026-07-30T06:01:52.703887+00:00",
+      "lifecycleState": "ACTIVE"
+    },
+    "wall_v5d_048": {
+      "projectId": "real-2d-45x45-32c4e1ba-151",
+      "vision5dRevisionId": "rev_001_original",
+      "pascalSceneId": "pending",
+      "pascalSchemaVersion": "0.9.2",
+      "vision5dStableId": "wall_v5d_048",
+      "pascalNodeId": "wall_cdpwiietvv7k7h99",
+      "nodeType": "wall",
+      "sourceDxfHandles": [
+        "4545",
+        "4546"
+      ],
+      "createdAt": "2026-07-30T06:01:52.703887+00:00",
+      "lastSyncedAt": "2026-07-30T06:01:52.703887+00:00",
+      "lifecycleState": "ACTIVE"
+    },
+    "wall_v5d_049": {
+      "projectId": "real-2d-45x45-32c4e1ba-151",
+      "vision5dRevisionId": "rev_001_original",
+      "pascalSceneId": "pending",
+      "pascalSchemaVersion": "0.9.2",
+      "vision5dStableId": "wall_v5d_049",
+      "pascalNodeId": "wall_ju5kl1p1x8dv1ife",
+      "nodeType": "wall",
+      "sourceDxfHandles": [
+        "44EB",
+        "450D",
+        "453A",
+        "453B"
+      ],
+      "createdAt": "2026-07-30T06:01:52.703887+00:00",
+      "lastSyncedAt": "2026-07-30T06:01:52.703887+00:00",
+      "lifecycleState": "ACTIVE"
+    },
+    "wall_v5d_050": {
+      "projectId": "real-2d-45x45-32c4e1ba-151",
+      "vision5dRevisionId": "rev_001_original",
+      "pascalSceneId": "pending",
+      "pascalSchemaVersion": "0.9.2",
+      "vision5dStableId": "wall_v5d_050",
+      "pascalNodeId": "wall_z11dipw6dq3ioq7j",
+      "nodeType": "wall",
+      "sourceDxfHandles": [
+        "44A0",
+        "44A1"
+      ],
+      "createdAt": "2026-07-30T06:01:52.703887+00:00",
+      "lastSyncedAt": "2026-07-30T06:01:52.703887+00:00",
+      "lifecycleState": "ACTIVE"
+    },
+    "wall_v5d_051": {
+      "projectId": "real-2d-45x45-32c4e1ba-151",
+      "vision5dRevisionId": "rev_001_original",
+      "pascalSceneId": "pending",
+      "pascalSchemaVersion": "0.9.2",
+      "vision5dStableId": "wall_v5d_051",
+      "pascalNodeId": "wall_j00spvtgarbpmh6w",
+      "nodeType": "wall",
+      "sourceDxfHandles": [
+        "44F8",
+        "44F9"
+      ],
+      "createdAt": "2026-07-30T06:01:52.703887+00:00",
+      "lastSyncedAt": "2026-07-30T06:01:52.703887+00:00",
+      "lifecycleState": "ACTIVE"
+    },
+    "wall_v5d_052": {
+      "projectId": "real-2d-45x45-32c4e1ba-151",
+      "vision5dRevisionId": "rev_001_original",
+      "pascalSceneId": "pending",
+      "pascalSchemaVersion": "0.9.2",
+      "vision5dStableId": "wall_v5d_052",
+      "pascalNodeId": "wall_82zysxiadr2xt4iy",
+      "nodeType": "wall",
+      "sourceDxfHandles": [
+        "44CA",
+        "44D5",
+        "44EC",
+        "454F"
+      ],
+      "createdAt": "2026-07-30T06:01:52.703887+00:00",
+      "lastSyncedAt": "2026-07-30T06:01:52.703887+00:00",
+      "lifecycleState": "ACTIVE"
+    },
+    "wall_v5d_053": {
+      "projectId": "real-2d-45x45-32c4e1ba-151",
+      "vision5dRevisionId": "rev_001_original",
+      "pascalSceneId": "pending",
+      "pascalSchemaVersion": "0.9.2",
+      "vision5dStableId": "wall_v5d_053",
+      "pascalNodeId": "wall_d717z4m24n1dpwrg",
+      "nodeType": "wall",
+      "sourceDxfHandles": [
+        "44A9"
+      ],
+      "createdAt": "2026-07-30T06:01:52.703887+00:00",
+      "lastSyncedAt": "2026-07-30T06:01:52.703887+00:00",
+      "lifecycleState": "ACTIVE"
+    },
+    "wall_v5d_054": {
+      "projectId": "real-2d-45x45-32c4e1ba-151",
+      "vision5dRevisionId": "rev_001_original",
+      "pascalSceneId": "pending",
+      "pascalSchemaVersion": "0.9.2",
+      "vision5dStableId": "wall_v5d_054",
+      "pascalNodeId": "wall_vfaxkxdizjjidbep",
+      "nodeType": "wall",
+      "sourceDxfHandles": [
+        "44C1",
+        "44C2",
+        "44E2",
+        "44E3"
+      ],
+      "createdAt": "2026-07-30T06:01:52.703887+00:00",
+      "lastSyncedAt": "2026-07-30T06:01:52.703887+00:00",
+      "lifecycleState": "ACTIVE"
+    },
+    "wall_v5d_055": {
+      "projectId": "real-2d-45x45-32c4e1ba-151",
+      "vision5dRevisionId": "rev_001_original",
+      "pascalSceneId": "pending",
+      "pascalSchemaVersion": "0.9.2",
+      "vision5dStableId": "wall_v5d_055",
+      "pascalNodeId": "wall_w63f4xq9kz46fgxo",
+      "nodeType": "wall",
+      "sourceDxfHandles": [
+        "44B6",
+        "44B7",
+        "44CB",
+        "44D6"
+      ],
+      "createdAt": "2026-07-30T06:01:52.703887+00:00",
+      "lastSyncedAt": "2026-07-30T06:01:52.703887+00:00",
+      "lifecycleState": "ACTIVE"
+    },
+    "wall_v5d_056": {
+      "projectId": "real-2d-45x45-32c4e1ba-151",
+      "vision5dRevisionId": "rev_001_original",
+      "pascalSceneId": "pending",
+      "pascalSchemaVersion": "0.9.2",
+      "vision5dStableId": "wall_v5d_056",
+      "pascalNodeId": "wall_fg60wg8nmxh41ip2",
+      "nodeType": "wall",
+      "sourceDxfHandles": [
+        "44AA"
+      ],
+      "createdAt": "2026-07-30T06:01:52.703887+00:00",
+      "lastSyncedAt": "2026-07-30T06:01:52.703887+00:00",
+      "lifecycleState": "ACTIVE"
+    },
+    "slab_v5d_001": {
+      "projectId": "real-2d-45x45-32c4e1ba-151",
+      "vision5dRevisionId": "rev_001_original",
+      "pascalSceneId": "pending",
+      "pascalSchemaVersion": "0.9.2",
+      "vision5dStableId": "slab_v5d_001",
+      "pascalNodeId": "slab_itib96ntx8uzlx9r",
+      "nodeType": "slab",
+      "sourceDxfHandles": [],
+      "createdAt": "2026-07-30T06:01:52.703887+00:00",
+      "lastSyncedAt": "2026-07-30T06:01:52.703887+00:00",
+      "lifecycleState": "ACTIVE"
+    },
+    "door_v5d_000": {
+      "projectId": "real-2d-45x45-32c4e1ba-151",
+      "vision5dRevisionId": "rev_001_original",
+      "pascalSceneId": "pending",
+      "pascalSchemaVersion": "0.9.2",
+      "vision5dStableId": "door_v5d_000",
+      "pascalNodeId": "door_pgqrh202pnn40f1o",
+      "nodeType": "door",
+      "sourceDxfHandles": [],
+      "createdAt": "2026-07-30T06:01:52.703887+00:00",
+      "lastSyncedAt": "2026-07-30T06:01:52.703887+00:00",
+      "lifecycleState": "ACTIVE"
+    },
+    "door_v5d_001": {
+      "projectId": "real-2d-45x45-32c4e1ba-151",
+      "vision5dRevisionId": "rev_001_original",
+      "pascalSceneId": "pending",
+      "pascalSchemaVersion": "0.9.2",
+      "vision5dStableId": "door_v5d_001",
+      "pascalNodeId": "door_1khq01vd5eo5wthw",
+      "nodeType": "door",
+      "sourceDxfHandles": [],
+      "createdAt": "2026-07-30T06:01:52.703887+00:00",
+      "lastSyncedAt": "2026-07-30T06:01:52.703887+00:00",
+      "lifecycleState": "ACTIVE"
+    },
+    "window_v5d_000": {
+      "projectId": "real-2d-45x45-32c4e1ba-151",
+      "vision5dRevisionId": "rev_001_original",
+      "pascalSceneId": "pending",
+      "pascalSchemaVersion": "0.9.2",
+      "vision5dStableId": "window_v5d_000",
+      "pascalNodeId": "window_raqvftjhfs2zguej",
+      "nodeType": "window",
+      "sourceDxfHandles": [],
+      "createdAt": "2026-07-30T06:01:52.703887+00:00",
+      "lastSyncedAt": "2026-07-30T06:01:52.703887+00:00",
+      "lifecycleState": "ACTIVE"
+    }
+  },
+  "pascalToVision5d": {
+    "site_jj890j3j2p45xgnd": "site_v5d_001",
+    "building_0jrwh82h75bivl7k": "building_v5d_001",
+    "level_n41m6pyw1ofwai8k": "level_v5d_001",
+    "wall_ykcsk4jw449g0wrh": "wall_v5d_000",
+    "wall_mcbn9or4wb0mugaj": "wall_v5d_001",
+    "wall_oxrmgz74nvnkbm67": "wall_v5d_002",
+    "wall_ad815sk2y0lm4888": "wall_v5d_003",
+    "wall_5a2fg13bftofxo3k": "wall_v5d_004",
+    "wall_qdcyugnnwtnir3jj": "wall_v5d_005",
+    "wall_35dmm3vjqgzrb248": "wall_v5d_006",
+    "wall_15ieega6y48upa68": "wall_v5d_007",
+    "wall_yjg5lej1e805kyky": "wall_v5d_008",
+    "wall_wergl2ce7zjjqu0g": "wall_v5d_009",
+    "wall_bdkt70dn4r1zrq6a": "wall_v5d_010",
+    "wall_ldtruyciz6rex7vi": "wall_v5d_011",
+    "wall_fy5ze5ehch7w4c9m": "wall_v5d_012",
+    "wall_8jygfins642jgp5w": "wall_v5d_013",
+    "wall_lt43h8fc3dcnscjd": "wall_v5d_014",
+    "wall_tot9pwgbz3axsxfr": "wall_v5d_015",
+    "wall_7k7ulh938imyifii": "wall_v5d_016",
+    "wall_ccrinxeukb5gd7v0": "wall_v5d_017",
+    "wall_5ikpay5n2o334eyl": "wall_v5d_018",
+    "wall_2xdrm0o4158wkq80": "wall_v5d_019",
+    "wall_ns2214jlfkimrox3": "wall_v5d_020",
+    "wall_7dqoeu04aqcbsgfi": "wall_v5d_021",
+    "wall_kh4smti78y2b5ijq": "wall_v5d_022",
+    "wall_tc2nzvs4odq3lfnn": "wall_v5d_023",
+    "wall_yz2tejyg1b32i2h0": "wall_v5d_024",
+    "wall_zpii65ftpgmpqc40": "wall_v5d_025",
+    "wall_pn1x0gsyuz49kb2u": "wall_v5d_026",
+    "wall_5werzrjdw1e0huav": "wall_v5d_027",
+    "wall_iwjaaldrz2d2gfrn": "wall_v5d_028",
+    "wall_vblrwo2wgqed2n6g": "wall_v5d_029",
+    "wall_1io8xapxhu21g0s9": "wall_v5d_030",
+    "wall_jzsfa84xp8h389ts": "wall_v5d_031",
+    "wall_hke1udpb9tpfz6mq": "wall_v5d_032",
+    "wall_hak5k69ijrr8328d": "wall_v5d_033",
+    "wall_inmx1e1mofyora61": "wall_v5d_034",
+    "wall_khh4j3e3y5dxrl9g": "wall_v5d_035",
+    "wall_stooow1y7r8wahwy": "wall_v5d_036",
+    "wall_lh2rmnc7v8i55054": "wall_v5d_037",
+    "wall_lc5paodff0fssfpo": "wall_v5d_038",
+    "wall_doxgci8239m08cn1": "wall_v5d_039",
+    "wall_ej3mvoughu2nzn7a": "wall_v5d_040",
+    "wall_ou4r5bfqoc6qzny3": "wall_v5d_041",
+    "wall_xwbkeo937u7kvw94": "wall_v5d_042",
+    "wall_dv0pd0rqluarm0tp": "wall_v5d_043",
+    "wall_i826ffvo3f0paus7": "wall_v5d_044",
+    "wall_fk0yfje33k5rmgfz": "wall_v5d_045",
+    "wall_p6oi9whziuuspps1": "wall_v5d_046",
+    "wall_224ljl3muq12u3ha": "wall_v5d_047",
+    "wall_cdpwiietvv7k7h99": "wall_v5d_048",
+    "wall_ju5kl1p1x8dv1ife": "wall_v5d_049",
+    "wall_z11dipw6dq3ioq7j": "wall_v5d_050",
+    "wall_j00spvtgarbpmh6w": "wall_v5d_051",
+    "wall_82zysxiadr2xt4iy": "wall_v5d_052",
+    "wall_d717z4m24n1dpwrg": "wall_v5d_053",
+    "wall_vfaxkxdizjjidbep": "wall_v5d_054",
+    "wall_w63f4xq9kz46fgxo": "wall_v5d_055",
+    "wall_fg60wg8nmxh41ip2": "wall_v5d_056",
+    "slab_itib96ntx8uzlx9r": "slab_v5d_001",
+    "door_pgqrh202pnn40f1o": "door_v5d_000",
+    "door_1khq01vd5eo5wthw": "door_v5d_001",
+    "window_raqvftjhfs2zguej": "window_v5d_000"
+  },
+  "createdAt": "2026-07-30T06:01:52.703887+00:00",
+  "updatedAt": "2026-07-30T06:01:52.703887+00:00",
+  "version": 1
+}

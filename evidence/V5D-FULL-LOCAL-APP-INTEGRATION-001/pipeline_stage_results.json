@@ -1,0 +1,83 @@
+{
+  "mission": "V5D-FULL-LOCAL-APP-INTEGRATION-001",
+  "timestamp": "2026-07-31T21:10:00",
+  "pipeline_stages": {
+    "photo_understanding": {
+      "status": "PARTIAL",
+      "has_code": true,
+      "module": "packages/ai/gemini_vision.py",
+      "blocker": "No API endpoint connects upload → Gemini Vision → structured output. Module exists but not wired.",
+      "requires": "NVIDIA_API_KEY in .env, API endpoint to invoke Gemini Vision with uploaded photo"
+    },
+    "approval_gate": {
+      "status": "PARTIAL",
+      "has_code": false,
+      "detail": "Studio approval mechanism exists for drafts. No photo-understanding-specific approval UI.",
+      "can_approve": "Studio drafts can be approved via commit. Photo understanding results have no dedicated approval endpoint."
+    },
+    "geometry_generation": {
+      "status": "PARTIAL",
+      "has_code": true,
+      "module": "packages/geometry/",
+      "blocker": "No API endpoint for photo→geometry. Geometry engine works with CAD/DXF input, not photo understanding output."
+    },
+    "pascal_scene": {
+      "status": "PARTIAL",
+      "has_code": true,
+      "adapters": "src/integrations/pascal/adapters/ (TypeScript)",
+      "blocker": "No running Pascal MCP/REST service. Adapters convert schemas but no backend integration."
+    },
+    "pascal_editor": {
+      "status": "DISCONNECTED",
+      "has_code": true,
+      "frontend": "studio.html",
+      "blocker": "Pascal MCP client is TypeScript-only. No backend bridge for live scene editing via Vision 5D API."
+    },
+    "scene3d_generation": {
+      "status": "PARTIAL",
+      "has_code": true,
+      "module": "packages/scene3d/reconstruction.py",
+      "endpoint": "GET /api/v4/projects/{id}/scene",
+      "blocker": "Requires geometry input from earlier stages. Scene3D reconstructor exists but needs real geometry data."
+    },
+    "furniture_design": {
+      "status": "PARTIAL",
+      "has_code": true,
+      "endpoint": "GET /api/v5/studio/furniture",
+      "blocker": "Furniture library exists. Placing furniture on 3D scenes requires studio draft workflow, not yet integrated with scene3d."
+    },
+    "materials_lighting": {
+      "status": "MISSING",
+      "has_code": false,
+      "blocker": "No API endpoints or frontend controls for materials/lighting on 3D scenes."
+    },
+    "camera_cinematic": {
+      "status": "MISSING",
+      "has_code": false,
+      "blocker": "No API endpoints for camera setup. Cinematic engine exists (packages/cinematic/) but not API-integrated."
+    },
+    "video_rendering": {
+      "status": "MISSING",
+      "has_code": true,
+      "module": "packages/cinematic/engine.py",
+      "blocker": "Cinematic engine is standalone script. No API endpoint to render 3D scene to MP4. Requires 3D scene + camera config as input.",
+      "existing_video": "apps/web/cinematic.mp4 exists (7.6 MB) — pre-rendered demo"
+    },
+    "final_results_page": {
+      "status": "MISSING",
+      "has_code": false,
+      "blocker": "No dedicated results page aggregating all pipeline outputs. Individual endpoints exist."
+    },
+    "artifact_download": {
+      "status": "PARTIAL",
+      "has_code": true,
+      "detail": "Artifact refs stored in DB (durable_artifact_refs table). No streaming download endpoint for local files.",
+      "count": 8
+    }
+  },
+  "working_count": 14,
+  "partial_count": 8,
+  "missing_count": 5,
+  "verdict": "VISION 5D FULL LOCAL APPLICATION PARTIALLY VERIFIED",
+  "reason": "Dashboard, auth, AI config, project CRUD, and studio drafts are fully functional. Photo→understanding→geometry→Pascal→3D→video pipeline has individual components but is not wired as an end-to-end API flow."
+}

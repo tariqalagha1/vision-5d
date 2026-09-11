@@ -1,0 +1,152 @@
+{
+  "created": [
+    {
+      "node_id": "window_v5d_001",
+      "type": "window",
+      "name": "Window 2 (added)",
+      "new_node": {
+        "object": "node",
+        "id": "window_v5d_001",
+        "type": "window",
+        "name": "Window 2 (added)",
+        "parentId": "level_ground",
+        "position": [
+          313.615,
+          1.0,
+          64.129
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "wallId": "wall_v5d_027",
+        "width": 1.2,
+        "height": 1.0,
+        "windowType": "casement",
+        "openingKind": "window",
+        "openingShape": "rectangle",
+        "visible": true,
+        "metadata": {
+          "vision5d": {
+            "project_id": "real-2d-45x45-32c4e1ba-151",
+            "source_file_sha256": "aca1d4c9ef1e2ccb5427c6f525aadc3d8b18fa00a9e767c2d0fa404563f46509",
+            "host_wall_id": "wall_v5d_027",
+            "extraction_confidence": 1.0,
+            "extraction_method": "manual_add",
+            "validation_status": "pending",
+            "unit": "meters",
+            "parent_revision_id": "rev_001_original"
+          }
+        }
+      }
+    }
+  ],
+  "deleted": [
+    {
+      "node_id": "wall_v5d_053",
+      "type": "wall",
+      "name": "Wall 54 (interior)",
+      "old_node": {
+        "object": "node",
+        "id": "wall_v5d_053",
+        "type": "wall",
+        "name": "Wall 54 (interior)",
+        "parentId": "level_ground",
+        "position": [
+          336.984,
+          0.0,
+          42.652
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "visible": true,
+        "thickness": 0.2,
+        "height": 2.7,
+        "start_point_2d": [
+          336.984,
+          42.652
+        ],
+        "end_point_2d": [
+          336.984,
+          42.789
+        ],
+        "metadata": {
+          "vision5d": {
+            "project_id": "real-2d-45x45-32c4e1ba-151",
+            "source_file_sha256": "aca1d4c9ef1e2ccb5427c6f525aadc3d8b18fa00a9e767c2d0fa404563f46509",
+            "dxf_entity_handles": [
+              "44A9"
+            ],
+            "source_layer": "",
+            "source_dxf_handles": [
+              "44A9"
+            ],
+            "orientation": "vertical",
+            "length_m": 0.137,
+            "wall_type": "interior",
+            "extraction_confidence": 0.95,
+            "validation_status": "structural_match",
+            "unit": "meters",
+            "parent_revision_id": "rev_001_original"
+          }
+        }
+      }
+    }
+  ],
+  "updated": [
+    {
+      "node_id": "door_v5d_000",
+      "type": "door",
+      "name": "Door 1",
+      "changed_properties": {
+        "position": {
+          "old": [
+            322.373,
+            0.0,
+            36.512
+          ],
+          "new": [
+            322.573,
+            0.0,
+            36.512
+          ]
+        }
+      },
+      "affected_neighbors": []
+    },
+    {
+      "node_id": "wall_v5d_010",
+      "type": "wall",
+      "name": "Wall 11 (interior)",
+      "changed_properties": {
+        "end_point_2d": {
+          "old": [
+            333.934,
+            43.005
+          ],
+          "new": [
+            334.184,
+            43.005
+          ]
+        }
+      },
+      "affected_neighbors": []
+    },
+    {
+      "node_id": "wall_v5d_015",
+      "type": "wall",
+      "name": "Wall 16 (interior)",
+      "changed_properties": {
+        "thickness": {
+          "old": 0.2,
+          "new": 0.25
+        }
+      },
+      "affected_neighbors": []
+    }
+  ]
+}

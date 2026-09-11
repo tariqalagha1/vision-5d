@@ -1,0 +1,23 @@
+{
+  "schema_version": "1.0",
+  "fields": [
+    "event_id",
+    "event_type",
+    "timestamp",
+    "project_id",
+    "source_revision_id",
+    "target_revision_id",
+    "pascal_node_id",
+    "vision5d_id",
+    "old_value",
+    "new_value",
+    "coordinate_system",
+    "units",
+    "origin",
+    "reason",
+    "validation_status",
+    "dependent_nodes",
+    "provenance",
+    "checksum"
+  ]
+}

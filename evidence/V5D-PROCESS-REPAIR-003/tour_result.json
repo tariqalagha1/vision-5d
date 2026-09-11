@@ -1,0 +1,102 @@
+{
+  "success": true,
+  "mode": "full",
+  "object_count": 14,
+  "shots": [
+    {
+      "id": "shot_01",
+      "name": "Opening context",
+      "type": "orbit",
+      "area": "exterior_context",
+      "duration": 3.0,
+      "frames": 72,
+      "valid": true,
+      "collision_issues": []
+    },
+    {
+      "id": "shot_02",
+      "name": "Approach entrance",
+      "type": "approach",
+      "area": "entrance_approach",
+      "duration": 2.5,
+      "frames": 60,
+      "valid": true,
+      "collision_issues": []
+    },
+    {
+      "id": "shot_03",
+      "name": "Primary interior walkthrough",
+      "type": "walkthrough",
+      "area": "living_room_primary",
+      "duration": 2.5,
+      "frames": 60,
+      "valid": true,
+      "collision_issues": []
+    },
+    {
+      "id": "shot_04",
+      "name": "Orbit seating area",
+      "type": "orbit",
+      "area": "living_room_secondary",
+      "duration": 3.0,
+      "frames": 72,
+      "valid": true,
+      "collision_issues": []
+    },
+    {
+      "id": "shot_05",
+      "name": "Furniture flyover",
+      "type": "orbit",
+      "area": "furniture_feature",
+      "duration": 2.0,
+      "frames": 48,
+      "valid": true,
+      "collision_issues": []
+    },
+    {
+      "id": "shot_06",
+      "name": "Final hero reveal",
+      "type": "reveal",
+      "area": "hero_reveal",
+      "duration": 3.0,
+      "frames": 72,
+      "valid": true,
+      "collision_issues": []
+    }
+  ],
+  "shots_generated": 6,
+  "shots_valid": 6,
+  "shots_rejected": 0,
+  "render": [
+    {
+      "id": "shot_01",
+      "result": "RENDERED",
+      "frames": 72
+    },
+    {
+      "id": "shot_02",
+      "result": "RENDERED",
+      "frames": 60
+    },
+    {
+      "id": "shot_03",
+      "result": "RENDERED",
+      "frames": 60
+    },
+    {
+      "id": "shot_04",
+      "result": "RENDERED",
+      "frames": 72
+    },
+    {
+      "id": "shot_05",
+      "result": "RENDERED",
+      "frames": 48
+    },
+    {
+      "id": "shot_06",
+      "result": "RENDERED",
+      "frames": 72
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "mission": "V5D-FULL-LOCAL-APP-INTEGRATION-001",
+  "timestamp": "2026-07-31T21:14:49.398963",
+  "script": "start_vision5d_local.bat",
+  "script_size_bytes": 3405,
+  "services_started": 2,
+  "backend_health": {
+    "status": "healthy",
+    "version": "1.0.0",
+    "phase": 7,
+    "mode": "production"
+  },
+  "ports": {
+    "api": 8000,
+    "static": 8100
+  },
+  "urls": {
+    "dashboard": "http://localhost:8100/index.html",
+    "api": "http://localhost:8000",
+    "docs": "http://localhost:8000/docs"
+  }
+}

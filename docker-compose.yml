@@ -1,0 +1,48 @@
+services:
+  # ── API Server ──
+  api:
+    build:
+      context: .
+      dockerfile: infrastructure/Dockerfile
+    image: vision5d:${VERSION:-latest}
+    restart: unless-stopped
+    command: api
+    environment:
+      V5D_ENV: local
+      V5D_DATABASE_URL: sqlite:////app/data/vision5d.db
+      V5D_AUTO_MIGRATE: "false"
+      V5D_AUTO_CREATE_TABLES: "true"
+      PORT: 8000
+      API_WORKERS: 1
+      AI_PROVIDER: ${AI_PROVIDER:-simulation}
+    ports:
+      - "${API_PORT:-8000}:8000"
+    volumes:
+      - vision5d_data:/app/data
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 15s
+
+  # ── Durable Worker ──
+  worker:
+    build:
+      context: .
+      dockerfile: infrastructure/Dockerfile
+    image: vision5d:${VERSION:-latest}
+    restart: unless-stopped
+    command: worker
+    environment:
+      V5D_ENV: local
+      V5D_DATABASE_URL: sqlite:////app/data/vision5d.db
+      AI_PROVIDER: ${AI_PROVIDER:-simulation}
+    volumes:
+      - vision5d_data:/app/data
+    depends_on:
+      api:
+        condition: service_healthy
+
+volumes:
+  vision5d_data:

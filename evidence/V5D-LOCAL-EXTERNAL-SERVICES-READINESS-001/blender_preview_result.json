@@ -1,0 +1,9 @@
+{
+  "engine": "CYCLES",
+  "samples": 1,
+  "expected_frames": 10,
+  "actual_frames": 10,
+  "render_duration_s": 116.1,
+  "first_frame_size": 394979,
+  "total_size": 4912203
+}

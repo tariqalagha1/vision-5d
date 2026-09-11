@@ -1,0 +1,311 @@
+{
+  "option_a_issues": [
+    {
+      "type": "out_of_bounds",
+      "object": "Reception Desk",
+      "severity": "blocking"
+    },
+    {
+      "type": "furniture_overlap",
+      "obj1": "Reception Desk",
+      "obj2": "Ergonomic Chair A1",
+      "severity": "warning"
+    },
+    {
+      "type": "furniture_overlap",
+      "obj1": "Reception Desk",
+      "obj2": "Indoor Plant A1",
+      "severity": "warning"
+    },
+    {
+      "type": "out_of_bounds",
+      "object": "Ergonomic Chair A1",
+      "severity": "blocking"
+    },
+    {
+      "type": "out_of_bounds",
+      "object": "Workstation Desk A1",
+      "severity": "blocking"
+    },
+    {
+      "type": "furniture_overlap",
+      "obj1": "Workstation Desk A1",
+      "obj2": "Ergonomic Chair A2",
+      "severity": "warning"
+    },
+    {
+      "type": "out_of_bounds",
+      "object": "Ergonomic Chair A2",
+      "severity": "blocking"
+    },
+    {
+      "type": "out_of_bounds",
+      "object": "Meeting Table",
+      "severity": "blocking"
+    },
+    {
+      "type": "furniture_overlap",
+      "obj1": "Meeting Table",
+      "obj2": "Meeting Chair 1",
+      "severity": "warning"
+    },
+    {
+      "type": "furniture_overlap",
+      "obj1": "Meeting Table",
+      "obj2": "Meeting Chair 2",
+      "severity": "warning"
+    },
+    {
+      "type": "furniture_overlap",
+      "obj1": "Meeting Table",
+      "obj2": "Indoor Plant A2",
+      "severity": "warning"
+    },
+    {
+      "type": "out_of_bounds",
+      "object": "Meeting Chair 1",
+      "severity": "blocking"
+    },
+    {
+      "type": "out_of_bounds",
+      "object": "Meeting Chair 2",
+      "severity": "blocking"
+    },
+    {
+      "type": "out_of_bounds",
+      "object": "Storage Cabinet A",
+      "severity": "blocking"
+    },
+    {
+      "type": "out_of_bounds",
+      "object": "Indoor Plant A1",
+      "severity": "blocking"
+    },
+    {
+      "type": "out_of_bounds",
+      "object": "Indoor Plant A2",
+      "severity": "blocking"
+    },
+    {
+      "type": "out_of_bounds",
+      "object": "Artwork Panel 1",
+      "severity": "blocking"
+    }
+  ],
+  "option_b_issues": [
+    {
+      "type": "out_of_bounds",
+      "object": "Premium Reception Desk",
+      "severity": "blocking"
+    },
+    {
+      "type": "furniture_overlap",
+      "obj1": "Premium Reception Desk",
+      "obj2": "Ergonomic Chair B1",
+      "severity": "warning"
+    },
+    {
+      "type": "furniture_overlap",
+      "obj1": "Premium Reception Desk",
+      "obj2": "Indoor Plant B1",
+      "severity": "warning"
+    },
+    {
+      "type": "out_of_bounds",
+      "object": "Ergonomic Chair B1",
+      "severity": "blocking"
+    },
+    {
+      "type": "out_of_bounds",
+      "object": "Executive Workstation 1",
+      "severity": "blocking"
+    },
+    {
+      "type": "furniture_overlap",
+      "obj1": "Executive Workstation 1",
+      "obj2": "Executive Workstation 2",
+      "severity": "warning"
+    },
+    {
+      "type": "furniture_overlap",
+      "obj1": "Executive Workstation 1",
+      "obj2": "Ergonomic Chair B2",
+      "severity": "warning"
+    },
+    {
+      "type": "furniture_overlap",
+      "obj1": "Executive Workstation 1",
+      "obj2": "Ergonomic Chair B3",
+      "severity": "warning"
+    },
+    {
+      "type": "furniture_overlap",
+      "obj1": "Executive Workstation 1",
+      "obj2": "Waiting Sofa",
+      "severity": "warning"
+    },
+    {
+      "type": "furniture_overlap",
+      "obj1": "Executive Workstation 1",
+      "obj2": "Coffee Table",
+      "severity": "warning"
+    },
+    {
+      "type": "out_of_bounds",
+      "object": "Executive Workstation 2",
+      "severity": "blocking"
+    },
+    {
+      "type": "furniture_overlap",
+      "obj1": "Executive Workstation 2",
+      "obj2": "Ergonomic Chair B2",
+      "severity": "warning"
+    },
+    {
+      "type": "furniture_overlap",
+      "obj1": "Executive Workstation 2",
+      "obj2": "Ergonomic Chair B3",
+      "severity": "warning"
+    },
+    {
+      "type": "out_of_bounds",
+      "object": "Ergonomic Chair B2",
+      "severity": "blocking"
+    },
+    {
+      "type": "furniture_overlap",
+      "obj1": "Ergonomic Chair B2",
+      "obj2": "Coffee Table",
+      "severity": "warning"
+    },
+    {
+      "type": "out_of_bounds",
+      "object": "Ergonomic Chair B3",
+      "severity": "blocking"
+    },
+    {
+      "type": "out_of_bounds",
+      "object": "Premium Meeting Table",
+      "severity": "blocking"
+    },
+    {
+      "type": "furniture_overlap",
+      "obj1": "Premium Meeting Table",
+      "obj2": "Meeting Chair B1",
+      "severity": "warning"
+    },
+    {
+      "type": "furniture_overlap",
+      "obj1": "Premium Meeting Table",
+      "obj2": "Meeting Chair B2",
+      "severity": "warning"
+    },
+    {
+      "type": "furniture_overlap",
+      "obj1": "Premium Meeting Table",
+      "obj2": "Meeting Chair B3",
+      "severity": "warning"
+    },
+    {
+      "type": "furniture_overlap",
+      "obj1": "Premium Meeting Table",
+      "obj2": "Indoor Plant B2",
+      "severity": "warning"
+    },
+    {
+      "type": "out_of_bounds",
+      "object": "Meeting Chair B1",
+      "severity": "blocking"
+    },
+    {
+      "type": "furniture_overlap",
+      "obj1": "Meeting Chair B1",
+      "obj2": "Meeting Chair B3",
+      "severity": "warning"
+    },
+    {
+      "type": "out_of_bounds",
+      "object": "Meeting Chair B2",
+      "severity": "blocking"
+    },
+    {
+      "type": "furniture_overlap",
+      "obj1": "Meeting Chair B2",
+      "obj2": "Meeting Chair B3",
+      "severity": "warning"
+    },
+    {
+      "type": "out_of_bounds",
+      "object": "Meeting Chair B3",
+      "severity": "blocking"
+    },
+    {
+      "type": "out_of_bounds",
+      "object": "Storage Cabinet B1",
+      "severity": "blocking"
+    },
+    {
+      "type": "out_of_bounds",
+      "object": "Storage Cabinet B2",
+      "severity": "blocking"
+    },
+    {
+      "type": "out_of_bounds",
+      "object": "Indoor Plant B1",
+      "severity": "blocking"
+    },
+    {
+      "type": "out_of_bounds",
+      "object": "Indoor Plant B2",
+      "severity": "blocking"
+    },
+    {
+      "type": "out_of_bounds",
+      "object": "Indoor Plant B3",
+      "severity": "blocking"
+    },
+    {
+      "type": "out_of_bounds",
+      "object": "Artwork Panel 1",
+      "severity": "blocking"
+    },
+    {
+      "type": "furniture_overlap",
+      "obj1": "Artwork Panel 1",
+      "obj2": "Artwork Panel 2",
+      "severity": "warning"
+    },
+    {
+      "type": "out_of_bounds",
+      "object": "Artwork Panel 2",
+      "severity": "blocking"
+    },
+    {
+      "type": "out_of_bounds",
+      "object": "Waiting Sofa",
+      "severity": "blocking"
+    },
+    {
+      "type": "furniture_overlap",
+      "obj1": "Waiting Sofa",
+      "obj2": "Coffee Table",
+      "severity": "warning"
+    },
+    {
+      "type": "furniture_overlap",
+      "obj1": "Waiting Sofa",
+      "obj2": "Decorative Lamp",
+      "severity": "warning"
+    },
+    {
+      "type": "out_of_bounds",
+      "object": "Coffee Table",
+      "severity": "blocking"
+    },
+    {
+      "type": "out_of_bounds",
+      "object": "Decorative Lamp",
+      "severity": "blocking"
+    }
+  ]
+}

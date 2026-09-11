@@ -1,0 +1,256 @@
+{
+  "name": "OPTION A \u2014 Minimal Scandinavian Office",
+  "strategy": "minimal",
+  "furniture": {
+    "additions": [
+      {
+        "label": "Reception Desk",
+        "position": [
+          2000,
+          0,
+          -1000
+        ],
+        "color": "#E8E0D5",
+        "dimensions": [
+          2400,
+          1100,
+          800
+        ]
+      },
+      {
+        "label": "Ergonomic Chair A1",
+        "position": [
+          1800,
+          0,
+          -1600
+        ],
+        "color": "#C0C0C0",
+        "dimensions": [
+          600,
+          900,
+          500
+        ]
+      },
+      {
+        "label": "Workstation Desk A1",
+        "position": [
+          2500,
+          0,
+          -3000
+        ],
+        "color": "#D4C5B9",
+        "dimensions": [
+          1600,
+          750,
+          700
+        ]
+      },
+      {
+        "label": "Ergonomic Chair A2",
+        "position": [
+          2200,
+          0,
+          -3500
+        ],
+        "color": "#C0C0C0",
+        "dimensions": [
+          600,
+          900,
+          500
+        ]
+      },
+      {
+        "label": "Meeting Table",
+        "position": [
+          3000,
+          0,
+          -5000
+        ],
+        "color": "#C4B5A5",
+        "dimensions": [
+          3000,
+          750,
+          1200
+        ]
+      },
+      {
+        "label": "Meeting Chair 1",
+        "position": [
+          2600,
+          0,
+          -5200
+        ],
+        "color": "#A0A0A0",
+        "dimensions": [
+          500,
+          900,
+          500
+        ]
+      },
+      {
+        "label": "Meeting Chair 2",
+        "position": [
+          3400,
+          0,
+          -5200
+        ],
+        "color": "#A0A0A0",
+        "dimensions": [
+          500,
+          900,
+          500
+        ]
+      },
+      {
+        "label": "Storage Cabinet A",
+        "position": [
+          1000,
+          0,
+          -4000
+        ],
+        "color": "#D4C5B9",
+        "dimensions": [
+          900,
+          2000,
+          400
+        ]
+      },
+      {
+        "label": "Indoor Plant A1",
+        "position": [
+          1500,
+          0,
+          -800
+        ],
+        "color": "#4CAF50",
+        "dimensions": [
+          400,
+          1200,
+          400
+        ]
+      },
+      {
+        "label": "Indoor Plant A2",
+        "position": [
+          4000,
+          0,
+          -5500
+        ],
+        "color": "#4CAF50",
+        "dimensions": [
+          400,
+          1000,
+          400
+        ]
+      },
+      {
+        "label": "Artwork Panel 1",
+        "position": [
+          3000,
+          1800,
+          -100
+        ],
+        "color": "#8B7D6B",
+        "dimensions": [
+          1200,
+          800,
+          30
+        ]
+      }
+    ]
+  },
+  "materials": {
+    "floor": {
+      "type": "light_oak",
+      "color": "#D4C4A8",
+      "roughness": 0.3
+    },
+    "wall": {
+      "color": "#F5F0E8",
+      "roughness": 0.6
+    },
+    "ceiling": {
+      "color": "#FFFFFF",
+      "roughness": 0.5
+    }
+  },
+  "lighting": {
+    "additions": [
+      {
+        "label": "LED Panel 1",
+        "position": [
+          2000,
+          2700,
+          -2000
+        ],
+        "color": "#FFF8F0",
+        "intensity": 1.2,
+        "temperature": 4000
+      },
+      {
+        "label": "LED Panel 2",
+        "position": [
+          3500,
+          2700,
+          -4000
+        ],
+        "color": "#FFF8F0",
+        "intensity": 1.0,
+        "temperature": 4000
+      },
+      {
+        "label": "Ambient Light",
+        "color": "#FFF5E6",
+        "intensity": 0.5,
+        "type": "ambient"
+      }
+    ],
+    "daylight_multiplier": 1.3
+  },
+  "cameras": [
+    {
+      "name": "Entrance View",
+      "position": [
+        1000,
+        1600,
+        500
+      ],
+      "target": [
+        2000,
+        1200,
+        -2000
+      ],
+      "fov": 65
+    },
+    {
+      "name": "Main Workspace",
+      "position": [
+        3000,
+        1800,
+        -3500
+      ],
+      "target": [
+        2500,
+        1200,
+        -4000
+      ],
+      "fov": 55
+    },
+    {
+      "name": "Meeting Room",
+      "position": [
+        2000,
+        1600,
+        -5500
+      ],
+      "target": [
+        3000,
+        1200,
+        -5000
+      ],
+      "fov": 60
+    }
+  ],
+  "estimated_cost_band": "standard",
+  "estimated_time_days": 14
+}

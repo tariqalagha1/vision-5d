@@ -1,0 +1,32 @@
+{
+  "operations": [
+    {
+      "op": "validateScene",
+      "pass": true
+    },
+    {
+      "op": "updateNode",
+      "node": "wall_1f33d5wz0zg6otzr",
+      "change": "thickness 0.20\u21920.25",
+      "pass": true,
+      "metadataPreserved": true
+    },
+    {
+      "op": "exportJSON",
+      "pass": true,
+      "nativeFormat": true
+    },
+    {
+      "op": "undo",
+      "pass": true,
+      "provenanceRestored": true
+    },
+    {
+      "op": "redo",
+      "pass": true,
+      "provenanceReapplied": true
+    }
+  ],
+  "allowlistEnforced": true,
+  "noUnrestrictedOps": true
+}

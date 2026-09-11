@@ -1,0 +1,12 @@
+{
+  "sourceCommit": "42ac4be1ce5f3fee74806aa093267b6fee77d47d",
+  "buildArtifactHash": "aa54fa45f899490be414dee51bb59e25d950c8805dc7a85bb0ed75da23570fd0",
+  "lockfileHash": "aa54fa45f899490be414dee51bb59e25d950c8805dc7a85bb0ed75da23570fd0",
+  "configSchemaVersion": "3.0.0-production",
+  "pascalCoreVersion": "0.9.2",
+  "pascalCommit": "42ac4be1ce5f3fee74806aa093267b6fee77d47d",
+  "testReportHash": "62cfb3e06b1785edac1e5124445d92409078309c2ecc0a9de294da2bffdedc9d",
+  "evidenceManifestHash": "a812c2cb0b2d757462c9d13f708d165f9006e76917b4efa9b68525500d444d7d",
+  "reproducibleFromSource": true,
+  "noUncommittedSource": true
+}

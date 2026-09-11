@@ -1,0 +1,9 @@
+{
+  "mission": "V5D-AI-CONFIGURATION-001",
+  "timestamp": "2026-07-31T14:06:52.568851",
+  "api_response": "masked_key: '\u2022\u2022\u2022\u2022-key', raw key NOT PRESENT",
+  "frontend_input": "type=password",
+  "frontend_clear": "3x zero",
+  "logs": "NO raw key in logs",
+  "verdict": "MASKING VERIFIED"
+}

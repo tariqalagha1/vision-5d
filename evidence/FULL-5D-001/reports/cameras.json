@@ -1,0 +1,44 @@
+[
+  {
+    "name": "Entrance",
+    "position": [
+      1.0,
+      1.6,
+      0.5
+    ],
+    "target": [
+      2.0,
+      1.2,
+      -2.0
+    ],
+    "fov": 65
+  },
+  {
+    "name": "Workspace",
+    "position": [
+      3.0,
+      1.8,
+      -3.5
+    ],
+    "target": [
+      2.5,
+      1.2,
+      -4.0
+    ],
+    "fov": 55
+  },
+  {
+    "name": "Meeting Room",
+    "position": [
+      2.0,
+      1.6,
+      -5.5
+    ],
+    "target": [
+      3.0,
+      1.2,
+      -5.5
+    ],
+    "fov": 60
+  }
+]

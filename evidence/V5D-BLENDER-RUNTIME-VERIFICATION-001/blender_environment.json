@@ -1,0 +1,12 @@
+{
+  "mission": "V5D-BLENDER-RUNTIME-VERIFICATION-001",
+  "timestamp": "2026-07-31T22:23:19.856746",
+  "blender_exe": "C:\\Program Files\\Blender Foundation\\Blender 5.2\\blender.exe",
+  "blender_version": "5.2.0 LTS",
+  "blender_build_hash": "fbe6228777e7",
+  "blender_installed_via": "winget install BlenderFoundation.Blender",
+  "ffmpeg_path": "C:\\Users\\admin\\AppData\\Local\\Microsoft\\WinGet\\Links\\ffmpeg.exe",
+  "ffmpeg_version": "8.1.1",
+  "api_status": "healthy, Phase 7, port 8000",
+  "blender_path_env": "V5D_BLENDER_PATH=C:/Program Files/Blender Foundation/Blender 5.2/blender.exe"
+}

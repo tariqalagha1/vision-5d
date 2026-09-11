@@ -1,0 +1,109 @@
+{
+  "is_indoor_furnished_room": true,
+  "room_type": {
+    "value": "living_room",
+    "confidence": 1.0
+  },
+  "walls_observable": {
+    "count": 2,
+    "evidence": "visible wall panels and a wall with a staircase"
+  },
+  "floor_visible": true,
+  "ceiling_visible": true,
+  "visible_openings": [
+    {
+      "type": "window",
+      "count": 1,
+      "position_hint": "right",
+      "confidence": 1.0
+    }
+  ],
+  "room_corners_visible": true,
+  "visible_furniture": [
+    {
+      "object_id": "furn_1",
+      "class": "sofa",
+      "category": "furniture",
+      "confidence": 1.0,
+      "partially_occluded": false,
+      "against_wall": true,
+      "visible_evidence": "the sofa is against the wall and visible in its entirety",
+      "uncertainty": "none"
+    },
+    {
+      "object_id": "furn_2",
+      "class": "table",
+      "category": "furniture",
+      "confidence": 1.0,
+      "partially_occluded": false,
+      "against_wall": false,
+      "visible_evidence": "the table is in the center of the room and visible in its entirety",
+      "uncertainty": "none"
+    }
+  ],
+  "visible_architecture": [
+    {
+      "object_id": "arch_1",
+      "class": "wall",
+      "category": "architecture",
+      "confidence": 1.0,
+      "visible_evidence": "the wall panels are visible and well-lit"
+    },
+    {
+      "object_id": "arch_2",
+      "class": "staircase",
+      "category": "architecture",
+      "confidence": 1.0,
+      "visible_evidence": "the staircase is visible and well-lit"
+    }
+  ],
+  "visible_lighting": [
+    {
+      "object_id": "light_1",
+      "class": "recessed",
+      "category": "lighting",
+      "confidence": 1.0,
+      "visible_evidence": "the recessed lighting is visible and well-lit"
+    }
+  ],
+  "visible_decoration": [
+    {
+      "object_id": "deco_1",
+      "class": "rug",
+      "category": "decoration",
+      "confidence": 1.0,
+      "visible_evidence": "the rug is visible and well-lit"
+    }
+  ],
+  "spatial_relationships": [
+    {
+      "subject": "sofa",
+      "relationship": "against",
+      "object": "wall",
+      "confidence": 1.0,
+      "visible_evidence": "the sofa is against the wall"
+    },
+    {
+      "subject": "table",
+      "relationship": "in_front_of",
+      "object": "sofa",
+      "confidence": 1.0,
+      "visible_evidence": "the table is in front of the sofa"
+    }
+  ],
+  "occlusions": [
+    {
+      "object": "sofa",
+      "occluded_by": "none",
+      "extent": "none"
+    },
+    {
+      "object": "table",
+      "occluded_by": "none",
+      "extent": "none"
+    }
+  ],
+  "unknowns": [
+    "the color of the walls, the type of flooring, the type of lighting fixtures"
+  ]
+}

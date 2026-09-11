@@ -1,0 +1,63 @@
+{
+  "mission": "V5D-FRONTEND-INVENTORY-001",
+  "timestamp": "2026-07-31T13:32:43.056888",
+  "pascal_integration": {
+    "status": "PRODUCTION LIVE",
+    "commit": "42ac4be1ce5f3fee74806aa093267b6fee77d47d",
+    "version": "0.9.2",
+    "adapter_location": "src/integrations/pascal/",
+    "adapter_modules": 19,
+    "architecture": "CORE_FOR_TYPES_REST_FOR_SCENES_MCP_FOR_AUTOMATION"
+  },
+  "frontend_access": {
+    "rule": "Browser MUST access Pascal through Vision 5D backend endpoints ONLY. Pascal service credentials MUST NEVER be exposed to the browser.",
+    "current_status": "NO frontend-to-Pascal API exists. All Pascal integration is server-side TypeScript."
+  },
+  "required_frontend_surfaces": [
+    {
+      "surface": "Pascal scene status",
+      "backend_endpoint_needed": "GET /api/v7/pascal/projects/{id}/scene/status",
+      "status": "MISSING"
+    },
+    {
+      "surface": "Scene creation",
+      "backend_endpoint_needed": "POST /api/v7/pascal/projects/{id}/scene",
+      "status": "MISSING"
+    },
+    {
+      "surface": "Scene readback",
+      "backend_endpoint_needed": "GET /api/v7/pascal/projects/{id}/scene",
+      "status": "MISSING"
+    },
+    {
+      "surface": "Editor launch URL",
+      "backend_endpoint_needed": "GET /api/v7/pascal/projects/{id}/editor",
+      "status": "MISSING"
+    },
+    {
+      "surface": "Synchronization state",
+      "backend_endpoint_needed": "GET /api/v7/pascal/projects/{id}/sync",
+      "status": "MISSING"
+    },
+    {
+      "surface": "Correction events",
+      "backend_endpoint_needed": "GET /api/v7/pascal/projects/{id}/corrections",
+      "status": "MISSING"
+    },
+    {
+      "surface": "Revision creation",
+      "backend_endpoint_needed": "POST /api/v7/pascal/projects/{id}/revisions",
+      "status": "MISSING"
+    },
+    {
+      "surface": "Conflict reports",
+      "backend_endpoint_needed": "GET /api/v7/pascal/projects/{id}/conflicts",
+      "status": "MISSING"
+    }
+  ],
+  "credentials": {
+    "pascal_service_credentials_location": "Server-side environment variables or encrypted storage",
+    "browser_exposure": "NEVER \u2014 zero Pascal credentials in browser",
+    "proxy_architecture": "Vision 5D backend proxies all Pascal requests \u2014 browser never contacts Pascal directly"
+  }
+}

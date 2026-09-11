@@ -1,0 +1,58 @@
+{
+  "mission": "V5D-BLENDER-RUNTIME-VERIFICATION-001",
+  "timestamp": "2026-07-31T22:23:19.856746",
+  "chain": [
+    {
+      "stage": "GLB Generation",
+      "status": "VERIFIED",
+      "detail": "6 meshes, 144 vertices, SHA-256: 0638c6331ee87b12..."
+    },
+    {
+      "stage": "GLB Validation",
+      "status": "VERIFIED",
+      "detail": "validate_glb() passed: valid=True, 1 mesh, 288 vertex attributes"
+    },
+    {
+      "stage": "Blender Script Generation",
+      "status": "VERIFIED",
+      "detail": "build_blender_script() produced valid Python, 7263 chars"
+    },
+    {
+      "stage": "Blender GLB Import",
+      "status": "VERIFIED",
+      "detail": "bpy.ops.import_scene.gltf() succeeded, 1 mesh object imported"
+    },
+    {
+      "stage": "Material Application",
+      "status": "VERIFIED",
+      "detail": "Principled BSDF materials applied"
+    },
+    {
+      "stage": "Lighting Setup",
+      "status": "VERIFIED",
+      "detail": "SUN + POINT lights with intensity and color temperature"
+    },
+    {
+      "stage": "Camera Animation",
+      "status": "VERIFIED",
+      "detail": "Orbit shot, 1-30 frames, keyframe animation"
+    },
+    {
+      "stage": "Frame Rendering",
+      "status": "VERIFIED",
+      "detail": "30 PNG frames at 1280x720, EEVEE, 32 samples"
+    },
+    {
+      "stage": "FFmpeg MP4 Encoding",
+      "status": "VERIFIED",
+      "detail": "H.264, yuv420p, CRF 23, preset fast"
+    },
+    {
+      "stage": "FFprobe Validation",
+      "status": "VERIFIED",
+      "detail": "Codec=h264, 1280x720, 30fps, 30 frames, 1.0s duration"
+    }
+  ],
+  "all_stages_verified": true,
+  "round_trip": "GLB \u2192 Blender \u2192 PNG frames \u2192 FFmpeg \u2192 MP4 \u2192 FFprobe \u2705"
+}

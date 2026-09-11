@@ -1,0 +1,185 @@
+{
+  "mission": "V5D-POST-RESET-TRUTH-RECONCILIATION-001",
+  "gate": "GATE_4",
+  "timestamp": "2026-07-27T08:22:53.925159",
+  "file": "C:\\Users\\admin\\workspaces\\vision-5d\\output\\RE-SingDetch-FH_AS\\exports\\RE-SingDetch-FH_AS.glb",
+  "exists": true,
+  "filename": "RE-SingDetch-FH_AS.glb",
+  "extension": ".glb",
+  "mime_type": "model/gltf-binary",
+  "size_bytes": 13160,
+  "human_size": "13,160 bytes",
+  "relative_path": "output/RE-SingDetch-FH_AS/exports/RE-SingDetch-FH_AS.glb",
+  "absolute_path": "C:\\Users\\admin\\workspaces\\vision-5d\\output\\RE-SingDetch-FH_AS\\exports\\RE-SingDetch-FH_AS.glb",
+  "sha256": "1579f70691d15b411bc39c58fa65464e83cb69cb53310a954c5cbd1067108de0",
+  "header": {
+    "magic": "0x46546C67",
+    "magic_ascii": "glTF",
+    "version": 2,
+    "declared_total_length": 13152,
+    "actual_file_length": 13160
+  },
+  "json_chunk": {
+    "length": 2401,
+    "type": "0x4E4F534A",
+    "type_ascii": "JSON"
+  },
+  "bin_chunk": {
+    "length": 3892314112,
+    "type": "0x42000029",
+    "type_ascii": ")\u0000\u0000B"
+  },
+  "structure": {
+    "scenes_count": 1,
+    "nodes_count": 17,
+    "meshes_count": 17,
+    "accessors_count": 0,
+    "bufferViews_count": 0,
+    "buffers_count": 1,
+    "materials_count": 0,
+    "textures_count": 0,
+    "images_count": 0,
+    "samplers_count": 0,
+    "cameras_count": 0,
+    "animations_count": 0,
+    "skins_count": 0,
+    "extensionsUsed": [],
+    "extensionsRequired": []
+  },
+  "node_names": [
+    "wall_solid",
+    "wall_solid",
+    "wall_solid",
+    "wall_solid",
+    "floor_slab",
+    "floor_slab",
+    "floor_slab",
+    "floor_slab",
+    "ceiling_surface",
+    "ceiling_surface",
+    "ceiling_surface",
+    "ceiling_surface",
+    "door_element",
+    "door_element",
+    "window_element",
+    "window_element",
+    "roof_element"
+  ],
+  "buffer_details": {
+    "byteLength": 0,
+    "uri": null
+  },
+  "primitive_validation": {
+    "total_primitives_checked": 17,
+    "passed": 0,
+    "failed": 17,
+    "details": [
+      {
+        "mesh": 0,
+        "primitive": 0,
+        "issues": [
+          "POSITION accessor 0 out of bounds (max -1)",
+          "NORMAL accessor 1 out of bounds",
+          "indices accessor 2 out of bounds (max -1)"
+        ],
+        "status": "FAIL"
+      },
+      {
+        "mesh": 1,
+        "primitive": 0,
+        "issues": [
+          "POSITION accessor 3 out of bounds (max -1)",
+          "NORMAL accessor 4 out of bounds",
+          "indices accessor 5 out of bounds (max -1)"
+        ],
+        "status": "FAIL"
+      },
+      {
+        "mesh": 2,
+        "primitive": 0,
+        "issues": [
+          "POSITION accessor 6 out of bounds (max -1)",
+          "NORMAL accessor 7 out of bounds",
+          "indices accessor 8 out of bounds (max -1)"
+        ],
+        "status": "FAIL"
+      },
+      {
+        "mesh": 3,
+        "primitive": 0,
+        "issues": [
+          "POSITION accessor 9 out of bounds (max -1)",
+          "NORMAL accessor 10 out of bounds",
+          "indices accessor 11 out of bounds (max -1)"
+        ],
+        "status": "FAIL"
+      },
+      {
+        "mesh": 4,
+        "primitive": 0,
+        "issues": [
+          "POSITION accessor 12 out of bounds (max -1)",
+          "NORMAL accessor 13 out of bounds",
+          "indices accessor 14 out of bounds (max -1)"
+        ],
+        "status": "FAIL"
+      },
+      {
+        "mesh": 5,
+        "primitive": 0,
+        "issues": [
+          "POSITION accessor 15 out of bounds (max -1)",
+          "NORMAL accessor 16 out of bounds",
+          "indices accessor 17 out of bounds (max -1)"
+        ],
+        "status": "FAIL"
+      },
+      {
+        "mesh": 6,
+        "primitive": 0,
+        "issues": [
+          "POSITION accessor 18 out of bounds (max -1)",
+          "NORMAL accessor 19 out of bounds",
+          "indices accessor 20 out of bounds (max -1)"
+        ],
+        "status": "FAIL"
+      },
+      {
+        "mesh": 7,
+        "primitive": 0,
+        "issues": [
+          "POSITION accessor 21 out of bounds (max -1)",
+          "NORMAL accessor 22 out of bounds",
+          "indices accessor 23 out of bounds (max -1)"
+        ],
+        "status": "FAIL"
+      },
+      {
+        "mesh": 8,
+        "primitive": 0,
+        "issues": [
+          "POSITION accessor 24 out of bounds (max -1)",
+          "NORMAL accessor 25 out of bounds",
+          "indices accessor 26 out of bounds (max -1)"
+        ],
+        "status": "FAIL"
+      },
+      {
+        "mesh": 9,
+        "primitive": 0,
+        "issues": [
+          "POSITION accessor 27 out of bounds (max -1)",
+          "NORMAL accessor 28 out of bounds",
+          "indices accessor 29 out of bounds (max -1)"
+        ],
+        "status": "FAIL"
+      }
+    ]
+  },
+  "critical_flaws": [
+    "accessors array is EMPTY",
+    "bufferViews array is EMPTY",
+    "buffer byteLength is 0"
+  ],
+  "verdict": "STRUCTURALLY INVALID \u2014 no conformant glTF 2.0 loader can render this GLB"
+}

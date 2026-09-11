@@ -1,0 +1,84 @@
+{
+  "mapping_version": "1.0",
+  "generated_by": "V5D-PASCAL-ADAPTER-PROOF-001",
+  "mappings": [
+    {
+      "vision5d": "Level (from CAD layer/elevation)",
+      "pascal": "LevelNode",
+      "fields": {
+        "vision5d_elevation": "LevelNode.elevation",
+        "vision5d_name": "LevelNode.name",
+        "vision5d_project_id": "LevelNode.metadata.vision5d.project_id"
+      },
+      "notes": "One LevelNode per floor. Elevation in meters."
+    },
+    {
+      "vision5d": "Wall segment (from DXF LINE pairs)",
+      "pascal": "WallNode",
+      "fields": {
+        "vision5d.start_point": "WallNode.position [x, y, z]",
+        "vision5d.length": "Derived from wall curve geometry",
+        "vision5d.thickness": "WallNode.thickness (default: 0.2m)",
+        "vision5d.height": "WallNode.height (default: 2.7m)",
+        "vision5d.dxf_handles": "WallNode.metadata.vision5d.dxf_handles",
+        "vision5d.project_id": "WallNode.metadata.vision5d.project_id",
+        "vision5d.source_sha256": "WallNode.metadata.vision5d.source_sha256",
+        "vision5d.source_layer": "WallNode.metadata.vision5d.source_layer"
+      },
+      "notes": "Wall segments are straight centerlines. Pascal supports curved walls via curve property. Parent: LevelNode."
+    },
+    {
+      "vision5d": "Floor polygon (derived from exterior wall loop)",
+      "pascal": "SlabNode",
+      "fields": {
+        "vision5d.exterior_polygon": "SlabNode.polygon",
+        "vision5d.elevation": "SlabNode.elevation",
+        "vision5d.thickness": "SlabNode.thickness (default: 0.15m)",
+        "vision5d.area": "SlabNode.metadata.vision5d.area_m2"
+      },
+      "notes": "Polygon derived from outermost wall segments. Parent: LevelNode."
+    },
+    {
+      "vision5d": "Door candidate (from DXF INSERT block)",
+      "pascal": "DoorNode",
+      "fields": {
+        "vision5d.position": "DoorNode.position (wall-local coords)",
+        "vision5d.host_wall_id": "DoorNode.wallId",
+        "vision5d.width": "DoorNode.width (default: 0.9m)",
+        "vision5d.height": "DoorNode.height (default: 2.1m)",
+        "vision5d.block_name": "DoorNode.metadata.vision5d.block_name"
+      },
+      "notes": "Wall-mounted child. Position is center on wall face. Parent: LevelNode. doorType defaults to 'hinged'."
+    },
+    {
+      "vision5d": "Window candidate (from DXF INSERT block)",
+      "pascal": "WindowNode",
+      "fields": {
+        "vision5d.position": "WindowNode.position (wall-local coords)",
+        "vision5d.host_wall_id": "WindowNode.wallId",
+        "vision5d.width": "WindowNode.width (default: 1.5m)",
+        "vision5d.height": "WindowNode.height (default: 1.2m)",
+        "vision5d.block_name": "WindowNode.metadata.vision5d.block_name"
+      },
+      "notes": "Wall-mounted child. Sill height embedded in position.y. Parent: LevelNode."
+    }
+  ],
+  "provenance_strategy": {
+    "storage": "Every Pascal node stores Vision 5D origin in metadata.vision5d",
+    "fields_preserved": [
+      "project_id", "source_file_sha256", "dxf_entity_handles",
+      "source_layer", "extraction_confidence", "validation_status",
+      "unit", "orientation", "length_m", "wall_type", "area_m2"
+    ],
+    "round_trip": "Vision 5D can read Pascal scene state and extract original provenance from metadata.vision5d. Edits in Pascal update position/geometry but metadata.vision5d persists unchanged."
+  },
+  "coordinate_system": {
+    "vision5d": "Right-handed: X (east), Y (north), Z (up). Unit: meters (from DWG)",
+    "pascal": "Right-handed: X (east), Y (up/height), Z (north). Unit: meters",
+    "conversion": "Vision5D(x, y, z) → Pascal(x, z, y). No scale factor needed."
+  },
+  "unit_conversion": {
+    "factor": 1.0,
+    "note": "Both systems use meters. No conversion needed for the 45x45 project."
+  }
+}

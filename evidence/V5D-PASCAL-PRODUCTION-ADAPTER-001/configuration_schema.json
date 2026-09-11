@@ -1,0 +1,17 @@
+{
+  "pascalRestBaseUrl": "http://localhost:3131",
+  "requestTimeoutMs": 30000,
+  "retryCount": 3,
+  "retryBackoffMs": 1000,
+  "maxSceneSizeBytes": 10485760,
+  "expectedPascalCoreVersion": "0.9.2",
+  "maxRoundTripDeltaM": 0.0005,
+  "coordinatePrecision": 6,
+  "enableRestAuth": false,
+  "enableMcpAuth": false,
+  "featureFlags": {
+    "enableAutoSync": false,
+    "enableMcpAutomation": true,
+    "enableConflictAutoResolve": false
+  }
+}

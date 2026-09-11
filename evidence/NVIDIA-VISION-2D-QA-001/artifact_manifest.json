@@ -1,0 +1,60 @@
+{
+  "files": [
+    {
+      "relative_path": "evidence\\NVIDIA-VISION-2D-QA-001\\call_center_qa.json",
+      "size_bytes": 2808,
+      "sha256": "6c9e0a951cd4246a7e4168d2104af2d780a6ca061994e8820bcaf8e751f6807a"
+    },
+    {
+      "relative_path": "evidence\\NVIDIA-VISION-2D-QA-001\\combined_2d_qa_report.md",
+      "size_bytes": 3980,
+      "sha256": "2275ce157c3018346e1021b65cff2df2b8c6ddc5028a3aeaf1c2b85e1e133575"
+    },
+    {
+      "relative_path": "evidence\\NVIDIA-VISION-2D-QA-001\\cross_file_consistency.json",
+      "size_bytes": 822,
+      "sha256": "d11a84ac467c82d5755df29e9c00622b2ce70e06938c103022d65478e64ae4e9"
+    },
+    {
+      "relative_path": "evidence\\NVIDIA-VISION-2D-QA-001\\final_nvidia_2d_verdict.json",
+      "size_bytes": 685,
+      "sha256": "7afe8dc96c960cd2836af571124f8ee6ed40b5b89d1c549f65a9efc0e59a40c6"
+    },
+    {
+      "relative_path": "evidence\\NVIDIA-VISION-2D-QA-001\\image_assessments.json",
+      "size_bytes": 3551,
+      "sha256": "a30023f71bb34a1681cd684539b1b2d9f66bb767592f1ede59ca6b69e2c0a6a2"
+    },
+    {
+      "relative_path": "evidence\\NVIDIA-VISION-2D-QA-001\\nvidia_vision_execution.log",
+      "size_bytes": 512,
+      "sha256": "cb6e07d1d2835d3b65506efe876b98cc1fd4a9d589d8e35621810bb30fd1a63d"
+    },
+    {
+      "relative_path": "evidence\\NVIDIA-VISION-2D-QA-001\\nvidia_visual_verdict.json",
+      "size_bytes": 662,
+      "sha256": "c25b8f8b083580bd14c2a8cad1afaf41830cb9cbd4f977a894bf78732855831f"
+    },
+    {
+      "relative_path": "evidence\\NVIDIA-VISION-2D-QA-001\\plan_separation_assessment.json",
+      "size_bytes": 2197,
+      "sha256": "fcd5c3d539949b2619138d6caf983aba58cf922247da0365c37f3966dd64340f"
+    },
+    {
+      "relative_path": "evidence\\NVIDIA-VISION-2D-QA-001\\raw_responses.json",
+      "size_bytes": 5216,
+      "sha256": "3283f843182831b51d3d9ecce3bd9d50b2a827bbcb898a247fe769824a561824"
+    },
+    {
+      "relative_path": "evidence\\NVIDIA-VISION-2D-QA-001\\request_manifest.json",
+      "size_bytes": 1490,
+      "sha256": "8b0d8c5d0d840de3ee3446cf4801f88f159cf0bccf4c571ef8dcd9428f685f88"
+    },
+    {
+      "relative_path": "evidence\\NVIDIA-VISION-2D-QA-001\\two_storey_qa.json",
+      "size_bytes": 4012,
+      "sha256": "71bc17e8882fe43dbe6d4c246193447f83859513e6445d6ae28e8ab5c06390fd"
+    }
+  ],
+  "total": 11
+}

@@ -1,0 +1,221 @@
+[
+  {
+    "id": "FILE-01",
+    "name": "2BR Apartment",
+    "hash": "3c52e93f897a1f0d02f45128294f37b68fc755eaa2241bb734729ccd59110bcf",
+    "rooms_gt": 5,
+    "walls_gt": 12,
+    "doors_gt": 6,
+    "windows_gt": 6,
+    "layers_used": [
+      "A-WALL",
+      "A-DOOR",
+      "A-WINDOW",
+      "A-DIM",
+      "A-TEXT",
+      "A-ROOM"
+    ],
+    "features": [
+      "standard_layers",
+      "insert_blocks",
+      "polylines",
+      "text_labels"
+    ],
+    "size_bytes": 1422
+  },
+  {
+    "id": "FILE-02",
+    "name": "3BR Villa with Garden",
+    "hash": "576555dc1749da724da6ad0e1760b4201fce01c7b32d66325817f89d0ba56f16",
+    "rooms_gt": 8,
+    "walls_gt": 18,
+    "doors_gt": 9,
+    "windows_gt": 8,
+    "layers_used": [
+      "WALLS",
+      "DOORS",
+      "WINDOWS",
+      "DIMENSIONS",
+      "TEXT"
+    ],
+    "features": [
+      "non_standard_layers",
+      "large_floor_plan",
+      "exterior_walls"
+    ],
+    "size_bytes": 2142
+  },
+  {
+    "id": "FILE-03",
+    "name": "Small Office (4 Rooms)",
+    "hash": "b2038c01a91e4837572fd53ccdf5314bc28bd8bff357010748ab7379d883354a",
+    "rooms_gt": 4,
+    "walls_gt": 10,
+    "doors_gt": 4,
+    "windows_gt": 4,
+    "layers_used": [
+      "0",
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    "features": [
+      "all_layer_zero",
+      "poor_organization",
+      "open_plan"
+    ],
+    "size_bytes": 1019
+  },
+  {
+    "id": "FILE-04",
+    "name": "Medical Clinic (6 Rooms)",
+    "hash": "6ed9df26a34fac73ba7388985184eb2a1f062fca4ecb5d9ac7b934c6506efa8d",
+    "rooms_gt": 6,
+    "walls_gt": 14,
+    "doors_gt": 7,
+    "windows_gt": 5,
+    "layers_used": [
+      "WALL-INT",
+      "WALL-EXT",
+      "DOOR-SWING",
+      "WINDOW-OPENING",
+      "ROOM-LABEL"
+    ],
+    "features": [
+      "rotated_blocks",
+      "corridor",
+      "specialty_rooms"
+    ],
+    "size_bytes": 1675
+  },
+  {
+    "id": "FILE-05",
+    "name": "Retail Shop with Storage",
+    "hash": "bae89ae67f5043e9542963306feeb3610d523fcbc576c6c5c95eba235a02a1da",
+    "rooms_gt": 3,
+    "walls_gt": 6,
+    "doors_gt": 3,
+    "windows_gt": 2,
+    "layers_used": [
+      "ARCH-WALL",
+      "ARCH-DOOR",
+      "ARCH-WIN",
+      "ARCH-TEXT"
+    ],
+    "features": [
+      "open_plan",
+      "arc_walls",
+      "mirrored_doors"
+    ],
+    "size_bytes": 823
+  },
+  {
+    "id": "FILE-06",
+    "name": "L-Shaped Studio",
+    "hash": "411f4c256dcd731de856c44df49f3da045d5ddeb2fdc46263bb4b6d7a6253c6d",
+    "rooms_gt": 3,
+    "walls_gt": 8,
+    "doors_gt": 2,
+    "windows_gt": 3,
+    "layers_used": [
+      "A-WALL",
+      "A-DOOR",
+      "A-GLAZ",
+      "A-AREA"
+    ],
+    "features": [
+      "irregular_polygon",
+      "polyline_geometry",
+      "arc_windows"
+    ],
+    "size_bytes": 746
+  },
+  {
+    "id": "FILE-07",
+    "name": "School Wing (8 Rooms + Corridors)",
+    "hash": "0b4c06e5235ff637a9d68a2446474b370e51fd380706515ee276f99eebe09642",
+    "rooms_gt": 10,
+    "walls_gt": 22,
+    "doors_gt": 10,
+    "windows_gt": 8,
+    "layers_used": [
+      "WALL",
+      "DOOR",
+      "WINDOW",
+      "TEXT",
+      "HATCH"
+    ],
+    "features": [
+      "corridor_heavy",
+      "many_rooms",
+      "parallel_walls",
+      "polyline_hatch"
+    ],
+    "size_bytes": 2310
+  },
+  {
+    "id": "FILE-08",
+    "name": "Warehouse with Mezzanine",
+    "hash": "a67312197041c3e978370264defaa8afdff60f77ca599bbaa74f9c371b69b876",
+    "rooms_gt": 2,
+    "walls_gt": 4,
+    "doors_gt": 2,
+    "windows_gt": 0,
+    "layers_used": [
+      "0",
+      "0"
+    ],
+    "features": [
+      "layer_zero",
+      "minimal_annotations",
+      "no_windows",
+      "large_span"
+    ],
+    "size_bytes": 482
+  },
+  {
+    "id": "FILE-09",
+    "name": "4-Unit Apartment Floor",
+    "hash": "8edf721a3985cb68128235a0ee46bc8f7b33185b540daeecc4fdf12df3fca89b",
+    "rooms_gt": 12,
+    "walls_gt": 28,
+    "doors_gt": 12,
+    "windows_gt": 10,
+    "layers_used": [
+      "A-WALL-INT",
+      "A-WALL-EXT",
+      "A-DOOR",
+      "A-WINDOW",
+      "A-ROOM",
+      "A-DIM"
+    ],
+    "features": [
+      "multi_unit",
+      "mirrored_layout",
+      "many_openings",
+      "complex_partitions"
+    ],
+    "size_bytes": 2813
+  },
+  {
+    "id": "FILE-10",
+    "name": "Circular Pavilion (Ambiguous)",
+    "hash": "cd7c53ad5f0c468a81f344553a738b78b0f09fdb9c0f2fe26272b3a44a34b9af",
+    "rooms_gt": 1,
+    "walls_gt": 16,
+    "doors_gt": 1,
+    "windows_gt": 0,
+    "layers_used": [
+      "0"
+    ],
+    "features": [
+      "unsupported_geometry",
+      "circular_wall",
+      "ambiguous",
+      "single_room",
+      "arc_only"
+    ],
+    "size_bytes": 363
+  }
+]

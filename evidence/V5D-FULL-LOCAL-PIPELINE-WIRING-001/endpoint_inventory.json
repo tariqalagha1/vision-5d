@@ -1,0 +1,96 @@
+{
+  "mission": "V5D-FULL-LOCAL-PIPELINE-WIRING-001",
+  "timestamp": "2026-07-31T21:35:59.525750",
+  "new_endpoints": [
+    {
+      "method": "GET",
+      "path": "/api/v1/projects/{id}/workflow",
+      "stage": "Workflow State"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/projects/{id}/understand",
+      "stage": "Photo Understanding"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/projects/{id}/understanding",
+      "stage": "Understanding Review"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/projects/{id}/understanding/approve",
+      "stage": "Approval Gate"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/projects/{id}/understanding/reject",
+      "stage": "Rejection"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/projects/{id}/geometry",
+      "stage": "Geometry Generation"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/projects/{id}/pascal",
+      "stage": "Pascal Scene"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/projects/{id}/pascal/import",
+      "stage": "Correction Import"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/projects/{id}/scene3d",
+      "stage": "Scene3D + GLB"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/projects/{id}/materials",
+      "stage": "Materials"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/projects/{id}/materials",
+      "stage": "Materials Update"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/projects/{id}/lighting",
+      "stage": "Lighting"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/projects/{id}/lighting",
+      "stage": "Lighting Update"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/projects/{id}/cinematic",
+      "stage": "Cinematic"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/projects/{id}/cinematic",
+      "stage": "Cinematic Update"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/projects/{id}/render",
+      "stage": "Video Render"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/projects/{id}/artifacts",
+      "stage": "Artifact List"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/projects/{id}/artifacts/{aid}",
+      "stage": "Artifact Download"
+    }
+  ]
+}

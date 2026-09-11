@@ -1,0 +1,36 @@
+{
+  "mission": "V5D-FRONTEND-INVENTORY-001",
+  "timestamp": "2026-07-31T13:32:43.056888",
+  "files_to_create": [
+    "apps/web/css/dashboard.css",
+    "apps/web/js/services/api.js",
+    "apps/web/js/services/auth.js",
+    "apps/web/js/services/projects.js",
+    "apps/web/js/services/ai-providers.js",
+    "apps/web/js/services/jobs.js",
+    "apps/web/js/services/scenes.js",
+    "apps/web/js/components/sidebar.js",
+    "apps/web/js/components/header.js",
+    "apps/web/js/components/project-card.js",
+    "apps/web/js/components/job-list.js",
+    "apps/web/js/components/provider-form.js",
+    "apps/web/js/components/status-badge.js",
+    "apps/web/js/views/dashboard.js",
+    "apps/web/js/views/projects.js",
+    "apps/web/js/views/project-detail.js",
+    "apps/web/js/views/ai-configuration.js",
+    "apps/web/js/views/scenes.js",
+    "apps/web/js/app.js",
+    "apps/web/js/types.js"
+  ],
+  "files_to_modify": [
+    "apps/web/index.html \u2014 restructure as single-page app shell with module loading"
+  ],
+  "files_never_modify": [
+    "src/integrations/pascal/ \u2014 Pascal production adapter (FROZEN)",
+    "packages/scene3d/contracts.py \u2014 Scene3D contracts",
+    "packages/domain/models.py \u2014 DB models"
+  ],
+  "total_proposed": 20,
+  "total_modified": 1
+}

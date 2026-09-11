@@ -1,0 +1,3080 @@
+{
+  "nodes": {
+    "site_1mwi0hu25d6an4lv": {
+      "object": "node",
+      "id": "site_1mwi0hu25d6an4lv",
+      "type": "site",
+      "name": "Vision 5D Import Site",
+      "parentId": null,
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "visible": true,
+      "children": [
+        "building_jjqnxepzwxjqnf5z"
+      ],
+      "polygon": {
+        "type": "polygon",
+        "points": [
+          [
+            -20,
+            -20
+          ],
+          [
+            50,
+            -20
+          ],
+          [
+            50,
+            40
+          ],
+          [
+            -20,
+            40
+          ]
+        ]
+      },
+      "metadata": {
+        "vision5d": {
+          "project_id": "real-2d-45x45-32c4e1ba-151",
+          "source_file_sha256": "aca1d4c9ef1e2ccb5427c6f525aadc3d8b18fa00a9e767c2d0fa404563f46509",
+          "source_file": "45x45-Modern-House-4-Bedrooms.dwg",
+          "adapter_version": "2.0-schema-conformant",
+          "pascal_schema_version": "0.9.2",
+          "pascal_commit": "42ac4be1ce5f3fee74806aa093267b6fee77d47d",
+          "conversion_timestamp": "2026-07-30T05:48:03.426934+00:00",
+          "unit": "meters"
+        }
+      }
+    },
+    "building_jjqnxepzwxjqnf5z": {
+      "object": "node",
+      "id": "building_jjqnxepzwxjqnf5z",
+      "type": "building",
+      "name": "45x45 Modern House",
+      "parentId": "site_1mwi0hu25d6an4lv",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "visible": true,
+      "children": [
+        "level_5oruhniqbwe5rxg4"
+      ],
+      "metadata": {
+        "vision5d": {
+          "project_id": "real-2d-45x45-32c4e1ba-151",
+          "source_file_sha256": "aca1d4c9ef1e2ccb5427c6f525aadc3d8b18fa00a9e767c2d0fa404563f46509",
+          "stable_v5d_id": "building_v5d001"
+        }
+      }
+    },
+    "level_5oruhniqbwe5rxg4": {
+      "object": "node",
+      "id": "level_5oruhniqbwe5rxg4",
+      "type": "level",
+      "name": "Ground Floor",
+      "parentId": "building_jjqnxepzwxjqnf5z",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "visible": true,
+      "level": 0,
+      "children": [
+        "wall_yvdq5etn9lecelle",
+        "wall_91lhm9hv1210ku8o",
+        "wall_nenkh5gg0xazf213",
+        "wall_h8yr1gs0g99454xn",
+        "wall_d6uhgazf6em35f5c",
+        "wall_abn1esxdo2rtypc8",
+        "wall_o95yaspsjj7k8s95",
+        "wall_u03nnivewhf35r3q",
+        "wall_af8ebbzpy19vyv07",
+        "wall_o245j7d05tgceuog",
+        "wall_hl8ts2zw36vmg9t3",
+        "wall_rpj8m3vehpqmyyps",
+        "wall_uvpds6gjtzag1yrp",
+        "wall_4fbf0swurghigx97",
+        "wall_y1z31uowrschy4z6",
+        "wall_170rwl3l9ubov4uu",
+        "wall_qzc1bkxpsfs1r2r4",
+        "wall_5vuw9lr5d1n8xr69",
+        "wall_aesyx7ojmswok5f9",
+        "wall_e13boercxcgoujsu",
+        "wall_h5qcx2d2pummd6q1",
+        "wall_3qkk2ziber2hliaf",
+        "wall_o3p63c4g0id9kovh",
+        "wall_r9luhzguacvju3rr",
+        "wall_uj8lr2b7dkcr3hgq",
+        "wall_4notpah6ekn7ug0r",
+        "wall_iz9ukq53zi5zkvut",
+        "wall_xx97kczqytc1dvot",
+        "wall_0n0z374oid4sgu6f",
+        "wall_41tbypcp8j58y4ki",
+        "wall_lxd202czhmbxtkue",
+        "wall_97hhl9ghd4yrcih6",
+        "wall_w78ju2ehceh8rkst",
+        "wall_krbunss5089q9pio",
+        "wall_4u2unh5ms2kfg7j3",
+        "wall_xdq72un7uwmvkk5e",
+        "wall_bfq2y62b434us7gh",
+        "wall_7dbn70pmm73vz3qc",
+        "wall_bp2503ozifv6bvtp",
+        "wall_y9ocrunle1kf9mco",
+        "wall_bxo6xo9ds2r7wld1",
+        "wall_znm8l6ancn6y1fn4",
+        "wall_oh682ec5s248i02r",
+        "wall_jdlgjy9f3bp61sp7",
+        "wall_b2qk21754r4pi30p",
+        "wall_eptz76n64j8ouw56",
+        "wall_cso7u97ig7vcq4tg",
+        "wall_yskxumj77elq59q9",
+        "wall_bfltsapdoxm3d38i",
+        "wall_4bd7wphdh4z4uosd",
+        "wall_eqoqr1hdac2ubvf0",
+        "wall_49goxolk2xgyyfii",
+        "wall_6ic2uleylmwrlzf1",
+        "wall_ahgjwaovdxrazyxy",
+        "wall_70bsbjmz87ov95fc",
+        "wall_8om0rzy6su5mk8la",
+        "wall_ywg5l73swp7zw6rc",
+        "slab_0zarsukaxuioqn3s",
+        "door_57jvaf03umywebf3",
+        "door_ud0j4n8cmvb4f9is",
+        "window_k1gnmd3zlxzqcq97"
+      ],
+      "metadata": {
+        "vision5d": {
+          "project_id": "real-2d-45x45-32c4e1ba-151",
+          "source_file_sha256": "aca1d4c9ef1e2ccb5427c6f525aadc3d8b18fa00a9e767c2d0fa404563f46509",
+          "region_bounds": [
+            298.6,
+            35.8,
+            340.1,
+            50.8
+          ],
+          "unit": "meters"
+        }
+      }
+    },
+    "wall_yvdq5etn9lecelle": {
+      "object": "node",
+      "id": "wall_yvdq5etn9lecelle",
+      "type": "wall",
+      "name": "Wall 1 (exterior)",
+      "parentId": "level_5oruhniqbwe5rxg4",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "visible": true,
+      "start": [
+        317.953,
+        35.762
+      ],
+      "end": [
+        318.422,
+        35.762
+      ],
+      "thickness": 0.2,
+      "height": 2.7,
+      "children": [
+        "window_k1gnmd3zlxzqcq97"
+      ],
+      "metadata": {
+        "vision5d": {
+          "project_id": "real-2d-45x45-32c4e1ba-151",
+          "source_file_sha256": "aca1d4c9ef1e2ccb5427c6f525aadc3d8b18fa00a9e767c2d0fa404563f46509",
+          "stable_v5d_id": "wall_v5d_000",
+          "dxf_entity_handles": [
+            "43D9"
+          ],
+          "source_layer": "",
+          "orientation": "horizontal",
+          "length_m": 0.468,
+          "wall_type": "exterior",
+          "extraction_confidence": 0.95,
+          "validation_status": "structural_match",
+          "unit": "meters"
+        }
+      }
+    },
+    "wall_91lhm9hv1210ku8o": {
+      "object": "node",
+      "id": "wall_91lhm9hv1210ku8o",
+      "type": "wall",
+      "name": "Wall 2 (interior)",
+      "parentId": "level_5oruhniqbwe5rxg4",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "visible": true,
+      "start": [
+        309.001,
+        36.512
+      ],
+      "end": [
+        335.746,
+        36.512
+      ],
+      "thickness": 0.2,
+      "height": 2.7,
+      "children": [
+        "door_57jvaf03umywebf3"
+      ],
+      "metadata": {
+        "vision5d": {
+          "project_id": "real-2d-45x45-32c4e1ba-151",
+          "source_file_sha256": "aca1d4c9ef1e2ccb5427c6f525aadc3d8b18fa00a9e767c2d0fa404563f46509",
+          "stable_v5d_id": "wall_v5d_001",
+          "dxf_entity_handles": [
+            "43FA",
+            "44F7"
+          ],
+          "source_layer": "",
+          "orientation": "horizontal",
+          "length_m": 26.745,
+          "wall_type": "interior",
+          "extraction_confidence": 0.95,
+          "validation_status": "structural_match",
+          "unit": "meters"
+        }
+      }
+    },
+    "wall_nenkh5gg0xazf213": {
+      "object": "node",
+      "id": "wall_nenkh5gg0xazf213",
+      "type": "wall",
+      "name": "Wall 3 (interior)",
+      "parentId": "level_5oruhniqbwe5rxg4",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "visible": true,
+      "start": [
+        333.174,
+        37.574
+      ],
+      "end": [
+        336.274,
+        37.574
+      ],
+      "thickness": 0.2,
+      "height": 2.7,
+      "children": [
+        "door_ud0j4n8cmvb4f9is"
+      ],
+      "metadata": {
+        "vision5d": {
+          "project_id": "real-2d-45x45-32c4e1ba-151",
+          "source_file_sha256": "aca1d4c9ef1e2ccb5427c6f525aadc3d8b18fa00a9e767c2d0fa404563f46509",
+          "stable_v5d_id": "wall_v5d_002",
+          "dxf_entity_handles": [
+            "44ED",
+            "44EE"
+          ],
+          "source_layer": "",
+          "orientation": "horizontal",
+          "length_m": 3.1,
+          "wall_type": "interior",
+          "extraction_confidence": 0.95,
+          "validation_status": "structural_match",
+          "unit": "meters"
+        }
+      }
+    },
+    "wall_h8yr1gs0g99454xn": {
+      "object": "node",
+      "id": "wall_h8yr1gs0g99454xn",
+      "type": "wall",
+      "name": "Wall 4 (interior)",
+      "parentId": "level_5oruhniqbwe5rxg4",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "visible": true,
+      "start": [
+        305.655,
+        38.565
+      ],
+      "end": [
+        339.686,
+        38.565
+      ],
+      "thickness": 0.2,
+      "height": 2.7,
+      "children": [],
+      "metadata": {
+        "vision5d": {
+          "project_id": "real-2d-45x45-32c4e1ba-151",
+          "source_file_sha256": "aca1d4c9ef1e2ccb5427c6f525aadc3d8b18fa00a9e767c2d0fa404563f46509",
+          "stable_v5d_id": "wall_v5d_003",
+          "dxf_entity_handles": [
+            "43F0",
+            "43F1",
+            "44D7",
+            "44D8"
+          ],
+          "source_layer": "",
+          "orientation": "horizontal",
+          "length_m": 34.031,
+          "wall_type": "interior",
+          "extraction_confidence": 0.95,
+          "validation_status": "structural_match",
+          "unit": "meters"
+        }
+      }
+    },
+    "wall_d6uhgazf6em35f5c": {
+      "object": "node",
+      "id": "wall_d6uhgazf6em35f5c",
+      "type": "wall",
+      "name": "Wall 5 (interior)",
+      "parentId": "level_5oruhniqbwe5rxg4",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "visible": true,
+      "start": [
+        335.534,
+        40.014
+      ],
+      "end": [
+        335.746,
+        40.014
+      ],
+      "thickness": 0.2,
+      "height": 2.7,
+      "children": [],
+      "metadata": {
+        "vision5d": {
+          "project_id": "real-2d-45x45-32c4e1ba-151",
+          "source_file_sha256": "aca1d4c9ef1e2ccb5427c6f525aadc3d8b18fa00a9e767c2d0fa404563f46509",
+          "stable_v5d_id": "wall_v5d_004",
+          "dxf_entity_handles": [
+            "44F6"
+          ],
+          "source_layer": "",
+          "orientation": "horizontal",
+          "length_m": 0.211,
+          "wall_type": "interior",
+          "extraction_confidence": 0.95,
+          "validation_status": "structural_match",
+          "unit": "meters"
+        }
+      }
+    },
+    "wall_abn1esxdo2rtypc8": {
+      "object": "node",
+      "id": "wall_abn1esxdo2rtypc8",
+      "type": "wall",
+      "name": "Wall 6 (interior)",
+      "parentId": "level_5oruhniqbwe5rxg4",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "visible": true,
+      "start": [
+        328.101,
+        40.369
+      ],
+      "end": [
+        333.084,
+        40.369
+      ],
+      "thickness": 0.2,
+      "height": 2.7,
+      "children": [],
+      "metadata": {
+        "vision5d": {
+          "project_id": "real-2d-45x45-32c4e1ba-151",
+          "source_file_sha256": "aca1d4c9ef1e2ccb5427c6f525aadc3d8b18fa00a9e767c2d0fa404563f46509",
+          "stable_v5d_id": "wall_v5d_005",
+          "dxf_entity_handles": [
+            "450E",
+            "450F"
+          ],
+          "source_layer": "",
+          "orientation": "horizontal",
+          "length_m": 4.983,
+          "wall_type": "interior",
+          "extraction_confidence": 0.95,
+          "validation_status": "structural_match",
+          "unit": "meters"
+        }
+      }
+    },
+    "wall_o95yaspsjj7k8s95": {
+      "object": "node",
+      "id": "wall_o95yaspsjj7k8s95",
+      "type": "wall",
+      "name": "Wall 7 (interior)",
+      "parentId": "level_5oruhniqbwe5rxg4",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "visible": true,
+      "start": [
+        336.384,
+        40.72
+      ],
+      "end": [
+        339.684,
+        40.72
+      ],
+      "thickness": 0.2,
+      "height": 2.7,
+      "children": [],
+      "metadata": {
+        "vision5d": {
+          "project_id": "real-2d-45x45-32c4e1ba-151",
+          "source_file_sha256": "aca1d4c9ef1e2ccb5427c6f525aadc3d8b18fa00a9e767c2d0fa404563f46509",
+          "stable_v5d_id": "wall_v5d_006",
+          "dxf_entity_handles": [
+            "44CC",
+            "44CD"
+          ],
+          "source_layer": "",
+          "orientation": "horizontal",
+          "length_m": 3.3,
+          "wall_type": "interior",
+          "extraction_confidence": 0.95,
+          "validation_status": "structural_match",
+          "unit": "meters"
+        }
+      }
+    },
+    "wall_u03nnivewhf35r3q": {
+      "object": "node",
+      "id": "wall_u03nnivewhf35r3q",
+      "type": "wall",
+      "name": "Wall 8 (interior)",
+      "parentId": "level_5oruhniqbwe5rxg4",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "visible": true,
+      "start": [
+        311.809,
+        41.168
+      ],
+      "end": [
+        340.117,
+        41.168
+      ],
+      "thickness": 0.2,
+      "height": 2.7,
+      "children": [],
+      "metadata": {
+        "vision5d": {
+          "project_id": "real-2d-45x45-32c4e1ba-151",
+          "source_file_sha256": "aca1d4c9ef1e2ccb5427c6f525aadc3d8b18fa00a9e767c2d0fa404563f46509",
+          "stable_v5d_id": "wall_v5d_007",
+          "dxf_entity_handles": [
+            "43E5",
+            "43E6",
+            "44B5"
+          ],
+          "source_layer": "",
+          "orientation": "horizontal",
+          "length_m": 28.309,
+          "wall_type": "interior",
+          "extraction_confidence": 0.95,
+          "validation_status": "structural_match",
+          "unit": "meters"
+        }
+      }
+    },
+    "wall_af8ebbzpy19vyv07": {
+      "object": "node",
+      "id": "wall_af8ebbzpy19vyv07",
+      "type": "wall",
+      "name": "Wall 9 (interior)",
+      "parentId": "level_5oruhniqbwe5rxg4",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "visible": true,
+      "start": [
+        309.001,
+        41.912
+      ],
+      "end": [
+        309.571,
+        41.912
+      ],
+      "thickness": 0.2,
+      "height": 2.7,
+      "children": [],
+      "metadata": {
+        "vision5d": {
+          "project_id": "real-2d-45x45-32c4e1ba-151",
+          "source_file_sha256": "aca1d4c9ef1e2ccb5427c6f525aadc3d8b18fa00a9e767c2d0fa404563f46509",
+          "stable_v5d_id": "wall_v5d_008",
+          "dxf_entity_handles": [
+            "43F9"
+          ],
+          "source_layer": "",
+          "orientation": "horizontal",
+          "length_m": 0.57,
+          "wall_type": "interior",
+          "extraction_confidence": 0.95,
+          "validation_status": "structural_match",
+          "unit": "meters"
+        }
+      }
+    },
+    "wall_o245j7d05tgceuog": {
+      "object": "node",
+      "id": "wall_o245j7d05tgceuog",
+      "type": "wall",
+      "name": "Wall 10 (interior)",
+      "parentId": "level_5oruhniqbwe5rxg4",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "visible": true,
+      "start": [
+        305.655,
+        42.579
+      ],
+      "end": [
+        340.14,
+        42.579
+      ],
+      "thickness": 0.2,
+      "height": 2.7,
+      "children": [],
+      "metadata": {
+        "vision5d": {
+          "project_id": "real-2d-45x45-32c4e1ba-151",
+          "source_file_sha256": "aca1d4c9ef1e2ccb5427c6f525aadc3d8b18fa00a9e767c2d0fa404563f46509",
+          "stable_v5d_id": "wall_v5d_009",
+          "dxf_entity_handles": [
+            "4411",
+            "4412",
+            "44AB",
+            "44AC",
+            "4539"
+          ],
+          "source_layer": "",
+          "orientation": "horizontal",
+          "length_m": 34.485,
+          "wall_type": "interior",
+          "extraction_confidence": 0.95,
+          "validation_status": "structural_match",
+          "unit": "meters"
+        }
+      }
+    },
+    "wall_hl8ts2zw36vmg9t3": {
+      "object": "node",
+      "id": "wall_hl8ts2zw36vmg9t3",
+      "type": "wall",
+      "name": "Wall 11 (interior)",
+      "parentId": "level_5oruhniqbwe5rxg4",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "visible": true,
+      "start": [
+        326.734,
+        43.005
+      ],
+      "end": [
+        333.934,
+        43.005
+      ],
+      "thickness": 0.2,
+      "height": 2.7,
+      "children": [],
+      "metadata": {
+        "vision5d": {
+          "project_id": "real-2d-45x45-32c4e1ba-151",
+          "source_file_sha256": "aca1d4c9ef1e2ccb5427c6f525aadc3d8b18fa00a9e767c2d0fa404563f46509",
+          "stable_v5d_id": "wall_v5d_010",
+          "dxf_entity_handles": [
+            "4524",
+            "4525",
+            "452F",
+            "4530"
+          ],
+          "source_layer": "",
+          "orientation": "horizontal",
+          "length_m": 7.2,
+          "wall_type": "interior",
+          "extraction_confidence": 0.95,
+          "validation_status": "structural_match",
+          "unit": "meters"
+        }
+      }
+    },
+    "wall_rpj8m3vehpqmyyps": {
+      "object": "node",
+      "id": "wall_rpj8m3vehpqmyyps",
+      "type": "wall",
+      "name": "Wall 12 (interior)",
+      "parentId": "level_5oruhniqbwe5rxg4",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "visible": true,
+      "start": [
+        311.418,
+        44.15
+      ],
+      "end": [
+        333.567,
+        44.15
+      ],
+      "thickness": 0.2,
+      "height": 2.7,
+      "children": [],
+      "metadata": {
+        "vision5d": {
+          "project_id": "real-2d-45x45-32c4e1ba-151",
+          "source_file_sha256": "aca1d4c9ef1e2ccb5427c6f525aadc3d8b18fa00a9e767c2d0fa404563f46509",
+          "stable_v5d_id": "wall_v5d_011",
+          "dxf_entity_handles": [
+            "43AD",
+            "43CE",
+            "43D8",
+            "4473",
+            "4538"
+          ],
+          "source_layer": "",
+          "orientation": "horizontal",
+          "length_m": 22.149,
+          "wall_type": "interior",
+          "extraction_confidence": 0.95,
+          "validation_status": "structural_match",
+          "unit": "meters"
+        }
+      }
+    },
+    "wall_uvpds6gjtzag1yrp": {
+      "object": "node",
+      "id": "wall_uvpds6gjtzag1yrp",
+      "type": "wall",
+      "name": "Wall 13 (interior)",
+      "parentId": "level_5oruhniqbwe5rxg4",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "visible": true,
+      "start": [
+        339.77,
+        44.586
+      ],
+      "end": [
+        340.117,
+        44.586
+      ],
+      "thickness": 0.2,
+      "height": 2.7,
+      "children": [],
+      "metadata": {
+        "vision5d": {
+          "project_id": "real-2d-45x45-32c4e1ba-151",
+          "source_file_sha256": "aca1d4c9ef1e2ccb5427c6f525aadc3d8b18fa00a9e767c2d0fa404563f46509",
+          "stable_v5d_id": "wall_v5d_012",
+          "dxf_entity_handles": [
+            "44B4"
+          ],
+          "source_layer": "",
+          "orientation": "horizontal",
+          "length_m": 0.347,
+          "wall_type": "interior",
+          "extraction_confidence": 0.95,
+          "validation_status": "structural_match",
+          "unit": "meters"
+        }
+      }
+    },
+    "wall_4fbf0swurghigx97": {
+      "object": "node",
+      "id": "wall_4fbf0swurghigx97",
+      "type": "wall",
+      "name": "Wall 14 (interior)",
+      "parentId": "level_5oruhniqbwe5rxg4",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "visible": true,
+      "start": [
+        326.734,
+        44.999
+      ],
+      "end": [
+        336.234,
+        44.999
+      ],
+      "thickness": 0.2,
+      "height": 2.7,
+      "children": [],
+      "metadata": {
+        "vision5d": {
+          "project_id": "real-2d-45x45-32c4e1ba-151",
+          "source_file_sha256": "aca1d4c9ef1e2ccb5427c6f525aadc3d8b18fa00a9e767c2d0fa404563f46509",
+          "stable_v5d_id": "wall_v5d_013",
+          "dxf_entity_handles": [
+            "4550",
+            "4551"
+          ],
+          "source_layer": "",
+          "orientation": "horizontal",
+          "length_m": 9.5,
+          "wall_type": "interior",
+          "extraction_confidence": 0.95,
+          "validation_status": "structural_match",
+          "unit": "meters"
+        }
+      }
+    },
+    "wall_y1z31uowrschy4z6": {
+      "object": "node",
+      "id": "wall_y1z31uowrschy4z6",
+      "type": "wall",
+      "name": "Wall 15 (interior)",
+      "parentId": "level_5oruhniqbwe5rxg4",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "visible": true,
+      "start": [
+        305.655,
+        45.557
+      ],
+      "end": [
+        315.155,
+        45.557
+      ],
+      "thickness": 0.2,
+      "height": 2.7,
+      "children": [],
+      "metadata": {
+        "vision5d": {
+          "project_id": "real-2d-45x45-32c4e1ba-151",
+          "source_file_sha256": "aca1d4c9ef1e2ccb5427c6f525aadc3d8b18fa00a9e767c2d0fa404563f46509",
+          "stable_v5d_id": "wall_v5d_014",
+          "dxf_entity_handles": [
+            "43B9",
+            "43BA"
+          ],
+          "source_layer": "",
+          "orientation": "horizontal",
+          "length_m": 9.5,
+          "wall_type": "interior",
+          "extraction_confidence": 0.95,
+          "validation_status": "structural_match",
+          "unit": "meters"
+        }
+      }
+    },
+    "wall_170rwl3l9ubov4uu": {
+      "object": "node",
+      "id": "wall_170rwl3l9ubov4uu",
+      "type": "wall",
+      "name": "Wall 16 (interior)",
+      "parentId": "level_5oruhniqbwe5rxg4",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "visible": true,
+      "start": [
+        315.305,
+        46.485
+      ],
+      "end": [
+        332.21,
+        46.485
+      ],
+      "thickness": 0.2,
+      "height": 2.7,
+      "children": [],
+      "metadata": {
+        "vision5d": {
+          "project_id": "real-2d-45x45-32c4e1ba-151",
+          "source_file_sha256": "aca1d4c9ef1e2ccb5427c6f525aadc3d8b18fa00a9e767c2d0fa404563f46509",
+          "stable_v5d_id": "wall_v5d_015",
+          "dxf_entity_handles": [
+            "43C4",
+            "43C5",
+            "4543"
+          ],
+          "source_layer": "",
+          "orientation": "horizontal",
+          "length_m": 16.904,
+          "wall_type": "interior",
+          "extraction_confidence": 0.95,
+          "validation_status": "structural_match",
+          "unit": "meters"
+        }
+      }
+    },
+    "wall_qzc1bkxpsfs1r2r4": {
+      "object": "node",
+      "id": "wall_qzc1bkxpsfs1r2r4",
+      "type": "wall",
+      "name": "Wall 17 (interior)",
+      "parentId": "level_5oruhniqbwe5rxg4",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "visible": true,
+      "start": [
+        333.768,
+        47.336
+      ],
+      "end": [
+        334.338,
+        47.336
+      ],
+      "thickness": 0.2,
+      "height": 2.7,
+      "children": [],
+      "metadata": {
+        "vision5d": {
+          "project_id": "real-2d-45x45-32c4e1ba-151",
+          "source_file_sha256": "aca1d4c9ef1e2ccb5427c6f525aadc3d8b18fa00a9e767c2d0fa404563f46509",
+          "stable_v5d_id": "wall_v5d_016",
+          "dxf_entity_handles": [
+            "449F"
+          ],
+          "source_layer": "",
+          "orientation": "horizontal",
+          "length_m": 0.57,
+          "wall_type": "interior",
+          "extraction_confidence": 0.95,
+          "validation_status": "structural_match",
+          "unit": "meters"
+        }
+      }
+    },
+    "wall_5vuw9lr5d1n8xr69": {
+      "object": "node",
+      "id": "wall_5vuw9lr5d1n8xr69",
+      "type": "wall",
+      "name": "Wall 18 (interior)",
+      "parentId": "level_5oruhniqbwe5rxg4",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "visible": true,
+      "start": [
+        331.384,
+        47.862
+      ],
+      "end": [
+        332.784,
+        47.862
+      ],
+      "thickness": 0.2,
+      "height": 2.7,
+      "children": [],
+      "metadata": {
+        "vision5d": {
+          "project_id": "real-2d-45x45-32c4e1ba-151",
+          "source_file_sha256": "aca1d4c9ef1e2ccb5427c6f525aadc3d8b18fa00a9e767c2d0fa404563f46509",
+          "stable_v5d_id": "wall_v5d_017",
+          "dxf_entity_handles": [
+            "447F",
+            "4480"
+          ],
+          "source_layer": "",
+          "orientation": "horizontal",
+          "length_m": 1.4,
+          "wall_type": "interior",
+          "extraction_confidence": 0.95,
+          "validation_status": "structural_match",
+          "unit": "meters"
+        }
+      }
+    },
+    "wall_aesyx7ojmswok5f9": {
+      "object": "node",
+      "id": "wall_aesyx7ojmswok5f9",
+      "type": "wall",
+      "name": "Wall 19 (interior)",
+      "parentId": "level_5oruhniqbwe5rxg4",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "visible": true,
+      "start": [
+        326.734,
+        48.213
+      ],
+      "end": [
+        336.234,
+        48.213
+      ],
+      "thickness": 0.2,
+      "height": 2.7,
+      "children": [],
+      "metadata": {
+        "vision5d": {
+          "project_id": "real-2d-45x45-32c4e1ba-151",
+          "source_file_sha256": "aca1d4c9ef1e2ccb5427c6f525aadc3d8b18fa00a9e767c2d0fa404563f46509",
+          "stable_v5d_id": "wall_v5d_018",
+          "dxf_entity_handles": [
+            "4469",
+            "446A",
+            "4495",
+            "4496"
+          ],
+          "source_layer": "",
+          "orientation": "horizontal",
+          "length_m": 9.5,
+          "wall_type": "interior",
+          "extraction_confidence": 0.95,
+          "validation_status": "structural_match",
+          "unit": "meters"
+        }
+      }
+    },
+    "wall_e13boercxcgoujsu": {
+      "object": "node",
+      "id": "wall_e13boercxcgoujsu",
+      "type": "wall",
+      "name": "Wall 20 (interior)",
+      "parentId": "level_5oruhniqbwe5rxg4",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "visible": true,
+      "start": [
+        329.54,
+        49.736
+      ],
+      "end": [
+        330.019,
+        49.736
+      ],
+      "thickness": 0.2,
+      "height": 2.7,
+      "children": [],
+      "metadata": {
+        "vision5d": {
+          "project_id": "real-2d-45x45-32c4e1ba-151",
+          "source_file_sha256": "aca1d4c9ef1e2ccb5427c6f525aadc3d8b18fa00a9e767c2d0fa404563f46509",
+          "stable_v5d_id": "wall_v5d_019",
+          "dxf_entity_handles": [
+            "4472"
+          ],
+          "source_layer": "",
+          "orientation": "horizontal",
+          "length_m": 0.478,
+          "wall_type": "interior",
+          "extraction_confidence": 0.95,
+          "validation_status": "structural_match",
+          "unit": "meters"
+        }
+      }
+    },
+    "wall_h5qcx2d2pummd6q1": {
+      "object": "node",
+      "id": "wall_h5qcx2d2pummd6q1",
+      "type": "wall",
+      "name": "Wall 21 (interior)",
+      "parentId": "level_5oruhniqbwe5rxg4",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "visible": true,
+      "start": [
+        311.418,
+        50.142
+      ],
+      "end": [
+        311.988,
+        50.142
+      ],
+      "thickness": 0.2,
+      "height": 2.7,
+      "children": [],
+      "metadata": {
+        "vision5d": {
+          "project_id": "real-2d-45x45-32c4e1ba-151",
+          "source_file_sha256": "aca1d4c9ef1e2ccb5427c6f525aadc3d8b18fa00a9e767c2d0fa404563f46509",
+          "stable_v5d_id": "wall_v5d_020",
+          "dxf_entity_handles": [
+            "43AC"
+          ],
+          "source_layer": "",
+          "orientation": "horizontal",
+          "length_m": 0.57,
+          "wall_type": "interior",
+          "extraction_confidence": 0.95,
+          "validation_status": "structural_match",
+          "unit": "meters"
+        }
+      }
+    },
+    "wall_3qkk2ziber2hliaf": {
+      "object": "node",
+      "id": "wall_3qkk2ziber2hliaf",
+      "type": "wall",
+      "name": "Wall 22 (interior)",
+      "parentId": "level_5oruhniqbwe5rxg4",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "visible": true,
+      "start": [
+        333.768,
+        50.736
+      ],
+      "end": [
+        334.338,
+        50.736
+      ],
+      "thickness": 0.2,
+      "height": 2.7,
+      "children": [],
+      "metadata": {
+        "vision5d": {
+          "project_id": "real-2d-45x45-32c4e1ba-151",
+          "source_file_sha256": "aca1d4c9ef1e2ccb5427c6f525aadc3d8b18fa00a9e767c2d0fa404563f46509",
+          "stable_v5d_id": "wall_v5d_021",
+          "dxf_entity_handles": [
+            "449E"
+          ],
+          "source_layer": "",
+          "orientation": "horizontal",
+          "length_m": 0.57,
+          "wall_type": "interior",
+          "extraction_confidence": 0.95,
+          "validation_status": "structural_match",
+          "unit": "meters"
+        }
+      }
+    },
+    "wall_o3p63c4g0id9kovh": {
+      "object": "node",
+      "id": "wall_o3p63c4g0id9kovh",
+      "type": "wall",
+      "name": "Wall 23 (interior)",
+      "parentId": "level_5oruhniqbwe5rxg4",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "visible": true,
+      "start": [
+        307.622,
+        57.863
+      ],
+      "end": [
+        313.021,
+        57.863
+      ],
+      "thickness": 0.2,
+      "height": 2.7,
+      "children": [],
+      "metadata": {
+        "vision5d": {
+          "project_id": "real-2d-45x45-32c4e1ba-151",
+          "source_file_sha256": "aca1d4c9ef1e2ccb5427c6f525aadc3d8b18fa00a9e767c2d0fa404563f46509",
+          "stable_v5d_id": "wall_v5d_022",
+          "dxf_entity_handles": [
+            "4432",
+            "4433"
+          ],
+          "source_layer": "",
+          "orientation": "horizontal",
+          "length_m": 5.399,
+          "wall_type": "interior",
+          "extraction_confidence": 0.95,
+          "validation_status": "structural_match",
+          "unit": "meters"
+        }
+      }
+    },
+    "wall_r9luhzguacvju3rr": {
+      "object": "node",
+      "id": "wall_r9luhzguacvju3rr",
+      "type": "wall",
+      "name": "Wall 24 (interior)",
+      "parentId": "level_5oruhniqbwe5rxg4",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "visible": true,
+      "start": [
+        313.051,
+        58.447
+      ],
+      "end": [
+        315.893,
+        58.447
+      ],
+      "thickness": 0.2,
+      "height": 2.7,
+      "children": [],
+      "metadata": {
+        "vision5d": {
+          "project_id": "real-2d-45x45-32c4e1ba-151",
+          "source_file_sha256": "aca1d4c9ef1e2ccb5427c6f525aadc3d8b18fa00a9e767c2d0fa404563f46509",
+          "stable_v5d_id": "wall_v5d_023",
+          "dxf_entity_handles": [
+            "4426",
+            "445D"
+          ],
+          "source_layer": "",
+          "orientation": "horizontal",
+          "length_m": 2.841,
+          "wall_type": "interior",
+          "extraction_confidence": 0.95,
+          "validation_status": "structural_match",
+          "unit": "meters"
+        }
+      }
+    },
+    "wall_uj8lr2b7dkcr3hgq": {
+      "object": "node",
+      "id": "wall_uj8lr2b7dkcr3hgq",
+      "type": "wall",
+      "name": "Wall 25 (interior)",
+      "parentId": "level_5oruhniqbwe5rxg4",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "visible": true,
+      "start": [
+        298.609,
+        59.327
+      ],
+      "end": [
+        307.631,
+        59.327
+      ],
+      "thickness": 0.2,
+      "height": 2.7,
+      "children": [],
+      "metadata": {
+        "vision5d": {
+          "project_id": "real-2d-45x45-32c4e1ba-151",
+          "source_file_sha256": "aca1d4c9ef1e2ccb5427c6f525aadc3d8b18fa00a9e767c2d0fa404563f46509",
+          "stable_v5d_id": "wall_v5d_024",
+          "dxf_entity_handles": [
+            "441C",
+            "441D"
+          ],
+          "source_layer": "",
+          "orientation": "horizontal",
+          "length_m": 9.023,
+          "wall_type": "interior",
+          "extraction_confidence": 0.95,
+          "validation_status": "structural_match",
+          "unit": "meters"
+        }
+      }
+    },
+    "wall_4notpah6ekn7ug0r": {
+      "object": "node",
+      "id": "wall_4notpah6ekn7ug0r",
+      "type": "wall",
+      "name": "Wall 26 (interior)",
+      "parentId": "level_5oruhniqbwe5rxg4",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "visible": true,
+      "start": [
+        314.799,
+        61.463
+      ],
+      "end": [
+        318.569,
+        61.463
+      ],
+      "thickness": 0.2,
+      "height": 2.7,
+      "children": [],
+      "metadata": {
+        "vision5d": {
+          "project_id": "real-2d-45x45-32c4e1ba-151",
+          "source_file_sha256": "aca1d4c9ef1e2ccb5427c6f525aadc3d8b18fa00a9e767c2d0fa404563f46509",
+          "stable_v5d_id": "wall_v5d_025",
+          "dxf_entity_handles": [
+            "4453",
+            "4454"
+          ],
+          "source_layer": "",
+          "orientation": "horizontal",
+          "length_m": 3.77,
+          "wall_type": "interior",
+          "extraction_confidence": 0.95,
+          "validation_status": "structural_match",
+          "unit": "meters"
+        }
+      }
+    },
+    "wall_iz9ukq53zi5zkvut": {
+      "object": "node",
+      "id": "wall_iz9ukq53zi5zkvut",
+      "type": "wall",
+      "name": "Wall 27 (interior)",
+      "parentId": "level_5oruhniqbwe5rxg4",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "visible": true,
+      "start": [
+        317.259,
+        62.829
+      ],
+      "end": [
+        319.159,
+        62.829
+      ],
+      "thickness": 0.2,
+      "height": 2.7,
+      "children": [],
+      "metadata": {
+        "vision5d": {
+          "project_id": "real-2d-45x45-32c4e1ba-151",
+          "source_file_sha256": "aca1d4c9ef1e2ccb5427c6f525aadc3d8b18fa00a9e767c2d0fa404563f46509",
+          "stable_v5d_id": "wall_v5d_026",
+          "dxf_entity_handles": [
+            "443C",
+            "4448",
+            "4449"
+          ],
+          "source_layer": "",
+          "orientation": "horizontal",
+          "length_m": 1.9,
+          "wall_type": "interior",
+          "extraction_confidence": 0.95,
+          "validation_status": "structural_match",
+          "unit": "meters"
+        }
+      }
+    },
+    "wall_xx97kczqytc1dvot": {
+      "object": "node",
+      "id": "wall_xx97kczqytc1dvot",
+      "type": "wall",
+      "name": "Wall 28 (exterior)",
+      "parentId": "level_5oruhniqbwe5rxg4",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "visible": true,
+      "start": [
+        313.051,
+        64.129
+      ],
+      "end": [
+        318.179,
+        64.129
+      ],
+      "thickness": 0.2,
+      "height": 2.7,
+      "children": [],
+      "metadata": {
+        "vision5d": {
+          "project_id": "real-2d-45x45-32c4e1ba-151",
+          "source_file_sha256": "aca1d4c9ef1e2ccb5427c6f525aadc3d8b18fa00a9e767c2d0fa404563f46509",
+          "stable_v5d_id": "wall_v5d_027",
+          "dxf_entity_handles": [
+            "4425",
+            "443B",
+            "445C"
+          ],
+          "source_layer": "",
+          "orientation": "horizontal",
+          "length_m": 5.127,
+          "wall_type": "exterior",
+          "extraction_confidence": 0.95,
+          "validation_status": "structural_match",
+          "unit": "meters"
+        }
+      }
+    },
+    "wall_0n0z374oid4sgu6f": {
+      "object": "node",
+      "id": "wall_0n0z374oid4sgu6f",
+      "type": "wall",
+      "name": "Wall 29 (exterior)",
+      "parentId": "level_5oruhniqbwe5rxg4",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "visible": true,
+      "start": [
+        298.609,
+        59.297
+      ],
+      "end": [
+        298.609,
+        59.398
+      ],
+      "thickness": 0.2,
+      "height": 2.7,
+      "children": [],
+      "metadata": {
+        "vision5d": {
+          "project_id": "real-2d-45x45-32c4e1ba-151",
+          "source_file_sha256": "aca1d4c9ef1e2ccb5427c6f525aadc3d8b18fa00a9e767c2d0fa404563f46509",
+          "stable_v5d_id": "wall_v5d_028",
+          "dxf_entity_handles": [
+            "441A"
+          ],
+          "source_layer": "",
+          "orientation": "vertical",
+          "length_m": 0.101,
+          "wall_type": "exterior",
+          "extraction_confidence": 0.95,
+          "validation_status": "structural_match",
+          "unit": "meters"
+        }
+      }
+    },
+    "wall_41tbypcp8j58y4ki": {
+      "object": "node",
+      "id": "wall_41tbypcp8j58y4ki",
+      "type": "wall",
+      "name": "Wall 30 (interior)",
+      "parentId": "level_5oruhniqbwe5rxg4",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "visible": true,
+      "start": [
+        305.655,
+        45.527
+      ],
+      "end": [
+        305.655,
+        45.839
+      ],
+      "thickness": 0.2,
+      "height": 2.7,
+      "children": [],
+      "metadata": {
+        "vision5d": {
+          "project_id": "real-2d-45x45-32c4e1ba-151",
+          "source_file_sha256": "aca1d4c9ef1e2ccb5427c6f525aadc3d8b18fa00a9e767c2d0fa404563f46509",
+          "stable_v5d_id": "wall_v5d_029",
+          "dxf_entity_handles": [
+            "43B7"
+          ],
+          "source_layer": "",
+          "orientation": "vertical",
+          "length_m": 0.311,
+          "wall_type": "interior",
+          "extraction_confidence": 0.95,
+          "validation_status": "structural_match",
+          "unit": "meters"
+        }
+      }
+    },
+    "wall_lxd202czhmbxtkue": {
+      "object": "node",
+      "id": "wall_lxd202czhmbxtkue",
+      "type": "wall",
+      "name": "Wall 31 (interior)",
+      "parentId": "level_5oruhniqbwe5rxg4",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "visible": true,
+      "start": [
+        306.253,
+        42.212
+      ],
+      "end": [
+        306.253,
+        43.662
+      ],
+      "thickness": 0.2,
+      "height": 2.7,
+      "children": [],
+      "metadata": {
+        "vision5d": {
+          "project_id": "real-2d-45x45-32c4e1ba-151",
+          "source_file_sha256": "aca1d4c9ef1e2ccb5427c6f525aadc3d8b18fa00a9e767c2d0fa404563f46509",
+          "stable_v5d_id": "wall_v5d_030",
+          "dxf_entity_handles": [
+            "4406",
+            "4407"
+          ],
+          "source_layer": "",
+          "orientation": "vertical",
+          "length_m": 1.45,
+          "wall_type": "interior",
+          "extraction_confidence": 0.95,
+          "validation_status": "structural_match",
+          "unit": "meters"
+        }
+      }
+    },
+    "wall_97hhl9ghd4yrcih6": {
+      "object": "node",
+      "id": "wall_97hhl9ghd4yrcih6",
+      "type": "wall",
+      "name": "Wall 32 (interior)",
+      "parentId": "level_5oruhniqbwe5rxg4",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "visible": true,
+      "start": [
+        307.631,
+        57.833
+      ],
+      "end": [
+        307.631,
+        59.398
+      ],
+      "thickness": 0.2,
+      "height": 2.7,
+      "children": [],
+      "metadata": {
+        "vision5d": {
+          "project_id": "real-2d-45x45-32c4e1ba-151",
+          "source_file_sha256": "aca1d4c9ef1e2ccb5427c6f525aadc3d8b18fa00a9e767c2d0fa404563f46509",
+          "stable_v5d_id": "wall_v5d_031",
+          "dxf_entity_handles": [
+            "441B",
+            "4430"
+          ],
+          "source_layer": "",
+          "orientation": "vertical",
+          "length_m": 1.566,
+          "wall_type": "interior",
+          "extraction_confidence": 0.95,
+          "validation_status": "structural_match",
+          "unit": "meters"
+        }
+      }
+    },
+    "wall_w78ju2ehceh8rkst": {
+      "object": "node",
+      "id": "wall_w78ju2ehceh8rkst",
+      "type": "wall",
+      "name": "Wall 33 (interior)",
+      "parentId": "level_5oruhniqbwe5rxg4",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "visible": true,
+      "start": [
+        309.541,
+        36.512
+      ],
+      "end": [
+        309.541,
+        41.912
+      ],
+      "thickness": 0.2,
+      "height": 2.7,
+      "children": [],
+      "metadata": {
+        "vision5d": {
+          "project_id": "real-2d-45x45-32c4e1ba-151",
+          "source_file_sha256": "aca1d4c9ef1e2ccb5427c6f525aadc3d8b18fa00a9e767c2d0fa404563f46509",
+          "stable_v5d_id": "wall_v5d_032",
+          "dxf_entity_handles": [
+            "43FB",
+            "43FC"
+          ],
+          "source_layer": "",
+          "orientation": "vertical",
+          "length_m": 5.4,
+          "wall_type": "interior",
+          "extraction_confidence": 0.95,
+          "validation_status": "structural_match",
+          "unit": "meters"
+        }
+      }
+    },
+    "wall_krbunss5089q9pio": {
+      "object": "node",
+      "id": "wall_krbunss5089q9pio",
+      "type": "wall",
+      "name": "Wall 34 (interior)",
+      "parentId": "level_5oruhniqbwe5rxg4",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "visible": true,
+      "start": [
+        311.448,
+        44.15
+      ],
+      "end": [
+        311.448,
+        50.142
+      ],
+      "thickness": 0.2,
+      "height": 2.7,
+      "children": [],
+      "metadata": {
+        "vision5d": {
+          "project_id": "real-2d-45x45-32c4e1ba-151",
+          "source_file_sha256": "aca1d4c9ef1e2ccb5427c6f525aadc3d8b18fa00a9e767c2d0fa404563f46509",
+          "stable_v5d_id": "wall_v5d_033",
+          "dxf_entity_handles": [
+            "43AE",
+            "43AF"
+          ],
+          "source_layer": "",
+          "orientation": "vertical",
+          "length_m": 5.993,
+          "wall_type": "interior",
+          "extraction_confidence": 0.95,
+          "validation_status": "structural_match",
+          "unit": "meters"
+        }
+      }
+    },
+    "wall_4u2unh5ms2kfg7j3": {
+      "object": "node",
+      "id": "wall_4u2unh5ms2kfg7j3",
+      "type": "wall",
+      "name": "Wall 35 (interior)",
+      "parentId": "level_5oruhniqbwe5rxg4",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "visible": true,
+      "start": [
+        313.021,
+        57.833
+      ],
+      "end": [
+        313.021,
+        58.403
+      ],
+      "thickness": 0.2,
+      "height": 2.7,
+      "children": [],
+      "metadata": {
+        "vision5d": {
+          "project_id": "real-2d-45x45-32c4e1ba-151",
+          "source_file_sha256": "aca1d4c9ef1e2ccb5427c6f525aadc3d8b18fa00a9e767c2d0fa404563f46509",
+          "stable_v5d_id": "wall_v5d_034",
+          "dxf_entity_handles": [
+            "4431"
+          ],
+          "source_layer": "",
+          "orientation": "vertical",
+          "length_m": 0.57,
+          "wall_type": "interior",
+          "extraction_confidence": 0.95,
+          "validation_status": "structural_match",
+          "unit": "meters"
+        }
+      }
+    },
+    "wall_xdq72un7uwmvkk5e": {
+      "object": "node",
+      "id": "wall_xdq72un7uwmvkk5e",
+      "type": "wall",
+      "name": "Wall 36 (interior)",
+      "parentId": "level_5oruhniqbwe5rxg4",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "visible": true,
+      "start": [
+        313.481,
+        58.447
+      ],
+      "end": [
+        313.481,
+        64.129
+      ],
+      "thickness": 0.2,
+      "height": 2.7,
+      "children": [],
+      "metadata": {
+        "vision5d": {
+          "project_id": "real-2d-45x45-32c4e1ba-151",
+          "source_file_sha256": "aca1d4c9ef1e2ccb5427c6f525aadc3d8b18fa00a9e767c2d0fa404563f46509",
+          "stable_v5d_id": "wall_v5d_035",
+          "dxf_entity_handles": [
+            "4427",
+            "4428"
+          ],
+          "source_layer": "",
+          "orientation": "vertical",
+          "length_m": 5.682,
+          "wall_type": "interior",
+          "extraction_confidence": 0.95,
+          "validation_status": "structural_match",
+          "unit": "meters"
+        }
+      }
+    },
+    "wall_bfq2y62b434us7gh": {
+      "object": "node",
+      "id": "wall_bfq2y62b434us7gh",
+      "type": "wall",
+      "name": "Wall 37 (interior)",
+      "parentId": "level_5oruhniqbwe5rxg4",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "visible": true,
+      "start": [
+        314.799,
+        60.923
+      ],
+      "end": [
+        314.799,
+        61.493
+      ],
+      "thickness": 0.2,
+      "height": 2.7,
+      "children": [],
+      "metadata": {
+        "vision5d": {
+          "project_id": "real-2d-45x45-32c4e1ba-151",
+          "source_file_sha256": "aca1d4c9ef1e2ccb5427c6f525aadc3d8b18fa00a9e767c2d0fa404563f46509",
+          "stable_v5d_id": "wall_v5d_036",
+          "dxf_entity_handles": [
+            "4451"
+          ],
+          "source_layer": "",
+          "orientation": "vertical",
+          "length_m": 0.57,
+          "wall_type": "interior",
+          "extraction_confidence": 0.95,
+          "validation_status": "structural_match",
+          "unit": "meters"
+        }
+      }
+    },
+    "wall_7dbn70pmm73vz3qc": {
+      "object": "node",
+      "id": "wall_7dbn70pmm73vz3qc",
+      "type": "wall",
+      "name": "Wall 38 (interior)",
+      "parentId": "level_5oruhniqbwe5rxg4",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "visible": true,
+      "start": [
+        315.155,
+        45.527
+      ],
+      "end": [
+        315.155,
+        64.129
+      ],
+      "thickness": 0.2,
+      "height": 2.7,
+      "children": [],
+      "metadata": {
+        "vision5d": {
+          "project_id": "real-2d-45x45-32c4e1ba-151",
+          "source_file_sha256": "aca1d4c9ef1e2ccb5427c6f525aadc3d8b18fa00a9e767c2d0fa404563f46509",
+          "stable_v5d_id": "wall_v5d_037",
+          "dxf_entity_handles": [
+            "43B8",
+            "445E",
+            "445F"
+          ],
+          "source_layer": "",
+          "orientation": "vertical",
+          "length_m": 18.602,
+          "wall_type": "interior",
+          "extraction_confidence": 0.95,
+          "validation_status": "structural_match",
+          "unit": "meters"
+        }
+      }
+    },
+    "wall_bp2503ozifv6bvtp": {
+      "object": "node",
+      "id": "wall_bp2503ozifv6bvtp",
+      "type": "wall",
+      "name": "Wall 39 (interior)",
+      "parentId": "level_5oruhniqbwe5rxg4",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "visible": true,
+      "start": [
+        317.259,
+        62.987
+      ],
+      "end": [
+        317.259,
+        63.147
+      ],
+      "thickness": 0.2,
+      "height": 2.7,
+      "children": [],
+      "metadata": {
+        "vision5d": {
+          "project_id": "real-2d-45x45-32c4e1ba-151",
+          "source_file_sha256": "aca1d4c9ef1e2ccb5427c6f525aadc3d8b18fa00a9e767c2d0fa404563f46509",
+          "stable_v5d_id": "wall_v5d_038",
+          "dxf_entity_handles": [
+            "4446"
+          ],
+          "source_layer": "",
+          "orientation": "vertical",
+          "length_m": 0.16,
+          "wall_type": "interior",
+          "extraction_confidence": 0.95,
+          "validation_status": "structural_match",
+          "unit": "meters"
+        }
+      }
+    },
+    "wall_y9ocrunle1kf9mco": {
+      "object": "node",
+      "id": "wall_y9ocrunle1kf9mco",
+      "type": "wall",
+      "name": "Wall 40 (interior)",
+      "parentId": "level_5oruhniqbwe5rxg4",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "visible": true,
+      "start": [
+        318.001,
+        62.829
+      ],
+      "end": [
+        318.001,
+        64.129
+      ],
+      "thickness": 0.2,
+      "height": 2.7,
+      "children": [],
+      "metadata": {
+        "vision5d": {
+          "project_id": "real-2d-45x45-32c4e1ba-151",
+          "source_file_sha256": "aca1d4c9ef1e2ccb5427c6f525aadc3d8b18fa00a9e767c2d0fa404563f46509",
+          "stable_v5d_id": "wall_v5d_039",
+          "dxf_entity_handles": [
+            "443D",
+            "443E"
+          ],
+          "source_layer": "",
+          "orientation": "vertical",
+          "length_m": 1.3,
+          "wall_type": "interior",
+          "extraction_confidence": 0.95,
+          "validation_status": "structural_match",
+          "unit": "meters"
+        }
+      }
+    },
+    "wall_bxo6xo9ds2r7wld1": {
+      "object": "node",
+      "id": "wall_bxo6xo9ds2r7wld1",
+      "type": "wall",
+      "name": "Wall 41 (interior)",
+      "parentId": "level_5oruhniqbwe5rxg4",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "visible": true,
+      "start": [
+        318.572,
+        35.762
+      ],
+      "end": [
+        318.572,
+        61.493
+      ],
+      "thickness": 0.2,
+      "height": 2.7,
+      "children": [],
+      "metadata": {
+        "vision5d": {
+          "project_id": "real-2d-45x45-32c4e1ba-151",
+          "source_file_sha256": "aca1d4c9ef1e2ccb5427c6f525aadc3d8b18fa00a9e767c2d0fa404563f46509",
+          "stable_v5d_id": "wall_v5d_040",
+          "dxf_entity_handles": [
+            "43CF",
+            "43D0",
+            "43DA",
+            "43DB",
+            "4452"
+          ],
+          "source_layer": "",
+          "orientation": "vertical",
+          "length_m": 25.73,
+          "wall_type": "interior",
+          "extraction_confidence": 0.95,
+          "validation_status": "structural_match",
+          "unit": "meters"
+        }
+      }
+    },
+    "wall_znm8l6ancn6y1fn4": {
+      "object": "node",
+      "id": "wall_znm8l6ancn6y1fn4",
+      "type": "wall",
+      "name": "Wall 42 (interior)",
+      "parentId": "level_5oruhniqbwe5rxg4",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "visible": true,
+      "start": [
+        319.159,
+        46.455
+      ],
+      "end": [
+        319.159,
+        63.147
+      ],
+      "thickness": 0.2,
+      "height": 2.7,
+      "children": [],
+      "metadata": {
+        "vision5d": {
+          "project_id": "real-2d-45x45-32c4e1ba-151",
+          "source_file_sha256": "aca1d4c9ef1e2ccb5427c6f525aadc3d8b18fa00a9e767c2d0fa404563f46509",
+          "stable_v5d_id": "wall_v5d_041",
+          "dxf_entity_handles": [
+            "43C3",
+            "4447"
+          ],
+          "source_layer": "",
+          "orientation": "vertical",
+          "length_m": 16.692,
+          "wall_type": "interior",
+          "extraction_confidence": 0.95,
+          "validation_status": "structural_match",
+          "unit": "meters"
+        }
+      }
+    },
+    "wall_oh682ec5s248i02r": {
+      "object": "node",
+      "id": "wall_oh682ec5s248i02r",
+      "type": "wall",
+      "name": "Wall 43 (interior)",
+      "parentId": "level_5oruhniqbwe5rxg4",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "visible": true,
+      "start": [
+        326.734,
+        42.686
+      ],
+      "end": [
+        326.734,
+        48.243
+      ],
+      "thickness": 0.2,
+      "height": 2.7,
+      "children": [],
+      "metadata": {
+        "vision5d": {
+          "project_id": "real-2d-45x45-32c4e1ba-151",
+          "source_file_sha256": "aca1d4c9ef1e2ccb5427c6f525aadc3d8b18fa00a9e767c2d0fa404563f46509",
+          "stable_v5d_id": "wall_v5d_042",
+          "dxf_entity_handles": [
+            "4467",
+            "4522",
+            "454E"
+          ],
+          "source_layer": "",
+          "orientation": "vertical",
+          "length_m": 5.558,
+          "wall_type": "interior",
+          "extraction_confidence": 0.95,
+          "validation_status": "structural_match",
+          "unit": "meters"
+        }
+      }
+    },
+    "wall_jdlgjy9f3bp61sp7": {
+      "object": "node",
+      "id": "wall_jdlgjy9f3bp61sp7",
+      "type": "wall",
+      "name": "Wall 44 (interior)",
+      "parentId": "level_5oruhniqbwe5rxg4",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "visible": true,
+      "start": [
+        328.101,
+        40.129
+      ],
+      "end": [
+        328.101,
+        40.399
+      ],
+      "thickness": 0.2,
+      "height": 2.7,
+      "children": [],
+      "metadata": {
+        "vision5d": {
+          "project_id": "real-2d-45x45-32c4e1ba-151",
+          "source_file_sha256": "aca1d4c9ef1e2ccb5427c6f525aadc3d8b18fa00a9e767c2d0fa404563f46509",
+          "stable_v5d_id": "wall_v5d_043",
+          "dxf_entity_handles": [
+            "450C"
+          ],
+          "source_layer": "",
+          "orientation": "vertical",
+          "length_m": 0.27,
+          "wall_type": "interior",
+          "extraction_confidence": 0.95,
+          "validation_status": "structural_match",
+          "unit": "meters"
+        }
+      }
+    },
+    "wall_b2qk21754r4pi30p": {
+      "object": "node",
+      "id": "wall_b2qk21754r4pi30p",
+      "type": "wall",
+      "name": "Wall 45 (interior)",
+      "parentId": "level_5oruhniqbwe5rxg4",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "visible": true,
+      "start": [
+        329.019,
+        42.656
+      ],
+      "end": [
+        329.019,
+        44.256
+      ],
+      "thickness": 0.2,
+      "height": 2.7,
+      "children": [],
+      "metadata": {
+        "vision5d": {
+          "project_id": "real-2d-45x45-32c4e1ba-151",
+          "source_file_sha256": "aca1d4c9ef1e2ccb5427c6f525aadc3d8b18fa00a9e767c2d0fa404563f46509",
+          "stable_v5d_id": "wall_v5d_044",
+          "dxf_entity_handles": [
+            "4519",
+            "451A"
+          ],
+          "source_layer": "",
+          "orientation": "vertical",
+          "length_m": 1.6,
+          "wall_type": "interior",
+          "extraction_confidence": 0.95,
+          "validation_status": "structural_match",
+          "unit": "meters"
+        }
+      }
+    },
+    "wall_eptz76n64j8ouw56": {
+      "object": "node",
+      "id": "wall_eptz76n64j8ouw56",
+      "type": "wall",
+      "name": "Wall 46 (interior)",
+      "parentId": "level_5oruhniqbwe5rxg4",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "visible": true,
+      "start": [
+        329.989,
+        44.406
+      ],
+      "end": [
+        329.989,
+        49.736
+      ],
+      "thickness": 0.2,
+      "height": 2.7,
+      "children": [],
+      "metadata": {
+        "vision5d": {
+          "project_id": "real-2d-45x45-32c4e1ba-151",
+          "source_file_sha256": "aca1d4c9ef1e2ccb5427c6f525aadc3d8b18fa00a9e767c2d0fa404563f46509",
+          "stable_v5d_id": "wall_v5d_045",
+          "dxf_entity_handles": [
+            "4474",
+            "4475"
+          ],
+          "source_layer": "",
+          "orientation": "vertical",
+          "length_m": 5.33,
+          "wall_type": "interior",
+          "extraction_confidence": 0.95,
+          "validation_status": "structural_match",
+          "unit": "meters"
+        }
+      }
+    },
+    "wall_cso7u97ig7vcq4tg": {
+      "object": "node",
+      "id": "wall_cso7u97ig7vcq4tg",
+      "type": "wall",
+      "name": "Wall 47 (interior)",
+      "parentId": "level_5oruhniqbwe5rxg4",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "visible": true,
+      "start": [
+        331.234,
+        39.486
+      ],
+      "end": [
+        331.234,
+        48.243
+      ],
+      "thickness": 0.2,
+      "height": 2.7,
+      "children": [],
+      "metadata": {
+        "vision5d": {
+          "project_id": "real-2d-45x45-32c4e1ba-151",
+          "source_file_sha256": "aca1d4c9ef1e2ccb5427c6f525aadc3d8b18fa00a9e767c2d0fa404563f46509",
+          "stable_v5d_id": "wall_v5d_046",
+          "dxf_entity_handles": [
+            "4468",
+            "4503",
+            "4504",
+            "4523"
+          ],
+          "source_layer": "",
+          "orientation": "vertical",
+          "length_m": 8.758,
+          "wall_type": "interior",
+          "extraction_confidence": 0.95,
+          "validation_status": "structural_match",
+          "unit": "meters"
+        }
+      }
+    },
+    "wall_yskxumj77elq59q9": {
+      "object": "node",
+      "id": "wall_yskxumj77elq59q9",
+      "type": "wall",
+      "name": "Wall 48 (interior)",
+      "parentId": "level_5oruhniqbwe5rxg4",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "visible": true,
+      "start": [
+        331.672,
+        46.736
+      ],
+      "end": [
+        331.672,
+        49.736
+      ],
+      "thickness": 0.2,
+      "height": 2.7,
+      "children": [],
+      "metadata": {
+        "vision5d": {
+          "project_id": "real-2d-45x45-32c4e1ba-151",
+          "source_file_sha256": "aca1d4c9ef1e2ccb5427c6f525aadc3d8b18fa00a9e767c2d0fa404563f46509",
+          "stable_v5d_id": "wall_v5d_047",
+          "dxf_entity_handles": [
+            "448A",
+            "448B"
+          ],
+          "source_layer": "",
+          "orientation": "vertical",
+          "length_m": 3.0,
+          "wall_type": "interior",
+          "extraction_confidence": 0.95,
+          "validation_status": "structural_match",
+          "unit": "meters"
+        }
+      }
+    },
+    "wall_bfltsapdoxm3d38i": {
+      "object": "node",
+      "id": "wall_bfltsapdoxm3d38i",
+      "type": "wall",
+      "name": "Wall 49 (interior)",
+      "parentId": "level_5oruhniqbwe5rxg4",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "visible": true,
+      "start": [
+        332.18,
+        44.406
+      ],
+      "end": [
+        332.18,
+        46.586
+      ],
+      "thickness": 0.2,
+      "height": 2.7,
+      "children": [],
+      "metadata": {
+        "vision5d": {
+          "project_id": "real-2d-45x45-32c4e1ba-151",
+          "source_file_sha256": "aca1d4c9ef1e2ccb5427c6f525aadc3d8b18fa00a9e767c2d0fa404563f46509",
+          "stable_v5d_id": "wall_v5d_048",
+          "dxf_entity_handles": [
+            "4545",
+            "4546"
+          ],
+          "source_layer": "",
+          "orientation": "vertical",
+          "length_m": 2.18,
+          "wall_type": "interior",
+          "extraction_confidence": 0.95,
+          "validation_status": "structural_match",
+          "unit": "meters"
+        }
+      }
+    },
+    "wall_4bd7wphdh4z4uosd": {
+      "object": "node",
+      "id": "wall_4bd7wphdh4z4uosd",
+      "type": "wall",
+      "name": "Wall 50 (interior)",
+      "parentId": "level_5oruhniqbwe5rxg4",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "visible": true,
+      "start": [
+        333.174,
+        37.4
+      ],
+      "end": [
+        333.174,
+        44.256
+      ],
+      "thickness": 0.2,
+      "height": 2.7,
+      "children": [],
+      "metadata": {
+        "vision5d": {
+          "project_id": "real-2d-45x45-32c4e1ba-151",
+          "source_file_sha256": "aca1d4c9ef1e2ccb5427c6f525aadc3d8b18fa00a9e767c2d0fa404563f46509",
+          "stable_v5d_id": "wall_v5d_049",
+          "dxf_entity_handles": [
+            "44EB",
+            "450D",
+            "453A",
+            "453B"
+          ],
+          "source_layer": "",
+          "orientation": "vertical",
+          "length_m": 6.856,
+          "wall_type": "interior",
+          "extraction_confidence": 0.95,
+          "validation_status": "structural_match",
+          "unit": "meters"
+        }
+      }
+    },
+    "wall_eqoqr1hdac2ubvf0": {
+      "object": "node",
+      "id": "wall_eqoqr1hdac2ubvf0",
+      "type": "wall",
+      "name": "Wall 51 (interior)",
+      "parentId": "level_5oruhniqbwe5rxg4",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "visible": true,
+      "start": [
+        333.798,
+        47.336
+      ],
+      "end": [
+        333.798,
+        50.736
+      ],
+      "thickness": 0.2,
+      "height": 2.7,
+      "children": [],
+      "metadata": {
+        "vision5d": {
+          "project_id": "real-2d-45x45-32c4e1ba-151",
+          "source_file_sha256": "aca1d4c9ef1e2ccb5427c6f525aadc3d8b18fa00a9e767c2d0fa404563f46509",
+          "stable_v5d_id": "wall_v5d_050",
+          "dxf_entity_handles": [
+            "44A0",
+            "44A1"
+          ],
+          "source_layer": "",
+          "orientation": "vertical",
+          "length_m": 3.4,
+          "wall_type": "interior",
+          "extraction_confidence": 0.95,
+          "validation_status": "structural_match",
+          "unit": "meters"
+        }
+      }
+    },
+    "wall_49goxolk2xgyyfii": {
+      "object": "node",
+      "id": "wall_49goxolk2xgyyfii",
+      "type": "wall",
+      "name": "Wall 52 (interior)",
+      "parentId": "level_5oruhniqbwe5rxg4",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "visible": true,
+      "start": [
+        335.716,
+        36.666
+      ],
+      "end": [
+        335.716,
+        40.014
+      ],
+      "thickness": 0.2,
+      "height": 2.7,
+      "children": [],
+      "metadata": {
+        "vision5d": {
+          "project_id": "real-2d-45x45-32c4e1ba-151",
+          "source_file_sha256": "aca1d4c9ef1e2ccb5427c6f525aadc3d8b18fa00a9e767c2d0fa404563f46509",
+          "stable_v5d_id": "wall_v5d_051",
+          "dxf_entity_handles": [
+            "44F8",
+            "44F9"
+          ],
+          "source_layer": "",
+          "orientation": "vertical",
+          "length_m": 3.348,
+          "wall_type": "interior",
+          "extraction_confidence": 0.95,
+          "validation_status": "structural_match",
+          "unit": "meters"
+        }
+      }
+    },
+    "wall_6ic2uleylmwrlzf1": {
+      "object": "node",
+      "id": "wall_6ic2uleylmwrlzf1",
+      "type": "wall",
+      "name": "Wall 53 (interior)",
+      "parentId": "level_5oruhniqbwe5rxg4",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "visible": true,
+      "start": [
+        336.384,
+        37.4
+      ],
+      "end": [
+        336.384,
+        45.077
+      ],
+      "thickness": 0.2,
+      "height": 2.7,
+      "children": [],
+      "metadata": {
+        "vision5d": {
+          "project_id": "real-2d-45x45-32c4e1ba-151",
+          "source_file_sha256": "aca1d4c9ef1e2ccb5427c6f525aadc3d8b18fa00a9e767c2d0fa404563f46509",
+          "stable_v5d_id": "wall_v5d_052",
+          "dxf_entity_handles": [
+            "44CA",
+            "44D5",
+            "44EC",
+            "454F"
+          ],
+          "source_layer": "",
+          "orientation": "vertical",
+          "length_m": 7.677,
+          "wall_type": "interior",
+          "extraction_confidence": 0.95,
+          "validation_status": "structural_match",
+          "unit": "meters"
+        }
+      }
+    },
+    "wall_ahgjwaovdxrazyxy": {
+      "object": "node",
+      "id": "wall_ahgjwaovdxrazyxy",
+      "type": "wall",
+      "name": "Wall 54 (interior)",
+      "parentId": "level_5oruhniqbwe5rxg4",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "visible": true,
+      "start": [
+        336.984,
+        42.652
+      ],
+      "end": [
+        336.984,
+        42.789
+      ],
+      "thickness": 0.2,
+      "height": 2.7,
+      "children": [],
+      "metadata": {
+        "vision5d": {
+          "project_id": "real-2d-45x45-32c4e1ba-151",
+          "source_file_sha256": "aca1d4c9ef1e2ccb5427c6f525aadc3d8b18fa00a9e767c2d0fa404563f46509",
+          "stable_v5d_id": "wall_v5d_053",
+          "dxf_entity_handles": [
+            "44A9"
+          ],
+          "source_layer": "",
+          "orientation": "vertical",
+          "length_m": 0.137,
+          "wall_type": "interior",
+          "extraction_confidence": 0.95,
+          "validation_status": "structural_match",
+          "unit": "meters"
+        }
+      }
+    },
+    "wall_70bsbjmz87ov95fc": {
+      "object": "node",
+      "id": "wall_70bsbjmz87ov95fc",
+      "type": "wall",
+      "name": "Wall 55 (interior)",
+      "parentId": "level_5oruhniqbwe5rxg4",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "visible": true,
+      "start": [
+        338.567,
+        37.886
+      ],
+      "end": [
+        338.567,
+        40.936
+      ],
+      "thickness": 0.2,
+      "height": 2.7,
+      "children": [],
+      "metadata": {
+        "vision5d": {
+          "project_id": "real-2d-45x45-32c4e1ba-151",
+          "source_file_sha256": "aca1d4c9ef1e2ccb5427c6f525aadc3d8b18fa00a9e767c2d0fa404563f46509",
+          "stable_v5d_id": "wall_v5d_054",
+          "dxf_entity_handles": [
+            "44C1",
+            "44C2",
+            "44E2",
+            "44E3"
+          ],
+          "source_layer": "",
+          "orientation": "vertical",
+          "length_m": 3.05,
+          "wall_type": "interior",
+          "extraction_confidence": 0.95,
+          "validation_status": "structural_match",
+          "unit": "meters"
+        }
+      }
+    },
+    "wall_8om0rzy6su5mk8la": {
+      "object": "node",
+      "id": "wall_8om0rzy6su5mk8la",
+      "type": "wall",
+      "name": "Wall 56 (interior)",
+      "parentId": "level_5oruhniqbwe5rxg4",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "visible": true,
+      "start": [
+        339.8,
+        38.129
+      ],
+      "end": [
+        339.8,
+        44.586
+      ],
+      "thickness": 0.2,
+      "height": 2.7,
+      "children": [],
+      "metadata": {
+        "vision5d": {
+          "project_id": "real-2d-45x45-32c4e1ba-151",
+          "source_file_sha256": "aca1d4c9ef1e2ccb5427c6f525aadc3d8b18fa00a9e767c2d0fa404563f46509",
+          "stable_v5d_id": "wall_v5d_055",
+          "dxf_entity_handles": [
+            "44B6",
+            "44B7",
+            "44CB",
+            "44D6"
+          ],
+          "source_layer": "",
+          "orientation": "vertical",
+          "length_m": 6.457,
+          "wall_type": "interior",
+          "extraction_confidence": 0.95,
+          "validation_status": "structural_match",
+          "unit": "meters"
+        }
+      }
+    },
+    "wall_ywg5l73swp7zw6rc": {
+      "object": "node",
+      "id": "wall_ywg5l73swp7zw6rc",
+      "type": "wall",
+      "name": "Wall 57 (exterior)",
+      "parentId": "level_5oruhniqbwe5rxg4",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "visible": true,
+      "start": [
+        340.14,
+        42.652
+      ],
+      "end": [
+        340.14,
+        42.789
+      ],
+      "thickness": 0.2,
+      "height": 2.7,
+      "children": [],
+      "metadata": {
+        "vision5d": {
+          "project_id": "real-2d-45x45-32c4e1ba-151",
+          "source_file_sha256": "aca1d4c9ef1e2ccb5427c6f525aadc3d8b18fa00a9e767c2d0fa404563f46509",
+          "stable_v5d_id": "wall_v5d_056",
+          "dxf_entity_handles": [
+            "44AA"
+          ],
+          "source_layer": "",
+          "orientation": "vertical",
+          "length_m": 0.137,
+          "wall_type": "exterior",
+          "extraction_confidence": 0.95,
+          "validation_status": "structural_match",
+          "unit": "meters"
+        }
+      }
+    },
+    "slab_0zarsukaxuioqn3s": {
+      "object": "node",
+      "id": "slab_0zarsukaxuioqn3s",
+      "type": "slab",
+      "name": "Ground Floor Slab",
+      "parentId": "level_5oruhniqbwe5rxg4",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "visible": true,
+      "polygon": [
+        [
+          317.953,
+          35.762
+        ],
+        [
+          318.422,
+          35.762
+        ],
+        [
+          340.14,
+          42.652
+        ],
+        [
+          340.14,
+          42.789
+        ],
+        [
+          313.051,
+          64.129
+        ],
+        [
+          318.179,
+          64.129
+        ],
+        [
+          298.609,
+          59.297
+        ],
+        [
+          298.609,
+          59.398
+        ]
+      ],
+      "holes": [],
+      "holeMetadata": [],
+      "elevation": 0.0,
+      "thickness": 0.15,
+      "autoFromWalls": true,
+      "metadata": {
+        "vision5d": {
+          "project_id": "real-2d-45x45-32c4e1ba-151",
+          "source_file_sha256": "aca1d4c9ef1e2ccb5427c6f525aadc3d8b18fa00a9e767c2d0fa404563f46509",
+          "derived_from": "exterior_wall_loop",
+          "extraction_confidence": 0.9,
+          "validation_status": "structural_match",
+          "unit": "meters",
+          "area_m2": 538.363
+        }
+      }
+    },
+    "door_57jvaf03umywebf3": {
+      "object": "node",
+      "id": "door_57jvaf03umywebf3",
+      "type": "door",
+      "name": "Door 1",
+      "parentId": "level_5oruhniqbwe5rxg4",
+      "position": [
+        13.373,
+        0.0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "wallId": "wall_91lhm9hv1210ku8o",
+      "side": "front",
+      "width": 0.9,
+      "height": 2.1,
+      "doorType": "hinged",
+      "doorCategory": "interior",
+      "openingKind": "door",
+      "openingShape": "rectangle",
+      "visible": true,
+      "metadata": {
+        "vision5d": {
+          "project_id": "real-2d-45x45-32c4e1ba-151",
+          "source_file_sha256": "aca1d4c9ef1e2ccb5427c6f525aadc3d8b18fa00a9e767c2d0fa404563f46509",
+          "stable_v5d_id": "door_v5d_000",
+          "host_wall_id": "wall_91lhm9hv1210ku8o",
+          "extraction_confidence": 0.85,
+          "extraction_method": "placed_on_interior_wall",
+          "validation_status": "placement_valid",
+          "unit": "meters",
+          "global_position_for_reverse": [
+            322.3735,
+            36.512,
+            0.0
+          ]
+        }
+      }
+    },
+    "door_ud0j4n8cmvb4f9is": {
+      "object": "node",
+      "id": "door_ud0j4n8cmvb4f9is",
+      "type": "door",
+      "name": "Door 2",
+      "parentId": "level_5oruhniqbwe5rxg4",
+      "position": [
+        1.55,
+        0.0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "wallId": "wall_nenkh5gg0xazf213",
+      "side": "front",
+      "width": 0.9,
+      "height": 2.1,
+      "doorType": "hinged",
+      "doorCategory": "interior",
+      "openingKind": "door",
+      "openingShape": "rectangle",
+      "visible": true,
+      "metadata": {
+        "vision5d": {
+          "project_id": "real-2d-45x45-32c4e1ba-151",
+          "source_file_sha256": "aca1d4c9ef1e2ccb5427c6f525aadc3d8b18fa00a9e767c2d0fa404563f46509",
+          "stable_v5d_id": "door_v5d_001",
+          "host_wall_id": "wall_nenkh5gg0xazf213",
+          "extraction_confidence": 0.85,
+          "extraction_method": "placed_on_interior_wall",
+          "validation_status": "placement_valid",
+          "unit": "meters",
+          "global_position_for_reverse": [
+            334.724,
+            37.574,
+            0.0
+          ]
+        }
+      }
+    },
+    "window_k1gnmd3zlxzqcq97": {
+      "object": "node",
+      "id": "window_k1gnmd3zlxzqcq97",
+      "type": "window",
+      "name": "Window 1",
+      "parentId": "level_5oruhniqbwe5rxg4",
+      "position": [
+        0.235,
+        1.0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "wallId": "wall_yvdq5etn9lecelle",
+      "side": "front",
+      "width": 1.5,
+      "height": 1.2,
+      "windowType": "fixed",
+      "openingKind": "window",
+      "openingShape": "rectangle",
+      "visible": true,
+      "metadata": {
+        "vision5d": {
+          "project_id": "real-2d-45x45-32c4e1ba-151",
+          "source_file_sha256": "aca1d4c9ef1e2ccb5427c6f525aadc3d8b18fa00a9e767c2d0fa404563f46509",
+          "stable_v5d_id": "window_v5d_000",
+          "host_wall_id": "wall_yvdq5etn9lecelle",
+          "extraction_confidence": 0.85,
+          "extraction_method": "placed_on_exterior_wall",
+          "validation_status": "placement_valid",
+          "unit": "meters",
+          "global_position_for_reverse": [
+            318.1875,
+            35.762,
+            1.0
+          ]
+        }
+      }
+    }
+  },
+  "rootNodeIds": [
+    "site_1mwi0hu25d6an4lv"
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "GAP-001": {
+    "area": "Scene Format",
+    "proof_field": "nodes: PascalNode[] (flat array)",
+    "pascal_field": "nodes: Record<AnyNodeId, AnyNode> (string-keyed map)",
+    "conversion": "Convert array to map keyed by node.id. Must also provide rootNodeIds array."
+  },
+  "GAP-002": {
+    "area": "Root Nodes",
+    "proof_field": "No rootNodeIds \u2014 implicit from building with parentId=null",
+    "pascal_field": "Explicit rootNodeIds: string[]",
+    "conversion": "Find all nodes with parentId=null, add their IDs to rootNodeIds array."
+  },
+  "GAP-003": {
+    "area": "Wall Geometry",
+    "proof_field": "position [x,0,z] + custom start_point_2d/end_point_2d in metadata",
+    "pascal_field": "start: [x, y], end: [x, y] \u2014 2D tuples at node level",
+    "conversion": "Map start_point_2d \u2192 start, end_point_2d \u2192 end. Wall position from BaseNode becomes [0,0,0] (child of level)."
+  },
+  "GAP-004": {
+    "area": "Hierarchy",
+    "proof_field": "Custom children arrays on building, level",
+    "pascal_field": "parentId on every node + children arrays on building/level/wall",
+    "conversion": "Set parentId=levelId on walls/slab/doors/windows. Keep children arrays for building\u2192level, level\u2192children."
+  },
+  "GAP-005": {
+    "area": "Opening Position",
+    "proof_field": "Global 3D position [x, sill_height, z] in level coordinates",
+    "pascal_field": "Wall-local 3D position [u_along_wall, v_height, w_offset]",
+    "conversion": "Convert global\u2192local: project global point onto wall line. u = distance from wall start. v = sill height. w = 0 (centered on wall)."
+  },
+  "GAP-006": {
+    "area": "Metadata",
+    "proof_field": "metadata.vision5d with project_id, source_sha256, dxf_handles, etc.",
+    "pascal_field": "metadata: z.json().optional().default({})",
+    "conversion": "No conversion needed \u2014 z.json() accepts arbitrary JSON."
+  },
+  "GAP-007": {
+    "area": "Slab Polygon Axes",
+    "proof_field": "polygon: [[x, y], ...]",
+    "pascal_field": "polygon: z.array(z.tuple([z.number(), z.number()])) \u2014 described as [x, z] in docs",
+    "conversion": "Map: proof's (x,y) \u2192 Pascal's (x, z). Y-axis in proof = Z-axis (north) in Pascal level coords."
+  },
+  "GAP-008": {
+    "area": "Wall Thickness/Height",
+    "proof_field": "thickness: 0.20, height: 2.70 (hardcoded defaults)",
+    "pascal_field": "thickness: z.number().optional(), height: z.number().optional()",
+    "conversion": "No conversion needed \u2014 directly mappable."
+  },
+  "GAP-009": {
+    "area": "Site Node",
+    "proof_field": "No site node \u2014 building is root",
+    "pascal_field": "SiteNode is typically root with buildings as children",
+    "conversion": "Create a site node, set building.parentId = site.id, rootNodeIds = ['site_...']."
+  },
+  "GAP-010": {
+    "area": "ID Format",
+    "proof_field": "Custom IDs: wall_v5d_000, door_v5d_000, window_v5d_000, building_v5d001",
+    "pascal_field": "objectId('wall') \u2192 wall_<nanoid16>, objectId('door') \u2192 door_<nanoid16>",
+    "conversion": "Regenerate IDs using Pascal's nanoid format OR keep Vision 5D IDs. Both pass Zod validation (z.string())."
+  }
+}

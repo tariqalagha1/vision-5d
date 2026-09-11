@@ -1,0 +1,27 @@
+{
+  "revisions": [
+    {
+      "revision_id": "rev_001_original",
+      "type": "original",
+      "parent": null,
+      "node_count": 63,
+      "created_at": "2026-07-30T05:13:54.419077+00:00"
+    },
+    {
+      "revision_id": "rev_002_edited",
+      "type": "edited_pascal_scene",
+      "parent": "rev_001_original",
+      "node_count": 63,
+      "created_at": "2026-07-30T05:13:54.419077+00:00"
+    },
+    {
+      "revision_id": "rev_002_vision5d_update",
+      "type": "vision5d_updated",
+      "parent": "rev_001_original",
+      "node_count": 63,
+      "created_at": "2026-07-30T05:13:54.419077+00:00"
+    }
+  ],
+  "immutable_chain": true,
+  "original_was_not_modified": true
+}

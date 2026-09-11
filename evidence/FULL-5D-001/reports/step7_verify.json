@@ -1,0 +1,14 @@
+{
+  "furniture_added": 12,
+  "furniture_removed": 0,
+  "materials_changed": [
+    "floor",
+    "wall",
+    "ceiling"
+  ],
+  "lights_added": 3,
+  "cameras_added": 3,
+  "v1_hash": "ba55f102531cfb8323e923de882fc75895fd7c7685f8876aefdff0e54f5aefdd",
+  "v2_hash": "22e4d237325c221642e4f372fd487e5b429c925d800e6d91fe42dba0109b7ae4",
+  "hashes_differ": true
+}

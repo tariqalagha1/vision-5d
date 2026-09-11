@@ -1,0 +1,11 @@
+{
+  "sourceUnchanged": true,
+  "newRevisionId": "rev_002_staging_1f1e130d",
+  "parentRevisionId": "rev_001_original",
+  "correctionEventCount": 5,
+  "changedNodes": 2,
+  "createdNodes": 1,
+  "deletedNodes": 1,
+  "sourceSha256": "85bcd73980398f442cce1f35b6ab74e369bd82b2b93b3b6d564e641e8fb166b4",
+  "newRevisionSha256": "d795a5c504d5669b77db4222b6c5430664458b672a74b3743950ca73de62f27d"
+}

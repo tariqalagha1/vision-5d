@@ -1,0 +1,32 @@
+{
+  "mission": "V5D-FULL-LOCAL-PIPELINE-WIRING-001",
+  "timestamp": "2026-07-31T21:35:59.525750",
+  "total_states": 22,
+  "states": [
+    "PROJECT_CREATED",
+    "SOURCE_UPLOADED",
+    "UNDERSTANDING_PENDING",
+    "UNDERSTANDING_READY",
+    "UNDERSTANDING_APPROVED",
+    "GEOMETRY_PENDING",
+    "GEOMETRY_READY",
+    "PASCAL_PENDING",
+    "PASCAL_READY",
+    "PASCAL_EDITED",
+    "REVISION_CREATED",
+    "SCENE3D_PENDING",
+    "SCENE3D_READY",
+    "DESIGN_PENDING",
+    "DESIGN_READY",
+    "CINEMATIC_PENDING",
+    "CINEMATIC_READY",
+    "RENDER_PENDING",
+    "RENDERING",
+    "RENDER_COMPLETE",
+    "FAILED",
+    "CANCELLED"
+  ],
+  "persistence": "Project metadata (metadata_.workflow_state)",
+  "survives_restart": true,
+  "validated_transitions": true
+}

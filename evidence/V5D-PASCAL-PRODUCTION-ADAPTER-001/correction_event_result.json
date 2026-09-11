@@ -1,0 +1,28 @@
+[
+  {
+    "eventId": "8e78233a-83b9-4f8f-b0e9-172b796e7a76",
+    "eventType": "CHANGE_WALL_THICKNESS",
+    "timestamp": "2026-07-30T06:01:52.703887+00:00",
+    "projectId": "real-2d-45x45-32c4e1ba-151",
+    "sourceRevisionId": "rev_001_original",
+    "targetRevisionId": null,
+    "pascalSceneId": "fb4da1b6d815",
+    "pascalNodeId": "wall_tot9pwgbz3axsxfr",
+    "vision5dStableId": "wall_v5d_015",
+    "affectedDxfHandles": [],
+    "oldValue": {
+      "thickness": 0.2
+    },
+    "newValue": {
+      "thickness": 0.25
+    },
+    "coordinateSystem": "right-handed X(east) Y(up) Z(north)",
+    "units": "meters",
+    "origin": "mcp_operation",
+    "reason": "Production MCP test \u2014 increase wall thickness",
+    "validationStatus": "valid",
+    "dependentNodeIds": [],
+    "checksum": "11799a31f80ef5db1b2e3b7d76e348cac96c58b5b6a927039549a086de612d17",
+    "appliedAt": null
+  }
+]

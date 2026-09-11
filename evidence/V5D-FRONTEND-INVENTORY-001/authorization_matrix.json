@@ -1,0 +1,34 @@
+{
+  "view_ai_configuration": [
+    "workspace_owner",
+    "workspace_admin"
+  ],
+  "add_api_key": [
+    "workspace_owner",
+    "workspace_admin"
+  ],
+  "replace_api_key": [
+    "workspace_owner",
+    "workspace_admin"
+  ],
+  "delete_api_key": [
+    "workspace_owner"
+  ],
+  "select_llm_model": [
+    "workspace_owner",
+    "workspace_admin"
+  ],
+  "export_scenes": [
+    "project_admin",
+    "project_write"
+  ],
+  "import_corrections": [
+    "project_admin",
+    "project_write"
+  ],
+  "view_revision_history": [
+    "project_read",
+    "project_write",
+    "project_admin"
+  ]
+}

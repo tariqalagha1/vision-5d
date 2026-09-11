@@ -1,0 +1,33 @@
+{
+  "mission": "V5D-FRONTEND-INVENTORY-001",
+  "timestamp": "2026-07-31T13:32:43.056888",
+  "dependencies_required": [
+    {
+      "package": "NONE",
+      "reason": "Pure HTML/JS frontend \u2014 no npm packages needed"
+    },
+    {
+      "package": "Three.js 0.160.0",
+      "type": "CDN",
+      "reason": "Already used \u2014 keep existing CDN reference"
+    },
+    {
+      "package": "NONE for build",
+      "reason": "No bundler \u2014 ES modules via importmap or script tags"
+    }
+  ],
+  "no_new_dependencies": true,
+  "existing_cdn_approved": [
+    "three@0.160.0",
+    "OrbitControls",
+    "TransformControls"
+  ],
+  "api_key_storage": "SERVER-SIDE ONLY \u2014 AES-256-GCM encrypted in encrypted_credentials table",
+  "api_key_never_in": [
+    "localStorage",
+    "sessionStorage",
+    "IndexedDB",
+    "cookies (JS-accessible)",
+    "committed files"
+  ]
+}

@@ -1,0 +1,91 @@
+{
+  "mission": "V5D-PASCAL-ADAPTER-PROOF-001",
+  "total_artifacts": 14,
+  "artifacts": [
+    {
+      "path": "build_evidence.py",
+      "size_bytes": 11359,
+      "sha256": "2d39a54bed748450088d8f11bf09b8860369935c835824a97ed45685c79b60bc",
+      "created": "2026-07-29T06:41:56.265570+00:00"
+    },
+    {
+      "path": "coordinate_comparison.json",
+      "size_bytes": 8765,
+      "sha256": "2c165aec41c27b873e87e5459d2bc0c29487a8ff1c3b43974b4eb735dc97eb32",
+      "created": "2026-07-29T06:42:00.456993+00:00"
+    },
+    {
+      "path": "final_report.md",
+      "size_bytes": 6192,
+      "sha256": "2dafe96d428526b26d12a4934296c29af7a8c897a451a12f704685f5049f9674",
+      "created": "2026-07-29T06:45:03.379130+00:00"
+    },
+    {
+      "path": "generated_pascal_scene.json",
+      "size_bytes": 61018,
+      "sha256": "1089cbde0deea270338c4d8aa23f31869f735118b15b62f2529af0c9a7f53692",
+      "created": "2026-07-29T06:42:00.443794+00:00"
+    },
+    {
+      "path": "input_graph.json",
+      "size_bytes": 225,
+      "sha256": "b9b01cec1a7fcb8aeb3037f42206b4ab33a99c07ba4a97d4e86ba8f0e71ebe60",
+      "created": "2026-07-29T06:42:00.443794+00:00"
+    },
+    {
+      "path": "nvidia_visual_qa.json",
+      "size_bytes": 3530,
+      "sha256": "27a9d6f7f54f15ef7e70e5c74aadf0183127ec2672c34bff7f0610fae9bfb777",
+      "created": "2026-07-29T06:44:10.255598+00:00"
+    },
+    {
+      "path": "pascal_repository_inventory.json",
+      "size_bytes": 2962,
+      "sha256": "a5e27347f2d0164ba76d8469823a87f6d7db1f54ad9b5fe7fa348a18601fef57",
+      "created": "2026-07-29T06:42:24.355691+00:00"
+    },
+    {
+      "path": "pascal_schema_inventory.json",
+      "size_bytes": 2723,
+      "sha256": "03d8ec132b8a9344c7551714d1cf262f0cda15288a2ff14fae23720a33ce5970",
+      "created": "2026-07-29T06:42:43.396352+00:00"
+    },
+    {
+      "path": "provenance_preservation.json",
+      "size_bytes": 294,
+      "sha256": "348d475b246114996afacc662a4831fd8a3c7c8645bcd20933fa65f510dde260",
+      "created": "2026-07-29T06:42:00.456993+00:00"
+    },
+    {
+      "path": "risk_report.md",
+      "size_bytes": 2364,
+      "sha256": "14120bbe8dd2808b37919a768350bd7b86727979e0a229d18d9b99f9da5c5c91",
+      "created": "2026-07-29T06:44:30.524270+00:00"
+    },
+    {
+      "path": "round_trip_result.json",
+      "size_bytes": 228,
+      "sha256": "9798fb2b16fef92ecb08095c75fdfa5599d08de2b708a1456ec2a742a7f54d2b",
+      "created": "2026-07-29T06:42:00.456993+00:00"
+    },
+    {
+      "path": "scene_node_inventory.json",
+      "size_bytes": 8203,
+      "sha256": "5b8552ddc63f66f18ab8d1f61026e58da06ba63e8178d0b374acd7a9ce82f9bb",
+      "created": "2026-07-29T06:42:00.456993+00:00"
+    },
+    {
+      "path": "vision5d_pascal_mapping.json",
+      "size_bytes": 3778,
+      "sha256": "cf054d762d0c571f337dca9c39e1bbcbb38637eb58e2b16cad5d0e4fff26718e",
+      "created": "2026-07-29T06:43:04.855178+00:00"
+    },
+    {
+      "path": "adapter_source\\vision5d_to_pascal.ts",
+      "size_bytes": 9936,
+      "sha256": "bff15fb0feb448cf64b464dc625f7f798487ef083a79cb3caf420487219a1bb2",
+      "created": "2026-07-29T06:43:44.558490+00:00"
+    }
+  ],
+  "generated_at": "2026-07-29T06:45:11.835568+00:00"
+}

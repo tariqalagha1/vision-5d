@@ -1,0 +1,10 @@
+{
+  "pascal": {
+    "status": "ok",
+    "app": "editor",
+    "latencyMs": 2
+  },
+  "adapter": {
+    "status": "ok"
+  }
+}

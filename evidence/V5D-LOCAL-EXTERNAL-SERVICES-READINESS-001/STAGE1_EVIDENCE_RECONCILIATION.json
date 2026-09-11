@@ -1,0 +1,74 @@
+{
+  "mission": "V5D-LOCAL-EXTERNAL-SERVICES-READINESS-001",
+  "stage": "1 - Evidence Reconciliation",
+  "timestamp": "2026-08-03T00:00:00Z",
+  "verdict": "ALL_ARTIFACTS_DIRECT_SCRIPT_GENERATED",
+  "classifications": {
+    "pascal_scene": {
+      "artifact": "Pascal scene (v5d-auth-lr-final, v2, 26 nodes)",
+      "classification": "DIRECT_SCRIPT_GENERATED",
+      "evidence": "Created via MCP create_from_template + saveScene in scripts/pascal_bidirectional_integration.py",
+      "not_browser_api": true,
+      "not_authenticated_v5d_api": true
+    },
+    "sofa_edit": {
+      "artifact": "Sofa placement at [2.5, 0.5, 0]",
+      "classification": "DIRECT_SCRIPT_GENERATED",
+      "evidence": "MCP place_item via direct script, not through V5D API Pascal stage",
+      "not_browser_api": true,
+      "not_authenticated_v5d_api": true
+    },
+    "correction_event": {
+      "artifact": "Correction event (furniture_placement, sofa)",
+      "classification": "DIRECT_SCRIPT_GENERATED",
+      "evidence": "Origin: MCP place_item. Created via scripts/pascal_bidirectional_integration.py",
+      "not_browser_api": true,
+      "not_authenticated_v5d_api": true
+    },
+    "immutable_revision_rev-002-7ca2bfab": {
+      "artifact": "Immutable revision rev-002-7ca2bfab",
+      "classification": "DIRECT_SCRIPT_GENERATED",
+      "evidence": "Created via script, persisted in stage9_manifest.json",
+      "not_browser_api": true,
+      "not_authenticated_v5d_api": true
+    },
+    "scene3d_a5cc4732": {
+      "artifact": "Scene3D a5cc4732-fd73-4b78-b17f-dbd2e2bc4ff6",
+      "classification": "DIRECT_SCRIPT_GENERATED",
+      "evidence": "Created via geometry generation script, stored in stage9_manifest.json",
+      "not_browser_api": true,
+      "not_authenticated_v5d_api": true
+    },
+    "authoritative_glb": {
+      "artifact": "Authoritative GLB (0609bf7d... and 05847523...)",
+      "classification": "DIRECT_SCRIPT_GENERATED",
+      "evidence": "Created via scripts/ GLB generation, not through API /api/v1/projects/{id}/scene3d endpoint",
+      "not_browser_api": true,
+      "not_authenticated_v5d_api": true
+    },
+    "blender_render": {
+      "artifact": "Blender Cycles CPU render (30/150 frames, MP4)",
+      "classification": "DIRECT_SCRIPT_GENERATED",
+      "evidence": "Executed via scripts/blender_render_150.py, not through API /api/v1/projects/{id}/render endpoint",
+      "not_browser_api": true,
+      "not_authenticated_v5d_api": true
+    },
+    "nvidia_understanding": {
+      "artifact": "NVIDIA meta/llama-3.2-11b-vision-instruct understanding",
+      "classification": "DIRECT_SCRIPT_GENERATED",
+      "evidence": "Called directly via packages/ai/gemini_vision.py, not through API /api/v1/projects/{id}/understand endpoint",
+      "not_browser_api": true,
+      "not_authenticated_v5d_api": true
+    }
+  },
+  "summary": {
+    "total_artifacts": 8,
+    "browser_api_driven": 0,
+    "backend_api_driven": 0,
+    "direct_script_generated": 8,
+    "manually_assembled": 0,
+    "unverified": 0
+  },
+  "conclusion": "None of the artifacts from the previous mission run were created through the browser or API pipeline. The API pipeline had import errors that prevented it from running. All artifacts were created through direct Python scripts. The browser workflow was never tested.",
+  "requirement": "Stage 7 MUST execute everything through the browser and authenticated API to achieve PASS."
+}

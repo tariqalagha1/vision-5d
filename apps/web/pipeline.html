@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vision 5D — Pipeline</title>
+<link rel="stylesheet" href="css/dashboard.css">
+<style>
+.pipeline-container { max-width: 900px; margin: 0 auto; }
+.pipeline-stage { display:flex; align-items:flex-start; gap:14px; border-left:3px solid var(--v5d-border-light); padding:14px 16px; margin:4px 0; border-radius:0 8px 8px 0; transition:all 200ms; }
+.pipeline-stage.completed { border-left-color: var(--v5d-success); background: var(--v5d-success-bg); }
+.pipeline-stage.active { border-left-color: var(--v5d-accent); background: var(--v5d-accent-light); }
+.pipeline-stage.failed { border-left-color: var(--v5d-error); background: var(--v5d-error-bg); }
+.pipeline-stage.pending { border-left-color: var(--v5d-border-light); }
+.stage-icon { font-size:22px; min-width:32px; text-align:center; }
+.stage-body { flex:1; }
+.stage-title { font-weight:600; font-size:14px; margin-bottom:2px; }
+.stage-desc { font-size:12px; color:var(--v5d-text-secondary); margin-bottom:8px; }
+.stage-actions { display:flex; gap:8px; flex-wrap:wrap; }
+.stage-result { margin-top:8px; padding:8px 12px; background:var(--v5d-bg-secondary); border-radius:6px; font-size:12px; font-family:monospace; max-height:120px; overflow-y:auto; white-space:pre-wrap; word-break:break-all; }
+.action-btn { padding:6px 14px; border-radius:6px; border:1px solid var(--v5d-border); background:var(--v5d-bg-card); color:var(--v5d-text); cursor:pointer; font-size:12px; font-weight:500; transition:all 150ms; }
+.action-btn:hover { border-color:var(--v5d-accent); background:var(--v5d-accent-light); }
+.action-btn:disabled { opacity:0.4; cursor:not-allowed; }
+.action-btn.primary { background:var(--v5d-accent); color:#fff; border-color:var(--v5d-accent); }
+.action-btn.danger { background:var(--v5d-error); color:#fff; border-color:var(--v5d-error); }
+.upload-zone { border:2px dashed var(--v5d-border); border-radius:12px; padding:40px; text-align:center; cursor:pointer; transition:all 200ms; margin-bottom:20px; }
+.upload-zone:hover { border-color:var(--v5d-accent); background:var(--v5d-accent-light); }
+.upload-zone.dragover { border-color:var(--v5d-success); background:var(--v5d-success-bg); }
+.upload-preview { max-width:200px; max-height:150px; border-radius:8px; margin-bottom:12px; }
+.artifact-card { background:var(--v5d-bg-card); border:1px solid var(--v5d-border-light); border-radius:8px; padding:14px; margin:10px 0; }
+.artifact-row { display:flex; justify-content:space-between; align-items:center; padding:6px 0; border-bottom:1px solid var(--v5d-border-light); font-size:13px; }
+.artifact-row:last-child { border-bottom:none; }
+.project-picker { display:flex; gap:8px; align-items:center; margin-bottom:20px; }
+.project-picker select { flex:1; padding:8px 12px; border:1px solid var(--v5d-border); border-radius:6px; font-size:14px; background:var(--v5d-bg-card); color:var(--v5d-text); }
+.video-preview { width:100%; max-width:640px; border-radius:8px; margin-top:12px; }
+</style>
+</head>
+<body>
+<div id="app">
+  <div id="app-sidebar"></div>
+  <div id="app-main">
+    <div id="app-header"></div>
+    <div id="app-content"></div>
+  </div>
+</div>
+
+<script src="js/services/api.js?v=8"></script>
+<script src="js/services/auth.js?v=8"></script>
+<script src="js/services/router.js?v=8"></script>
+<script src="js/services/projects.js?v=8"></script>
+<script src="js/services/ai-providers.js?v=8"></script>
+<script src="js/components/ui.js?v=8"></script>
+<script src="js/views/dashboard.js?v=8"></script>
+<script src="js/views/pipeline.js?v=8"></script>
+<script>
+/* Auto-render for standalone page — auto-login if needed */
+(function() {
+  setTimeout(function() {
+    if (!V5D.Auth) return;
+    V5D.Auth.checkSession().then(function(ok) {
+      if (ok) { V5D.Pipeline.render(); return; }
+      /* Not authenticated — auto-login then render */
+      return V5D.Auth.login('google').then(function() {
+        V5D.Pipeline.render();
+      });
+    }).catch(function() {
+      /* Session check failed — auto-login */
+      V5D.Auth.login('google').then(function() {
+        V5D.Pipeline.render();
+      }).catch(function() {
+        V5D.Pipeline.render();
+      });
+    });
+  }, 300);
+})();
+</script>
+</body>
+</html>

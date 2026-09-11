@@ -1,0 +1,127 @@
+{
+  "job_id": "e0f38a15-2aa",
+  "project_id": "real-2d-test-house-e0f38a15-2aa",
+  "timestamp": "2026-07-27T09:04:49.235285",
+  "artifacts": [
+    {
+      "relative_path": "converted\\Two-Storey-4-Bedrooms.dxf",
+      "size_bytes": 1070540,
+      "sha256": "2628b77305fb50e47e09924f3cbc1b6779a323aa7cd4976c733d710398e7f0ba"
+    },
+    {
+      "relative_path": "logs\\rendering.log",
+      "size_bytes": 30,
+      "sha256": "8b59b8c14e23a6570f9b02d3a5ab13d6426ddc0948c907c29b5103be3dd76bdd"
+    },
+    {
+      "relative_path": "parsed\\drawing_bounds.json",
+      "size_bytes": 190,
+      "sha256": "0f51cc7b0e425b89512486170262f5a21a75d9faadd6b2209847ab73522043ac"
+    },
+    {
+      "relative_path": "parsed\\entity_inventory.json",
+      "size_bytes": 266,
+      "sha256": "fc29f98e0d3079060be1c509ce83f8ab5a929f54f996500a897bdc4a0a6942b9"
+    },
+    {
+      "relative_path": "parsed\\layer_inventory.json",
+      "size_bytes": 188,
+      "sha256": "788f19a1f4cd9980627716c628e6599d060b629695e291810b0cb729befce7e5"
+    },
+    {
+      "relative_path": "parsed\\parsing_report.json",
+      "size_bytes": 988,
+      "sha256": "237659ff7263bceb8efbe998dc339c0ed2b569806b8bacf4287cc204d0019199"
+    },
+    {
+      "relative_path": "parsed\\region_inventory.json",
+      "size_bytes": 499,
+      "sha256": "989bad7e9d75bd558ba9059da1b68f5931d67117505177cb821ecdeb5df818ee"
+    },
+    {
+      "relative_path": "parsed\\_entities.pkl",
+      "size_bytes": 364887,
+      "sha256": "6f9358c57a06ac49472154cb03d134819e40772b7d1455511c2d522b90a0a9d5"
+    },
+    {
+      "relative_path": "renders\\blocks_and_inserts.png",
+      "size_bytes": 8179,
+      "sha256": "3ff3d431cdbe5489d937411b0e1ef7df999f545c9efb3dcc94b40185693a8485"
+    },
+    {
+      "relative_path": "renders\\clean_architectural_overview.png",
+      "size_bytes": 14265,
+      "sha256": "6241f73f088d00757ec728e6c0e0fb3c30f1b58546eed72e32c4685efc099edc"
+    },
+    {
+      "relative_path": "renders\\first_floor_plan.png",
+      "size_bytes": 16854,
+      "sha256": "361cbace637a4e424c421b2d6ba28e316d5947ad43bbaa1d7ea2ab61e1634e99"
+    },
+    {
+      "relative_path": "renders\\full_source_drawing.png",
+      "size_bytes": 90692,
+      "sha256": "3dbea062948b3ea6db5e13510866327b9f8077fc89d62a0781de37543e7f764b"
+    },
+    {
+      "relative_path": "renders\\full_source_extents_diagnostic.png",
+      "size_bytes": 16998,
+      "sha256": "4a9744cf0b1a3fd01eb8584a79339189e3ba26aba1c1a27f96bf85cfd04ac1e6"
+    },
+    {
+      "relative_path": "renders\\ground_floor_plan.png",
+      "size_bytes": 68045,
+      "sha256": "08f8bc5996f25f38ccf253f6d5fea099d5c6c89fd3d76b894b4fe824da31cc2e"
+    },
+    {
+      "relative_path": "renders\\hatches.png",
+      "size_bytes": 8007,
+      "sha256": "91807bf106f3ac9606c40b884f6fdcf94e0bd793e39c2dd70cbd62249cef5dc0"
+    },
+    {
+      "relative_path": "renders\\layer_contact_sheet.png",
+      "size_bytes": 12344,
+      "sha256": "ffb7c1969c8fcd55ed59c24eb2cfe7e8000325aa9de13bc0f35878985650fd1c"
+    },
+    {
+      "relative_path": "renders\\region_contact_sheet.png",
+      "size_bytes": 8242,
+      "sha256": "5960892ba82966d5b7bee48da59d4286516a48428475e7e189d77a9f4f0da714"
+    },
+    {
+      "relative_path": "renders\\text_and_dimensions.png",
+      "size_bytes": 86633,
+      "sha256": "f8908714644c5a2caaabc045745f708e77762d92320f89deed2d74f31431e72b"
+    },
+    {
+      "relative_path": "renders\\Two-Storey-4-Bedrooms.pdf",
+      "size_bytes": 81612,
+      "sha256": "85e90aaac6afc4e9c600d8d20b8c3de14cc7530ce92954d2b2036e8b52c384c1"
+    },
+    {
+      "relative_path": "renders\\Two-Storey-4-Bedrooms.svg",
+      "size_bytes": 276106,
+      "sha256": "9e83343e724d6b11d89f711d32e70232f35aad14199921cf2703982b8fe672d6"
+    },
+    {
+      "relative_path": "reports\\comparative_diagnosis.json",
+      "size_bytes": 1079,
+      "sha256": "cfdd9972870f4a35c4ead5778c884b221bf2943e167c97fa59fdb0d770ea62c3"
+    },
+    {
+      "relative_path": "reports\\final_2d_verdict.json",
+      "size_bytes": 1183,
+      "sha256": "920503e717ff2160d4815f800f8c29fcff85861755678b2605d9e53896cf4377"
+    },
+    {
+      "relative_path": "reports\\visual_validation_report.json",
+      "size_bytes": 407,
+      "sha256": "ce9586e3ed594092f5a19c2021a59ce1f089f4cdb3a249da66999ab9c2ab1872"
+    },
+    {
+      "relative_path": "source\\Two-Storey-4-Bedrooms.dwg",
+      "size_bytes": 536434,
+      "sha256": "41e74d9433a2db8166c7d15ecf833111189b2772567af9c3a98e5ef2564023d5"
+    }
+  ]
+}

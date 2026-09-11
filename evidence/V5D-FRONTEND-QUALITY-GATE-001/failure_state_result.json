@@ -1,0 +1,67 @@
+{
+  "mission": "V5D-FRONTEND-QUALITY-GATE-001",
+  "timestamp": "2026-07-31T20:20:56.948235",
+  "verdict": "PASS \u2014 10/10 failure states handled",
+  "states": [
+    {
+      "state": "Auth expiration",
+      "code": "AUTH_EXPIRED",
+      "handler": "api.js 401 \u2192 auth:expired event",
+      "result": "PASS"
+    },
+    {
+      "state": "401 Unauthorized",
+      "code": "AUTH_EXPIRED",
+      "handler": "api.js \u2192 throws AUTH_EXPIRED",
+      "result": "PASS"
+    },
+    {
+      "state": "403 Forbidden",
+      "code": "FORBIDDEN",
+      "handler": "api.js \u2192 throws FORBIDDEN",
+      "result": "PASS"
+    },
+    {
+      "state": "404 Not Found",
+      "code": "NOT_FOUND",
+      "handler": "api.js \u2192 throws NOT_FOUND",
+      "result": "PASS"
+    },
+    {
+      "state": "409 Conflict",
+      "code": "API_ERROR",
+      "handler": "api.js !response.ok \u2192 API_ERROR with status",
+      "result": "PASS"
+    },
+    {
+      "state": "429 Rate Limit",
+      "code": "RATE_LIMITED",
+      "handler": "api.js \u2192 throws RATE_LIMITED with Retry-After",
+      "result": "PASS"
+    },
+    {
+      "state": "500 Server Error",
+      "code": "API_ERROR",
+      "handler": "api.js !response.ok \u2192 API_ERROR",
+      "result": "PASS"
+    },
+    {
+      "state": "Network disconnect",
+      "code": "NETWORK_ERROR",
+      "handler": "api.js fetch() catch \u2192 NETWORK_ERROR",
+      "result": "PASS"
+    },
+    {
+      "state": "Pascal unavailable",
+      "code": "N/A",
+      "handler": "dashboard.js catch \u2192 'Unavailable' badge",
+      "result": "PASS"
+    },
+    {
+      "state": "AI provider unavailable",
+      "code": "N/A",
+      "handler": "dashboard.js \u2192 'Not configured'/'Unknown' badge",
+      "result": "PASS"
+    }
+  ]
+}

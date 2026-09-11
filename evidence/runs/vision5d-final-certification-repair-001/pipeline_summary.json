@@ -1,0 +1,24 @@
+{
+  "source": "C:\\Users\\admin\\workspaces\\vision-5d\\scripts\\..\\output\\RE-SingDetch-FH_AS\\geometry\\converted.dxf",
+  "source_sha256": "726c6d97babc83a1afa0268a227d626e47ff4128fa713b18d7762b7a58e4f835",
+  "source_bounds": [
+    -252.0442410063967,
+    -8.551463688384665,
+    425.5980490117103,
+    294.5742397498523
+  ],
+  "graph_wall_nodes": 1020,
+  "graph_openings": 105,
+  "graph_rooms": 18,
+  "geometry_walls": 146,
+  "geometry_rooms": 18,
+  "geometry_openings": 105,
+  "scene_meshes": 288,
+  "scene_vertices": 305656,
+  "scene_triangles": 609792,
+  "glb_bytes": 11180796,
+  "glb_sha256": "ea9003b37ce2a88d1b33ad3e4356671744146891c1b4bb75555bf378e8015461",
+  "glb_valid": true,
+  "glb_errors": [],
+  "walltime_s": 177.1
+}

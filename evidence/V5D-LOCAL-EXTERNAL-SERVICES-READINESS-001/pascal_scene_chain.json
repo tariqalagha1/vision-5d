@@ -1,0 +1,72 @@
+{
+  "mission": "V5D-LOCAL-EXTERNAL-SERVICES-READINESS-001",
+  "stages": "10-16",
+  "timestamp": "2026-07-31T21:50:00Z",
+  "nvidia_understanding": {
+    "source_image": "test_data/1.webp",
+    "provider": "nvidia",
+    "model": "meta/llama-3.2-11b-vision-instruct",
+    "latency_ms": 15794.1,
+    "drawing_type": "floor_plan",
+    "rooms": [{"label": "Living Room", "has_furniture": true}],
+    "furniture_detected": [
+      {"type": "sofa", "count": 1, "room": "Living Room"},
+      {"type": "table", "count": 1, "room": "Living Room"},
+      {"type": "cabinet", "count": 1, "room": "Living Room"}
+    ],
+    "language": "en",
+    "walls_visible": true,
+    "doors_visible": true,
+    "windows_visible": true,
+    "suitable_for_review": true,
+    "approval": "MANUALLY_APPROVED",
+    "approval_timestamp": "2026-07-31T21:45:00Z"
+  },
+  "vision5d_project": {
+    "project_id": "20bf0835-adbc-4769-b3d1-7a94dd2ff107",
+    "workspace_id": "fbd7855a-1445-4ebf-92b0-06a67668d78e",
+    "name": "Authoritative Living Room",
+    "project_type": "residential",
+    "state": "DRAFT"
+  },
+  "pascal_scene": {
+    "scene_id": "v5d-auth-lr-final",
+    "name": "V5D Auth Living Room",
+    "version": 2,
+    "node_count": 26,
+    "published": true,
+    "graph_hash": "82b84e03977b817dd2c3bacd05482096d744e7fdd19a7a4cecf1a88b235b72cc",
+    "template": "two-bedroom",
+    "living_room_zone": "zone_z0wyo8cqjk06qsi3",
+    "level_id": "level_huo08vz1dz345vgx",
+    "v5d_metadata_strategy": "site_node.metadata.vision5d",
+    "sofa_item_id": "item_sofa_v5d_auth_001",
+    "sofa_position": [2.5, 0.5, 0],
+    "stable_furniture_id": "sofa_living_room",
+    "validation": "valid (MCP validate_scene: true, 0 errors)"
+  },
+  "pascal_rest_roundtrip": {
+    "create": "MCP create_from_template + saveScene",
+    "readback": "REST GET /api/scenes/v5d-auth-lr-final",
+    "roundtrip_verified": true,
+    "metadata_vision5d_present": true,
+    "stable_ids_preserved": true
+  },
+  "correction_event": {
+    "type": "furniture_placement",
+    "object": "sofa",
+    "stable_id": "sofa_living_room",
+    "pascal_item_id": "item_sofa_v5d_auth_001",
+    "operation": "place_item",
+    "position": [2.5, 0.5, 0],
+    "zone": "Living / Kitchen (zone_z0wyo8cqjk06qsi3)",
+    "origin": "MCP place_item"
+  },
+  "immutable_revision": {
+    "revision_id": "v5d-auth-lr-final@v2",
+    "source_revision_id": "v5d-auth-lr-final@v1",
+    "graph_hash": "82b84e03977b817dd2c3bacd05482096d744e7fdd19a7a4cecf1a88b235b72cc",
+    "immutable": true,
+    "version_incremented": true
+  }
+}

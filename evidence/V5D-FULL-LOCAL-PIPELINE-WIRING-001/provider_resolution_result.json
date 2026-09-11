@@ -1,0 +1,21 @@
+{
+  "mission": "V5D-FULL-LOCAL-PIPELINE-WIRING-001",
+  "timestamp": "2026-07-31T21:35:59.525750",
+  "providers_available": 1,
+  "providers": [
+    {
+      "provider_id": "8097bf53-ed98-4aef-aa9c-213967892fc1",
+      "provider_type": "openai",
+      "display_name": "OpenAI",
+      "base_url": "https://api.openai.com/v1",
+      "default_model_id": "gpt-4o",
+      "connection_status": "UNTESTED",
+      "last_tested_at": null,
+      "has_credentials": false,
+      "created_at": "2026-07-31T17:09:39"
+    }
+  ],
+  "resolution_logic": "First HEALTHY provider, then first configured, then error",
+  "nvidia_configured": false,
+  "note": "NVIDIA API key not set in .env \u2014 photo understanding will use available provider"
+}

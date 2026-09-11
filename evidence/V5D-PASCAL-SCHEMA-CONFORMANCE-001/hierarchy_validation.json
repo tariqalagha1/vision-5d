@@ -1,0 +1,28 @@
+{
+  "site": {
+    "id": "site_1mwi0hu25d6an4lv",
+    "children": [
+      "building_jjqnxepzwxjqnf5z"
+    ]
+  },
+  "building": {
+    "id": "building_jjqnxepzwxjqnf5z",
+    "parentId": "site_1mwi0hu25d6an4lv",
+    "children": [
+      "level_5oruhniqbwe5rxg4"
+    ]
+  },
+  "level": {
+    "id": "level_5oruhniqbwe5rxg4",
+    "parentId": "building_jjqnxepzwxjqnf5z",
+    "children_count": 61
+  },
+  "wall_count": 57,
+  "door_count": 2,
+  "window_count": 1,
+  "slab_count": 1,
+  "depth": {
+    "site\u2192building\u2192level\u2192walls": "4 levels deep"
+  },
+  "orphan_nodes": []
+}

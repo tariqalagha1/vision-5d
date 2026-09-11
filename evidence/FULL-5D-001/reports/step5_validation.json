@@ -1,0 +1,150 @@
+{
+  "option_a": [
+    {
+      "severity": "warning",
+      "type": "overlap",
+      "a": "Reception Desk",
+      "b": "Ergonomic Chair 1"
+    },
+    {
+      "severity": "warning",
+      "type": "overlap",
+      "a": "Reception Desk",
+      "b": "Plant 1"
+    },
+    {
+      "severity": "warning",
+      "type": "overlap",
+      "a": "Workstation 1",
+      "b": "Workstation 2"
+    },
+    {
+      "severity": "warning",
+      "type": "overlap",
+      "a": "Workstation 1",
+      "b": "Ergonomic Chair 2"
+    },
+    {
+      "severity": "warning",
+      "type": "overlap",
+      "a": "Workstation 1",
+      "b": "Ergonomic Chair 3"
+    },
+    {
+      "severity": "warning",
+      "type": "overlap",
+      "a": "Workstation 2",
+      "b": "Ergonomic Chair 3"
+    },
+    {
+      "severity": "warning",
+      "type": "overlap",
+      "a": "Meeting Table",
+      "b": "Meeting Chair 1"
+    },
+    {
+      "severity": "warning",
+      "type": "overlap",
+      "a": "Meeting Table",
+      "b": "Meeting Chair 2"
+    },
+    {
+      "severity": "warning",
+      "type": "overlap",
+      "a": "Meeting Table",
+      "b": "Plant 2"
+    }
+  ],
+  "option_b": [
+    {
+      "severity": "warning",
+      "type": "overlap",
+      "a": "Premium Reception",
+      "b": "Executive Chair 1"
+    },
+    {
+      "severity": "warning",
+      "type": "overlap",
+      "a": "Premium Reception",
+      "b": "Plant B1"
+    },
+    {
+      "severity": "warning",
+      "type": "overlap",
+      "a": "Executive Desk 1",
+      "b": "Executive Desk 2"
+    },
+    {
+      "severity": "warning",
+      "type": "overlap",
+      "a": "Executive Desk 1",
+      "b": "Executive Chair 2"
+    },
+    {
+      "severity": "warning",
+      "type": "overlap",
+      "a": "Executive Desk 1",
+      "b": "Executive Chair 3"
+    },
+    {
+      "severity": "warning",
+      "type": "overlap",
+      "a": "Executive Desk 1",
+      "b": "Waiting Sofa"
+    },
+    {
+      "severity": "warning",
+      "type": "overlap",
+      "a": "Executive Desk 1",
+      "b": "Coffee Table"
+    },
+    {
+      "severity": "warning",
+      "type": "overlap",
+      "a": "Executive Desk 2",
+      "b": "Executive Chair 3"
+    },
+    {
+      "severity": "warning",
+      "type": "overlap",
+      "a": "Executive Chair 2",
+      "b": "Coffee Table"
+    },
+    {
+      "severity": "warning",
+      "type": "overlap",
+      "a": "Board Table",
+      "b": "Board Chair 1"
+    },
+    {
+      "severity": "warning",
+      "type": "overlap",
+      "a": "Board Table",
+      "b": "Board Chair 2"
+    },
+    {
+      "severity": "warning",
+      "type": "overlap",
+      "a": "Board Table",
+      "b": "Board Chair 3"
+    },
+    {
+      "severity": "warning",
+      "type": "overlap",
+      "a": "Board Table",
+      "b": "Plant B2"
+    },
+    {
+      "severity": "warning",
+      "type": "overlap",
+      "a": "Waiting Sofa",
+      "b": "Coffee Table"
+    },
+    {
+      "severity": "warning",
+      "type": "overlap",
+      "a": "Waiting Sofa",
+      "b": "Deco Lamp"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "v1": {
+    "size": 13160,
+    "hash": "1579f70691d15b411bc39c58fa65464e83cb69cb53310a954c5cbd1067108de0",
+    "hash_match": true,
+    "nodes": 17,
+    "meshes": 17
+  },
+  "v2": {
+    "size": 13160,
+    "hash": "1579f70691d15b411bc39c58fa65464e83cb69cb53310a954c5cbd1067108de0",
+    "hash_match": true,
+    "nodes": 17,
+    "meshes": 17
+  },
+  "glbs_differ": false
+}

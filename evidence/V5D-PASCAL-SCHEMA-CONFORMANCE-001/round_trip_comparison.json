@@ -1,0 +1,9 @@
+{
+  "max_delta": 0.00050000000004502,
+  "wall_count_match": true,
+  "door_count_match": true,
+  "window_count_match": true,
+  "stable_ids_preserved": true,
+  "provenance_preserved": true,
+  "zero_gaps": true
+}

@@ -1,0 +1,20 @@
+{
+  "mission": "V5D-REAL-PROJECT-2D-TEST-HOUSE-001",
+  "verdict": "PARTIALLY VERIFIED",
+  "timestamp": "2026-07-27T09:04:49.234286",
+  "evaluations": {
+    "1_dwg_intake": "PASS",
+    "2_isolation": "PASS",
+    "3_dxf_conversion": "PASS",
+    "4_dxf_parsing": "PASS - 4144 entities, 2 floor regions detected",
+    "5_region_detection": "PASS - X-axis gap separates ground (1486 ents) from first floor (1038 ents)",
+    "6_ground_floor_render": "PARTIAL - architectural content visible but ~300 large-radius arcs dominate",
+    "7_first_floor_render": "PASS - clean legible floor plan",
+    "8_full_overview": "PARTIAL",
+    "9_visual_completeness": "PARTIAL",
+    "10_source_traceability": "PASS"
+  },
+  "root_cause": "MIXED_FAILURE",
+  "root_cause_detail": "Call-center renders perfectly because it has no outlier geometry. House DWG contains ~300 large-radius ARC entities that inflate viewport. Common pipeline works correctly for both. Fix: filter arcs with radius > 10 drawing units from viewport computation.",
+  "recommendation": "REPAIR COMMON 2D PIPELINE - add entity-type-aware viewport filtering to exclude large-radius arcs from architectural bounds"
+}

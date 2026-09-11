@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-07-29T06:20:45.858851+00:00",
+  "checks": {
+    "readable_image": true,
+    "not_blank": true,
+    "pixel_std_dev": 59.308407633645835,
+    "not_corrupted": true,
+    "dimensions_reasonable": true,
+    "valid_photo_format": true,
+    "reasonable_file_size": true
+  },
+  "overall": "PASS",
+  "issues": []
+}

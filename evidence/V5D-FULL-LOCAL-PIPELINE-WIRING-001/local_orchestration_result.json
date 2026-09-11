@@ -1,0 +1,31 @@
+{
+  "mission": "V5D-FULL-LOCAL-PIPELINE-WIRING-001",
+  "timestamp": "2026-07-31T21:35:59.525750",
+  "script": "start_vision5d_local.bat",
+  "script_size_bytes": 3405,
+  "services": [
+    {
+      "name": "Vision 5D API",
+      "port": 8000,
+      "command": "uvicorn apps.api.main:app",
+      "status": "RUNNING"
+    },
+    {
+      "name": "Static Files",
+      "port": 8100,
+      "command": "python -m http.server",
+      "status": "AVAILABLE"
+    },
+    {
+      "name": "Pascal MCP",
+      "port": "N/A",
+      "command": "Not started",
+      "status": "NEEDS EXTERNAL STARTUP"
+    }
+  ],
+  "health_checks": [
+    "GET /health"
+  ],
+  "stop": "taskkill /FI 'WINDOWTITLE eq Vision5D-*' /F",
+  "restart": "Run start_vision5d_local.bat again"
+}

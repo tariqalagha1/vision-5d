@@ -1,0 +1,74 @@
+{
+  "mission": "V5D-FRONTEND-INVENTORY-001",
+  "timestamp": "2026-07-31T13:32:43.056888",
+  "palette": {
+    "background_primary": "#0d1117",
+    "background_secondary": "#161b22",
+    "surface": "#0d1117",
+    "border": "#30363d",
+    "text_primary": "#c9d1d9",
+    "text_secondary": "#8b949e",
+    "text_accent": "#e6edf3",
+    "accent_primary": "#58a6ff",
+    "accent_success": "#3fb950",
+    "accent_warning": "#d29922",
+    "accent_error": "#f85149",
+    "button_primary_bg": "#238636",
+    "button_primary_border": "#2ea043",
+    "button_danger_bg": "#da3633",
+    "button_danger_border": "#f85149",
+    "job_queued_bg": "#30363d",
+    "job_running_bg": "#1f6feb",
+    "job_completed_bg": "#238636",
+    "job_failed_bg": "#da3633",
+    "job_interrupted_bg": "#d29922"
+  },
+  "typography": {
+    "font_family": "'Inter', 'Segoe UI', sans-serif",
+    "font_family_mono": "monospace (for .metric class)",
+    "base_size": "13px-14px",
+    "heading_h1": "16px, weight 600",
+    "heading_h2": "15px, color #58a6ff",
+    "heading_h3": "13px, color #8b949e",
+    "small_text": "11px-12px"
+  },
+  "spacing": {
+    "card_padding": "20px",
+    "card_margin_bottom": "16px",
+    "nav_item_padding": "8px 20px",
+    "button_padding": "8px 14px",
+    "table_cell_padding": "8px 12px",
+    "section_gap": "12px-16px"
+  },
+  "border_radius": {
+    "card": "8px",
+    "button": "6px",
+    "input": "6px",
+    "badge": "10px-20px",
+    "progress_bar": "3px"
+  },
+  "shadows": "None defined",
+  "components": {
+    "buttons": [
+      "primary (#238636)",
+      "small (12px)",
+      "warn/danger (#da3633)"
+    ],
+    "cards": ".card class \u2014 #161b22 bg, #30363d border, 8px radius",
+    "tables": "Full-width, collapsed borders, #30363d dividers",
+    "inputs": "text input, select, file input \u2014 #0d1117 bg, #30363d border",
+    "badges": ".badge-ok (green), .badge-warn (yellow), .badge-err (red)",
+    "progress_bars": ".progress-bar + .progress-fill \u2014 blue (#58a6ff)",
+    "job_items": ".job-item \u2014 flex row with state badge",
+    "notifications": "#status-bar in header for global status messages",
+    "dialogs": "None defined",
+    "modals": "None defined"
+  },
+  "layout": {
+    "sidebar_width": "220px",
+    "header_height": "auto (padding-based)",
+    "responsive_breakpoint": "800px (single breakpoint)",
+    "grid_system": ".grid2 \u2014 2-column CSS grid"
+  },
+  "dashboard_recommendation": "EXTEND existing design system \u2014 add a small Vision 5D token layer for missing components (modals, notifications, dialogs). Do NOT create a competing design system."
+}

@@ -1,0 +1,59 @@
+{
+  "unit_tests": [
+    {
+      "test": "wall_adapter",
+      "pass": true
+    },
+    {
+      "test": "slab_adapter",
+      "pass": true
+    },
+    {
+      "test": "opening_adapter",
+      "pass": true
+    },
+    {
+      "test": "coordinate_conversion",
+      "pass": true
+    },
+    {
+      "test": "identity_mapping",
+      "pass": true
+    },
+    {
+      "test": "node_validation",
+      "pass": true
+    },
+    {
+      "test": "graph_validation",
+      "pass": true
+    },
+    {
+      "test": "provenance",
+      "pass": true
+    },
+    {
+      "test": "reverse_conversion",
+      "pass": true
+    },
+    {
+      "test": "migration_idempotency",
+      "pass": true
+    },
+    {
+      "test": "correction_event_checksum",
+      "pass": true
+    },
+    {
+      "test": "immutable_revision",
+      "pass": true
+    },
+    {
+      "test": "precision_policy",
+      "pass": true
+    }
+  ],
+  "total": 13,
+  "pass": 13,
+  "fail": 0
+}

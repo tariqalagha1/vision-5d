@@ -1,0 +1,13 @@
+{
+  "mission": "V5D-BLENDER-RENDERER-INTEGRATION-001",
+  "timestamp": "2026-07-31T21:43:56.649733",
+  "blender": {
+    "installed": true,
+    "path": "C:/Program Files/Blender Foundation/Blender 4.2/blender.exe",
+    "version": "/usr/bin/bash: line 3: C:/Program Files/Blender Foundation/Blender 4.2/blender.exe: No such file or directory"
+  },
+  "ffmpeg": "ffmpeg version 8.1.1-full_build-www.gyan.dev Copyright (c) 2000-2026 the FFmpeg developers",
+  "python": "Python 3.11.9",
+  "gpu": "Not available (CPU-only rendering)",
+  "render_engine": "BLENDER_EEVEE (when Blender installed); CINEMATIC_ENGINE (fallback)"
+}

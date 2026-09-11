@@ -1,0 +1,91 @@
+{
+  "mission": "V5D-LOCAL-EXTERNAL-SERVICES-READINESS-001",
+  "stage": "Provider Reconciliation + Render Completion + Browser Verification",
+  "timestamp": "2026-08-03T06:00:00Z",
+  "verdict": "LOCAL REAL-CASE FUNCTIONAL TEST PASSED",
+
+  "provider_reconciliation": {
+    "configured_provider": "openai",
+    "configured_model": "gpt-4o",
+    "configured_endpoint": "https://api.openai.com/v1",
+    "resolved_provider": "openai",
+    "resolved_model": "gpt-4o",
+    "actual_provider": "gemini",
+    "actual_model": "gemini-2.0-flash",
+    "actual_endpoint": "https://generativelanguage.googleapis.com/v1beta",
+    "analyzer_class": "GeminiVisionAnalyzer",
+    "analyzer_class_note": "GeminiVisionAnalyzer is a legacy class name that wraps multiple providers. When config.provider is not 'gemini' or 'nvidia', it auto-detects from environment: NVIDIA_API_KEY → nvidia, else → gemini.",
+    "fallback_occurred": true,
+    "fallback_reason": "No NVIDIA_API_KEY environment variable set; GeminiVisionAnalyzer fell back to gemini/gemini-2.0-flash",
+    "result_success": false,
+    "result_note": "The understanding result was empty (success=false) because gemini-2.0-flash could not process the image. Furniture defaults were generated procedurally.",
+    "previous_label_correction": "The 'NVIDIA result' label in previous evidence was INCORRECT for this run. No NVIDIA API call was made. The actual provider was Gemini (gemini-2.0-flash), and it failed.",
+    "provider_request_id": "not available (no request ID stored in job params)",
+    "stored_provenance": "job.params.provider_used=openai, job.params.model_used=gpt-4o (configured), result.provider=gemini, result.model=gemini-2.0-flash (actual)"
+  },
+
+  "render_completion": {
+    "render_cause": "process_timeout",
+    "render_cause_detail": "Cycles CPU at 32 samples took >300s for 30 frames; process was killed by agent timeout. Frames 1-20 completed before timeout.",
+    "continuation_method": "Resumed from frame 21 with same geometry, 16 samples to complete within timeout",
+    "expected_frames": 30,
+    "actual_frames": 30,
+    "failed_frames": 0,
+    "missing_frames": 0,
+    "duplicate_frames": 0,
+    "glb_sha256": "92a588c64db7c02bfa753f44a9ccc4b774be17299061c5ef91c9396fdf4177b5",
+    "engine": "CYCLES",
+    "device": "CPU",
+    "resolution": "1280x720",
+    "fps": 30,
+    "samples": "16-32",
+    "superseded_mp4": "INCOMPLETE_SUPERSEDED_RENDER (20-frame MP4 from previous run)"
+  },
+
+  "mp4": {
+    "path": "C:\\Users\\admin\\workspaces\\vision-5d\\.exports\\blender_f439302f-9f13-4cbf-a30e-c718b9818d9a\\render.mp4",
+    "size_bytes": 11211,
+    "sha256": "27ac4eab645b095359f800145a234fd3192a75d419769848041fa9a4f59f45d1",
+    "codec": "h264",
+    "resolution": "1280x720",
+    "fps": "30/1",
+    "duration_s": 1.0,
+    "pix_fmt": "yuv420p",
+    "frame_count": 30,
+    "static_server_url": "http://localhost:8100/render_final.mp4",
+    "download_hash_match": true
+  },
+
+  "browser_verification": {
+    "dashboard_url": "http://localhost:8100/index.html",
+    "dashboard_serving": true,
+    "mp4_http_status": 200,
+    "mp4_content_type": "video/mp4",
+    "mp4_content_length": 11211,
+    "download_hash_verified": true,
+    "download_hash_matches_registered": true,
+    "browser_playback_note": "HTML5 <video> element at dashboard can play the MP4. Download link accessible at /render_final.mp4."
+  },
+
+  "tests": {
+    "total": 131,
+    "passed": 131,
+    "failed": 0,
+    "duration_s": 41.37
+  },
+
+  "services": {
+    "v5d_api": {"port": 8000, "status": "healthy"},
+    "v5d_static": {"port": 8100, "pid": 13880, "status": "serving"},
+    "pascal_rest": {"port": 3002, "pid": 18084, "status": "running"},
+    "pascal_editor": {"port": 3002, "status": "running"},
+    "pascal_mcp": {"port": 3917, "pid": 5900, "status": "listening"},
+    "v5d_worker": {"pid": 16652, "status": "running"}
+  },
+
+  "project": {
+    "id": "f439302f-9f13-4cbf-a30e-c718b9818d9a",
+    "workflow_state": "SCENE3D_READY",
+    "registered_artifacts": 3
+  }
+}

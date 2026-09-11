@@ -1,0 +1,8 @@
+{
+  "start_time": "2026-07-29T06:22:04.185232+00:00",
+  "end_time": "2026-07-29T06:22:04.188823+00:00",
+  "status_code": 200,
+  "model_used": "meta/llama-3.2-11b-vision-instruct",
+  "latency_ms": 15748.258352279663,
+  "success": true
+}

@@ -1,0 +1,102 @@
+{
+  "success": true,
+  "mode": "diag",
+  "object_count": 14,
+  "shots": [
+    {
+      "id": "shot_01",
+      "name": "Opening context",
+      "type": "orbit",
+      "area": "exterior_context",
+      "duration": 3.0,
+      "frames": 72,
+      "valid": true,
+      "collision_issues": []
+    },
+    {
+      "id": "shot_02",
+      "name": "Approach entrance",
+      "type": "approach",
+      "area": "entrance_approach",
+      "duration": 2.5,
+      "frames": 60,
+      "valid": true,
+      "collision_issues": []
+    },
+    {
+      "id": "shot_03",
+      "name": "Enter and walk through",
+      "type": "walkthrough",
+      "area": "living_walkthrough",
+      "duration": 3.0,
+      "frames": 72,
+      "valid": true,
+      "collision_issues": []
+    },
+    {
+      "id": "shot_04",
+      "name": "Sofa and seating",
+      "type": "orbit",
+      "area": "seating_orbit",
+      "duration": 3.0,
+      "frames": 72,
+      "valid": true,
+      "collision_issues": []
+    },
+    {
+      "id": "shot_05",
+      "name": "Furniture detail",
+      "type": "dolly",
+      "area": "furniture_detail",
+      "duration": 2.5,
+      "frames": 60,
+      "valid": true,
+      "collision_issues": []
+    },
+    {
+      "id": "shot_06",
+      "name": "Final hero reveal",
+      "type": "reveal",
+      "area": "hero_reveal",
+      "duration": 3.5,
+      "frames": 84,
+      "valid": true,
+      "collision_issues": []
+    }
+  ],
+  "shots_generated": 6,
+  "shots_valid": 6,
+  "shots_rejected": 0,
+  "render": [
+    {
+      "id": "shot_01",
+      "result": "DIAG",
+      "mid": "C:\\Users\\admin\\workspaces\\vision-5d\\evidence\\V5D-PROCESS-REPAIR-003\\shots\\shot_01\\mid2_shot_01.png"
+    },
+    {
+      "id": "shot_02",
+      "result": "DIAG",
+      "mid": "C:\\Users\\admin\\workspaces\\vision-5d\\evidence\\V5D-PROCESS-REPAIR-003\\shots\\shot_02\\mid2_shot_02.png"
+    },
+    {
+      "id": "shot_03",
+      "result": "DIAG",
+      "mid": "C:\\Users\\admin\\workspaces\\vision-5d\\evidence\\V5D-PROCESS-REPAIR-003\\shots\\shot_03\\mid2_shot_03.png"
+    },
+    {
+      "id": "shot_04",
+      "result": "DIAG",
+      "mid": "C:\\Users\\admin\\workspaces\\vision-5d\\evidence\\V5D-PROCESS-REPAIR-003\\shots\\shot_04\\mid2_shot_04.png"
+    },
+    {
+      "id": "shot_05",
+      "result": "DIAG",
+      "mid": "C:\\Users\\admin\\workspaces\\vision-5d\\evidence\\V5D-PROCESS-REPAIR-003\\shots\\shot_05\\mid2_shot_05.png"
+    },
+    {
+      "id": "shot_06",
+      "result": "DIAG",
+      "mid": "C:\\Users\\admin\\workspaces\\vision-5d\\evidence\\V5D-PROCESS-REPAIR-003\\shots\\shot_06\\mid2_shot_06.png"
+    }
+  ]
+}

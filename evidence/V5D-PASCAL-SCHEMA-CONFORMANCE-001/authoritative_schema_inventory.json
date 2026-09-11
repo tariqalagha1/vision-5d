@@ -1,0 +1,136 @@
+{
+  "pascal_commit": "42ac4be1ce5f3fee74806aa093267b6fee77d47d",
+  "pascal_core_version": "0.9.2",
+  "schemas": {
+    "BaseNode": {
+      "source": "packages/core/src/schema/base.ts",
+      "export": "PUBLIC_EXPORT",
+      "key_fields": {
+        "object": "z.literal('node').default('node')",
+        "id": "z.string()",
+        "type": "nodeType('node')",
+        "name": "z.string().optional()",
+        "parentId": "z.string().nullable().default(null)",
+        "visible": "z.boolean().optional().default(true)",
+        "camera": "CameraSchema.optional()",
+        "metadata": "z.json().optional().default({})"
+      }
+    },
+    "WallNode": {
+      "source": "packages/core/src/schema/nodes/wall.ts",
+      "export": "PUBLIC_EXPORT",
+      "key_fields": {
+        "id": "objectId('wall') \u2014 e.g. wall_abc123def456gh",
+        "type": "nodeType('wall') \u2014 literal 'wall'",
+        "children": "z.array(z.union([ItemNode.shape.id, DoorNode.shape.id, WindowNode.shape.id])).default([])",
+        "start": "z.tuple([z.number(), z.number()]) \u2014 REQUIRED, 2D level coordinates",
+        "end": "z.tuple([z.number(), z.number()]) \u2014 REQUIRED, 2D level coordinates",
+        "thickness": "z.number().optional()",
+        "height": "z.number().optional()",
+        "curveOffset": "z.number().optional()",
+        "frontSide": "z.enum(['interior','exterior','unknown']).default('unknown')",
+        "backSide": "z.enum(['interior','exterior','unknown']).default('unknown')"
+      },
+      "coordinate_convention": "start/end are 2D [x, y] tuples in level coordinate system. position/rotation inherited from BaseNode but not primary geometry."
+    },
+    "DoorNode": {
+      "source": "packages/core/src/schema/nodes/door.ts",
+      "export": "PUBLIC_EXPORT",
+      "key_fields": {
+        "id": "objectId('door')",
+        "type": "nodeType('door')",
+        "position": "z.tuple([z.number(),z.number(),z.number()]).default([0,0,0]) \u2014 WALL-LOCAL [u, v, w]",
+        "rotation": "z.tuple([z.number(),z.number(),z.number()]).default([0,0,0])",
+        "wallId": "z.string().optional()",
+        "width": "z.number().default(0.9)",
+        "height": "z.number().default(2.1)",
+        "doorType": "DoorType.default('hinged')",
+        "doorCategory": "DoorCategory.default('interior')",
+        "openingKind": "z.enum(['door','opening']).default('door')",
+        "openingShape": "z.enum(['rectangle','rounded','arch']).default('rectangle')"
+      },
+      "coordinate_convention": "position is WALL-LOCAL: [u along wall face, v height from floor, w offset from wall mid-plane]. Y=height/2, always at floor."
+    },
+    "WindowNode": {
+      "source": "packages/core/src/schema/nodes/window.ts",
+      "export": "PUBLIC_EXPORT",
+      "key_fields": {
+        "id": "objectId('window')",
+        "type": "nodeType('window')",
+        "position": "z.tuple([z.number(),z.number(),z.number()]).default([0,0,0]) \u2014 WALL-LOCAL",
+        "rotation": "z.tuple([z.number(),z.number(),z.number()]).default([0,0,0])",
+        "wallId": "z.string().optional()",
+        "width": "z.number().default(1.5)",
+        "height": "z.number().default(1.5)",
+        "windowType": "WindowType.default('fixed')",
+        "openingKind": "z.enum(['window','opening']).default('window')",
+        "openingShape": "z.enum(['rectangle','rounded','arch']).default('rectangle')"
+      },
+      "coordinate_convention": "position is WALL-LOCAL. Y component = sill height above floor."
+    },
+    "SlabNode": {
+      "source": "packages/core/src/schema/nodes/slab.ts",
+      "export": "PUBLIC_EXPORT",
+      "key_fields": {
+        "id": "objectId('slab')",
+        "type": "nodeType('slab')",
+        "polygon": "z.array(z.tuple([z.number(), z.number()])) \u2014 REQUIRED [x,z] array",
+        "elevation": "z.number().default(0.05)",
+        "thickness": "z.number().default(0.05)",
+        "recessed": "z.boolean().default(false)",
+        "autoFromWalls": "z.boolean().default(false)"
+      },
+      "coordinate_convention": "polygon is [x, z] points. elevation is slab top above level plane. thickness grows DOWNWARD."
+    },
+    "BuildingNode": {
+      "source": "packages/core/src/schema/nodes/building.ts",
+      "export": "PUBLIC_EXPORT",
+      "key_fields": {
+        "id": "objectId('building')",
+        "type": "nodeType('building')",
+        "children": "z.array(z.union([LevelNode.shape.id, ElevatorNode.shape.id])).default([])",
+        "position": "z.tuple([z.number(),z.number(),z.number()]).default([0,0,0])",
+        "rotation": "z.tuple([z.number(),z.number(),z.number()]).default([0,0,0])"
+      }
+    },
+    "LevelNode": {
+      "source": "packages/core/src/schema/nodes/level.ts",
+      "export": "PUBLIC_EXPORT",
+      "key_fields": {
+        "id": "objectId('level')",
+        "type": "nodeType('level')",
+        "children": "z.array(LevelChildId).default([]) \u2014 accepts wall, slab, door, window, +25 others",
+        "level": "z.number().default(0)",
+        "height": "z.number().optional() \u2014 storey height, no default"
+      }
+    },
+    "SiteNode": {
+      "source": "packages/core/src/schema/nodes/site.ts",
+      "export": "PUBLIC_EXPORT",
+      "key_fields": {
+        "id": "objectId('site')",
+        "type": "nodeType('site')",
+        "polygon": "optional PropertyLineData, default 30x30 square centered at origin",
+        "children": "z.array(z.string()).default([])"
+      }
+    },
+    "AnyNode": {
+      "source": "packages/core/src/schema/types.ts",
+      "export": "PUBLIC_EXPORT",
+      "description": "z.discriminatedUnion('type', [SiteNode, BuildingNode, ElevatorNode, LevelNode, ...]) \u2014 46 node types total"
+    },
+    "SceneGraph": {
+      "source": "packages/core/src/utils/clone-scene-graph.ts",
+      "export": "PUBLIC_EXPORT (TypeScript type, not Zod)",
+      "shape": "{ nodes: Record<AnyNodeId, AnyNode>, rootNodeIds: AnyNodeId[], collections?, installedPlugins? }"
+    },
+    "apiGraphSchema": {
+      "source": "apps/editor/lib/graph-schema.ts",
+      "export": "INTERNAL_ONLY (server-side Zod)",
+      "shape": "z.object({ nodes: z.record(z.string(), z.unknown()), rootNodeIds: z.array(z.string()), ... }).superRefine(\u2192 AnyNode.safeParse on every node)"
+    }
+  },
+  "total_schema_types": 46,
+  "public_export_count": 10,
+  "internal_only_count": 1
+}

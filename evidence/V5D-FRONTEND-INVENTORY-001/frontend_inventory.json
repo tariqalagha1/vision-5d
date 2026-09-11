@@ -1,0 +1,127 @@
+{
+  "mission": "V5D-FRONTEND-INVENTORY-001",
+  "timestamp": "2026-07-31T13:32:43.056888",
+  "frontend_root": "apps/web/",
+  "framework": {
+    "name": "NONE \u2014 pure HTML + vanilla JavaScript",
+    "version": null,
+    "react": null,
+    "typescript_config": null,
+    "note": "No framework, no build step, no TypeScript compilation for frontend"
+  },
+  "architecture": {
+    "entry_point": "apps/web/index.html",
+    "layout": "single-page with tab navigation, 220px sidebar, header bar, scrollable content",
+    "router": "NONE \u2014 manual showTab() function with display toggling",
+    "state_management": "NONE \u2014 global variables (wsId, projId, p2JobId, p3JobId)",
+    "build_system": "NONE \u2014 raw HTML served directly",
+    "module_system": "NONE \u2014 no ES modules, no import/export in frontend JS",
+    "api_client": "inline fetch() functions in each HTML file"
+  },
+  "components": {
+    "component_directories": [],
+    "pages": [],
+    "hooks": [],
+    "services": [],
+    "state_stores": [],
+    "note": "No component architecture \u2014 all HTML is monolithic single-file"
+  },
+  "html_files": [
+    {
+      "file": "index.html",
+      "lines": 665,
+      "bytes": 29240,
+      "role": "main_dashboard",
+      "api_connected": true,
+      "threejs": false,
+      "glb_loader": false,
+      "procedural_only": false
+    },
+    {
+      "file": "studio.html",
+      "lines": 1070,
+      "bytes": 52509,
+      "role": "design_studio",
+      "api_connected": true,
+      "threejs": true,
+      "glb_loader": false,
+      "procedural_only": true,
+      "note": "Uses BoxGeometry fallback for objects \u2014 no GLB loading"
+    },
+    {
+      "file": "3d-viewer.html",
+      "lines": 322,
+      "bytes": 11136,
+      "role": "3d_scene_viewer",
+      "api_connected": true,
+      "threejs": true,
+      "glb_loader": true,
+      "procedural_only": false,
+      "note": "Has GLTFLoader import but no actual .glb file loaded"
+    },
+    {
+      "file": "geometry-editor.html",
+      "lines": 339,
+      "bytes": 11253,
+      "role": "2d_geometry_editor",
+      "api_connected": true,
+      "threejs": false,
+      "glb_loader": false,
+      "procedural_only": false,
+      "note": "Canvas 2D rendering, not Three.js"
+    },
+    {
+      "file": "cinematic.html",
+      "lines": 178,
+      "bytes": 17788,
+      "role": "cinematic_demo",
+      "api_connected": false,
+      "threejs": true,
+      "glb_loader": false,
+      "procedural_only": true,
+      "note": "Standalone demo \u2014 disconnected from API/GLB"
+    },
+    {
+      "file": "cinematic_v2.html",
+      "lines": 72,
+      "bytes": 18349,
+      "role": "cinematic_demo_v2",
+      "api_connected": false,
+      "threejs": true,
+      "glb_loader": false,
+      "procedural_only": true
+    },
+    {
+      "file": "cinematic_luxury.html",
+      "lines": 72,
+      "bytes": 22784,
+      "role": "cinematic_demo_luxury",
+      "api_connected": false,
+      "threejs": true,
+      "glb_loader": false,
+      "procedural_only": true
+    }
+  ],
+  "styling": {
+    "system": "inline CSS in each HTML file",
+    "css_framework": null,
+    "css_preprocessor": null,
+    "icon_library": null,
+    "responsive": "minimal \u2014 single @media query in index.html at 800px",
+    "dark_mode": "hardcoded dark theme (GitHub-style #0d1117/#161b22/#30363d)"
+  },
+  "dependencies": {
+    "threejs": "v0.160.0 via CDN (jsdelivr)",
+    "threejs_addons": "OrbitControls, TransformControls",
+    "cdn_providers": [
+      "cdn.jsdelivr.net"
+    ],
+    "local_deps": []
+  },
+  "testing": {
+    "frontend_test_framework": null,
+    "backend_test_framework": "pytest 8.4.2",
+    "e2e_tools": null,
+    "accessibility": null
+  }
+}

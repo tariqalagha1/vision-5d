@@ -1,0 +1,15 @@
+{
+  "buildId": "build-c0f5d661",
+  "command": "bun install && bun run build",
+  "exitCode": 0,
+  "durationS": 122,
+  "packagesBuilt": 7,
+  "deterministic": true,
+  "optimization": "production (Next.js + Turbopack)",
+  "sourceMaps": "enabled",
+  "checksums": {
+    "lockfile": "aa54fa45f899490be414dee51bb59e25d950c8805dc7a85bb0ed75da23570fd0",
+    "adapter": "8172b093cd3fe801d81dff0d958ba713bc88e47e1d092d500094849da53f6e7f"
+  },
+  "verdict": "PASS"
+}

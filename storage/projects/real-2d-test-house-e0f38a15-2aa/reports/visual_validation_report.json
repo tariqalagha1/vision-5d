@@ -1,0 +1,12 @@
+{
+  "stage": "STAGE_6",
+  "timestamp": "2026-07-27T09:04:49.233285",
+  "findings": {
+    "drawing_visible": true,
+    "is_blank": false,
+    "ground_floor_issue": "Large-radius ARCs create concentric circle overlay obscuring building",
+    "first_floor_clean": true,
+    "both_storeys_preserved": true,
+    "suitable_for_review": "PARTIAL - first floor OK, ground floor needs arc filtering"
+  }
+}

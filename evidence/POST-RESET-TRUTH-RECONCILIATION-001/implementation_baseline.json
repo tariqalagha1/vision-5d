@@ -1,0 +1,67 @@
+{
+  "mission": "V5D-POST-RESET-TRUTH-RECONCILIATION-001",
+  "timestamp": "2026-07-27T08:24:59.246148",
+  "declaration": {
+    "1_source_conversion": {
+      "status": "OPERATIONAL",
+      "detail": "DWG\u2192DXF conversion via LibreDWG 0.13.3 works correctly. step01_isolation.py produces valid DXF files with verified SHA-256.",
+      "readiness": "READY"
+    },
+    "2_cad_parsing": {
+      "status": "OPERATIONAL",
+      "detail": "DXF parser (packages/cad_import/dxf_parser.py) correctly extracts entities, layers, and blocks. Produces CADDrawing objects.",
+      "readiness": "READY"
+    },
+    "3_2d_rendering": {
+      "status": "OPERATIONAL (but disconnected from 3D pipeline)",
+      "detail": "render_cinematic_video.py and render_full_video.py produce 2D diagrams via Pillow. These are NOT 3D renders and are DISCONNECTED from the GLB/HTML pipeline.",
+      "readiness": "REQUIRES REPLACEMENT"
+    },
+    "4_architectural_interpretation": {
+      "status": "OPERATIONAL",
+      "detail": "Plan understanding (packages/plan_understanding/) detects walls, rooms, openings. Geometry engine (packages/geometry/) produces valid GeometryModel with 1,010 walls, 18 rooms, 105 doors.",
+      "readiness": "READY"
+    },
+    "5_scene_graph": {
+      "status": "PARTIAL",
+      "detail": "HermesGeometryModel.v5d.json (205KB) contains geometry data as JSON but is NOT the authoritative SceneGraph (.v5d binary format). The scene3d/reconstruction.py partially assembles a Scene3D object but the unified SceneGraph format does not yet exist.",
+      "readiness": "REQUIRES BUILD"
+    },
+    "6_mesh_generation": {
+      "status": "BROKEN",
+      "detail": "Mesh generation is attempted in glb_export.py but produces GLB with empty accessors[] and bufferViews[]. 1,010 walls in geometry model \u2192 4 wall_solid meshes in GLB with zero accessible vertex data. No triangulation pipeline exists.",
+      "readiness": "REQUIRES BUILD"
+    },
+    "7_glb_export": {
+      "status": "BROKEN \u2014 STRUCTURALLY INVALID",
+      "detail": "glb_export.py produces a 13KB GLB with valid glTF 2.0 header but EMPTY accessors array (0 accessors), EMPTY bufferViews array (0 bufferViews), and buffer byteLength of 0. All 51 primitive accessor references resolve to out-of-bounds indices. No conformant glTF 2.0 loader can render this GLB.",
+      "readiness": "REQUIRES FIX"
+    },
+    "8_html_viewer": {
+      "status": "DISCONNECTED \u2014 NEVER LOADS GLB",
+      "detail": "index.html creates an independent procedural scene: 10 BoxGeometry walls in a circle, 1 PlaneGeometry floor, 30 BoxGeometry furniture from embedded F[] JavaScript array. No GLTFLoader import. No GLB reference. Scene shares zero data with the GLB or geometry model.",
+      "readiness": "REQUIRES REWRITE"
+    },
+    "9_video_generation": {
+      "status": "DISCONNECTED \u2014 2D DIAGRAM, NOT 3D",
+      "detail": "MP4 (341KB, h264, 1920x1080, 30fps, 91s) and WebM (1.6MB, VP9, 1920x1080, 30fps, 91s) contain a static 2D top-down schematic floor plan with text labels. 89% of extracted frames are perceptually identical. The video does NOT use the GLB, Three.js, or any 3D renderer. Pillow 2D drawing with custom world_to_screen() math.",
+      "readiness": "REQUIRES REPLACEMENT"
+    },
+    "10_test_environment": {
+      "status": "ENVIRONMENT MISMATCH",
+      "detail": "Hermes runs tests with Python 3.11 (hermes venv) which lacks sqlalchemy, numpy, structlog. The project's authoritative interpreter is Python 3.14. Test collection with correct interpreter returned exit code 0 (tests collected). The 'test suite broken' health-check report was a false alarm caused by wrong interpreter.",
+      "readiness": "REQUIRES ENV DOCUMENTATION"
+    },
+    "11_customer_delivery": {
+      "status": "NOT READY FOR DELIVERY",
+      "detail": "GLB is structurally invalid. HTML never loads GLB. Video is 2D diagram. Artifacts are independently fabricated. Room count self-contradictory (18 vs 6 vs 2). Furniture is BoxGeometry boxes, not recognizable 3D meshes. Certification score (98.6%) is based on surface checks only.",
+      "readiness": "BLOCKED"
+    },
+    "12_architecture_migration": {
+      "status": "ARCHITECTURE RESET DESIGNED \u2014 NOT YET IMPLEMENTED",
+      "detail": "V5D-ARCHITECTURE-RESET-001 defines the new single-authoritative-scene pipeline. Implementation gap analysis identifies which components to keep/modify/delete. Stage contracts (0-16) are fully specified. Implementation has NOT started.",
+      "readiness": "READY FOR IMPLEMENTATION APPROVAL"
+    }
+  },
+  "safe_first_implementation_milestone": "Fix GLB export (F1 in architecture reset): populate accessors[] and bufferViews[] in glb_export.py so that the Scene3D object's mesh data is correctly serialized into the GLB binary. This is the single blocking bug \u2014 all other issues (HTML disconnected, video 2D) are downstream consequences of there being no valid GLB to consume."
+}

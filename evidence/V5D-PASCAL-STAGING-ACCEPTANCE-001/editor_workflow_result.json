@@ -1,0 +1,10 @@
+{
+  "edits": [
+    "MOVE_WALL_ENDPOINT",
+    "CHANGE_WALL_THICKNESS",
+    "MOVE_DOOR",
+    "ADD_WINDOW",
+    "DELETE_WALL"
+  ],
+  "appliedViaRest": 200
+}

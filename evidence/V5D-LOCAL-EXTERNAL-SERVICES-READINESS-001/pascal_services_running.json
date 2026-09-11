@@ -1,0 +1,35 @@
+{
+  "mission": "V5D-LOCAL-EXTERNAL-SERVICES-READINESS-001",
+  "stages": "4-5-6",
+  "timestamp": "2026-07-31T22:56:30Z",
+  "pascal_rest": {
+    "classification": "PASCAL_REST_RUNNING",
+    "command": "npx next dev --port 3002",
+    "working_directory": "C:\\Users\\admin\\workspaces\\pascal-editor-eval\\apps\\editor",
+    "port": 3002,
+    "base_url": "http://localhost:3002",
+    "health_endpoint": "/api/health",
+    "health_result": {"status":"ok","app":"editor"},
+    "scenes_endpoint": "/api/scenes",
+    "existing_scenes": 5,
+    "security": {
+      "unauthorized_origin_blocked": true,
+      "loopback_auto_allowed": true
+    }
+  },
+  "pascal_editor": {
+    "classification": "PASCAL_EDITOR_RUNNING",
+    "framework": "Next.js 16.2.9 (Turbopack)",
+    "url": "http://localhost:3002",
+    "shared_with_rest": true
+  },
+  "pascal_mcp": {
+    "classification": "PASCAL_MCP_RUNNING",
+    "transport": "stdio",
+    "bin": "dist/bin/pascal-mcp.js",
+    "version": "0.3.2",
+    "tools_registered": 46,
+    "smoke_test": "passed",
+    "operations_verified": ["get_scene", "validate_scene", "undo", "create_level"]
+  }
+}

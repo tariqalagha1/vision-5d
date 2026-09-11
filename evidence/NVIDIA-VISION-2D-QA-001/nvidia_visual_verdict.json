@@ -1,0 +1,15 @@
+{
+  "model": "nvidia/llama-3.1-nemotron-nano-vl-8b-v1",
+  "total_images_tested": 5,
+  "clear_architectural_plan": 5,
+  "other": 0,
+  "all_classifications": [
+    "CLEAR_ARCHITECTURAL_PLAN",
+    "CLEAR_ARCHITECTURAL_PLAN",
+    "CLEAR_ARCHITECTURAL_PLAN",
+    "CLEAR_ARCHITECTURAL_PLAN",
+    "CLEAR_ARCHITECTURAL_PLAN"
+  ],
+  "verdict": "PASS",
+  "note": "All images classified as CLEAR_ARCHITECTURAL_PLAN. However, Q18 (suitable for human review) was 'no' for all images \u2014 the NVIDIA model considers raw CAD exports as architecturally valid but lacking the polish needed for formal human review (no title block, scale bar, dimension values)."
+}

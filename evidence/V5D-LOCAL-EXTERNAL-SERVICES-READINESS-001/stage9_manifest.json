@@ -1,0 +1,88 @@
+{
+  "scene3d_id": "a5cc4732-fd73-4b78-b17f-dbd2e2bc4ff6",
+  "revision_id": "rev-002-7ca2bfab",
+  "glb_path": "C:\\Users\\admin\\workspaces\\vision-5d\\evidence\\V5D-LOCAL-EXTERNAL-SERVICES-READINESS-001\\authoritative_scene.glb",
+  "glb_sha256": "0609bf7da6d9e5430281eedc7b0542ef927ad9d18d1fb118acbf122ceed87192",
+  "glb_size": 2088,
+  "objects": [
+    {
+      "name": "floor",
+      "pos": [
+        2.5,
+        -0.05,
+        2.0
+      ],
+      "size": [
+        5.0,
+        0.1,
+        4.0
+      ]
+    },
+    {
+      "name": "wall_n",
+      "pos": [
+        2.5,
+        1.35,
+        0.0
+      ],
+      "size": [
+        5.0,
+        2.7,
+        0.2
+      ]
+    },
+    {
+      "name": "wall_s",
+      "pos": [
+        2.5,
+        1.35,
+        4.0
+      ],
+      "size": [
+        5.0,
+        2.7,
+        0.2
+      ]
+    },
+    {
+      "name": "wall_e",
+      "pos": [
+        5.0,
+        1.35,
+        2.0
+      ],
+      "size": [
+        0.2,
+        2.7,
+        4.0
+      ]
+    },
+    {
+      "name": "wall_w",
+      "pos": [
+        0.0,
+        1.35,
+        2.0
+      ],
+      "size": [
+        0.2,
+        2.7,
+        4.0
+      ]
+    },
+    {
+      "name": "sofa",
+      "pos": [
+        2.5,
+        0.4,
+        1.5
+      ],
+      "size": [
+        2.0,
+        0.8,
+        0.9
+      ]
+    }
+  ],
+  "timestamp": "2026-08-02T05:26:45.182510+00:00"
+}

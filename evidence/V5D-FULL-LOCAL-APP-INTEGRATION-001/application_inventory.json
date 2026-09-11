@@ -1,0 +1,46 @@
+{
+  "mission": "V5D-FULL-LOCAL-APP-INTEGRATION-001",
+  "stage": "1 — Application Inventory",
+  "timestamp": "2026-07-31T21:00:00",
+  "total_files": 642,
+  "components": {
+    "backend": {
+      "entry_point": "apps/api/main.py",
+      "framework": "FastAPI (uvicorn)",
+      "python": "3.11 (C:\\Users\\admin\\AppData\\Local\\Programs\\Python\\Python311\\python.exe)",
+      "database": "SQLite (vision5d.db)",
+      "routes": 7,
+      "endpoints": "17+ certified"
+    },
+    "frontend": {
+      "entry_point": "apps/web/index.html",
+      "architecture": "Vanilla HTML/CSS/JS (zero-build)",
+      "html_files": 7,
+      "js_files": 9,
+      "css_files": 1,
+      "total_js_size": "55.4 KB",
+      "total_css_size": "16.2 KB"
+    },
+    "worker": {
+      "entry_point": "apps/worker/main.py",
+      "lines": 998,
+      "state_machine": "17-state durable job worker"
+    },
+    "pascal": {
+      "type": "TypeScript adapters (no Python backend bridge)",
+      "files": 10,
+      "client": "MCP + REST clients (TypeScript)",
+      "backend_endpoint": "GET /api/v1/dashboard/pascal-health"
+    },
+    "packages": {
+      "ai": "Gemini Vision, provider client, analysis, proposals",
+      "geometry": "Phase 3 geometry engine",
+      "scene3d": "Phase 4 3D scene reconstruction + GLB export",
+      "cinematic": "Cinematic presentation engine + luxury director",
+      "studio": "Phase 5 studio (drafts, edits, versions, furniture)",
+      "cad_import": "DXF parser + fidelity bridge",
+      "plan_understanding": "Phase 2 plan understanding",
+      "universal_ingestion": "Multi-format CAD ingestion"
+    }
+  }
+}

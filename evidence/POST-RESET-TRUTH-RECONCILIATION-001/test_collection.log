@@ -1,0 +1,161 @@
+============================= test session starts =============================
+platform win32 -- Python 3.14.3, pytest-8.4.2, pluggy-1.6.0 -- C:\Users\admin\AppData\Local\Programs\Python\Python314\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\admin\workspaces\vision-5d
+configfile: pyproject.toml
+plugins: anyio-4.12.1, langsmith-0.7.20, asyncio-1.3.0
+asyncio: mode=Mode.AUTO, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+collecting ... collected 98 items
+
+<Dir vision-5d>
+  <Dir tests>
+    <Module test_integration_v5d.py>
+      Vision 5D — Integration Tests for Async Durable Job Execution
+      Tests: async submission, idempotency, checkpoint resume, worker authority,
+      duplicate prevention, artifact durability, and auth session persistence.
+      <Class TestStateTransitions>
+        <Function test_created_to_authorized>
+        <Function test_authorized_to_queued>
+        <Function test_queued_to_claimed>
+        <Function test_claimed_to_running>
+        <Function test_running_to_interrupted>
+        <Function test_interrupted_to_queued>
+        <Function test_checkpointed_to_interrupted>
+        <Function test_resuming_to_running>
+        <Function test_resume_requested_to_resuming>
+        <Function test_terminal_no_transition>
+        <Function test_new_states_in_enum>
+          Verify INTERRUPTED and RESUMING are in the enum.
+      <Class TestDurableJobLifecycle>
+        <Function test_create_job_persisted>
+        <Function test_job_transition_persisted>
+        <Function test_attempt_record_created>
+        <Function test_checkpoint_with_resume_metadata>
+        <Function test_progress_event_persisted>
+        <Function test_durable_artifact_ref_persisted>
+      <Class TestIdempotency>
+        <Function test_unique_idempotency_key_enforced>
+        <Function test_same_params_different_key_allowed>
+      <Class TestInterruptResume>
+        <Function test_interrupt_then_recover_flow>
+          Simulate: RUNNING → INTERRUPTED → RESUMING → RUNNING
+        <Function test_checkpoint_load_latest>
+          Verify latest checkpoint is retrievable.
+      <Class TestSingleOutputCommit>
+        <Function test_only_one_persisted_geometry_per_job>
+          Duplicate geometry persist should not create extra versions.
+      <Class TestContractImports>
+        <Function test_new_contracts_importable>
+        <Function test_room_area_formatting>
+          Verify adaptive room area display precision.
+    <Module test_phase2.py>
+      Vision 5D — Phase 2 Tests
+      Tests for preprocessing, OCR, CV detection, understanding, and graph pipeline.
+      <Class TestPreprocessing>
+        Test the preprocessing pipeline.
+        <Function test_process_creates_output>
+        <Function test_quality_assessment>
+        <Function test_deskew_applied>
+      <Class TestOCR>
+        Test the OCR engine.
+        <Function test_ocr_extracts_text>
+        <Function test_ocr_classifies_room_labels>
+        <Function test_ocr_extracts_scale>
+      <Class TestCVDetection>
+        Test the CV detection pipeline.
+        <Function test_detects_walls>
+        <Function test_detects_rooms>
+        <Function test_detects_openings>
+        <Function test_all_detections_have_confidence>
+      <Class TestUnderstandingEngines>
+        Test scale, confidence, ambiguity, and understanding engines.
+        <Function test_scale_calibration>
+        <Function test_confidence_engine>
+        <Function test_ambiguity_engine>
+        <Function test_architectural_understanding>
+      <Class TestArchitecturalGraph>
+        Test the canonical architectural graph builder.
+        <Function test_graph_built_with_all_node_types>
+        <Function test_graph_has_rooms_and_walls>
+        <Function test_graph_has_labels>
+        <Function test_graph_validation>
+        <Function test_full_pipeline_result>
+    <Module test_phase3.py>
+      Vision 5D — Phase 3 Geometry Engine Tests (Fixed)
+      <Class TestGeometricPrimitives>
+        <Function test_point_operations>
+        <Function test_point_angle>
+        <Function test_line_intersection>
+        <Function test_polygon_area>
+        <Function test_polygon_validity>
+        <Function test_polygon_contains_point>
+        <Function test_coordinate_transforms>
+      <Class TestWallReconstruction>
+        <Function test_wall_body_build>
+        <Function test_wall_body_left_right_faces>
+        <Function test_junction_detection>
+        <Function test_endpoint_snapping>
+        <Function test_fragment_merge>
+        <Function test_wall_classification>
+      <Class TestWallThickness>
+        <Function test_default_internal>
+        <Function test_explicit_dimension_override>
+      <Class TestRoomPolygons>
+        <Function test_generate_rooms>
+        <Function test_room_adjacency>
+      <Class TestOpeningPlacement>
+        <Function test_place_door_on_wall>
+        <Function test_validate_door_width>
+        <Function test_opening_no_host>
+      <Class TestScaleCalibration>
+        <Function test_dimension_derived>
+        <Function test_phase2_fallback>
+        <Function test_default_scale>
+        <Function test_manual_override>
+        <Function test_conflicting_dimensions>
+      <Class TestConstraints>
+        <Function test_build_constraints>
+        <Function test_horizontal_constraint>
+        <Function test_shared_endpoint_constraint>
+        <Function test_solver_repairs>
+      <Class TestTopology>
+        <Function test_build_topology>
+      <Class TestRepair>
+        <Function test_endpoint_gap_repair>
+        <Function test_uncertainty_unclosed_room>
+        <Function test_repair_reversibility>
+      <Class TestEditableModel>
+        <Function test_initialize>
+        <Function test_add_wall_and_undo>
+        <Function test_undo_redo>
+        <Function test_rename_room>
+        <Function test_move_opening>
+        <Function test_change_scale>
+      <Class TestValidation>
+        <Function test_valid_floor>
+        <Function test_invalid_zero_thickness>
+        <Function test_room_not_closed>
+        <Function test_overlapping_rooms>
+        <Function test_metrics>
+      <Class TestScenarioA_CleanOrthogonalPlan>
+        <Function test_e2e_clean_orthogonal>
+      <Class TestScenarioB_FragmentedWalls>
+        <Function test_fragmented_repair>
+      <Class TestScenarioC_ConflictingScale>
+        <Function test_conflicting_dimensions>
+      <Class TestScenarioD_DiagonalGeometry>
+        <Function test_diagonal_preserved>
+      <Class TestScenarioE_InvalidOpening>
+        <Function test_door_outside_wall_validation>
+      <Class TestScenarioF_UserCorrection>
+        <Function test_move_wall_endpoint_then_undo>
+      <Class TestScenarioG_WorkerInterruption>
+        <Function test_checkpoint_recovery>
+      <Class TestScenarioH_PartialGeometry>
+        <Function test_partial_room_flagged>
+      <Class TestEdgeCases>
+        <Function test_empty_centerline_list>
+        <Function test_single_point_centerline>
+        <Function test_scale_round_trip>
+
+========================= 98 tests collected in 0.80s =========================

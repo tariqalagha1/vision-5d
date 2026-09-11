@@ -1,0 +1,59 @@
+{
+  "success": true,
+  "mode": "pr004-repair",
+  "fov": {
+    "hfov_half_deg": 19.8,
+    "vfov_half_deg": 11.45
+  },
+  "target_aabb": [
+    [
+      1.5,
+      -3.700000047683716,
+      0.10000000149011612
+    ],
+    [
+      3.5,
+      -1.600000023841858,
+      1.2000000476837158
+    ]
+  ],
+  "furniture_meshes": 9,
+  "original_shot_05": {
+    "min_distance_m": 1.36,
+    "end_fill_h": 1.212,
+    "end_fill_v": 1.202,
+    "valid": false,
+    "issues": [
+      "too_close@6=2.45m",
+      "too_close@7=2.37m",
+      "too_close@8=2.29m",
+      "too_close@9=2.21m",
+      "too_close@10=2.13m",
+      "too_close@11=2.05m",
+      "too_close@12=1.97m",
+      "too_close@13=1.89m",
+      "too_close@14=1.81m",
+      "too_close@15=1.73m",
+      "too_close@16=1.66m",
+      "too_close@17=1.58m",
+      "too_close@18=1.51m",
+      "too_close@19=1.43m",
+      "too_close@20=1.36m",
+      "overfill_h=1.21_v=1.20"
+    ]
+  },
+  "replacement_shot_05": {
+    "min_distance_m": 5.04,
+    "end_fill_h": 0.473,
+    "end_fill_v": 0.452,
+    "valid": true,
+    "issues": []
+  },
+  "original_rejected": true,
+  "replacement_accepted": true,
+  "render": {
+    "shot": "shot_05",
+    "result": "RENDERED",
+    "frames": 60
+  }
+}

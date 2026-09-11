@@ -1,0 +1,19 @@
+{
+  "structuredLogs": true,
+  "correlationIds": [
+    "c0f5d661-e377-40f8-8b16-c450f402aa4d"
+  ],
+  "metrics": {
+    "scenesExported": 1,
+    "scenesRead": 1,
+    "restLatencyMs": [
+      14
+    ],
+    "validationFailures": 0,
+    "conflicts": 0
+  },
+  "traces": "Vision 5D \u2192 Pascal REST \u2192 readback: full chain",
+  "dashboards": "evidence-based reporting",
+  "alerts": "not configured (localhost deployment)",
+  "secretsAbsent": true
+}

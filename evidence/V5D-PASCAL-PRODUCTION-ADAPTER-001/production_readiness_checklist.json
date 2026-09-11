@@ -1,0 +1,21 @@
+{
+  "schemaConformance": true,
+  "nodeValidation": true,
+  "graphValidation": true,
+  "identityMap": true,
+  "provenance": true,
+  "restIntegration": true,
+  "mcpIntegration": true,
+  "correctionEvents": true,
+  "immutableRevisions": true,
+  "reverseAdapter": true,
+  "precisionPolicy": true,
+  "migration": true,
+  "syncStates": true,
+  "conflictDetection": true,
+  "observability": true,
+  "failureAtomicity": true,
+  "security": true,
+  "tests": true,
+  "referenceE2E": true
+}

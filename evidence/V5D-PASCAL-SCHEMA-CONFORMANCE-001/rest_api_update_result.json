@@ -1,0 +1,21 @@
+{
+  "scene_id": "de31085edb9a",
+  "method": "PUT",
+  "status": 200,
+  "response": {
+    "id": "de31085edb9a",
+    "name": "Updated \u2014 25836d58",
+    "projectId": "real-2d-45x45-32c4e1ba-151",
+    "ownerId": null,
+    "thumbnailUrl": null,
+    "version": 2,
+    "createdAt": "2026-07-30T05:48:03.968Z",
+    "updatedAt": "2026-07-30T05:48:04.829Z",
+    "sizeBytes": 45272,
+    "nodeCount": 64,
+    "editorUrl": "/editor/de31085edb9a",
+    "url": "/editor/de31085edb9a",
+    "published": true,
+    "graphHash": "f6ecfdd09f037eff6ac19ff15c6defa31ddcb91ede91494a7c0e34beaa129d6b"
+  }
+}

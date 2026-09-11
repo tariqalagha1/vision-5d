@@ -1,0 +1,21 @@
+{
+  "stage": 2,
+  "result": "VERIFIED",
+  "provider": "nvidia",
+  "model": "meta/llama-3.2-11b-vision-instruct",
+  "api_key_present": true,
+  "api_key_server_side": true,
+  "real_screenshot_analyzed": true,
+  "real_screenshot_path": "evidence/V5D-LOCAL-EXTERNAL-SERVICES-READINESS-001/computer_use/screenshots/nvidia_test_screenshot.png",
+  "elements_detected": 16,
+  "latency_ms": 32035,
+  "structured_contract_fulfilled": true,
+  "vision_response_valid": true,
+  "no_credential_leak": true,
+  "fallback_not_used": true,
+  "fixes_applied": [
+    "vision.py: Fixed call_vision() to match actual ProviderAdapter signature (removed max_tokens/temperature)",
+    "vision.py: Fixed response extraction to use response['parsed'] instead of response['content']",
+    "vision.py: Added JSON unescaping for NVIDIA model's escaped-quote responses"
+  ]
+}

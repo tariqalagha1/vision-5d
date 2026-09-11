@@ -1,0 +1,20 @@
+{
+  "mission": "V5D-BLENDER-RUNTIME-VERIFICATION-001",
+  "timestamp": "2026-07-31T22:23:19.856746",
+  "path": "C:/Users/admin/workspaces/vision-5d\\.exports\\render_test_001\\output.mp4",
+  "exists": true,
+  "size_bytes": 5383,
+  "sha256": "51ad015ae9dc6af0039345c911befb3d0996344d2345a99c6c378ef1629e8ac3",
+  "codec": "h264",
+  "codec_long": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+  "profile": "High",
+  "pixel_format": "yuv420p",
+  "resolution": "1280x720",
+  "aspect_ratio": "16:9",
+  "fps": "30/1",
+  "duration_seconds": 1.0,
+  "frame_count": 30,
+  "bit_rate": "33224",
+  "container": "MP4 (QuickTime/MOV)",
+  "encoder": "Lavf62.12.101 / Lavc62.28.101 libx264"
+}

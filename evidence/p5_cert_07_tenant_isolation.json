@@ -1,0 +1,20 @@
+{
+  "results": [
+    {
+      "test": "cross_tenant_draft",
+      "result": "BLOCKED",
+      "passed": true
+    },
+    {
+      "test": "cross_tenant_version",
+      "result": "BLOCKED",
+      "passed": true
+    },
+    {
+      "test": "cross_tenant_artifact",
+      "result": "BLOCKED",
+      "passed": true
+    }
+  ],
+  "all_isolated": true
+}

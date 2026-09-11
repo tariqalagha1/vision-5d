@@ -1,0 +1,52 @@
+{
+  "mcp_server_available": true,
+  "operations_tested": [
+    {
+      "operation": "validateScene",
+      "status": "compatible",
+      "note": "Scene passes Pascal schema validation"
+    },
+    {
+      "operation": "exportJSON",
+      "status": "compatible",
+      "note": "Scene exports as Record<string, AnyNode>"
+    },
+    {
+      "operation": "createNode",
+      "status": "compatible",
+      "note": "Can create new nodes with native types"
+    },
+    {
+      "operation": "updateNode",
+      "status": "compatible",
+      "note": "Can update wall start/end tuples"
+    },
+    {
+      "operation": "deleteNode",
+      "status": "compatible",
+      "note": "Can delete nodes, cascade handles wallId refs"
+    },
+    {
+      "operation": "applyPatch",
+      "status": "compatible",
+      "note": "Patches preserve metadata.vision5d"
+    },
+    {
+      "operation": "undo",
+      "status": "compatible",
+      "note": "Undo restores previous state including provenance"
+    },
+    {
+      "operation": "redo",
+      "status": "compatible",
+      "note": "Redo re-applies changes with provenance intact"
+    }
+  ],
+  "controlled_wall_update": {
+    "operation": "updateNode on a wall",
+    "changes": "Update thickness from 0.20 to 0.25 via MCP",
+    "metadata_preserved": true,
+    "schema_valid_after": true
+  },
+  "correction_event_capable": true
+}

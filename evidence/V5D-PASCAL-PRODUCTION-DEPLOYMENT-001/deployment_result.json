@@ -1,0 +1,14 @@
+{
+  "deploymentId": "deploy-c0f5d661",
+  "timestamp": "2026-07-30T06:19:00.139984+00:00",
+  "service": "pascal-editor-production",
+  "version": "0.9.2",
+  "commit": "42ac4be1",
+  "port": 3131,
+  "url": "http://localhost:3131",
+  "imageHash": "aa54fa45f899490b",
+  "startupDurationS": 15,
+  "rolloutDurationS": 2,
+  "strategy": "direct (single instance)",
+  "verdict": "DEPLOYED"
+}

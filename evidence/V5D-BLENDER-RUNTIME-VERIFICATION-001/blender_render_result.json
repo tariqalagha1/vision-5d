@@ -1,0 +1,39 @@
+{
+  "mission": "V5D-BLENDER-RUNTIME-VERIFICATION-001",
+  "timestamp": "2026-07-31T22:23:19.856746",
+  "blender_exit_code": 0,
+  "frames_rendered": 30,
+  "frame_format": "PNG",
+  "resolution": "1280x720",
+  "render_engine": "BLENDER_EEVEE",
+  "samples": 32,
+  "fps": 30,
+  "blend_saved": true,
+  "blend_size_bytes": 95966,
+  "blend_sha256": "79049ec894eea798c948876b01732b590867019f8e7c8581a69ea7a765e8df10",
+  "frame_samples": [
+    {
+      "name": "frame_0001.png",
+      "size_bytes": 441437,
+      "sha256": "d473261d1fb75bfe6896abee72edc81723d13583d07482897dc3a6300441c256"
+    },
+    {
+      "name": "frame_0002.png",
+      "size_bytes": 441437,
+      "sha256": "01f925bcc884b752763be82305c5e7897fab08b883a13bce2cdf18320b7c7f62"
+    },
+    {
+      "name": "frame_0003.png",
+      "size_bytes": 441437,
+      "sha256": "9bb149c1b0b14c80a7ea7aa29fadbd772b17c2954c9ed229cb6d45afa2f4d6be"
+    },
+    {
+      "name": "frame_0030.png",
+      "size_bytes": 753389,
+      "sha256": "e0262fc55af6d6bcac79825f0396bad498df55a992aa80c77c350d6c798a3695"
+    }
+  ],
+  "render_time_seconds": 81.4,
+  "import_success": true,
+  "mesh_objects_imported": 1
+}

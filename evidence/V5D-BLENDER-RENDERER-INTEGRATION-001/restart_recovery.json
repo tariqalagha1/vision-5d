@@ -1,0 +1,9 @@
+{
+  "mission": "V5D-BLENDER-RENDERER-INTEGRATION-001",
+  "timestamp": "2026-07-31T21:43:56.649733",
+  "frame_persistence": "Frames saved to .exports/{project_id}/ directory",
+  "blend_persistence": ".blend file saved",
+  "interrupted_render": "Can re-render (idempotent GLB input)",
+  "duplicate_prevention": "Checks for existing frames before re-render",
+  "mp4_artifact": "Registered as DurableArtifactRef \u2014 survives restart"
+}

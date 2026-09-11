@@ -1,0 +1,17 @@
+{
+  "mission": "V5D-LOCAL-EXTERNAL-SERVICES-READINESS-001",
+  "timestamp": "2026-07-31T21:59:37.902388",
+  "init_file": "__init__.py \u2014 CORRECT",
+  "module_imports": "from packages.rendering.blender_scene_builder import ... \u2014 CORRECT",
+  "no_duplicate_renderer": true,
+  "no_procedural_replacement": true,
+  "blender_subprocess": "subprocess.run([blender_exe, '--background', '--python', script])",
+  "glb_from_artifact": true,
+  "materials_from_project": true,
+  "lights_from_project": true,
+  "cameras_from_cinematic": true,
+  "ffmpeg_consumes_blender_frames": true,
+  "builder_size_bytes": 17054,
+  "builder_sha256": "6c451aaf716f196192f234e9211dc9c2a51b7e168ea8fe253397bd87ca4c7a69",
+  "builder_lines": 446
+}

@@ -1,0 +1,182 @@
+# Vision 5D — Production Docker Compose
+# Usage: docker compose up -d
+# Includes: API (scaled), Worker, PostgreSQL, Redis, Nginx, Prometheus, Grafana
+
+version: "3.9"
+
+services:
+  # ── Database ──
+  postgres:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: vision5d
+      POSTGRES_USER: ${DB_USER:-vision5d}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./infrastructure/init-db.sql:/docker-entrypoint-initdb.d/init.sql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USER:-vision5d}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - vision5d
+    deploy:
+      resources:
+        limits: {memory: 1G, cpus: "1"}
+
+  # ── Cache / Queue ──
+  redis:
+    image: redis:7-alpine
+    restart: unless-stopped
+    command: redis-server --appendonly yes --maxmemory 256mb --maxmemory-policy allkeys-lru
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - vision5d
+
+  # ── API Server ──
+  api:
+    build: .
+    image: vision5d:${VERSION:-latest}
+    restart: unless-stopped
+    command: api
+    environment:
+      V5D_ENV: production
+      V5D_DATABASE_URL: postgresql://${DB_USER:-vision5d}:${DB_PASSWORD}@postgres:5432/vision5d
+      V5D_REDIS_URL: redis://redis:6379
+      V5D_AUTO_MIGRATE: "true"
+      PORT: 8000
+      API_WORKERS: ${API_WORKERS:-4}
+      LOG_LEVEL: ${LOG_LEVEL:-info}
+      AI_PROVIDER: ${AI_PROVIDER:-simulation}
+      DEEPSEEK_API_KEY: ${DEEPSEEK_API_KEY:-}
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
+      AI_SIMULATION_ALLOWED: ${AI_SIMULATION_ALLOWED:-true}
+      PROMETHEUS_MULTIPROC_DIR: /tmp
+    ports:
+      - "${API_PORT:-8000}:8000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    volumes:
+      - artifact_data:/app/.storage
+      - export_data:/app/.exports
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 15s
+    networks:
+      - vision5d
+    deploy:
+      replicas: ${API_REPLICAS:-2}
+      resources:
+        limits: {memory: 512M, cpus: "0.5"}
+
+  # ── Durable Worker ──
+  worker:
+    build: .
+    image: vision5d:${VERSION:-latest}
+    restart: unless-stopped
+    command: worker
+    environment:
+      V5D_ENV: production
+      V5D_DATABASE_URL: postgresql://${DB_USER:-vision5d}:${DB_PASSWORD}@postgres:5432/vision5d
+      V5D_REDIS_URL: redis://redis:6379
+      AI_PROVIDER: ${AI_PROVIDER:-simulation}
+      DEEPSEEK_API_KEY: ${DEEPSEEK_API_KEY:-}
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
+      AI_SIMULATION_ALLOWED: ${AI_SIMULATION_ALLOWED:-true}
+      LOG_LEVEL: ${LOG_LEVEL:-info}
+    depends_on:
+      postgres:
+        condition: service_healthy
+    volumes:
+      - artifact_data:/app/.storage
+      - export_data:/app/.exports
+    networks:
+      - vision5d
+    deploy:
+      replicas: ${WORKER_REPLICAS:-1}
+      resources:
+        limits: {memory: 1G, cpus: "1"}
+
+  # ── Nginx Reverse Proxy ──
+  nginx:
+    image: nginx:alpine
+    restart: unless-stopped
+    ports:
+      - "${NGINX_PORT:-80}:80"
+      - "${NGINX_SSL_PORT:-443}:443"
+    volumes:
+      - ./infrastructure/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./apps/web:/usr/share/nginx/html:ro
+    depends_on:
+      - api
+    networks:
+      - vision5d
+    healthcheck:
+      test: ["CMD", "nginx", "-t"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # ── Prometheus Metrics ──
+  prometheus:
+    image: prom/prometheus:latest
+    restart: unless-stopped
+    command:
+      - "--config.file=/etc/prometheus/prometheus.yml"
+      - "--storage.tsdb.path=/prometheus"
+      - "--storage.tsdb.retention.time=15d"
+    volumes:
+      - ./infrastructure/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - prometheus_data:/prometheus
+    ports:
+      - "${PROMETHEUS_PORT:-9090}:9090"
+    networks:
+      - vision5d
+
+  # ── Grafana Dashboards ──
+  grafana:
+    image: grafana/grafana:latest
+    restart: unless-stopped
+    environment:
+      GF_SECURITY_ADMIN_USER: ${GRAFANA_USER:-admin}
+      GF_SECURITY_ADMIN_PASSWORD: ${GRAFANA_PASSWORD:-admin}
+      GF_USERS_ALLOW_SIGN_UP: "false"
+    volumes:
+      - ./infrastructure/grafana-dashboards:/etc/grafana/provisioning/dashboards:ro
+      - ./infrastructure/grafana-datasources.yml:/etc/grafana/provisioning/datasources/datasources.yml:ro
+      - grafana_data:/var/lib/grafana
+    ports:
+      - "${GRAFANA_PORT:-3000}:3000"
+    depends_on:
+      - prometheus
+    networks:
+      - vision5d
+
+networks:
+  vision5d:
+    driver: bridge
+
+volumes:
+  postgres_data:
+  redis_data:
+  artifact_data:
+  export_data:
+  prometheus_data:
+  grafana_data:

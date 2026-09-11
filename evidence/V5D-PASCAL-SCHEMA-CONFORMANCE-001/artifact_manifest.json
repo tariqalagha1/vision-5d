@@ -1,0 +1,147 @@
+{
+  "mission": "V5D-PASCAL-SCHEMA-CONFORMANCE-001",
+  "total_artifacts": 28,
+  "artifacts": [
+    {
+      "path": "adapter_gap_analysis.md",
+      "sha256": "a7bb1341ab39667cf2d8fe360f1cb5b0315282b35478c03f568636485b33ed26",
+      "size_bytes": 4742
+    },
+    {
+      "path": "authoritative_schema_inventory.json",
+      "sha256": "462ceb3c8429d3604e10d87d10a38850db05dd3aa273a55ee41115361c0886ce",
+      "size_bytes": 6450
+    },
+    {
+      "path": "coordinate_conversion_spec.md",
+      "sha256": "cc152254cc79453e3e346f77172bad545f58beb306ab9b9da8ba938560abb281",
+      "size_bytes": 576
+    },
+    {
+      "path": "corrected_pascal_graph_normalized.json",
+      "sha256": "6b05fa8cccd05816ff86c54947cf442d148f6a51a354cb8031e7369436b2a89d",
+      "size_bytes": 76937
+    },
+    {
+      "path": "corrected_pascal_graph_raw.json",
+      "sha256": "6b05fa8cccd05816ff86c54947cf442d148f6a51a354cb8031e7369436b2a89d",
+      "size_bytes": 76937
+    },
+    {
+      "path": "editor_load_result.json",
+      "sha256": "dec4c54c7d2122753f395372dbc0d5ce53b58176888bec321cbed7118a87a77e",
+      "size_bytes": 437
+    },
+    {
+      "path": "field_mapping.json",
+      "sha256": "4eb094643556d7ff0c02528d0817eb8c2b4e6e2ae1429dfaa4d977c97b60f5c3",
+      "size_bytes": 3221
+    },
+    {
+      "path": "final_report.md",
+      "sha256": "bec3f836ed42533d1fc1cd583af80846f00addffda9ba548f21f35dd472f6d7a",
+      "size_bytes": 3514
+    },
+    {
+      "path": "graph_validation_result.json",
+      "sha256": "674b9d6cf7053c11e74a9e02ea139e0343adda521b592dc0080d33ded3df3f09",
+      "size_bytes": 413
+    },
+    {
+      "path": "hierarchy_validation.json",
+      "sha256": "408f32ae3c35c02c76244ac31f8acb1ceb56dfdb4436cbb945f060f513d317aa",
+      "size_bytes": 602
+    },
+    {
+      "path": "integration_path_analysis.md",
+      "sha256": "8f0d1878e1a3bd193b73efb6489d43f0e479421bc919af4666b2815e907bb5fa",
+      "size_bytes": 1330
+    },
+    {
+      "path": "mcp_operation_results.json",
+      "sha256": "0ce8b7b993f0ad05d9b0af53b189f277b8f8226fb41d688f094ff52f9c09fb81",
+      "size_bytes": 1406
+    },
+    {
+      "path": "migration_idempotency_result.json",
+      "sha256": "a354d027aa7890cc11a4c394321071c0ebb443b6b0cba452e2930cc675ff2a7f",
+      "size_bytes": 194
+    },
+    {
+      "path": "node_validation_results.json",
+      "sha256": "5fd24e86779e2979262bac1acbd3fe843f5de22d697cbdd26abb5a375f246aa2",
+      "size_bytes": 84614
+    },
+    {
+      "path": "opening_conversion_spec.md",
+      "sha256": "abc845912d713b2c448cf2f97732162b3741f66ef249eba362ac9bc469ecb09a",
+      "size_bytes": 706
+    },
+    {
+      "path": "proof_format_pascal_scene.json",
+      "sha256": "7e5fd97ffd0c088860addd2e3e055386570697cad0ed2c97386c30d16773134a",
+      "size_bytes": 132
+    },
+    {
+      "path": "provenance_validation.json",
+      "sha256": "01dbb6615badfdb3458dba02bd7d8b5c5217c1df97101a5c3f987e5694248f58",
+      "size_bytes": 416
+    },
+    {
+      "path": "public_export_inventory.json",
+      "sha256": "11bb23d04e5ad92027b75eced9c1eafcd93aea68845362ce64229b3448b6b6d6",
+      "size_bytes": 1703
+    },
+    {
+      "path": "rest_api_create_result.json",
+      "sha256": "e9996ee82804d8e178ee9110fe6446cf0ab4b6077c01cf6b17743dd4993d10c9",
+      "size_bytes": 729
+    },
+    {
+      "path": "rest_api_read_result.json",
+      "sha256": "991634de7af96cbed714495d8d47cfa79d257bfd43c62c19f3890bf1fbb6d05c",
+      "size_bytes": 89877
+    },
+    {
+      "path": "rest_api_update_result.json",
+      "sha256": "035c2e0cb2577f16f52b31877cb30b008ba1b9ebf984b8e08a556048aa0d91ae",
+      "size_bytes": 604
+    },
+    {
+      "path": "reverse_adapter_result.json",
+      "sha256": "2392197914181325502660f0871c687f6fbca80d6620a2f94be79890d7ac0865",
+      "size_bytes": 49570
+    },
+    {
+      "path": "risk_report.md",
+      "sha256": "ed37c443c38bc6d808c81bfcab621c9a730408b19a4382052c3329821e2f508d",
+      "size_bytes": 727
+    },
+    {
+      "path": "round_trip_comparison.json",
+      "sha256": "e9d15ba837d938a40201c71b5400e944bd879b59ae9ad60469b4c322717f8efb",
+      "size_bytes": 217
+    },
+    {
+      "path": "source_vision5d_graph.json",
+      "sha256": "6126b760697510e616d64fc3d849bb01a2d0ea54011ae2bf4c931d7dd8697e81",
+      "size_bytes": 253
+    },
+    {
+      "path": "structural_comparison.json",
+      "sha256": "d2da1a7d940b7b6fc34724ece44e46d3da3fae10233e69439b16484822815bfd",
+      "size_bytes": 25014
+    },
+    {
+      "path": "adapter_source\\migrate_proof_to_native.ts",
+      "sha256": "b42dac80c5577debee500ba98d9d834dfeb3f86e17c4144916e54fc1623ded45",
+      "size_bytes": 786
+    },
+    {
+      "path": "adapter_source\\vision5d_to_pascal_graph.ts",
+      "sha256": "66821053fb1ffaf06af1a45349e9b5c073cfa51ff600e7fc60cadcda376155c8",
+      "size_bytes": 892
+    }
+  ],
+  "generated_at": "2026-07-30T05:48:03.426934+00:00"
+}

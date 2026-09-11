@@ -1,0 +1,12 @@
+{
+  "idempotent": true,
+  "pass": true,
+  "first_migration": {
+    "node_count": 3,
+    "is_record": true
+  },
+  "second_migration": {
+    "node_count": 3,
+    "identical": true
+  }
+}

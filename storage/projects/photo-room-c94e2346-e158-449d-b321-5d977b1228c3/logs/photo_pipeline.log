@@ -1,0 +1,66 @@
+2026-07-29 09:21:48,087 [INFO] MISSION: V5D-PHOTO-PIPELINE-REPO-TEST-001
+2026-07-29 09:21:48,087 [INFO] Job ID: c94e2346-e158-449d-b321-5d977b1228c3
+2026-07-29 09:21:48,087 [INFO] Project ID: 6e1587e7-d86e-4df0-849e-41667ac1b490
+2026-07-29 09:21:48,087 [INFO] Project: PHOTO-ROOM-c94e2346
+2026-07-29 09:21:48,087 [INFO] ============================================================
+2026-07-29 09:21:48,087 [INFO] STAGE 1: PHOTO INGESTION
+2026-07-29 09:21:48,120 [INFO] Source: C:\Users\admin\workspaces\vision-5d\test_data\1.webp
+2026-07-29 09:21:48,120 [INFO] Size: 161854 bytes, 1200x1500
+2026-07-29 09:21:48,120 [INFO] SHA-256: 3b39eeaa3907409677fa205f13c3bc93f49a1a5f6d4bbec52878df4d76ed8732
+2026-07-29 09:21:48,120 [INFO] Copy verified: True
+2026-07-29 09:21:48,121 [INFO] ============================================================
+2026-07-29 09:21:48,121 [INFO] STAGE 2: PHOTO VALIDATION
+2026-07-29 09:21:48,237 [INFO] Validation: PASS
+2026-07-29 09:21:48,238 [INFO]   readable_image: True
+2026-07-29 09:21:48,238 [INFO]   not_blank: True
+2026-07-29 09:21:48,238 [INFO]   pixel_std_dev: 59.308407633645835
+2026-07-29 09:21:48,238 [INFO]   not_corrupted: True
+2026-07-29 09:21:48,238 [INFO]   dimensions_reasonable: True
+2026-07-29 09:21:48,238 [INFO]   valid_photo_format: True
+2026-07-29 09:21:48,238 [INFO]   reasonable_file_size: True
+2026-07-29 09:21:48,238 [INFO] ============================================================
+2026-07-29 09:21:48,238 [INFO] STAGE 3: NVIDIA VISION ADAPTER
+2026-07-29 09:21:48,350 [INFO] NVIDIA adapter created for endpoint: https://integrate.api.nvidia.com/v1/chat/completions
+2026-07-29 09:21:48,350 [INFO] Model: meta/llama-3.2-11b-vision-instruct
+2026-07-29 09:21:48,350 [INFO] ============================================================
+2026-07-29 09:21:48,350 [INFO] STAGE 4: NVIDIA VISION ANALYSIS
+2026-07-29 09:21:48,350 [INFO] Calling NVIDIA Vision on: C:\Users\admin\workspaces\vision-5d\storage\projects\photo-room-c94e2346-e158-449d-b321-5d977b1228c3\source\photo_original.webp
+2026-07-29 09:22:04,185 [INFO] HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-29 09:22:04,186 [INFO] API response: status=200, latency=15748ms
+2026-07-29 09:22:04,186 [INFO] Request ID: chatcmpl-7bf05594a3274625b5c4d27441cbadbd
+2026-07-29 09:22:04,186 [INFO] ============================================================
+2026-07-29 09:22:04,186 [INFO] STAGE 4b: STORE NVIDIA EVIDENCE
+2026-07-29 09:22:04,188 [INFO] Raw NVIDIA evidence stored
+2026-07-29 09:22:04,188 [INFO] ============================================================
+2026-07-29 09:22:04,188 [INFO] STAGE 4c: PARSE STRUCTURED SCENE JSON
+2026-07-29 09:22:04,188 [INFO] JSON successfully parsed from NVIDIA response
+2026-07-29 09:22:04,189 [INFO] Vision 5D structured scene created: C:\Users\admin\workspaces\vision-5d\storage\projects\photo-room-c94e2346-e158-449d-b321-5d977b1228c3\parsed\photo_scene.json
+2026-07-29 09:22:04,189 [INFO]   Room type: living_room (confidence: 1.0)
+2026-07-29 09:22:04,189 [INFO]   Architecture objects: 2
+2026-07-29 09:22:04,189 [INFO]   Furniture objects: 2
+2026-07-29 09:22:04,189 [INFO]   Lighting objects: 1
+2026-07-29 09:22:04,189 [INFO]   Decoration objects: 1
+2026-07-29 09:22:04,189 [INFO]   Relationships: 2
+2026-07-29 09:22:04,189 [INFO]   Occlusions: 2
+2026-07-29 09:22:04,189 [INFO]   Unknowns: 1
+2026-07-29 09:22:04,189 [INFO] ============================================================
+2026-07-29 09:22:04,189 [INFO] STAGE 5: EVIDENCE AND PROVENANCE
+2026-07-29 09:22:04,190 [INFO] ============================================================
+2026-07-29 09:22:04,190 [INFO] ARTIFACT MANIFEST
+2026-07-29 09:22:04,191 [INFO]   logs\photo_pipeline.log (3736 bytes, ea0c44634c869fdf...)
+2026-07-29 09:22:04,198 [INFO]   nvidia_vision\execution_log.json (242 bytes, 8342f5651fac19aa...)
+2026-07-29 09:22:04,204 [INFO]   nvidia_vision\normalized_response.json (2748 bytes, 79063ec072977b76...)
+2026-07-29 09:22:04,209 [INFO]   nvidia_vision\raw_response.json (3176 bytes, d6677a9cb0acf0ce...)
+2026-07-29 09:22:04,215 [INFO]   nvidia_vision\request_manifest.json (387 bytes, e14fc6c078bbe7c1...)
+2026-07-29 09:22:04,221 [INFO]   parsed\photo_scene.json (3278 bytes, fed232808565caca...)
+2026-07-29 09:22:04,226 [INFO]   reports\final_photo_pipeline_verdict.json (1411 bytes, 4f67b379634e69a1...)
+2026-07-29 09:22:04,229 [INFO]   reports\photo_input_validation.json (341 bytes, 13047180996e1524...)
+2026-07-29 09:22:04,233 [INFO]   reports\scene_validation.json (502 bytes, 149b9f954681ba10...)
+2026-07-29 09:22:04,233 [INFO]   source\ingestion.json (542 bytes, 892165801d9327e8...)
+2026-07-29 09:22:04,233 [INFO]   source\photo_original.webp (161854 bytes, 3b39eeaa39074096...)
+2026-07-29 09:22:04,241 [INFO] ============================================================
+2026-07-29 09:22:04,241 [INFO] MISSION COMPLETE
+2026-07-29 09:22:04,241 [INFO] Status: VERIFIED
+2026-07-29 09:22:04,241 [INFO] Job ID: c94e2346-e158-449d-b321-5d977b1228c3
+2026-07-29 09:22:04,241 [INFO] Project ID: 6e1587e7-d86e-4df0-849e-41667ac1b490
+2026-07-29 09:22:04,241 [INFO] Project dir: C:\Users\admin\workspaces\vision-5d\storage\projects\photo-room-c94e2346-e158-449d-b321-5d977b1228c3

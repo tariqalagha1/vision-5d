@@ -1,0 +1,20 @@
+{
+  "mission": "V5D-LOCAL-EXTERNAL-SERVICES-READINESS-001",
+  "timestamp": "2026-07-31T21:59:37.902388",
+  "ai_provider": "gemini (configured in .env)",
+  "vision_model": "gemini-2.0-flash",
+  "nvidia_base_url": "https://integrate.api.nvidia.com/v1",
+  "credential_status": "MASKED \u2014 key present in .env, never exposed in evidence",
+  "pascal_rest_url": "NOT CONFIGURED",
+  "pascal_editor_url": "NOT CONFIGURED",
+  "pascal_mcp_transport": "NOT CONFIGURED",
+  "blender_executable_path": "NOT INSTALLED",
+  "expected_blender_version": "4.2+",
+  "selected_render_engine": "BLENDER_EEVEE",
+  "ffmpeg_path": "C:\\Users\\admin\\AppData\\Local\\Microsoft\\WinGet\\Links\\ffmpeg.exe",
+  "service_ports": {
+    "api": 8000,
+    "static": 8100
+  },
+  "no_raw_secrets_included": true
+}

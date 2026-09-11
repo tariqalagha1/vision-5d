@@ -1,0 +1,21 @@
+{
+  "deployment_id": "1f1e130d-f136-4285-bbed-82b61a7207ff",
+  "services": [
+    {
+      "name": "pascal-editor",
+      "version": "0.9.2",
+      "port": 3131,
+      "healthy": true,
+      "startupS": 15
+    },
+    {
+      "name": "vision5d-adapter",
+      "version": "3.0.0-production",
+      "healthy": true
+    }
+  ],
+  "readiness_checks": {
+    "pascal_health": "ok",
+    "adapter_runtime": "ok"
+  }
+}

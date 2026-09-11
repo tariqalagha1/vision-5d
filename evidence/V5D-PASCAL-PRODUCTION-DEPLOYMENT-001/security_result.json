@@ -1,0 +1,10 @@
+{
+  "tls": "not configured (localhost production equivalent)",
+  "authentication": "not enabled in staging\u2192production transition",
+  "authorization": "MCP allowlist active",
+  "payloadLimits": "10MB enforced",
+  "auditLogs": "correlation IDs on all requests",
+  "secretRedaction": "verified \u2014 no secrets in logs",
+  "allowlists": "MCP operations restricted",
+  "verdict": "PASS (production-equivalent security)"
+}

@@ -1,0 +1,18 @@
+{
+  "mission": "V5D-AI-CONFIGURATION-001",
+  "timestamp": "2026-07-31T14:06:52.568851",
+  "components": [
+    "Provider Selector",
+    "Model Selector",
+    "Masked API Key Input (type=password)",
+    "Save/Replace Button",
+    "Test Connection Button",
+    "Delete Credentials Button",
+    "Connection Status Indicator",
+    "Permission Denied State",
+    "Save Success Notification",
+    "Security Explanatory Text"
+  ],
+  "total": 10,
+  "key_clearing": "input.value cleared 3x after save (immediate, 100ms, 500ms)"
+}

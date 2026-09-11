@@ -1,0 +1,72 @@
+{
+  "mission": "V5D-PASCAL-PRODUCTION-DEPLOYMENT-001",
+  "totalArtifacts": 13,
+  "artifacts": [
+    {
+      "path": "build_result.json",
+      "sha256": "f385cc8c4a2055c7a1f689e20924e77886fb7adbe726bb0baba69d0837953766",
+      "sizeBytes": 466
+    },
+    {
+      "path": "deployment_result.json",
+      "sha256": "ac17a72fb15eb214addc8fccf80b6a2060c40a4a9c0e6974f0feddc6379ceb51",
+      "sizeBytes": 393
+    },
+    {
+      "path": "final_report.md",
+      "sha256": "93501db7f5a0c5ba37f85042a16e809666404afe4b96998d5f773828f9fcd372",
+      "sizeBytes": 1589
+    },
+    {
+      "path": "health_result.json",
+      "sha256": "3d201ee64ebedec84ab14da707c5643bb6ae4b454641df4fe16c67f70fb4f41e",
+      "sizeBytes": 238
+    },
+    {
+      "path": "monitoring_result.json",
+      "sha256": "f55806ad61dd4f79f66e2e62aaae947624f484f0f00bc248efd2ee8a57941721",
+      "sizeBytes": 346
+    },
+    {
+      "path": "observability_result.json",
+      "sha256": "95e79ab62148fe614b450c9f7f994d58bf58c33b6485419b993f87077f32966a",
+      "sizeBytes": 463
+    },
+    {
+      "path": "release_acceptance.json",
+      "sha256": "cc9591e714635eda5a42fe76d3fad2f574ef61411f7adb0ff9de0e49f54810dd",
+      "sizeBytes": 546
+    },
+    {
+      "path": "release_candidate.json",
+      "sha256": "1fff93b50cc14cb4f2a49be43d17c06ccf1a31ee6ed38fa05481385555457b29",
+      "sizeBytes": 619
+    },
+    {
+      "path": "risk_report.md",
+      "sha256": "8989e8d7a01ac8063bda9882836e6e07aa424c054c0a15ab6f5b6cda8e358ba8",
+      "sizeBytes": 369
+    },
+    {
+      "path": "rollback_readiness.json",
+      "sha256": "785433c046868a92684e789908c152224f82442815cab2404cee3fedcca2d097",
+      "sizeBytes": 310
+    },
+    {
+      "path": "round_trip_result.json",
+      "sha256": "2880b0215bf306807d97640a7a13dd2d5c6cd979af1a26c1c72bfbeeda41f2f9",
+      "sizeBytes": 99
+    },
+    {
+      "path": "security_result.json",
+      "sha256": "23ce4030f52c75626fbbc36252c55f02d5988c5d42d499a07012e4a80923230e",
+      "sizeBytes": 432
+    },
+    {
+      "path": "smoke_test_result.json",
+      "sha256": "b86fc714cfc1e8f237214a7723477aaceba1ea76ee7d611a3c00a33e42c83de0",
+      "sizeBytes": 400
+    }
+  ],
+  "generatedAt": "2026-07-30T06:19:00.139984+00:00"
+}

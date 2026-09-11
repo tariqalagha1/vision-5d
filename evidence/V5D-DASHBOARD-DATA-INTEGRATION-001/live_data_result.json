@@ -1,0 +1,61 @@
+{
+  "mission": "V5D-DASHBOARD-DATA-INTEGRATION-001",
+  "timestamp": "2026-07-31T19:50:18.240944",
+  "server": "http://localhost:8000",
+  "stats": {
+    "total_projects": 3,
+    "active_projects": 1,
+    "total_scenes": 0,
+    "total_revisions": 0,
+    "conflict_count": 0,
+    "failed_sync_count": 0,
+    "ai_providers_configured": 0,
+    "ai_providers_healthy": 0,
+    "sync_health": "healthy"
+  },
+  "activity": {
+    "activity": [
+      {
+        "id": "afa95231-1677-4057-9b0a-3f29cd38b939",
+        "type": "project_created",
+        "project_id": "afa95231-1677-4057-9b0a-3f29cd38b939",
+        "title": "Project: Project 2",
+        "state": "DRAFT",
+        "time": "2026-07-31T16:47:43",
+        "icon": "\u2728"
+      },
+      {
+        "id": "ee4f060b-552c-405b-9421-f88d7fca45e4",
+        "type": "project_created",
+        "project_id": "ee4f060b-552c-405b-9421-f88d7fca45e4",
+        "title": "Project: Project 3",
+        "state": "DRAFT",
+        "time": "2026-07-31T16:47:43",
+        "icon": "\u2728"
+      },
+      {
+        "id": "ad07ee50-9257-4a57-b310-e1c1313192e0",
+        "type": "project_created",
+        "project_id": "ad07ee50-9257-4a57-b310-e1c1313192e0",
+        "title": "Project: Project 1",
+        "state": "ACTIVE",
+        "time": "2026-07-31T16:47:42",
+        "icon": "\u2728"
+      }
+    ],
+    "count": 3
+  },
+  "pascal_health": {
+    "status": "operational",
+    "adapter_installed": true,
+    "pascal_commit": "42ac4be1ce5f3fee74806aa093267b6fee77d47d",
+    "pascal_version": "0.9.2",
+    "integration_status": "LIVE",
+    "credentials_exposed_to_browser": false,
+    "last_sync": null,
+    "sync_state": "idle",
+    "correction_events_pending": 0,
+    "conflicts": 0
+  },
+  "verdict": "LIVE DATA VERIFIED \u2014 All endpoints return authenticated Vision 5D data"
+}

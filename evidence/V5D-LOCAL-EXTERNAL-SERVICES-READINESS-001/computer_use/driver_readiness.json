@@ -1,0 +1,13 @@
+{
+  "stage": 3,
+  "result": "CUA_DRIVER_READY",
+  "version": "0.9.0",
+  "executable_path": "C:\\Users\\admin\\AppData\\Local\\Programs\\Cua\\cua-driver\\bin\\cua-driver.exe",
+  "install_path": "C:\\Users\\admin\\.cua-driver\\packages\\releases\\0.9.0-x86_64-pc-windows-msvc\\cua-driver.exe",
+  "doctor_result": "all checks passed (binary, install, home, interactive session, UI Automation, 7 visible windows)",
+  "platform": "x86_64-windows",
+  "daemon_status": "running (pid 24192, pipe \\\\.\\pipe\\cua-driver)",
+  "update_available": "v0.17.0",
+  "smoke_test": "screenshot capture via PIL fallback works; CLI args mismatch between executor and actual cua-driver 0.9.0 (executor expects --element/--output flags, driver uses JSON via stdin)",
+  "vision5d_executor_compatibility": "PARTIAL — PIL screenshot fallback works; click/keyboard actions silently fail due to CLI interface mismatch"
+}

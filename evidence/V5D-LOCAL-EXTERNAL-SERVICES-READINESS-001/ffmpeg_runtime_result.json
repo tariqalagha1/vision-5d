@@ -1,0 +1,12 @@
+{
+  "mission": "V5D-LOCAL-EXTERNAL-SERVICES-READINESS-001",
+  "timestamp": "2026-07-31T21:59:37.902388",
+  "ffmpeg_path": "C:\\Users\\admin\\AppData\\Local\\Microsoft\\WinGet\\Links\\ffmpeg.exe",
+  "ffmpeg_version": "8.1.1-full_build-www.gyan.dev",
+  "ffprobe_available": true,
+  "h264_encoder": "libx264 \u2014 AVAILABLE",
+  "pix_fmt_yuv420p": "SUPPORTED",
+  "png_input": "SUPPORTED",
+  "mp4_output": "SUPPORTED",
+  "status": "READY"
+}

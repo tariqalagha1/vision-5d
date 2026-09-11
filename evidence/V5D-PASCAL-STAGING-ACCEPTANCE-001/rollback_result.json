@@ -1,0 +1,10 @@
+{
+  "rollbackSuccessful": true,
+  "previousVersionRestored": true,
+  "databaseReadable": true,
+  "revisionsPreserved": true,
+  "pascalScenesPreserved": true,
+  "identityMapPreserved": true,
+  "redeploySuccessful": true,
+  "verdict": "PASS"
+}
